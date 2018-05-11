@@ -1,0 +1,37 @@
+.contractAdd .content-wrapper .basics {
+  margin-top: 20px; }
+  .contractAdd .content-wrapper .basics .form-inline {
+    padding: 50px 30px; }
+
+.contractAdd .content-wrapper .sign label {
+  width: 100px; }
+
+.contractAdd .content-wrapper .sign textarea.form-control {
+  width: 83%; }
+
+.contractAdd .content-wrapper .contract-party label {
+  width: 120px; }
+
+.contractAdd .content-wrapper .contract-party textarea.form-control {
+  width: 83%; }
+
+.contractAdd .content-wrapper .contract-party .border {
+  position: relative; }
+  .contractAdd .content-wrapper .contract-party .border:before {
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 15px;
+    background-color: #ccc; }
+
+.contractAdd .content-wrapper .set-up label {
+  width: 120px; }
+
+.contractAdd .content-wrapper .set-up textarea.form-control {
+  width: 83%; }
+
+.contractAdd .content-wrapper .sign, .contractAdd .content-wrapper .contract-party, .contractAdd .content-wrapper .set-up {
+  display: none; }

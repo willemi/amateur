@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Miminium Admin Template v.1">
+	<meta name="author" content="Isna Nur Azis">
+	<meta name="keyword" content="">
+	<title>大地</title>
+</head>
+<body>
+<!--header start-->
+<div id="header" class="header">
+	<div class="container-fluid">
+		
+	</div>
+</div>
+<!--header end-->
+<!--sidebar start-->
+<%= require('html-loader!./sidebar.html') %>
+<!--sidbar end-->
+<!--cont start-->
+<div id="content" class="content">
+	<div class="content-wrapper">
+		<h3>大地传播</h3>
+		<div class="search">
+			<div class="row">
+				<div class="col-md-6 col-lg-6 col-md-push-3">
+					<div class="input-group col-md-12 col-lg-12">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">全部<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:;">音乐</a></li>								
+								<li><a href="javascript:;">美术</a></li>
+								<li><a href="javascript:;">文字</a></li>
+								<li><a href="javascript:;">戏剧</a></li>
+								<li><a href="javascript:;">影视动漫</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+						<input type="text" class="form-control" aria-label="...">
+					</div><!-- /input-group -->
+				</div><!-- /.col-lg-6 -->
+				<button type="button" class="btn btn-primary col-md-push-3 btn-query">查询</button>
+			</div>
+		</div>
+		<div class="ip-list">
+			<div class="title-h3"><h3>IP资源池列表</h3><button type="button" class="btn btn-default">导出数据<i class="glyphicon glyphicon-download-alt"></i></button></div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>资源名称</th>
+						<th>资源类型</th>
+						<th>权利主体</th>
+						<th>权利来源</th>
+						<th>权利状况</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">嫁我一次好吗</th>
+						<td>歌曲</td>
+						<td>大地之作有限公司</td>
+						<td>采购</td>
+						<td>出版发行</td>
+						<td>						
+							<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#newly-added">修改</button>
+							<button class="btn btn-danger btn-md" data-toggle="modal" data-target="#delete" data-id="1">删除</button>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">孔子</th>
+						<td>电影t</td>
+						<td>大地文化传播有限公司</td>
+						<td>主控</td>
+						<td>无限制</td>
+						<td>						
+							<button class="btn btn-primary btn-md" data-toggle="modal" data-target="#newly-added">修改</button>
+							<button class="btn btn-danger btn-md" data-toggle="modal" data-target="#delete" data-id="2">删除</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="example" class="example">
+				<ul id="pageLimit"></ul>
+			</div>
+		</div>
+		<div class="ip-details">
+			<dl class="details-title">
+				<dt class="btn-list">IP资源池列表 / </dt>
+				<dd> 孔子</dd>
+			</dl>
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">项目基本信息</div>
+						<div class="panel-body">
+							项目基本信息
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-6 pr10">
+					<div class="panel panel-default">
+						<div class="panel-heading">权利链图谱</div>
+						<div class="panel-body">
+							<i class="glyphicon glyphicon-fullscreen btn-tree"></i>
+							<div class="container" id="container"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-6 pl10">
+					<div class="panel panel-default">
+						<div class="panel-heading">版权结构图谱</div>
+						<div class="panel-body">
+							<div class="container" id="container1"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">
+					Modal
+				</h4>
+			</div>
+			<div class="modal-body">
+				确认要删除吗？
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<%= require('html-loader!./modal-newly-added.html') %>
+<div class="tree-fixed">
+	<p></p>
+	<div class="tree-cont">
+		<i class="tree-close glyphicon glyphicon-remove-circle"></i>
+		<div id="tree-content"></div>
+	</div>
+</div>
+</body>
+</html>

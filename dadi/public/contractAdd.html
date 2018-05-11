@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Miminium Admin Template v.1">
+	<meta name="author" content="Isna Nur Azis">
+	<meta name="keyword" content="">
+	<title>大地</title>
+<link href="resource/css/common.css" rel="stylesheet"><link href="resource/css/contractAdd.css" rel="stylesheet"></head>
+<body>
+<!--header start-->
+<div id="header" class="header">
+	<div class="container-fluid">
+		
+	</div>
+</div>
+<!--header end-->
+<!--sidebar start-->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul id="sideNav" class="nav nav-pills nav-stacked">
+            <li class="admin">
+                <a href="index.html" class="sid-li" data-sider=""><img src="../img/160_160.jpg"></a>
+            </li>
+            <li class="hassub">
+                <a href="iplist.html" class="sid-li" data-sider="1">IP资源池<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+                <ol class="nav sub">
+                    <li><a href="ipAdd.html" class="nav-li" data-sider="0">音乐作品</a></li>
+                    <li><a href="ipAdd.html" class="nav-li" data-sider="1">美术作品</a></li>
+                    <li><a href="ipAdd.html" class="nav-li" data-sider="3">文字作品</a></li>
+                    <li><a href="ipAdd.html" class="nav-li" data-sider="4">戏剧作品</a></li>
+                    <li><a href="ipAdd.html" class="nav-li" data-sider="5">影视动漫作品</a></li>
+                </ol>
+            </li>
+            <li class="hassub">
+                <a href="contract.html" class="sid-li" data-sider="2">合同管理<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+                <ol class="nav sub">
+                    <li><a href="contractAdd.html" class="nav-li" data-sider="0">采购合同信息</a></li>
+                    <li><a href="contractAdd.html" class="nav-li" data-sider="1">合作制作合同信息</a></li>
+                    <li><a href="contractAdd.html" class="nav-li" data-sider="2">委托制作合同信息</a></li>
+                    <li><a href="contractAdd.html" class="nav-li" data-sider="3">开发授权合同信息</a></li>
+                </ol>
+            </li>
+            <li class="hassub">
+                <a href="project.html" class="sid-li" data-sider="3">项目管理<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+                <ol class="nav sub">
+                    <li><a href="projectAdd.html" class="nav-li" data-sider="0">发行及作品授权</a></li>
+                    <li><a href="projectAdd.html" class="nav-li" data-sider="1">影视制作项目</a></li>
+                    <li><a href="projectAdd.html" class="nav-li" data-sider="2">影视投资项目</a></li>
+                    <li><a href="projectAdd.html" class="nav-li" data-sider="3">预立项</a></li>
+                </ol>
+            </li>
+            <li class="hassub ">
+                <a href="#" class="sid-li" data-sider="4">知识产权管理<span class="glyphicon glyphicon-lock" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+                <ol class="nav sub">
+                    <li><a href="#" class="nav-li" data-sider="0">商标信息管理</a></li>
+                    <li><a href="#" class="nav-li" data-sider="1">专利信息管理</a></li>
+                    <li><a href="#" class="nav-li" data-sider="2">域名信息管理</a></li>
+                    <li><a href="#" class="nav-li" data-sider="3">著作权信息管理</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#" class="sid-li" data-sider="5">查询统计中心<span class="glyphicon glyphicon-lock" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+            </li>
+            <li class="hassub ">
+                <a href="#" class="sid-li" data-sider="6">系统管理<span class="glyphicon glyphicon-lock" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+                <ol class="nav sub">
+                    <li><a href="#" class="nav-li" data-sider="0">基础字典设置</a></li>
+                    <li><a href="#" class="nav-li" data-sider="1">权利信息设置</a></li>
+                    <li><a href="#" class="nav-li" data-sider="2">用户信息设置</a></li>
+                    <li><a href="#" class="nav-li" data-sider="3">权限信息设置</a></li>
+                    <li><a href="#" class="nav-li" data-sider="3">系统操作日志</a></li>
+                </ol>
+            </li>
+            <li class="hassub ">
+                <a href="#" class="sid-li" data-sider="7">版权事务管理<span class="glyphicon glyphicon-lock" aria-hidden="true"></span><i class="glyphicon glyphicon-menu-down"></i></a>
+                <ol class="nav sub">
+                    <li><a href="#" class="nav-li" data-sider="0">通知公告信息</a></li>
+                    <li><a href="#" class="nav-li" data-sider="1">案例案件信息</a></li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--sidbar end-->
+<!--cont start-->
+<div id="content" class="content contractAdd">
+	<div class="content-wrapper">
+		<h3>大地传播</h3>
+		<ul class="step">
+			<li class="col-md-3 col-lg-3 step-left active">1.基础信息</li>
+			<li class="col-md-3 col-lg-3 step-center ">2.签订信息</li>
+			<li class="col-md-3 col-lg-3 step-center ">3.合同签约方</li>
+			<li class="col-md-3 col-lg-3 step-right ">4.附件信息</li>
+		</ul>
+		<!--基础信息 start-->
+		<div class="basics main" data-id="1">
+			<form class="form-inline">
+				<div class="row col-md-12 col-lg-12">
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">合同编号</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">合同主体</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputEmail2">呈文部门</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">合同名称</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">合同金额</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputEmail2">签约日期</label>
+						<div class='input-group date' id='datetimepicker1'>  
+							<input type='text' class="form-control" />  
+							<span class="input-group-addon">  
+								<span class="glyphicon glyphicon-calendar"></span>  
+							</span>  
+						</div> 
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">生效日期</label>
+						<div class='input-group date' id='datetimepicker2'>  
+							<input type='text' class="form-control" />  
+							<span class="input-group-addon">  
+								<span class="glyphicon glyphicon-calendar"></span>  
+							</span>  
+						</div> 
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">失效日期</label>
+						<div class='input-group date' id='datetimepicker3'>  
+							<input type='text' class="form-control" />  
+							<span class="input-group-addon">  
+								<span class="glyphicon glyphicon-calendar"></span>  
+							</span>  
+						</div> 
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputEmail2">有效期</label>
+						<div class='input-group date' id='datetimepicker4'>  
+							<input type='text' class="form-control" />  
+							<span class="input-group-addon">  
+								<span class="glyphicon glyphicon-calendar"></span>  
+							</span>  
+						</div> 
+					</div>
+				</div>			
+			</form>
+			<div class="row row-btn col-md-pull-1">				
+				<button type="button" class="btn btn-default">重置</button>
+				<button type="button" class="btn btn-primary next-step">下一步</button>
+			</div>			
+		</div>
+		<!--基础信息 end-->
+		<!--签订信息 start-->
+		<div class="sign main" data-id="2">
+			<form class="form-inline">
+				<div class="row col-md-12 col-lg-12">
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">节目(作品)名称</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">集数/期数</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputEmail2">单集价格</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">支付方式</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">支付计划</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputEmail2">交付标准及方式</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-12 col-lg-12">
+						<label for="exampleInputEmail2">合同备注</label>
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+				</div>
+			</form>
+			<div class="row row-btn col-md-pull-1">				
+				<button type="button" class="btn btn-default">重置</button>
+				<button type="button" class="btn btn-primary next-step">下一步</button>
+			</div>	
+		</div>
+		<!--签订信息 end-->
+		<!--合同签约方 start-->
+		<div class="contract-party main" data-id="3">
+			<form class="form-inline">
+				<div class="row col-md-12 col-lg-12">
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">签约方</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">签约方类型</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputEmail2">签约方名称</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">签约方电话</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-4 col-lg-4">
+						<label for="exampleInputName2">签约方联系人名称</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-12 col-lg-12">
+						<label for="exampleInputEmail2">签约方地址</label>
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+				</div>
+			</form>			
+			<div class="row row-btn col-md-pull-1">				
+				<button type="button" class="btn btn-default">重置</button>
+				<button type="button" class="btn btn-primary next-step">下一步</button>
+			</div>	
+		</div>
+		<!--合同签约方 end-->
+		<!--授权设置 start-->
+		<div class="set-up main">
+			<form class="form-inline">
+				<div class="row col-md-12 col-lg-12">
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">附件名称</label>
+						<input type="text" class="form-control" id="" placeholder="">
+						<i>必填</i>
+					</div>
+					<div class="form-group col-md-12 col-lg-12">
+						<label for="exampleInputEmail2">签约方地址</label>
+						<textarea class="form-control" rows="3"></textarea>
+					</div>
+					<div class="form-group col-md-12 col-lg-12">
+						<label for="exampleInputEmail2">上传附件</label>
+						<button type="button" class="btn btn-primary file"><i class="glyphicon glyphicon-open"></i>上传附件<input type="file"></button>
+					</div>
+				</div>				
+			</form>
+			<div class="right-title">
+				<h3 class="col-md-2 col-lg-2">合同采购信息</h3>
+				<div class="right-ht col-md-10 col-lg-10">
+					<div class="btn-group" role="group" aria-label="...">
+						<span class="btn btn-default">合同信息</span>
+						<select id="right-news" class="form-control btn-default" value="1">
+							<option value="1">否</option>
+							<option value="0">是</option>							
+						</select>						
+					</div>
+					<button type="button" class="btn btn-primary" disabled="disabled">点击引用合同</button>
+					<div class="btn-operation">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cg-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
+						<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i>修改</button>
+						<button type="button" class="btn btn-default">删除</button>					
+					</div>
+				</div>				
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>拥有权利内容</th>
+						<th>我方权利比重</th>
+						<th>是否专有</th>
+						<th>有无维权权利</th>
+						<th>有无合同</th>
+						<th>授权许可使用方式</th>
+						<th>授权许可使用渠道</th>
+						<th>授权许可使用地域</th>
+						<th>授权许可使用次数</th>
+						<th>授权许可使用语言</th>
+						<th>授权许可起止时间</th>
+						<th>合同权利描述</th>
+						<th>备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">出版社</th>
+						<td>1990.10.22</td>
+						<td>2040.10.22</td>
+						<td>备注备注备注备注备注备注备注备注备注</td>
+						<td>除大陆，港澳台，新加坡，马来西亚</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>1990.10.22</td>
+						<td>2040.10.22</td>
+						<td>备注备注备注备注备注备注备注备注备注</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="example" class="example">
+				<ul id="pageLimit"></ul>
+			</div>
+			
+			<div class="row row-btn col-md-pull-1">				
+				<button type="button" class="btn btn-default">重置</button>
+				<button type="button" class="btn btn-primary">完成</button>
+			</div>	
+		</div>
+		<!--授权设置 end-->
+	</div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade cg-added" style="display:bl8ock" id="cg-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">新增</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-inline">
+					<div class="row col-md-12 col-lg-12">
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">拥有权利内容</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">我方权利比重</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputEmail2">是否专有</label>
+							<select class="form-control">
+								<option>是</option>
+								<option>否</option>
+							</select>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">有无维权权利</label>
+							<select class="form-control">
+								<option>有</option>
+								<option>无</option>
+							</select>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">有无合同</label>
+							<select class="form-control">
+								<option>有</option>
+								<option>无</option>
+							</select>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">权利类型</label>
+							<select class="form-control">
+								<option>权利类型1</option>
+								<option>权利类型2</option>
+							</select>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">授权许可使用方式</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputEmail2">授权许可使用渠道</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">授权许可使用地域</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">授权许可使用次数</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">授权许可使用语言</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-12 col-lg-12">
+							<label for="exampleInputName2">授权许可起止时间</label>
+							<input size="16" type="text" id="datetimeStart" readonly class="form_datetime ml10 form-control">
+							一
+							<input size="16" type="text" id="datetimeEnd" readonly class="form_datetime form-control">
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-12 col-lg-12">
+							<label for="exampleInputEmail2">合同权利描述</label>
+							<textarea class="form-control" rows="3"></textarea>
+							<i>必填</i>
+						</div>
+						<div class="form-group col-md-12 col-lg-12">
+							<label for="exampleInputEmail2">备注</label>
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<script type="text/javascript" src="resource/js/common.js"></script><script type="text/javascript" src="resource/js/contractAdd.js"></script></body>
+</html>
