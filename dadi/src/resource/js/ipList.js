@@ -5,6 +5,56 @@ const util = require("./common/util.js")
 const echarts = require('echarts');
 const data = require('../data/flare.json');
 
+const tabelTpl = require('../tpl/item.tpl');
+
+let $tabelCont = $(".tabel-cont");
+//默认表
+let data1 =[{
+	"title": "叫我一次好吗",
+	"type": "电影",
+	"sub": "大地之作有点公司",
+	"source": "采购",
+	"status": "出版发行",
+	"s": 1
+},{
+	"title": "叫我一次好吗1",
+	"type": "电影1",
+	"sub": "大地之作有点公司1",
+	"source": "采购1",
+	"status": "出版发行1",
+	"s": 1
+}]
+//查询表
+let data2 =[{
+	"title": "孔子",
+	"type": "电影",
+	"sub": "大地之作有点公司",
+	"source": "采购",
+	"status": "出版发行",
+	"s": 2
+},{
+	"title": "孔子",
+	"type": "电影1",
+	"sub": "大地之作有点公司1",
+	"source": "采购1",
+	"status": "出版发行1",
+	"s": 2
+}]
+//默认数据
+function initDaya(){
+	let data = data1;
+	renderData(data)
+}
+//搜索数据
+function searchDaya(){
+	let data = data2;
+	renderData(data)
+}
+
+function renderData(data) {
+	$tabelCont.html(tabelTpl(data))
+}
+
 function bindEvents(){
 	var $doc = $(document);
 	// $doc.on("click", "#sideNav > li", function(e){
@@ -21,6 +71,7 @@ function bindEvents(){
 	// 		$(this).addClass("cut")
 	// 	}
 	// })
+	//树形图谱
 	var $treeFixed = $(".tree-fixed");
 	$doc.on("click", ".btn-tree", function(){
 		$treeFixed.show();
@@ -30,9 +81,13 @@ function bindEvents(){
 	$treeFixed.on("click", "i", function(){
 		$treeFixed.hide();
 	})
+	//搜索
 	var $ipList = $(".ip-list");
 	var $ipDetails = $(".ip-details");
 	$doc.on("click", ".btn-query", function(){
+		searchDaya()
+	})
+	$doc.on("click", ".btn-look", function(){
 		$ipList.hide();
 		$ipDetails.show();
 		treeFun("container");
@@ -97,6 +152,7 @@ function treeFun(cont){
 	}
 }
 function init(){
+	initDaya()
 	bindEvents();
 }
 init();

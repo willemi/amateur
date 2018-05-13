@@ -1,6 +1,9 @@
 @import './common.scss';
 .ip-details {
     display: none;
+    .row {
+        margin:0;
+    }
     dl{
         @extend .clearfix;
         margin:0;
