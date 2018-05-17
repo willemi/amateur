@@ -54,9 +54,19 @@
 					<input type="text" class="form-control" id="" placeholder="">
 				</div>
 				<div class="form-group col-md-4 col-lg-4">
-						<label for="exampleInputName2">资源名称</label>
-						<input type="text" class="form-control" id="" placeholder="">
-					</div>
+					<label for="name">权利来源</label>
+					<select class="form-control">
+						<option>资源类型1</option>
+						<option>资源类型2</option>
+						<option>资源类型3</option>
+						<option>资源类型4</option>
+						<option>资源类型5</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4 col-lg-4">
+					<label for="exampleInputName2">资源名称</label>
+					<input type="text" class="form-control" id="" placeholder="">
+				</div>
 				<div class="form-group col-md-4 col-lg-4">
 					<label for="name">资源类型</label>
 					<select class="form-control">
@@ -85,38 +95,11 @@
 					<input type="text" class="form-control" id="" placeholder="">
 				</div>
 			</div>
-			<!-- <div class="form-inline form-2 form-3">
-				<div class="form-group col-md-3 col-lg-3">
-					<label for="exampleInputName2">付费方式</label>
-					<input type="text" class="form-control" id="" placeholder="">
-				</div>
-				<div class="form-group col-md-3 col-lg-3">
-					<label for="name">付费金额</label>
-					<input type="text" class="form-control" id="" placeholder="">
-				</div>
-				<div class="form-group col-md-3 col-lg-3">
-					<label for="exampleInputName2">收入专辑</label>
-					<input type="text" class="form-control" id="" placeholder="">
-				</div>
-				<div class="form-group col-md-3 col-lg-3">
-					<label for="exampleInputName2">币种</label>
-					<select class="form-control">
-						<option>人民币</option>
-						<option>美元</option>
-						<option>欧元</option>
-						<option>日元</option>
-						<option>韩元</option>
-					</select>
-				</div>
-				<i class="add glyphicon glyphicon-plus"></i>
-				<i class="delete glyphicon glyphicon-minus"></i>
-			</div> -->
 			<div class="right-title">
 				<h3 class="col-md-2 col-lg-2">梗概权利许可</h3>
 				<div class="right-ht col-md-10 col-lg-10">					
 					<div class="btn-operation">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
-						<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i>修改</button>
 						<button type="button" class="btn btn-default">删除</button>					
 					</div>
 				</div>				
@@ -124,20 +107,26 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>词作者</th>
+						<th><input type="checkbox" name="">词作者</th>
 						<th>付费方式</th>
 						<th>付费金额</th>
 						<th>币种</th>
-						<th>许可使用语言</th>
+						<th>授权方</th>
+						<th>被授权方</th>
+						<th>词曲是否有原件</th>
+						<th>操作</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row">出版社</th>
+						<th scope="row"><input type="checkbox" name="">张三</th>
+						<td>在线支付</td>
+						<td>100元</td>
+						<td>人民币</td>
 						<td>无限制</td>
 						<td>无限制</td>
-						<td>除大陆，港澳台，新加坡，马来西亚</td>
-						<td>无限制</td>
+						<td>是</td>
+						<td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -148,45 +137,20 @@
 		</div>
 		<!--基础信息 end-->
 		<!--权利信息 start-->
-		<div class="right main" data-id="2">		
-			<div class="form-inline">
-				<div class="row col-md-10 col-lg-10">
-					<div class="form-group col-md-4 col-lg-4">
-						<label for="exampleInputName2">权利来源</label>
-						<select class="form-control">
-							<option>权利来源1</option>
-							<option>权利来源2</option>
-							<option>权利来源3</option>
-							<option>权利来源4</option>
-							<option>权利来源5</option>
-						</select>
-					</div>
-					<div class="form-group col-md-4 col-lg-4">
-							<label for="exampleInputName2">授权方</label>
-							<input type="text" class="form-control" id="" placeholder="请输入授权方">
-						</div>
-					<div class="form-group col-md-4 col-lg-4">
-						<label for="exampleInputEmail2">被授权方</label>
-						<input type="text" class="form-control" id="" placeholder="请输入被授权方">
-					</div>
-				</div>			
-				<button type="submit" class="btn btn-primary col-md-1 col-lg-1">查询</button>
-			</div>
+		<div class="right main" data-id="2">
 			<div class="right-title">
 				<h3 class="col-md-2 col-lg-2">权利信息</h3>
-				<div class="right-ht col-md-10 col-lg-10">
+				<div class="right-ht col-md-10 col-lg-10 quanli">
 					<div class="btn-group" role="group" aria-label="...">
-						<span class="btn btn-default">合同信息</span>
-						<select id="right-news" class="form-control btn-default" value="1">
+						<input type="radio" checked name="news"> 来源于合同
+					</div>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes" >点击引用合同</button>
+					<div class="btn-operation">
+						<label><input type="radio" name="news"> 来源于权利</label>
+						<select class="form-control btn-default" value="1">
 							<option value="1">否</option>
 							<option value="0">是</option>							
-						</select>						
-					</div>
-					<button type="button" class="btn btn-primary" disabled="disabled">点击引用合同</button>
-					<div class="btn-operation">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newly-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
-						<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i>修改</button>
-						<button type="button" class="btn btn-default">删除</button>					
+						</select>	
 					</div>
 				</div>				
 			</div>
@@ -227,65 +191,13 @@
 			</div>	
 		</div>
 		<!--权利信息 end-->
-		<!--lll start-->
-		<div class="copyright main">		
-			<div class="form-inline">
-				<div class="row">
-					<div class="form-group col-md-4 col-lg-4">
-						<label for="exampleInputName2">运营主体</label>
-						<select class="form-control">
-							<option>运营主体1</option>
-							<option>运营主体2</option>
-							<option>运营主体3</option>
-							<option>运营主体4</option>
-							<option>运营主体5</option>
-						</select>
-					</div>
-					<div class="form-group col-md-4 col-lg-4">
-							<label for="exampleInputName2">登记机构</label>
-							<input type="text" class="form-control" id="" placeholder="">
-						</div>
-					<div class="form-group col-md-4 col-lg-4">
-						<label for="exampleInputEmail2">登记日期</label>
-						<div class='input-group date' id='datetimepicker2'>  
-							<input type='text' class="form-control" />  
-							<span class="input-group-addon">  
-								<span class="glyphicon glyphicon-calendar"></span>  
-							</span>  
-						</div> 
-					</div>
-					<div class="form-group col-md-4 col-lg-4">
-							<label for="exampleInputName2">委托机构</label>
-							<input type="text" class="form-control" id="" placeholder="">
-						</div>
-					<div class="form-group col-md-4 col-lg-4">
-						<label for="exampleInputEmail2">登记证号</label>
-						<input type="text" class="form-control" id="" placeholder="">
-					</div>
-					<div class="form-group col-md-12 col-lg-12">
-						<label for="exampleInputEmail2"  style="line-height: 160px;float:left">登记证书</label>
-						<div class="file">
-							<i class="glyphicon glyphicon-open"></i>
-							<p>点击上传您的证书！</p>
-							<input type="file">
-						</div>
-					</div>
-				</div>
-			</div>
+		<!--附件信息 start-->
+		<div class="copyright main">
 			<div class="right-title">
-				<h3 class="col-md-2 col-lg-2">权利信息</h3>
-				<div class="right-ht col-md-10 col-lg-10">
-					<div class="btn-group" role="group" aria-label="...">
-						<span class="btn btn-default">合同信息</span>
-						<select id="right-news" class="form-control btn-default" value="1">
-							<option value="1">否</option>
-							<option value="0">是</option>							
-						</select>						
-					</div>
-					<button type="button" class="btn btn-primary" disabled="disabled">点击引用合同</button>
+				<h3 class="col-md-2 col-lg-2">梗概权利许可</h3>
+				<div class="right-ht col-md-10 col-lg-10">				
 					<div class="btn-operation">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newly-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
-						<button type="button" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i>修改</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
 						<button type="button" class="btn btn-default">删除</button>					
 					</div>
 				</div>				
@@ -293,27 +205,21 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>权利类型</th>
-						<th>许可传播方式</th>
-						<th>许可使用渠道</th>
-						<th>许可使用地域</th>
-						<th>许可使用语言</th>
-						<th>许可使用次数</th>
-						<th>开始日期</th>
-						<th>结束日期</th>
+						<th><input type="checkbox" name="">序号</th>
+						<th>附件名称</th>
+						<th>附件类型</th>
+						<th>附件大小</th>
+						<th>上传日期</th>
 						<th>备注</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row">出版社</th>
-						<td>无限制</td>
-						<td>无限制</td>
-						<td>除大陆，港澳台，新加坡，马来西亚</td>
-						<td>无限制</td>
-						<td>无限制</td>
-						<td>1990.10.22</td>
-						<td>2040.10.22</td>
+						<th scope="row"><input type="checkbox" name="">1</th>
+						<td>音乐作品登记</td>
+						<td>JPG</td>
+						<td>10.23MB</td>
+						<td>2018-12-23 10:55</td>
 						<td>备注备注备注备注备注备注备注备注备注</td>
 					</tr>
 				</tbody>
@@ -326,13 +232,11 @@
 				<button type="button" class="btn btn-primary">提交</button>
 			</div>	
 		</div>
-		<!--lala end-->
+		<!--附件信息 end-->
 	</div>
 </div>
 <!-- 模态框（Modal） -->
-<%= require('html-loader!./modal-newly-added.html') %>
-<!-- 模态框（Modal） -->
-<div class="modal fade" style="display:blo\ck" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" style="display:bock" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -344,23 +248,118 @@
                     <div class="form-group col-md-6 col-lg-6">
                         <label for="exampleInputName2">词作者</label>
                         <input type="text" class="form-control" id="" placeholder="">
-                    </div>
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">授权方</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">被授权方</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">币种</label>
+						<select class="form-control">
+							<option>有</option>
+							<option>无</option>
+						</select>
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">付费金额</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>
                     <div class="form-group col-md-6 col-lg-6">
                         <label for="exampleInputName2">付费方式</label>
                         <input type="text" class="form-control" id="" placeholder="">
 					</div>
 					<div class="form-group col-md-6 col-lg-6">
-                        <label for="exampleInputName2">付费金额</label>
-                        <input type="text" class="form-control" id="" placeholder="">
-                    </div>
-                    <div class="form-group col-md-6 col-lg-6">
-                        <label for="exampleInputName2">币种</label>
-                        <select class="form-control">
-                            <option>有</option>
-                            <option>无</option>
-                        </select>
-                    </div>
+						<label for="exampleInputName2">是否有原件</label>
+						<select class="form-control">
+							<option>有</option>
+							<option>无</option>
+						</select>
+					</div>                    
 				</form>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<!--file-->
+<div class="modal fade" style="display:blo0ck" id="file-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">新增</h4>
+			</div>
+			<div class="modal-body">
+				<div id="easyContainer"></div>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade Indexes" id="Indexes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">查询引用</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6 col-lg-6 col-md-push-2">
+						<div class="input-group">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">全部 <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="javascript:;">音乐</a></li>
+									<li><a href="javascript:;">影视</a></li>
+									<li><a href="javascript:;">动漫</a></li>
+									<li><a href="javascript:;">美术</a></li>
+									<li><a href="javascript:;">文字</a></li>
+									<li><a href="javascript:;">戏剧</a></li>
+								</ul>
+							</div><!-- /btn-group -->
+							<input type="text" class="form-control" aria-label="...">
+						</div><!-- /input-group -->
+					</div><!-- /.col-lg-6 -->
+					<button type="button" class="btn btn-primary col-md-push-3">查询</button>
+				</div>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>资源名称</th>
+							<th>资源类型</th>
+							<th>权利主体</th>
+							<th>权利来源</th>
+							<th>权利状况</th>
+							<th>创建时间</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row"><input type="checkbox">孔子</th>
+							<td>歌曲</td>
+							<td>大地之作有限公司</td>
+							<td>采购</td>
+							<td>出版发行</td>
+							<td>2018.02.02</td>
+						</tr>
+					</tbody>
+				</table>
+				<div id="example" class="example">
+					<ul id="pageLimit-Indexes"></ul>
+				</div>
 			</div>
 			<div class="modal-footer">				
 				<button type="button" class="btn btn-primary">确认</button>

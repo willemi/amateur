@@ -19,14 +19,20 @@ let output = {
 				presets: ['es2015'],
 				cacheDirectory: true
 			}
-		}, {
+		},{
+			test: /\.vue$/,
+			loader: 'vue-loader',
+			options: {
+			  // vue-loader options go here
+			}
+		},{
 			test: /\.css$/,
 			use: ExtractTextWebpackPlugin.extract({
 				// publicPath: '../../',
 				use: ['css-loader'],
 				fallback: 'style-loader'
 			})
-		}, {
+		},{
 			test: /\.(eot|svg|ttf|woff|woff2|png)\w*/,
 			loader: 'file-loader',
 			query: {
@@ -34,7 +40,7 @@ let output = {
 				outputPath: 'resource/fonts/',
 				name: '[name].[ext]'
 			}
-		}, {
+		},{
 			test: /\.scss$/,
 			use: ExtractTextWebpackPlugin.extract({
 				// publicPath: '../../',
@@ -50,13 +56,14 @@ let output = {
 				outputPath: 'resource/img/',
 				name: '[name].[ext]'
 			}
-		}, {
+		},{
 		// 当前新标签页统一使用的doT.js模板引擎，tpl模板文件引入dot-loader，返回doT.template('xxx.tpl')
 			test: /\.tpl$/,
 			loader: 'dot-loader',
 			options: {}
 		}]
 	},
+	resolve = { alias: { 'vue': 'vue/dist/vue.js' } }
 	plugins = [
 		new webpack.ProvidePlugin({
 			$: 'jquery',

@@ -181,6 +181,12 @@ html, body {
 				&.active a i {
 					transform: rotate(-180deg);
 				}
+				.nav-li {
+					padding-left:30px;					
+				}
+				.zi-li {
+					padding-left:45px;
+				}
 			}
 		}
 	}	
@@ -355,25 +361,25 @@ html, body {
 				margin:30px 0 0 20px;
 			}
 		}
-		.input-group {
-			position: relative;
-			.input-group-addon {
-				position: absolute;
-				right:0;
-				background-color:transparent;
-				border:0;
-				z-index: 2;
-				height:100%;
-				line-height:100%;
-				span {
-					top:50%;
-					transform: translateY(-50%);
-					&:before {
-						color:#999
-					}
-				}							
-			}
-		}		
+		// .input-group {
+		// 	position: relative;
+		// 	.input-group-addon {
+		// 		position: absolute;
+		// 		right:0;
+		// 		background-color:transparent;
+		// 		border:0;
+		// 		z-index: 2;
+		// 		height:100%;
+		// 		line-height:100%;
+		// 		span {
+		// 			top:50%;
+		// 			transform: translateY(-50%);
+		// 			&:before {
+		// 				color:#999
+		// 			}
+		// 		}							
+		// 	}
+		// }		
 		button.file {
 			position: relative;
 			i {
@@ -445,7 +451,20 @@ html, body {
                     }
                 }
             }
-        }
+		}
+		.quanli {
+			input {
+				width:20px;
+				min-width: 20px;
+			}
+			label {
+				float:left;
+				margin-right:10px;
+			}
+			.btn-operation {
+				width:30%;
+			}
+		}
 	}
 }
 .b-lc {

@@ -57,6 +57,11 @@
 /******/ 		"contract": 0
 /******/ 	};
 /******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "resource/js/" + ({}[chunkId]||chunkId) + ".js"
+/******/ 	}
+/******/
 /******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function

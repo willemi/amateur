@@ -208,6 +208,10 @@ html, body {
           color: #9ea6b9; }
         .sidebar .sidebar-inner > ul li.active a i {
           transform: rotate(-180deg); }
+        .sidebar .sidebar-inner > ul li .nav-li {
+          padding-left: 30px; }
+        .sidebar .sidebar-inner > ul li .zi-li {
+          padding-left: 45px; }
 
 .content {
   margin-left: 210px;
@@ -315,21 +319,6 @@ html, body {
       padding-bottom: 30px; }
       .content .content-wrapper .row.row-btn button {
         margin: 30px 0 0 20px; }
-    .content .content-wrapper .input-group {
-      position: relative; }
-      .content .content-wrapper .input-group .input-group-addon {
-        position: absolute;
-        right: 0;
-        background-color: transparent;
-        border: 0;
-        z-index: 2;
-        height: 100%;
-        line-height: 100%; }
-        .content .content-wrapper .input-group .input-group-addon span {
-          top: 50%;
-          transform: translateY(-50%); }
-          .content .content-wrapper .input-group .input-group-addon span:before {
-            color: #999; }
     .content .content-wrapper button.file {
       position: relative; }
       .content .content-wrapper button.file i {
@@ -386,6 +375,14 @@ html, body {
             margin-right: 5px; }
             .content .content-wrapper .right-title .btn-operation button i:before {
               font-size: 12px; }
+    .content .content-wrapper .quanli input {
+      width: 20px;
+      min-width: 20px; }
+    .content .content-wrapper .quanli label {
+      float: left;
+      margin-right: 10px; }
+    .content .content-wrapper .quanli .btn-operation {
+      width: 30%; }
 
 .b-lc, .content .content-wrapper ul.step li.step-left:after, .content .content-wrapper ul.step li.step-center:after {
   right: 0;

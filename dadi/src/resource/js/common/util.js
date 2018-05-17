@@ -111,15 +111,34 @@ util.storage = {
 };
 //sidbar
 var $doc = $(document);
+$doc.on("click", ".sid-li", function(e){
+	var $this = $(this).parent("li");
+    $this.addClass("active").siblings().removeClass("active height");
+})
+$doc.on("click", ".muen > li", function(e){
+	var $this = $(this);
+	$this.parents(".hassub").removeClass("active").addClass("height");
+    $this.addClass("active").siblings().removeClass("active");
+})
+
+
+
 $doc.on("click", ".sid-li", function(){
 	var sider = $(this).data("sider");
 	util.storage.set("sider", "sid1", sider);
 	util.storage.set("sider", "sid2", "");
+	util.storage.set("sider", "sid3", "");
 })
 $doc.on("click", ".nav-li", function(){
 	var sider = $(this).data("sider");
 	util.storage.set("sider", "sid2", sider);
 })
+$doc.on("click", ".zi-li", function(){
+	var sider = $(this).data("sider");
+	util.storage.set("sider", "sid3", sider);
+})
+
+
 
 var sider = util.storage.get("sider");
 console.log(sider)
@@ -128,10 +147,14 @@ if(util.isEmpty(sider.sid1) && util.isEmpty(sider.sid2)){
 }else{
 	var $navLi = $("#sideNav > li");
 	if(util.isEmpty(sider.sid2)){
-		$navLi.eq(sider.sid1).addClass("height active")
-	}else{
+		//$navLi.eq(sider.sid1).addClass("height active")
+	}else if(util.isEmpty(sider.sid3)){
 		$navLi.eq(sider.sid1).addClass("height")
 		$navLi.eq(sider.sid1).find("li").eq(sider.sid2).addClass("active");
+	}else{
+		$navLi.eq(sider.sid1).addClass("height")
+		$navLi.eq(sider.sid1).find("li").eq(sider.sid2).addClass("height");
+		$navLi.eq(sider.sid1).find("li").eq(sider.sid2).find("li").eq(sider.sid3).addClass("active");
 	}
 }
 

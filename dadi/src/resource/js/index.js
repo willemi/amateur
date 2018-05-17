@@ -1,6 +1,6 @@
 import '../css/index.scss';
 
-const util = require("./common/util.js")
+const util = require("./common/util")
 
 const echarts = require('echarts');
 
