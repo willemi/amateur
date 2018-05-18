@@ -1,39 +1,4 @@
 @import './common.scss';
-// .header{
-// 	position: relative;
-
-// 	.back {
-// 		position: absolute;
-
-// 		.back-home {
-// 			color: #fff;
-// 			&:before {
-// 				content: '\003c'
-// 			}
-// 		}
-
-// 		&.back-float {
-// 			position: fixed;
-// 			background: #fff;
-// 			.back-home {
-// 				color: $c3;
-// 			}
-// 		}
-// 	}
-// }
-// .content{
-// 	@extend .clearfix;
-// 	background-color:#fff;
-
-// 	.video-create {
-// 		&:hover {
-// 			background-color: $bce8;
-// 		}
-// 		&:active {
-// 			background-color: #1e80ff;
-// 		}
-// 	}
-// }
 .content-wrapper {
 	.row {
 		margin:0;

@@ -156,7 +156,8 @@ html, body {
         margin-top: 0;
         overflow: hidden;
         transition: background .4s;
-        -webkit-transition: background .4s; }
+        -webkit-transition: background .4s;
+        position: relative; }
         .sidebar .sidebar-inner > ul li.admin {
           height: 185px;
           border-bottom: 3px solid #2c3749; }
@@ -209,7 +210,17 @@ html, body {
         .sidebar .sidebar-inner > ul li.active a i {
           transform: rotate(-180deg); }
         .sidebar .sidebar-inner > ul li .nav-li {
-          padding-left: 30px; }
+          padding-left: 30px;
+          position: relative; }
+          .sidebar .sidebar-inner > ul li .nav-li i {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            left: 20px;
+            top: 24px;
+            display: block; }
         .sidebar .sidebar-inner > ul li .zi-li {
           padding-left: 45px; }
 

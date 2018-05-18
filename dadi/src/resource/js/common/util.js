@@ -1,3 +1,4 @@
+
 import '../../css/bootstrap-datetimepicker.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -142,8 +143,8 @@ $doc.on("click", ".zi-li", function(){
 
 var sider = util.storage.get("sider");
 console.log(sider)
-if(util.isEmpty(sider.sid1) && util.isEmpty(sider.sid2)){
-
+if(util.isEmpty(sider.sid1) && util.isEmpty(sider.sid2) && util.isEmpty(sider.sid3)){
+	
 }else{
 	var $navLi = $("#sideNav > li");
 	if(util.isEmpty(sider.sid2)){
@@ -153,10 +154,10 @@ if(util.isEmpty(sider.sid1) && util.isEmpty(sider.sid2)){
 		$navLi.eq(sider.sid1).find("li").eq(sider.sid2).addClass("active");
 	}else{
 		$navLi.eq(sider.sid1).addClass("height")
-		$navLi.eq(sider.sid1).find("li").eq(sider.sid2).addClass("height");
-		$navLi.eq(sider.sid1).find("li").eq(sider.sid2).find("li").eq(sider.sid3).addClass("active");
+		$navLi.eq(sider.sid1).find("li.be").eq(sider.sid2).addClass("height");
+		$navLi.eq(sider.sid1).find("li.height").find("li").eq(sider.sid3).addClass("active");
 	}
-}
+} 
 
 
 module.exports = util

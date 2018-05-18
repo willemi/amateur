@@ -20,12 +20,6 @@ let output = {
 				cacheDirectory: true
 			}
 		},{
-			test: /\.vue$/,
-			loader: 'vue-loader',
-			options: {
-			  // vue-loader options go here
-			}
-		},{
 			test: /\.css$/,
 			use: ExtractTextWebpackPlugin.extract({
 				// publicPath: '../../',
@@ -63,7 +57,6 @@ let output = {
 			options: {}
 		}]
 	},
-	resolve = { alias: { 'vue': 'vue/dist/vue.js' } }
 	plugins = [
 		new webpack.ProvidePlugin({
 			$: 'jquery',
