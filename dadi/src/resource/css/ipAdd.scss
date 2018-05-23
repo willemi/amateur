@@ -2,6 +2,9 @@
 @import './easy-upload.scss';
 .content {
 	.content-wrapper {	
+		textarea.form-control {
+			width: 83%;
+		}
         // .right, .copyright {
         //     display:none;
         // }	
@@ -9,7 +12,10 @@
             &:before {
                 background-color: transparent;
             }
-        }
+		}
+		.basics label {
+			min-width: 100px;
+		}
         .copyright {
             .form-inline {
                 &:before {
@@ -103,4 +109,7 @@
 	.form-inline {
 		padding-top:0
 	}
+}
+.hetong {
+	
 }

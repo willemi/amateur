@@ -52,6 +52,7 @@ function bindEvents(){
 	// 	}
 	// })
 	//time
+	util.timepicker("datetimepicker");
 	util.timepicker("datetimepicker1");
 
 	util.timepicker("datetimeStart", "datetimeEnd");	
@@ -85,12 +86,16 @@ function bindEvents(){
 	// 	}
 	// });
 	//pages	
-	util.pageinator("pageLimit1", "10", "url", tplData);
-	util.pageinator("pageLimit", "10", "url", tplData1);
+	util.pageinator("pageLimit", "10", "url", tplData);
+	util.pageinator("pageLimit1", "10", "url", tplData1);
+	util.pageinator("pageLimit2", "10", "url", tplData2);
 	function tplData(data){
 		console.log(data)
 	}
 	function tplData1(data){
+		console.log(data)
+	}
+	function tplData2(data){
 		console.log(data)
 	}
 	function fileFun(){

@@ -669,8 +669,14 @@ label {
       font-size: 14px;
       color: #999; }
 
+.content .content-wrapper textarea.form-control {
+  width: 83%; }
+
 .content .content-wrapper .right .form-inline:before {
   background-color: transparent; }
+
+.content .content-wrapper .basics label {
+  min-width: 100px; }
 
 .content .content-wrapper .copyright .form-inline:before {
   background: transparent; }
