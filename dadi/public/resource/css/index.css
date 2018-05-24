@@ -155,8 +155,8 @@ html, body {
         height: 50px;
         margin-top: 0;
         overflow: hidden;
-        transition: background .4s;
-        -webkit-transition: background .4s;
+        transition: background .4s, height .5s;
+        -webkit-transition: background .4s, height .5s;
         position: relative; }
         .sidebar .sidebar-inner > ul li.admin {
           height: 185px;
@@ -223,6 +223,9 @@ html, body {
             display: block; }
         .sidebar .sidebar-inner > ul li .zi-li {
           padding-left: 45px; }
+
+.table {
+  margin: 0; }
 
 .content {
   margin-left: 210px;
@@ -395,6 +398,20 @@ html, body {
     .content .content-wrapper .quanli .btn-operation {
       width: 30%; }
 
+.messages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #fff;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 999999; }
+
 .b-lc, .content .content-wrapper ul.step li.step-left:after, .content .content-wrapper ul.step li.step-center:after {
   right: 0;
   border-top: 20px solid #fff;
@@ -421,8 +438,7 @@ html, body {
 
 .example {
   background-color: #fff;
-  text-align: center;
-  margin-top: -20px; }
+  text-align: center; }
 
 .row {
   margin: 0; }

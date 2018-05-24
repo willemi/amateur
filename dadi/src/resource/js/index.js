@@ -112,6 +112,9 @@ function initEcharts(){
 }
 
 function bindEvents(){
+	util.storage.set("sider", "sid1", "");
+	util.storage.set("sider", "sid2", "");
+	util.storage.set("sider", "sid3", "");
     var $doc = $(document);
     // $doc.on("click", "#sideNav > li", function(e){
     //     var $this = $(this);

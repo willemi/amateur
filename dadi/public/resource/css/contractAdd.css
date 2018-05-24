@@ -175,3 +175,6 @@
 
 .contractAdd .content-wrapper .set-up textarea.form-control {
   width: 83%; }
+
+.contractAdd .content-wrapper .sign, .contractAdd .content-wrapper .contract-party, .contractAdd .content-wrapper .set-up, .contractAdd .content-wrapper .contract-a {
+  display: none; }
