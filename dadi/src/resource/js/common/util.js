@@ -3,6 +3,11 @@ import '../../css/bootstrap-datetimepicker.min.css';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
+import './sidebar-menu';
+import '../../css/sidebar-menu.css';
+import '../../css/font-awesome.css';
+$.sidebarMenu($('.sidebar-menu'))
+
 const datetimepicker = require("./bootstrap-datetimepicker.min.js");
 const moment = require('./bootstrap-datetimepicker.zh-CN.js');
 const bootstrapPaginator = require("./bootstrap-paginator.js");
