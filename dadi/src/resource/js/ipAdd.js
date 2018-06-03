@@ -317,7 +317,9 @@ function fileFun(){
 }
 fileFun()
 
-
+function tatbInit($id, $main){
+	return true;
+}
 //批量操作加权
 function batchFun(me){
 	var getAll = getAllids();
