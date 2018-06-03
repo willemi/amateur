@@ -4,6 +4,7 @@ const util = require("./common/util.js")
 const easyUpload = require("./common/easyUpload.js")
 const queryReferenceTpl = require('../tpl/queryReference.tpl');
 const htTpl = require('../tpl/ht.tpl');
+const ht1Tpl = require('../tpl/ht1.tpl');
 var data1 = [{
 	"ly": "自制",
 	"zt": "XXX",
@@ -82,6 +83,19 @@ var data3 = [{
 	"sTime": "2018-03-23",
 	"sxTime": "2018-03-23"
 }]
+var data4 = [{
+	"name": "张三",
+	"type": "词作者",
+	"fu": "否",
+	"mony": "人民币",
+	"jine": "100元"
+},{
+	"name": "张三",
+	"type": "词作者",
+	"fu": "否",
+	"mony": "人民币",
+	"jine": "100元"
+}]
 let msgTimer = null;
 function showMsg(msg) {
 	let $tip = $('.messages');
@@ -142,21 +156,21 @@ function bindEvents(){
 		let $val = $("input[name='news']:checked").val();
 		if($val == 1){
 			$(".qlnews").html(queryReferenceTpl(data2));
-			util.pageinator("pageLimit", "10", "url", tplData);
+			//util.pageinator("pageLimit", "10", "url", tplData);
 		}else{
 			showMsg('选择权利来源！')
 		}
 	})
 	$doc.on("click", ".btn-ht", function(){
 		$(".htn").html(htTpl(data3));
-		util.pageinator("pageLimit2", "10", "url", tplData2);
+		//util.pageinator("pageLimit2", "10", "url", tplData2);
 	})
 	$(".ipadd").on("click", ".btn-primary", function(){
 		$(".qlnews").html(queryReferenceTpl(data1));
 		let $val = $("input[name='htong']:checked").val();
 		$(".htNews").val($val);
 		$('#Indexes').modal('hide');
-		util.pageinator("pageLimit", "10", "url", tplData);
+		//util.pageinator("pageLimit", "10", "url", tplData);
 	})
 	//下一步\提交
 	var $step = $(".step li");
@@ -170,6 +184,34 @@ function bindEvents(){
 			$step.eq($id).addClass("active").siblings().removeClass("active");
 			$main.hide();
 			$nextMain.show();
+		}
+	})
+	let $selectDiv = $('.select-div');
+	$selectDiv.on("click", "li", function(){
+		$(".ht1").html(ht1Tpl(data4));
+		$selectDiv.hide();
+	})
+	
+	$("#zpname").keyup(function(e){
+		var $this = $(this);
+		//如果输入空格自动删除
+		this.value=$this.val().replace(' ','');
+		console.log(this.value)
+		//列表框显示
+		$selectDiv.show();
+		if(e.keyCode == 38) {
+			//up
+			console.log('up');
+		}else if(e.keyCode == 40) {
+			//down
+			console.log('down');		
+		}else if(e.keyCode == 13) {
+			//enter
+			console.log('enter');
+			$selectDiv.hide();
+		}else {
+			//other
+			console.log('other');
 		}
 	})
 	// $doc.on("click", ".basics .add", function(){		
@@ -223,51 +265,59 @@ function bindEvents(){
 	// 	}
 	// });
 	//pages	
-	
+	util.pageinator("pageLimit", "10", "url", tplData);
 	util.pageinator("pageLimit1", "10", "url", tplData1);
-	function tplData(data){
-		console.log(data)
-	}
-	function tplData1(data){
-		console.log(data)
-	}
-	function tplData2(data){
-		console.log(data)
-	}
-	function fileFun(){
-		$('#easyContainer').easyUpload({
-			allowFileTypes: '*.jpg;*.doc;*.pdf;*.png',//允许上传文件类型，格式';*.doc;*.pdf'
-			allowFileSize: 100000,//允许上传文件大小(KB)
-			selectText: '选择文件',//选择文件按钮文案
-			multi: true,//是否允许多文件上传
-			multiNum: 6,//多文件上传时允许的文件数
-			showNote: true,//是否展示文件上传说明
-			note: '提示：最多上传6个文件，支持格式为doc、pdf、jpg、png',//文件上传说明
-			showPreview: false,//是否显示文件预览
-			url: '',//上传文件地址
-			fileName: 'file',//文件filename配置参数
-			//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
-			// formParam: {
-			// 	token: $.cookie('token_cookie')//不需要验证token时可以去掉
-			// },
-			timeout: 30000,//请求超时时间
-			successFunc: function(res) {//上传成功回调函数
-				console.log('成功回调', res);
-			},
-			errorFunc: function(res) {//上传失败回调函数
-				console.log('失败回调', res);
-			},
-			deleteFunc: function(res) {//删除文件回调函数
-				console.log('删除回调', res);
-			}
-		});
-	}
-	fileFun()
+	util.pageinator("pageLimit2", "10", "url", tplData2);
+	util.pageinator("pageLimit3", "10", "url", tplData3);
+	
 	
 }
-function tatbInit($id, $main){
-	return true;
+function tplData(data){
+	console.log(data)
 }
+function tplData1(data){
+	console.log(data)
+}
+function tplData2(data){
+	console.log(data)
+}
+function tplData3(data){
+	console.log(data)
+}
+function fuzzySearch(e){
+	console.log(e)
+}
+function fileFun(){
+	$('#easyContainer').easyUpload({
+		allowFileTypes: '*.jpg;*.doc;*.pdf;*.png',//允许上传文件类型，格式';*.doc;*.pdf'
+		allowFileSize: 100000,//允许上传文件大小(KB)
+		selectText: '选择文件',//选择文件按钮文案
+		multi: true,//是否允许多文件上传
+		multiNum: 6,//多文件上传时允许的文件数
+		showNote: true,//是否展示文件上传说明
+		note: '提示：最多上传6个文件，支持格式为doc、pdf、jpg、png',//文件上传说明
+		showPreview: false,//是否显示文件预览
+		url: '',//上传文件地址
+		fileName: 'file',//文件filename配置参数
+		//文件filename以外的配置参数，格式：{key1:value1,key2:value2}
+		// formParam: {
+		// 	token: $.cookie('token_cookie')//不需要验证token时可以去掉
+		// },
+		timeout: 30000,//请求超时时间
+		successFunc: function(res) {//上传成功回调函数
+			console.log('成功回调', res);
+		},
+		errorFunc: function(res) {//上传失败回调函数
+			console.log('失败回调', res);
+		},
+		deleteFunc: function(res) {//删除文件回调函数
+			console.log('删除回调', res);
+		}
+	});
+}
+fileFun()
+
+
 //批量操作加权
 function batchFun(me){
 	var getAll = getAllids();

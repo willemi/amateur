@@ -141,6 +141,10 @@
       font-size: 14px;
       color: #999; }
 
+.contractAdd .content-wrapper .st-li li {
+  width: 20%;
+  float: left; }
+
 .contractAdd .content-wrapper .basics {
   margin-top: 20px; }
   .contractAdd .content-wrapper .basics .form-inline {
@@ -175,6 +179,3 @@
 
 .contractAdd .content-wrapper .set-up textarea.form-control {
   width: 83%; }
-
-.contractAdd .content-wrapper .sign, .contractAdd .content-wrapper .contract-party, .contractAdd .content-wrapper .set-up, .contractAdd .content-wrapper .contract-a {
-  display: none; }

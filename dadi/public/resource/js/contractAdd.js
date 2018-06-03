@@ -57,11 +57,6 @@
 /******/ 		"contractAdd": 0
 /******/ 	};
 /******/
-/******/ 	// script path function
-/******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "resource/js/" + ({}[chunkId]||chunkId) + ".js"
-/******/ 	}
-/******/
 /******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
@@ -141,17 +136,6 @@
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./src/resource/css/contractAdd.scss":
-/*!*******************************************!*\
-  !*** ./src/resource/css/contractAdd.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/resource/css/contractAdd.scss?");
-
-/***/ }),
 
 /***/ "./src/resource/js/contractAdd.js":
 /*!****************************************!*\

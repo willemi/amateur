@@ -6,5 +6,6 @@
 	<td>2018-03-23</td>
 	<td>2018-03-23</td>
 	<td>2018-03-23</td>
+	<td><a class="loog" data-toggle="modal" data-target="#gengk-look">查看详细</a></td>
 </tr>
 {{~}}

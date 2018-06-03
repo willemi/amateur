@@ -1,5 +1,5 @@
 <!-- 模态框（Modal） -->
-<div class="modal fade newly-added tl" id="newly-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade newly-added tl" style="display:bock" id="newly-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,63 @@
             </div>
             <div class="modal-body">
                 <div>
+                    <div class="row col-md-12 col-lg-12">
+                            <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">拥有权利内容</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">我方权利比重</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                    </div>
                     <div class="row">
+                        <span class="col-md-2 col-lg-2">是否专有</span>
+                        <div class="col-md-10 col-lg-10">
+                            <label class="radio-inline">
+                                <input type="radio" checked name="limit1" id="" value=""> 有
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="limit1" id="" value=""> 否
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-2 col-lg-2">有无维权权利</span>
+                        <div class="col-md-10 col-lg-10">
+                            <label class="radio-inline">
+                                <input type="radio" checked name="limit2" id="" value=""> 有
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="limit2" id="" value=""> 无
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-2 col-lg-2">有无授权权利</span>
+                        <div class="col-md-10 col-lg-10">
+                            <label class="radio-inline">
+                                <input type="radio" checked name="limit3" id="" value=""> 有
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="limit3" id="" value=""> 无
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-2 col-lg-2">有无合同</span>
+                        <div class="col-md-10 col-lg-10">
+                            <label class="radio-inline">
+                                <input type="radio" checked name="limit4" id="" value=""> 有
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="limit4" id="" value=""> 无
+                            </label>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
                         <span class="col-md-2 col-lg-2">授权限制</span>
                         <div class="col-md-10 col-lg-10">
                             <label class="radio-inline">
@@ -18,24 +74,18 @@
                                 <input type="radio" name="limit" id="" value=""> 非专有
                             </label>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <span class="col-md-2 col-lg-2">授权类型</span>
                         <div class="col-md-10 col-lg-10">
                             <label class="radio-inline">
-                                <input type="radio" checked name="type" id="" value=""> 无限制
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 广播权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 复制权
+                                <input type="radio" checked name="type" id="" value=""> 复制权
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="type" id="" value=""> 发行权
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 改编权
+                                <input type="radio" name="type" id="" value=""> 出租权
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="type" id="" value=""> 展览权
@@ -47,19 +97,22 @@
                                 <input type="radio" name="type" id="" value=""> 放映权
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 摄制权
+                                <input type="radio" name="type" id="" value=""> 广播权
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 放映权
+                                <input type="radio" name="type" id="" value=""> 信息网络传播权
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="type" id="" value=""> 摄制权
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="type" id="" value=""> 翻译权
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 出租权
+                                <input type="radio" name="type" id="" value=""> 汇编权
                             </label>
                             <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 信息网络传播权
+                                <input type="radio" name="type" id="" value=""> 改编权
                             </label>
                             <label class="radio-inline">
                                 <input type="radio" name="type" id="" value=""> 其他
@@ -67,7 +120,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <span class="col-md-2 col-lg-2">许可传播方式</span>
+                        <span class="col-md-2 col-lg-2">许可使用方式</span>
                         <div class="col-md-10 col-lg-10">
                             <label class="checkbox-inline">
                                 <input type="checkbox" checked name="mode" id="" value=""> 无限制
@@ -78,7 +131,7 @@
                             <label class="checkbox-inline">
                                 <input type="checkbox" name="mode" id="" value=""> 无线
                             </label>
-                            <label class="checkbox-inline">
+                            <!-- <label class="checkbox-inline">
                                 <input type="checkbox" name="mode" id="" value=""> 地面
                             </label>
                             <label class="checkbox-inline">
@@ -89,7 +142,7 @@
                             </label>
                             <label class="checkbox-inline">
                                 <input type="checkbox" name="mode" id="" value=""> 数字传输
-                            </label>
+                            </label> -->
                         </div>
                     </div>
                     <div class="row">
@@ -151,11 +204,14 @@
                                 <input type="checkbox" name="language" id="" value=""> 中文
                             </label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="language" id="" value=""> 外文
+                                <input type="checkbox" name="language" id="" value=""> 英文
                             </label>
-                            <label class="checkbox-inline new-inline col-md-10 col-lg-10">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="language" id="" value=""> 日文
+                            </label>
+                            <!-- <label class="checkbox-inline new-inline col-md-10 col-lg-10">
                                 <i>新增语言</i> <input type="type" name="" id="" value="" class="form-control"> (每种语言之间请用“-”隔开)
-                            </label>
+                            </label> -->
                         </div>
                     </div>
                     <div class="row">
@@ -164,22 +220,28 @@
                             <input size="16" type="text" id="datetimeStart" readonly class="form_datetime ml10 form-control">
                             一
                             <input size="16" type="text" id="datetimeEnd" readonly class="form_datetime form-control">
-                            <label class="checkbox-inline">
+                            <!-- <label class="checkbox-inline">
                                 <input type="checkbox" checked name="time" id="" value=""> 无限制
-                            </label>
+                            </label> -->
                         </div>
                     </div>
                     <div class="row">
                         <span class="col-md-2 col-lg-2">许可使用次数</span>
                         <div class="col-md-10 col-lg-10">
                             <input type="text" class="ml10 form-control"> 次
-                            <label class="checkbox-inline">
+                            <!-- <label class="checkbox-inline">
                                 <input type="checkbox" checked name="time" id="" value=""> 无限制
-                            </label>
+                            </label> -->
                         </div>
                     </div>
                     <div class="row">
                         <span class="col-md-2 col-lg-2">权利描述</span>
+                        <div class="col-md-10 col-lg-10">
+                            <textarea class="form-control ml10" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-2 col-lg-2">备注</span>
                         <div class="col-md-10 col-lg-10">
                             <textarea class="form-control ml10" rows="3"></textarea>
                         </div>

@@ -142,21 +142,21 @@ function bindEvents(){
 		let $val = $("input[name='news']:checked").val();
 		if($val == 1){
 			$(".qlnews").html(queryReferenceTpl(data2));
-			util.pageinator("pageLimit", "10", "url", tplData);
+			//util.pageinator("pageLimit", "10", "url", tplData);
 		}else{
 			showMsg('选择权利来源！')
 		}
 	})
 	$doc.on("click", ".btn-ht", function(){
 		$(".htn").html(htTpl(data3));
-		util.pageinator("pageLimit2", "10", "url", tplData2);
+		//util.pageinator("pageLimit2", "10", "url", tplData2);
 	})
 	$(".ipadd").on("click", ".btn-primary", function(){
 		$(".qlnews").html(queryReferenceTpl(data1));
 		let $val = $("input[name='htong']:checked").val();
 		$(".htNews").val($val);
 		$('#Indexes').modal('hide');
-		util.pageinator("pageLimit", "10", "url", tplData);
+		//util.pageinator("pageLimit", "10", "url", tplData);
 	})
 	//下一步\提交
 	var $step = $(".step li");
@@ -223,8 +223,10 @@ function bindEvents(){
 	// 	}
 	// });
 	//pages	
-	
+	util.pageinator("pageLimit", "10", "url", tplData);
 	util.pageinator("pageLimit1", "10", "url", tplData1);
+	util.pageinator("pageLimit2", "10", "url", tplData2);
+	util.pageinator("pageLimit3", "10", "url", tplData3);
 	function tplData(data){
 		console.log(data)
 	}
@@ -232,6 +234,9 @@ function bindEvents(){
 		console.log(data)
 	}
 	function tplData2(data){
+		console.log(data)
+	}
+	function tplData3(data){
 		console.log(data)
 	}
 	function fileFun(){
