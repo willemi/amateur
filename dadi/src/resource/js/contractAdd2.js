@@ -5,20 +5,32 @@ const easyUpload = require("./common/easyUpload.js")
 
 function bindEvents(){
     var $doc = $(document);
-    //下一步\提交
+	//下一步\提交
 	var $step = $(".step li");
 	$doc.on("click", ".next-step", function(){
 		var $this = $(this);
 		var $main = $this.parents(".main"),
-			$nextMain = $main.next(".main"),
-			$id = $main.data("id");
-
-		if(tatbInit($id, $main)){
-			$step.eq($id).addClass("active").siblings().removeClass("active");
+			$nextMain = $main.next(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$step.eq(++index).addClass("active").siblings().removeClass("active");
 			$main.hide();
 			$nextMain.show();
 		}
 	})
+	$doc.on("click", ".pre-step", function(){
+		var $this = $(this);
+		var $main = $this.parents(".main"),
+			$pretMain = $main.prev(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$step.eq(--index).addClass("active").siblings().removeClass("active");
+			$main.hide();
+			$pretMain.show();
+		}
+	})
+
+
 	util.timepicker("datetimepicker");
 	util.timepicker("datetimepicker1");
 	util.timepicker("datetimepicker2");
@@ -37,7 +49,7 @@ function bindEvents(){
 	}
 }
 
-function tatbInit($id, $main){
+function tatbInit($main){
 	return true;
 }
 function fileFun(){

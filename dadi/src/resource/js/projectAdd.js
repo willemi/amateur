@@ -62,13 +62,23 @@ function bindEvents(){
 	$doc.on("click", ".next-step", function(){
 		var $this = $(this);
 		var $main = $this.parents(".main"),
-			$nextMain = $main.next(".main"),
-			$id = $main.data("id");
-
-		if(tatbInit($id, $main)){
-			$step.eq($id).addClass("active").siblings().removeClass("active");
+			$nextMain = $main.next(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$step.eq(++index).addClass("active").siblings().removeClass("active");
 			$main.hide();
 			$nextMain.show();
+		}
+	})
+	$doc.on("click", ".pre-step", function(){
+		var $this = $(this);
+		var $main = $this.parents(".main"),
+			$pretMain = $main.prev(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$step.eq(--index).addClass("active").siblings().removeClass("active");
+			$main.hide();
+			$pretMain.show();
 		}
 	})
 }
