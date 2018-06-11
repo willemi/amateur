@@ -510,6 +510,8 @@
  有需要的欢迎fork ，如果喜欢，欢迎Star
 
 
+原文链接：行无忌的成长小屋：撸一个『改良版青🍊单车』
+https://github.com/hx-dl/bicycle  hx-dl 改良版青桔单车
  
 
 
