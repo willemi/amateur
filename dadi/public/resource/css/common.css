@@ -9876,7 +9876,7 @@ button.close {
       color: #999; }
 
 .contractAdd .content-wrapper .st-li li {
-  width: 20%;
+  width: 33.3333%;
   float: left; }
 
 .contractAdd .content-wrapper .basics {
@@ -10218,6 +10218,9 @@ button.close {
     background-color: #e2e2e2; }
   .table-cont table {
     min-width: 1600px; }
+
+.ipadd-look .modal-dialog {
+  width: 96% !important; }
 
 .gengk-look .modal-dialog {
   width: 96% !important; }

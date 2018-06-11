@@ -171,7 +171,7 @@ function bindEvents(){
 			$nextMain.show();
 		}
 	})
-	$doc.on("click", ".pre-step", function(){
+	$doc.on("click", ".。", function(){
 		var $this = $(this);
 		var $main = $this.parents(".main"),
 			$pretMain = $main.prev(".main");
