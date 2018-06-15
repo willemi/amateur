@@ -423,6 +423,18 @@ label {
       padding: 0; }
   .newly-added .row div .form-control {
     width: 90%; }
+  .newly-added .row.line span, .newly-added .row.line label {
+    line-height: 34px;
+    display: inline-block; }
+  .newly-added .row.line input[type=radio], .newly-added .row.line input[type=checkbox] {
+    margin-top: 10px;
+    float: left; }
+  .newly-added .row.line .add-a {
+    padding-left: 0; }
+    .newly-added .row.line .add-a .checkbox-inline {
+      margin-top: 10px;
+      margin-left: 0;
+      padding-left: 0; }
 
 .newly-added .modal-footer {
   padding-right: 60px; }
@@ -7355,7 +7367,7 @@ button.close {
       margin-right: 5px; }
   .sidebar-menu li.header {
     padding: 10px 25px 10px 15px;
-    font-size: 12px;
+    font-size: 16px;
     color: #4b646f;
     background: #1a2226; }
   .sidebar-menu li > a > .fa-angle-left {

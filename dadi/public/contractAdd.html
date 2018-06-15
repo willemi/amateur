@@ -439,8 +439,6 @@
 							<thead>
 								<tr>
 									<th>序号</th>
-									<th>合同编号</th>
-									<th>合同名称</th>
 									<th>作品名称</th>
 									<th>集数/期数</th>
 									<th>单集价格</th>
@@ -461,13 +459,12 @@
 									<th>使用次数限制</th>
 									<th>合同权利描述</th>
 									<th>备注</th>
+									<th>操作</th>
 								</tr>
 							</thead>
 							<tbody class="qlnews">
 								<tr> 
-									<td scope="row"><input type="checkbox" name="a1"></td> 
-									<td>XX18967545</td> 
-									<td>《嗨！看电视》2018XXX采购合同</td> 
+									<td scope="row">1</td> 
 									<td>孔子</td> 
 									<td>1</td> 
 									<td>50000</td> 
@@ -488,6 +485,7 @@
 									<td>无限制</td> 
 									<td>合同内文本描述</td> 
 									<td>备注备注备注备注备注备注备注备注备注</td>
+									<td><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
 								</tr>
 							</tbody>
 						</table>
@@ -701,6 +699,18 @@
 							<i></i>
 						</div>
 					</div>
+					<div class="row col-md-12 col-lg-12">
+						<div class="form-group col-md-6 col-lg-6">
+							<label for="exampleInputName2">授权比例</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i></i>
+						</div>
+						<div class="form-group col-md-6 col-lg-6">
+							<label for="exampleInputName2">授权价格</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i></i>
+						</div>
+					</div>
 					<div class="row">
 						<span class="col-md-2 col-lg-2">产品形态</span>
 						<div class="col-md-10 col-lg-10">
@@ -758,37 +768,25 @@
 						<div class="col-md-10 col-lg-10">
 							<textarea class="form-control ml10" rows="3"></textarea>
 						</div>
-					</div>
-					<div class="row col-md-12 col-lg-12">
-						<div class="form-group col-md-6 col-lg-6">
-							<label for="exampleInputName2">授权比例</label>
-							<input type="text" class="form-control" id="" placeholder="">
-							<i></i>
-						</div>
-						<div class="form-group col-md-6 col-lg-6">
-							<label for="exampleInputName2">授权价格</label>
-							<input type="text" class="form-control" id="" placeholder="">
-							<i></i>
-						</div>
-					</div>
-					<div class="row">
+					</div>					
+					<div class="row line">
 						<span class="col-md-2 col-lg-2">授权时间</span>
 						<div class="col-md-10 col-lg-10">
 							<div class="col-md-12 col-lg-12">
-								<input type="checkbox" checked name="time" id="" value="">
+								<input type="radio" checked name="time" id="" value="">
 								<input size="16" type="text" id="datetimeStart" readonly class="form_datetime ml10 form-control">
 								一
 								<input size="16" type="text" id="datetimeEnd" readonly class="form_datetime form-control">
 							</div>
 							<div class="col-md-12 col-lg-12">
-								<div class="col-md-2 col-lg-2">
+								<div class="col-md-2 col-lg-2 add-a">
 									<label class="checkbox-inline">
-										<input type="checkbox" checked name="time" id="" value=""> 无限制
+										<input type="radio" checked name="time" id="" value=""> 无限制
 									</label>
 								</div>
-								<div class="col-md-10 col-lg-10">
+								<div class="col-md-10 col-lg-10 add-a">
 									<label class="checkbox-inline">
-										<input type="checkbox" checked name="time" id="" value=""> 自定义时间
+										<input type="radio" checked name="time" id="" value=""> 自定义时间
 										<input type="text" class="form-control" id="" placeholder="">
 									</label>
 								</div>
@@ -809,7 +807,7 @@
 							</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row line">
 						<span class="col-md-2 col-lg-2">授权地域</span>
 						<div class="col-md-10 col-lg-10">
 							<label class="checkbox-inline">
@@ -827,7 +825,7 @@
 							</label>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row line">
 						<span class="col-md-2 col-lg-2">授权语言</span>
 						<div class="col-md-10 col-lg-10">
 							<label class="checkbox-inline">
@@ -839,8 +837,8 @@
 							<label class="checkbox-inline">
 								<input type="checkbox" name="language" id="" value=""> 英文
 							</label>
-							<label class="checkbox-inline new-inline col-md-10 col-lg-10">
-								<input type="checkbox" name="language" id="" value=""><i>其他 </i> <input type="type" name="" id="" value="" class="form-control">
+							<label class="checkbox-inline new-inline">
+								<input type="checkbox" name="language" id="" value="">其他 <input type="type" name="" id="" value="" class="form-control">
 							</label>
 						</div>
 					</div>
@@ -885,7 +883,7 @@
 						</div>
 					</div>
 					
-					<div class="row">
+					<div class="row line">
 						<span class="col-md-2 col-lg-2">许可使用次数</span>
 						<div class="col-md-10 col-lg-10">
 							<input type="text" class="ml10 form-control"> 次

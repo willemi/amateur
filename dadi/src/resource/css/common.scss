@@ -616,7 +616,25 @@ label {
             .form-control {
                 width:90%;
             }
-        }
+		}
+		&.line {
+			span, label{
+				line-height: 34px;
+				display: inline-block;
+			}			
+			input[type=radio], input[type=checkbox]{
+				margin-top:10px;
+				float:left
+			}
+			.add-a {
+				padding-left:0;
+				.checkbox-inline {
+					margin-top:10px;
+					margin-left:0;
+					padding-left:0;
+				}
+			}
+		}
     }
     .modal-footer {
         padding-right:60px;
