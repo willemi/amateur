@@ -1,56 +1,49 @@
 import '../css/index.scss';
-import './common/jQueryfullpage';
 
 const util = require('./common/util');
-const fullpage = require('./common/jQueryfullpage');
-function fullpageFun(){
-	$('#dowebok').fullpage({
-		//sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90','#1bbc9b', '#4BBFC3', '#7BAABE'],
-		anchors: ['hero', 'services', 'cases', 'news','about','think','footer','contact'],
-	    navigationPosition: 'left',
-		afterLoad: function(anchorLink, index){
-			if(index == 1){
-			   $('.totalTit').addClass('acitve');
-			}
-			if(index == 2){
-				$('.aboutclmax').addClass('active');
-			}
-			if(index == 3){
-			   $('.theMoves').addClass('active');
-			}
-			if(index == 4){
-			   $('.starPeople').addClass('active');
-			}
-			if(index == 5){
-			   $('.ourNews').addClass('active');
-			}
-			if(index == 6){
-			   $('.aboutUs').addClass('active')
-			}
-		},
-		onLeave: function(index, direction){
-			if(index == '1'){
-				$('.totalTit').removeClass('acitve');
-			}
-			if(index == '2'){
-				$('.aboutclmax').removeClass('active');
-			}
-			if(index == '3'){
-				$('.theMoves').removeClass('active');
-			}
-			if(index == '4'){
-				$('.starPeople').removeClass('active');
-			}
-			if(index == '5'){
-				$('.ourNews').removeClass('active');
-			}
-			if(index == '6'){
-				$('.aboutUs').removeClass('active')
-			}
+let $section1 = $(".section1");
+function bindEnds(){
+	let $doc = $(document);
+	setTimeout(function(){
+		$("header").hide();
+		$section1.animate({
+			"height": 0
+		},1500)
+	},5000)
+	var s = document.getElementsByClassName("waper");
+	document.addEventListener && document.addEventListener("scroll", function(a) {
+		fixModule(s)
+	}),
+	document.addEventListener && document.addEventListener("DOMMouseScroll", function(a) {
+		fixModule(s)
+	}, !1);
+	$doc.on("click", ".playBtn", function(){
+		let $this = $(this),
+			$video = $this.next("video").get(0);
+
+		if($video.paused){
+			$this.hide();
+			$video.play();
 		}
-    });
-} 
+	})
+}
+//background
+function fixModule(t) {
+	for (var a = $(window).scrollTop(), s = document.documentElement.clientHeight, e = 0; e < t.length - 1; e++) {
+		var i = t[e].offsetTop - 50;
+		if (a + s >= i && a + s < i + s + 640) {
+			var n = 160 / (i + s + 640)
+			  , r = n * (a + s - i);
+			$(t[e]).css("background-position", "center " + (80 - r) + "px")
+		}
+	}
+}
 function init(){
-    fullpageFun();
+	let windowH = $(window).height();
+	$section1.height(windowH);
+	setTimeout(function(){
+		$(".totalTit").addClass("active");
+	},500)
+	bindEnds();
 }
 init()

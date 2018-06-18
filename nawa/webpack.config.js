@@ -34,6 +34,14 @@ let output = {
 				fallback: 'style-loader'
 			})
 		},{
+			test: /\.(eot|svg|ttf|woff|woff2)\w*/,
+			loader: 'file-loader',
+			query: {
+				publicPath: '../fonts',
+				outputPath: 'resource/fonts/',
+				name: '[name].[ext]'
+			}
+		},{
 			// 图片文件，生产环境使用url-loader，将小于10k的图片base64，并且名称hash化
 			test: /\.(png|jpg|gif|svg)$/,
 			loader: 'file-loader',

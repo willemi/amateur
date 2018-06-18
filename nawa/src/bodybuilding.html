@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>呐咓</title>
+</head>
+<body>
+<%= require('html-loader!./include/header.html') %>
+<div class="swiper-container">
+    <div class="swiper-wrapper"></div>
+    <div class="swiper-pagination"></div>
+</div>
+<div class="tab-nav">
+	<h3></h3>
+	<ul id="myTab" class="nav hover">
+		<li class="active">
+			<a href="#coach" data-toggle="tab">
+				<img src="resource/img/275_210_01.jpg" alt="">
+				<dl>
+					<dt>明星教练</dt>
+					<dd>呐咓精英教练等你嗨</dd>
+				</dl>
+			</a>
+		</li>
+		<li>
+			<a href="#Venue" data-toggle="tab">
+				<img src="resource/img/275_210_02.jpg" alt="">
+				<dl>
+					<dt>呐咓场馆</dt>
+					<dd>京城首座花园运动体验馆 </dd>
+				</dl>	
+			</a>
+		</li>
+		<li>
+			<a href="#knowledge" data-toggle="tab">
+				<img src="resource/img/275_210_03.jpg" alt="">
+				<dl>
+					<dt>健身知识</dt>
+					<dd>呐咓独家健身知识库</dd>
+				</dl>
+			</a>
+		</li>
+	</ul>
+</div>
+
+
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active coach" id="coach">
+		<dl class="dl-title">
+			<dt><h4>明星教练</h4></dt>
+			<dd>呐咓精英教练等你嗨</dd>
+		</dl>
+		<div class="tab-ul">
+			<ul class="coach-ul hover">
+				<li><img src="resource/img/280_370.jpg" alt=""></li>
+				<li><img src="resource/img/280_370.jpg" alt=""></li>
+				<li><img src="resource/img/280_370.jpg" alt=""></li>
+				<li><img src="resource/img/280_370.jpg" alt=""></li>
+				<li><img src="resource/img/280_370.jpg" alt=""></li>
+			</ul>
+		</div>
+	</div>
+	<div class="tab-pane fade Venue" id="Venue">
+		<dl class="dl-title">
+			<dt><h4>呐咓场馆</h4></dt>
+			<dd>首座室内花园健身馆</dd>
+		</dl>
+	</div>
+</div>
+<!--coach news-->
+<div class="building-fixed">
+	<p></p>
+	<div class="fixed-cont">
+		<a class="close"></a>
+		<div class="cont-news">
+			<div>
+				<span class="span-img"><img src="resource/img/280_370.jpg"></span>
+				<span class="desc">
+					<h5>栾军</h5>
+					<h6>luanjun</h6>
+					<dl>
+						<dt>中国 北京</dt>
+						<dd>体能顾问／资深教练／体能专家</dd>
+						<dd>体能顾问／资深教练／体能专家</dd>
+						<dd>体能顾问／资深教练／体能专家</dd>
+						<dd>体能顾问／资深教练／体能专家</dd>
+					</dl>
+				</span>
+			</div>
+			<dl>
+				<dt>教练简介</dt>
+				<dd>多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。教练介绍：多年教练资质，k－1裁判认证。</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+<%= require('html-loader!./include/footer.html') %>
+</body>
+</html>

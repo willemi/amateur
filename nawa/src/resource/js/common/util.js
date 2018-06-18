@@ -1,3 +1,6 @@
+import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+
 let util = {};
 
 if (window.console) {

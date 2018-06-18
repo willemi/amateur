@@ -1,0 +1,305 @@
+@import './common';
+
+.swiper-container {
+    a {
+        width:100%;
+        height:600px;
+        display: block;
+    }
+}
+.tab-nav {
+    width:1180px;
+    height:250px;
+    margin:0 auto;
+    position: relative;
+    z-index: 1;
+    h3 {
+        width:330px;
+        height:240px;
+        float: left;
+        background-image: url('../img/bodybuilding/330_240.jpg');
+        background-size: cover;
+        margin-top:-10px;
+        text-shadow: 0 2px 5px rgba(104,99,99,.48);
+    }
+    &:after {
+        content:'';
+        width:100%;
+        height:20px;
+        background-color: #1f204a;
+        background-image: -webkit-linear-gradient(right, #00d8ff, #442e85);
+        background-image: -moz-linear-gradient(right, #00d8ff, #442e85);
+        background-image: -o-linear-gradient(right, #00d8ff, #442e85);
+        background-image: -ms-linear-gradient(right, #00d8ff, #442e85);
+        background-image: linear-gradient(to left, #00d8ff, #442e85);
+        position: absolute;
+        bottom:0;
+        left:0;
+    }
+    ul {
+        float: left;
+        width:850px;
+        li {
+            width:33.333%;
+            height:auto;
+            overflow: hidden;
+            padding-left:10px;
+            margin-top:10px;
+            float:left;        
+            img {
+                @extend .img;
+            }
+            a {
+                padding:0;
+            }
+            dl {
+                padding:0 25px 20px 30px;
+                position: absolute;
+                left:0;
+                bottom:0;
+                color:#fff;
+                dt {
+                    font:30px/50px "微软雅黑";
+                    text-shadow: 0 2px 5px rgba(104,99,99,.48);
+                }
+                dd {
+                    font:18px/24px "微软雅黑";
+                    text-shadow: 0 2px 5px rgba(104,99,99,.48);
+                }
+            }
+        }
+    }
+}
+.tab-content {
+    @extend .clearfix;
+    width:1200px;
+    padding:0 10px 50px;
+    margin:0 auto;
+    dl.dl-title {
+        width:100%;
+        height:auto;
+        overflow: hidden;
+        position: relative;
+        margin-top:30px;
+        text-align: center;
+        dt {
+            margin:0 auto;
+            position: relative;
+            display: table;        
+            h4 {                
+                font-size: 60px;
+                height:60px;
+                @extend .gradient;
+            }            
+        }
+        dd {
+            display: table;
+            font:24px/26px "微软雅黑";
+            color:#ccc1c0;
+            //text-shadow: 0 2px 5px rgba(104,99,99,.48);
+            background-color: #fff;
+            padding:0 15px;
+            margin:10px auto;  
+            position: relative;
+            z-index: 1;          
+        }
+        &::before {
+            content:'';
+            width:100%;
+            height:2px;
+            background-color: #ccc1c0;
+            position: absolute;
+            left:0;
+            bottom:20px;
+            z-index: 0;
+        }
+    }
+    .coach {       
+        .tab-ul, ul {
+            width:1200px;
+            @extend .clearfix;
+            li {
+                width:25%;
+                height:370px;
+                padding-right:20px;
+                float: left;
+                margin-top:20px;
+                cursor: pointer;
+                img {
+                    @extend .img;
+                    &:hover {
+                        -webkit-box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+                        -moz-box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+                        box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+                    }
+                }
+                
+            }
+        }
+    }
+    .Venue {
+        dl.dl-title{
+            dt {                
+                &::before, &::after {
+                    width:60px;
+                    height:60px;
+                    content: '';
+                    position: absolute;
+                    top:0;
+                    background-image: url('../img/bodybuilding/60_60.png');    
+                }
+                &::before {
+                    left:-80px;
+                }
+                &::after {
+                    right:-80px;
+                    transform:rotateY(-180deg);
+                }
+            }            
+        }
+    }
+}
+.building-fixed {
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 9;
+    width:100%;
+    height:100%;
+    display: none;
+    p {
+        width:100%;
+        height:100%;
+        background-color: rgba(0, 0, 0, .6);
+        position: relative;
+        left:0;
+        top:0;
+        z-index: 0;
+    }
+    .fixed-cont {
+        width: 868px;
+        height: 600px;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+        box-shadow: 0 1px 5px 1px rgba(41,113,181,.76);
+        &:after {
+            position: absolute;
+            top: 0; 
+            bottom: 0;
+            left: 0; 
+            right: 0;
+            background: linear-gradient(#21224b, #0574a6);
+            content: '';
+            z-index: -2;
+            border-radius: 10px;
+        }
+        &:before {
+            position: absolute;
+            top: 3px; 
+            bottom: 3px;
+            left: 3px; 
+            right: 3px;
+            background: #000;
+            content: '';
+            z-index: -1;
+        }           
+        a.close {
+            width:43px;
+            height:43px;
+            display: block;
+            position: absolute;
+            right:15px;
+            top:15px;
+            z-index: 9; 
+            background-image: url('../img/close-icons.png');
+            background-size: cover;
+            opacity: 1;
+        }
+        .cont-news {
+            padding:20px 65px;
+            div {
+                @extend .clearfix;
+                span {
+                    float:left;
+                    display: inline-block;
+                    position: relative;
+                    margin-top:50px;
+                    &.span-img {
+                        width:215px;
+                        height:290px;
+                        border-radius: 10px;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            z-index: 0;
+                            left:-2px;
+                            top:-2px;
+                            right:-2px;
+                            bottom:-2px;
+                            background: linear-gradient(#06bee8, #324f97);
+                            border-radius: 10px;
+                        }
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            z-index: -1;
+                            left:-4px;
+                            top:-4px;
+                            right:-4px;
+                            bottom:-4px;
+                            background: linear-gradient(#1d1e46, #006fa0);
+                            border-radius: 10px;
+                        }
+                        img {
+                            @extend .img;
+                            border-radius: 10px;
+                        }
+                    }
+                    &.desc {
+                        margin-left:110px;
+                        h5 ,h6 {
+                            @extend .gradient;
+                            font:46px/56px "微软雅黑";
+                        }
+                        h6 {
+                            margin-top:10px;
+                        }
+                        dl {
+                            color:#fff;
+                            margin-top:24px;                           
+                            dt {
+                                font-size: 26px;
+                                padding-bottom:26px;
+                                font-weight: normal;
+                            }
+                            dd {
+                                font: 16px/24px "微软雅黑";
+                            }
+                        }
+                    }
+                }
+            }
+           & > dl {
+                margin-top:30px;   
+                        
+                dt {
+                    @extend .gradient;
+                    font: 20px/24px "微软雅黑";
+                }
+                dd {
+                    margin-top:20px;
+                    font: 16px/24px "微软雅黑";
+                    color:#fff;
+                    max-height: 140px;
+                    overflow: auto; 
+                }
+            }
+        }
+    }
+   
+}
