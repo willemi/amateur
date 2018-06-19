@@ -9,19 +9,10 @@
 }
 .tab-nav {
     width:1180px;
-    height:250px;
+    height:260px;
     margin:0 auto;
     position: relative;
     z-index: 1;
-    h3 {
-        width:330px;
-        height:240px;
-        float: left;
-        background-image: url('../img/bodybuilding/330_240.jpg');
-        background-size: cover;
-        margin-top:-10px;
-        text-shadow: 0 2px 5px rgba(104,99,99,.48);
-    }
     &:after {
         content:'';
         width:100%;
@@ -35,34 +26,65 @@
     }
     ul {
         float: left;
-        width:850px;
+        width:1190px;
+        padding-bottom:10px;
         li {
-            width:33.333%;
+            width:25%;
             height:auto;
             overflow: hidden;
-            padding-left:10px;
+            padding-right:10px;
             margin-top:10px;
-            float:left;        
+            float:left;            
             img {
-                @extend .img;
+                @extend .img;               
             }
             a {
                 padding:0;
+                position: relative;
+                &:before {
+                    content: '';
+                    width:100%;
+                    height:100%;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    z-index: 1;
+                    background-image: url('../img/bodybuilding/275_210_bj.png');
+                    background-size: cover;
+                    display: none;
+                }
+                dl {
+                    padding:0 25px 20px 30px;
+                    position: absolute;
+                    left:0;
+                    bottom:0;
+                    color:#fff;
+                    z-index: 2;
+                    dt {
+                        font:30px/50px "微软雅黑";
+                        text-shadow: 0 2px 5px rgba(104,99,99,.48);
+                    }
+                    dd {
+                        font:18px/24px "微软雅黑";
+                        text-shadow: 0 2px 5px rgba(104,99,99,.48);
+                    }
+                }
             }
-            dl {
-                padding:0 25px 20px 30px;
-                position: absolute;
-                left:0;
-                bottom:0;
-                color:#fff;
-                dt {
-                    font:30px/50px "微软雅黑";
-                    text-shadow: 0 2px 5px rgba(104,99,99,.48);
+            
+            &.active {
+                transform: translateY(-5px);
+                a {
+                    &:before {
+                        display: block;
+                    }
+                    dt {
+                        text-shadow: 0 2px 5px rgba(104,99,99,0);
+                        color:#1f204a;
+                        font-weight: bold;
+                        @extend .gradient;
+                    }
                 }
-                dd {
-                    font:18px/24px "微软雅黑";
-                    text-shadow: 0 2px 5px rgba(104,99,99,.48);
-                }
+                
             }
         }
     }
@@ -159,7 +181,31 @@
                 }        
             }
         }
-    }  
+    }
+    .league {
+        
+        .league-table {
+            width: 1063px;
+            height: 597px;
+            padding:10px 40px 40px;
+            background-color: #1e2049;
+            margin:30px auto;
+            h5 {
+                font:18px/55px "微软雅黑";
+                color:#fff;
+                text-align: center;
+            }
+            ul {
+                @extend .clearfix;
+                li {
+                    width:12.286%;
+                    height:70px;
+                    color:#fff;
+                    
+                }
+            }
+        }
+    }
     .coach {       
         .tab-ul, ul {
             width:1200px;
@@ -340,6 +386,7 @@
                     border-top:1px solid #ccc;
                     height:auto;
                     overflow: hidden;
+                    border-bottom-right-radius:5px;
                     span {
                         font:16px/24px "微软雅黑";
                         color:#959595;

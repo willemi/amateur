@@ -9,10 +9,11 @@ body {
 	background-size: cover;
 	background-position: center center;
 }
-.active {
+.activity {
 	@extend .clearfix;
 	width:1180px;
 	margin:10px auto;
+	padding-bottom: 50px;
 	ul {
 		@extend .clearfix;
 		width:1150px;
@@ -24,7 +25,6 @@ body {
 			padding-right:20px;
 			margin-top:20px;
 			border-radius: 5px;
-			overflow: hidden;
 			float: left;
 			position: relative;
 			&::before {
@@ -72,13 +72,12 @@ body {
 				dt {
 					width:100%;
 					height:27px;
-					padding:0 10px 0 100px;
+					padding:0 20px;
 					position: relative;
-					@extend .before;
 					h5 {
 						@extend .els;
 						width:100%;
-						font:18px/27px "微软雅黑";
+						font:600 18px/27px "微软雅黑";
 						&:hover {
 							color:#1296db;
 						}
@@ -98,6 +97,7 @@ body {
 				border-top:1px solid #ccc;
 				height:auto;
 				overflow: hidden;
+				margin-top:20px;
 				span {
 					font:16px/24px "微软雅黑";
 					color:#959595;
