@@ -1,0 +1,99 @@
+@import './common';
+.banner {
+	width:100%;
+	height:400px;
+	background-image: url('../img/activity/active-banner.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+.active {
+	@extend .clearfix;
+	width:1180px;
+	margin:10px auto;
+	ul {
+		@extend .clearfix;
+		width:1150px;
+		margin-left:25px;
+		margin-top:20px;
+		li {
+			width:50%;
+			height:auto;
+			padding-right:20px;
+			margin-top:20px;
+			border-radius: 5px;
+			overflow: hidden;
+			float: left;
+			position: relative;
+			img {
+				width:100%;
+				height:280px;
+				display: block;
+				position: relative;
+				z-index: 0;
+				border-radius: 5px;
+			}
+			em {
+				@include prefix-value(background-image, linear-gradient(top, #00d8ff, #442e85));
+				width: 66px;
+				height: 36px;
+				display: none;
+				border-radius: 5px;
+				color:#000;
+				text-align: center;
+				font:20px/36px "微软雅黑";
+				position: absolute;
+				right:30px;
+				top:10px;
+				z-index: 1;
+			}
+			dl {
+				@extend .clearfix;
+				background-color: #fff;
+				padding-top:10px;
+				dt {
+					width:100%;
+					height:27px;
+					padding:0 10px 0 100px;
+					position: relative;
+					@extend .before;
+					h5 {
+						@extend .els;
+						width:100%;
+						font:18px/27px "微软雅黑";
+						&:hover {
+							color:#1296db;
+						}
+					}
+				}
+				dd {
+					font:16px/24px "微软雅黑";
+					color:#959595;
+					padding:5px 20px;
+					@include lines;
+				}
+			}
+			div {
+				width:100%;
+				padding:20px;
+				background-color:#fff;
+				border-top:1px solid #ccc;
+				height:auto;
+				overflow: hidden;
+				span {
+					font:16px/24px "微软雅黑";
+					color:#959595;
+					display: inline-block;
+					&:first-child {
+						float:left;
+					}
+					&:last-child {
+						float:right;
+					}
+					p {
+						@extend .p-icons;
+					}
+				}
+			}
+		}
+	}	
+}

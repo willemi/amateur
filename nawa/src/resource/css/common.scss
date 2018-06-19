@@ -1,5 +1,6 @@
 html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset,
 legend, input, textarea, select, p, blockquote, th, td { margin: 0; padding: 0; }
+
 table { border-collapse: collapse; border-spacing: 0; }
 fieldset, img { border: 0; }
 
@@ -23,31 +24,25 @@ legend { color: #000; }
 
 /* HTML5 */
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
-
+a { color: #333; text-decoration: none; cursor: pointer;}
+a:hover, a:focus {
+	color: #333;
+	text-decoration: none;
+}
 /* 公共字体 */
-body { font-family: "Microsoft YaHei", Arial, sans-serif; font-size: 12px; color: #666;}
-a { color: #666; text-decoration: none; cursor: pointer;}
+// 播放器控件背景色
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+	background: rgba(255,255,255,.8);
+}
+body {
+	// min-width: 850px;
+	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	// background-color:#019ced;
+	line-height: 1.42857143 !important;
+	color: #333 !important;
+}
 
-$bce8: #e8e8e8;
-$c3: #333;
-
-.gradient {
-	color: #1f204a;
-	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0, 216, 255, 1)), to(rgba(68, 46, 133, 1)));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-.els {
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-}
-.img {
-    width:100%;
-    height:100%;
-    display: block;
-    position: relative;
-}
 /**
  * 最多显示 $lineCount 行
  * lines
@@ -62,6 +57,133 @@ $c3: #333;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+/**
+ * 浏览器兼容前缀
+ *
+ * example:
+ * @include prefix(transform, scale(2), webkit);
+ * @include prefix(transform, scale(2), webkit moz);
+ */
+ @mixin prefix($property, $value, $vendors: webkit moz ms o) {
+    @if $vendors {
+      @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+      }
+    }
+    #{$property}: #{$value};
+}
+/**
+ * 仅兼容 webkit 即可
+ *
+ * example:
+ * @include webkit(transform, scale(2));
+ */
+ @mixin webkit($property, $value){
+	@include prefix($property, $value, webkit);
+}
+/**
+ * 浏览器兼容 值前缀
+ *
+ * example:
+ * @include prefix-value(display, box);
+ */
+ @mixin prefix-value($property, $value, $vendors: webkit moz ms o) {
+	@if $vendors {
+	  @each $vendor in $vendors {
+			#{$property}: #{"-" + $vendor + "-" + $value};
+	  }
+	}
+	#{$property}: #{$value};
+}
+/**
+* 浏览器兼容 值前缀
+* 仅兼容 webkit 即可
+*
+* example:
+* @include webkit-value(display, box);
+*/
+@mixin webkit-value($property, $value){
+  @include prefix-value($property, $value, webkit);
+}
+
+
+$bce8: #e8e8e8;
+$c3: #333;
+
+.gradient {
+	color: #1f204a;
+	background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(0, 216, 255, 1)), to(rgba(68, 46, 133, 1)));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.hover-shadow {
+	// -webkit-box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+	// -moz-box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+	// box-shadow: 0 4px 20px 1px rgba(41,113,181,.76);
+	@include webkit(box-shadow, 0 4px 20px 1px rgba(41,113,181,.76));
+}
+.els {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.img {
+    width:100%;
+    height:100%;
+    display: block;
+    position: relative;
+}
+.before {
+	&::before {
+		content:'';
+		display: inline-block;
+		position: absolute;
+		left:20px;
+		top:0;
+		width:71px;
+		height:27px;
+		background-image: url('../img/bodybuilding/71_27.png');
+		background-size: cover;
+	}
+}
+.p-icons {
+	display: inline-block;
+	padding-left:25px;
+	padding-right:10px;
+	position: relative;
+	&:before {
+		content:'';
+		width:21px;
+		height:18px;
+		background-image: url('../img/buildimg-icons.png');
+		background-size: cover;
+		position: absolute;
+		left:0;
+		top:3px;
+	}
+	&.new-time {
+		padding-left:0;
+		&:before {
+			background:transparent;
+		}
+	}
+	&.pre-time {
+		&:before {
+			background-position: 0 0;
+		}
+	}
+	&.play-num {
+		&:before {
+			background-position: 0 -18px;
+		}
+	}
+	&.comments {
+		&:before {
+			background-position: 0 -36px;
+		}
+	}       
 }
 
 /* 清除浮动 */
@@ -90,18 +212,7 @@ $c3: #333;
     background: #cecece;
 }
 
-// 播放器控件背景色
-audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
-  background: rgba(255,255,255,.8);
-}
-body {
-	// min-width: 850px;
-	font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 12px;
-	// background-color:#019ced;
-	line-height: 1.42857143 !important;
-	color: #58666e !important;
-}
+
 .header {
 	@extend .clearfix;
 	.header-wraper {
@@ -209,15 +320,11 @@ body {
 }
 .hover {
 	li {
-		-webkit-transition: all .3s ease-in-out;
-		transition: all .3s ease-in-out;
+		@include webkit(transition, all .3s ease-in-out);
 		&:hover {
-			-webkit-transform: translateY(-5px);
-			-moz-transform: translateY(-5px);
-			-ms-transform: translateY(-5px);
-			transform: translateY(-5px);
+			@include webkit(transform, translateY(-5px));
 		}
-	}		
+	}
 }
 footer {
 	@extend .clearfix;

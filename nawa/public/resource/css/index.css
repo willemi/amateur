@@ -56,22 +56,69 @@ legend {
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
 
-/* 公共字体 */
-body {
-  font-family: "Microsoft YaHei", Arial, sans-serif;
-  font-size: 12px;
-  color: #666; }
-
 a {
-  color: #666;
+  color: #333;
   text-decoration: none;
   cursor: pointer; }
 
+a:hover, a:focus {
+  color: #333;
+  text-decoration: none; }
+
+/* 公共字体 */
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+  background: rgba(255, 255, 255, 0.8); }
+
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 1.42857143 !important;
+  color: #333 !important; }
+
+/**
+ * 最多显示 $lineCount 行
+ * lines
+ *
+ * example:
+ * @include lines;
+ * @include lines(3);
+ */
+/**
+ * 浏览器兼容前缀
+ *
+ * example:
+ * @include prefix(transform, scale(2), webkit);
+ * @include prefix(transform, scale(2), webkit moz);
+ */
+/**
+ * 仅兼容 webkit 即可
+ *
+ * example:
+ * @include webkit(transform, scale(2));
+ */
+/**
+ * 浏览器兼容 值前缀
+ *
+ * example:
+ * @include prefix-value(display, box);
+ */
+/**
+* 浏览器兼容 值前缀
+* 仅兼容 webkit 即可
+*
+* example:
+* @include webkit-value(display, box);
+*/
 .gradient {
   color: #1f204a;
   background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#00d8ff), to(#442e85));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent; }
+
+.hover-shadow {
+  -webkit-box-shadow: 0 4px 20px 1px rgba(41, 113, 181, 0.76);
+  box-shadow: 0 4px 20px 1px rgba(41, 113, 181, 0.76); }
 
 .els, .latest-activities ul li a p {
   text-overflow: ellipsis;
@@ -84,14 +131,42 @@ a {
   display: block;
   position: relative; }
 
-/**
- * 最多显示 $lineCount 行
- * lines
- *
- * example:
- * @include lines;
- * @include lines(3);
- */
+.before::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 71px;
+  height: 27px;
+  background-image: url(../img/71_27.png);
+  background-size: cover; }
+
+.p-icons {
+  display: inline-block;
+  padding-left: 25px;
+  padding-right: 10px;
+  position: relative; }
+  .p-icons:before {
+    content: '';
+    width: 21px;
+    height: 18px;
+    background-image: url(../img/buildimg-icons.png);
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 3px; }
+  .p-icons.new-time {
+    padding-left: 0; }
+    .p-icons.new-time:before {
+      background: transparent; }
+  .p-icons.pre-time:before {
+    background-position: 0 0; }
+  .p-icons.play-num:before {
+    background-position: 0 -18px; }
+  .p-icons.comments:before {
+    background-position: 0 -36px; }
+
 /* 清除浮动 */
 .clearfix, .header, .header .header-wraper, footer, footer div, .latest-activities, .latest-activities ul, .waper ul, .waper .waper-cont, .fixed, .fixed ul {
   zoom: 1; }
@@ -121,15 +196,6 @@ a {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #cecece; }
-
-audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
-  background: rgba(255, 255, 255, 0.8); }
-
-body {
-  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12px;
-  line-height: 1.42857143 !important;
-  color: #58666e !important; }
 
 .header .header-wraper {
   width: 1180px;
@@ -217,12 +283,10 @@ body {
               top: 16px; }
 
 .hover li {
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out; }
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
   .hover li:hover {
     -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
     transform: translateY(-5px); }
 
 footer {
