@@ -716,6 +716,9 @@ label {
 .participant-modal input, .participant-modal select {
   min-width: 200px; }
 
+.Indexes .modal-dialog {
+  width: 90% !important; }
+
 .Indexes .modal-body button {
   position: relative; }
 
@@ -734,3 +737,6 @@ label {
 
 .newly-added .modal-body .form-inline {
   padding-top: 0; }
+
+.newly-added .aa {
+  display: none; }

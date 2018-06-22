@@ -39,20 +39,22 @@
                     <th class="th"><input type="checkbox" name="">商标进度</th>
                     <th>商标名称</th>
                     <th>申请代理机构</th>
-                    <th>商标类别</th>
-                    <th>注册类型</th>
-                    <th>注册日期</th>
+                    <th>申请代理合同名称</th>
+                    <th>是否复审</th>
+                    <th>复审代理机构</th>
+                    <th>注册类别</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th class="th" scope="row"><input type="checkbox" name="">张三</th>
-                    <td>在线支付</td>
-                    <td>100元</td>
-                    <td>人民币</td>
-                    <td>无限制</td>
-                    <td>2018-12-21 12:11</td>
+                    <th class="th" scope="row"><input type="checkbox" name="">申请中</th>
+                    <td>logo</td>
+                    <td>北京超凡知识产权</td>
+                    <td>超凡只是产权合同</td>
+                    <td>否</td>
+                    <td>无</td>
+                    <td>1123</td>
                     <td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
                 </tr>
             </tbody>
@@ -85,7 +87,8 @@
                         <li><a href="#yy" data-toggle="tab">公信息告</a></li>
                         <li><a href="#ms" data-toggle="tab">公示期信息</a></li>
                         <li><a href="#st" data-toggle="tab">核准注册信息</a></li>
-                        <li><a href="#zc" data-toggle="tab">附件管理</a></li>
+                        <li><a href="#zc" data-toggle="tab">授权信息</a></li>
+                        <li><a href="#ss" data-toggle="tab">附件管理</a></li>
                     </ul>
                 </div>
                 <div id="myTabContent" class="tab-content">
@@ -171,19 +174,373 @@
                         
                     </div>
                     <div class="tab-pane fade" id="wz">
-                        <p>暂无信息，请添加查询引用2</p>
+                        <form class="form-inline">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">是否复审</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">驳回群组</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理机构</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理合同名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理合同编号</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理合同金额</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">合同日期</label>
+                                <div class='input-group date' id='datetimepicker1'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>                            
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">单项价格</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>                           
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">驳回复审群组</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">复审结果</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="exampleInputName2">裁定结果</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="yy">
-                        <p>暂无信息，请添加查询引用3</p>
+                        <form class="form-inline">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">是否被提出异议 </label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">被异议的项目</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议代理合同名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">合同金额</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">合同日期</label>
+                                <div class='input-group date' id='datetimepicker2'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>         
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">是否异议复审</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">答辩内容</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">裁定结果</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审项目</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审合同名称 </label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审合同金额 </label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">异议复审合同日期</label>
+                                <div class='input-group date' id='datetimepicker3'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>       
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审单项价格 </label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="exampleInputName2">异议复审备注 </label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="ms">
-                        <p>暂无信息，请添加查询引用4</p>
+                        <form class="form-inline">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">是否被提出异议 </label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">被异议的项目</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议代理合同名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">合同金额</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">合同日期</label>
+                                <div class='input-group date' id='datetimepicker4'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>         
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">是否异议复审</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">答辩内容</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">裁定结果</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审项目</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审合同名称 </label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审合同金额 </label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">异议复审合同日期</label>
+                                <div class='input-group date' id='datetimepicker5'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>       
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议复审单项价格 </label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="exampleInputName2">异议复审备注 </label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="st">
-                        <p>暂无信息，请添加查询引用5</p>
+                        <form class="form-inline">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">注册有效期</label>
+                                <div class='input-group date' id='datetimepicker6'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">至</label>
+                                <div class='input-group date' id='datetimepicker7'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="zc">
-                        <p>暂无信息，请添加查询引用6</p>
+                        <form class="form-inline">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">商标类别 </label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>否</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">注册号</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">异议代理合同名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">项目</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授权单位</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">被授权单位</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授权形式</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">合同日期</label>
+                                <div class='input-group date' id='datetimepicker8'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>         
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="代理合同日期">至</label>
+                                <div class='input-group date' id='datetimepicker9'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授权年限</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授权区域</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授式范围</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授权单位经营范围 </label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">授权金额</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="exampleInputName2">备注 </label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="ss">
+                        <div class="right-title">
+                            <div class="right-ht col-md-10 col-lg-10">				
+                                <div class="btn-operation">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
+                                    <button type="button" class="btn btn-default">删除</button>					
+                                </div>
+                            </div>				
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" name="">序号</th>
+                                    <th>附件名称</th>
+                                    <th>附件类型</th>
+                                    <th>附件大小</th>
+                                    <th>上传日期</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><input type="checkbox" name="">1</th>
+                                    <td>音乐作品登记</td>
+                                    <td>JPG</td>
+                                    <td>10.23MB</td>
+                                    <td>2018-12-23 10:55</td>
+                                    <td>备注备注备注备注备注备注备注备注备注</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 			</div>

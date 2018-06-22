@@ -111,6 +111,9 @@
     }
 }
 .Indexes {
+    .modal-dialog {
+        width:90%!important;
+    }
     .modal-body {
         button {
             position: relative;
@@ -138,5 +141,8 @@
         .form-inline {
             padding-top:0;
         }
+    }
+    .aa {
+        display: none
     }
 }

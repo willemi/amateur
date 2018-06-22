@@ -25,7 +25,7 @@
 	<div class="content-wrapper">
         <h3>大地传播</h3>
         <div class="right-title">
-            <h3 class="col-md-2 col-lg-2">域名信息</h3>
+            <h3 class="col-md-2 col-lg-2">作品登记证书信息</h3>
             <div class="right-ht col-md-10 col-lg-10">					
                 <div class="btn-operation">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
@@ -37,24 +37,22 @@
             <thead>
                 <tr>
                     <th class="th"><input type="checkbox" name="">序号</th>
-                    <th>域名地址</th>
-                    <th>所有者</th>
-                    <th>所有者联系邮箱</th>
-                    <th>注册商</th>
-                    <th>注册日期</th>
-                    <th>到期日期</th>
+                    <th>登记证号</th>
+                    <th>作品名称</th>
+                    <th>登记日期</th>
+                    <th>作者</th>
+                    <th>登记机构</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th class="th" scope="row"><input type="checkbox" name="">1</th>
-                    <td>www.dadi.com</td>
-                    <td>大地</td>
-                    <td>dadi@dadi.com</td>
-                    <td>wanwang</td>
-                    <td>2018-12-21 12:11</td>
-                    <td>2018-12-21 12:11</td>
+                    <td>2</td>
+                    <td>张三的画</td>
+                    <td>2018-1-12</td>
+                    <td>李四</td>
+                    <td>北京版保中心</td>
                     <td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
                 </tr>
             </tbody>
@@ -72,41 +70,37 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="myModalLabel">新增</h4>
 			</div>
-			<div class="modal-body">
-                <!-- <div class="form-group col-md-12 col-lg-12 sel">
-                    <label for="exampleInputName2">申请进度</label>
-                    <select class="form-control">
-                        <option>有</option>
-                        <option>无</option>
-                    </select>
-                </div> -->
+			<div class="modal-body">                
 				<div class="row bcf">
                     <ul id="myTab" class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab">域名信息</a></li>
-                        <li><a href="#wz" data-toggle="tab">域名附件</a></li>
+                        <li class="active"><a href="#home" data-toggle="tab">基础信息</a></li>
+                        <li><a href="#wz" data-toggle="tab">作品附件</a></li>
                     </ul>
                 </div>
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade in active" id="home">
                         <form class="form-inline">
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">域名地址</label>
+                                <label for="exampleInputName2">作品名称</label>
                                 <input type="text" class="form-control" id="" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                    <label for="exampleInputName2">所有者</label>
+                                <label for="exampleInputName2">登记证号</label>
                                 <input type="text" class="form-control" id="" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">所有者邮箱 </label>
+                                <label for="exampleInputName2">作者</label>
                                 <input type="text" class="form-control" id="" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">注册商</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <label for="exampleInputName2">作品类型 </label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">注册日期</label>
+                                <label for="exampleInputName2">首发表时间</label>
                                 <div class='input-group date' id='datetimepicker'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
@@ -115,7 +109,7 @@
                                 </div> 
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">到期日期</label>
+                                <label for="exampleInputName2">创作完成时间</label>
                                 <div class='input-group date' id='datetimepicker1'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
@@ -124,25 +118,25 @@
                                 </div> 
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">费用</label>
-                                <input type="text" class="form-control" id="" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">域名状态</label>
+                                <label for="exampleInputName2">登记机构</label>
                                 <select class="form-control">
                                     <option>有</option>
                                     <option>无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">DNS服务器</label>
+                                <label for="exampleInputName2">委托机构 </label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">权利人名称</label>
                                 <input type="text" class="form-control" id="" placeholder="">
                             </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="exampleInputName2">备注 </label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </form>                        
+                        </form>
+                        
                     </div>
                     <div class="tab-pane fade" id="wz">
                         <div class="right-title">
