@@ -358,17 +358,23 @@ header {
 // 		text-align: center;
 //    }   
 }
-
-.banner {
-	width:100%;
-	height:500px;
-	background-image: url('../img/index/banner_01.jpg');
-	background-size: cover;
-	background-position: center center;
+.swiper-container {
+    a {
+        width:100%;
+        height:500px;
+        display: block;
+    }
 }
+// .banner {
+// 	width:100%;
+// 	height:500px;
+// 	background-image: url('../img/index/banner_01.jpg');
+// 	background-size: cover;
+// 	background-position: center center;
+// }
 .latest-activities {
 	@extend .clearfix;
-	width:1180px;
+	max-width:1180px;
 	margin:0 auto;
 	ul {
 		@extend .clearfix;
@@ -378,8 +384,10 @@ header {
 		li {
 			padding-right:29px;
 			padding-left: 0;
-			height:286px;
-			margin-top:20px;			
+			height:auto;
+			margin-top:20px;
+			border-radius: 8px;
+			overflow: hidden;			
 			a {
 				@extend .img;
 				border-radius: 8px;
@@ -458,23 +466,7 @@ header {
 					left:0;
 					top:0;
 					z-index: 2;
-					&:before {
-						content:'';
-						width:150px;
-						height:150px;
-						position: absolute;
-						left:50%;
-						top:50%;
-						transform: translate(-50%, -50%);
-						z-index: 2;
-						display: block;
-						background-image: url('../img/index/150_150.png');
-						background-size: cover;
-						cursor: pointer;
-					}
-					img {
-						@extend .img;
-					}
+					@extend .player-btn;
 				}
 				video {
 					@extend .img;

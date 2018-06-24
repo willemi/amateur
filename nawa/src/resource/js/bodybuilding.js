@@ -42,7 +42,8 @@ function seiper(){
 		pagination: {
 			el: '.swiper-pagination'
         },
-        autoplay : 5000
+		loop : true,
+        autoplay : 1000
 	});
 }
 function init(){

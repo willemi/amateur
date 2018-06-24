@@ -11,106 +11,205 @@
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
-<div class="swiper-container">
-    <div class="swiper-wrapper"></div>
-    <div class="swiper-pagination"></div>
+<div class="banner"></div>
+<div class="tab-nav">
+	<ul id="myTab" class="nav">
+		<li class="active">
+			<a href="#gushi" data-toggle="tab">星宇故事</a>
+		</li>
+		<li>
+			<a href="#video" data-toggle="tab">星宇视频</a>
+		</li>
+		<li>
+			<a href="#audio" data-toggle="tab">星宇音频</a>
+		</li>
+	</ul>
 </div>
-<div class="nav-t">
-	<div class="nav-cont">
-		<h3>呐咓厨房</h3>
-		<ul>
+<div id="myTabContent" class="tab-content">
+	<div class="tab-pane fade in active activity" id="gushi">
+		<ul class="hover">
 			<li>
-				<img src="resource/img/360_180.jpg">
-				<dl>
-					<dt>鸡胸肉的超级做法</dt>
-					<dd>将鸡肉改刀为长方形，边余料可用来炒肉丁，再斜刀划菱形纹，不要过深，切肉的厚度2/3留1/3不切，以免把肉切断，这样操作一是为容易入味，二是为相对容易熟透；留1/3不切以免把肉切断，这样操作一是为容易入味，二是为相对容易熟透；
-</dd>
-				</dl>
-				<h6>课程特色</h6>
-				<p>课程特色</p>
-				<p>课程特色课程特色</p>
-				<p>课程特色课程特色</p>
-				<p>课程特色</p>
-				<a href="#">我要报名</a>
+				<a href="#">
+					<span><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
 			</li>
 			<li>
-				<img src="resource/img/360_180.jpg">
-				<dl>
-					<dt>鸡胸肉的超级做法</dt>
-					<dd>将鸡肉改刀为长方形，边余料可用来炒肉丁，再斜刀划菱形纹，不要过深，切肉的厚度2/3留1/3不切，以免把肉切断，这样操作一是为容易入味，二是为相对容易熟透；留1/3不切以免把肉切断，这样操作一是为容易入味，二是为相对容易熟透；
-</dd>
-				</dl>
-				<h6>课程特色</h6>
-				<p>课程特色</p>
-				<p>课程特色课程特色</p>
-				<p>课程特色课程特色</p>
-				<p>课程特色</p>
-				<a href="#">我要报名</a>
+				<a href="#">
+					<span><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
 			</li>
 			<li>
-				<img src="resource/img/360_180.jpg">
-				<dl>
-					<dt>鸡胸肉的超级做法</dt>
-					<dd>将鸡肉改刀为长方形，边余料可用来炒肉丁，再斜刀划菱形纹，不要过深，切肉的厚度2/3留1/3不切，以免把肉切断，这样操作一是为容易入味，二是为相对容易熟透；留1/3不切以免把肉切断，这样操作一是为容易入味，二是为相对容易熟透；
-</dd>
-				</dl>
-				<h6>课程特色</h6>
-				<p>课程特色</p>
-				<p>课程特色课程特色</p>
-				<p>课程特色课程特色</p>
-				<p>课程特色</p>
-				<a href="#">我要报名</a>
+				<a href="#">
+					<span><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="tab-pane fade video activity" id="video">
+		<ul class="hover">
+			<li>
+				<a href="videoPlay.html" target="_blank">
+					<span><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="videoPlay.html" target="_blank">
+					<span><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="videoPlay.html" target="_blank">
+					<span><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="tab-pane fade audio activity" id="audio">
+		<ul class="hover">
+			<li>
+				<a href="javaScript:;">
+					<span class="play-btn" data-src="resource/img/mp3.mp3"><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>				
+			</li>
+			<li>
+				<a href="javaScript:;">
+					<span class="play-btn" data-src="resource/img/mp3.mp3"><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="javaScript:;">
+					<span class="play-btn" data-src="resource/img/mp3.mp3"><img src="resource/img/555_280.jpg"></span>
+					<em>独家</em>
+					<dl>
+						<dt><h5>呐咓独家健身知识库呐咓独家健身知识库呐咓独家健身知识库</h5></dt>
+					</dl>
+					<div>
+						<span>
+							<p class="new-time">2018-12-22</p>
+							<p class="pre-time">16天前</p>
+						</span>
+						<span>
+							<p class="play-num">23323</p>
+							<p class="comments">213123</p>
+						</span>
+					</div>
+				</a>
 			</li>
 		</ul>
 	</div>
 </div>
-<div class="warper">
-	<ul>
-		<li>
-			<a href="#">
-				<img src="resource/img/390_280.jpg">
-				<p>鸡胸肉的超级做法鸡胸肉的超级做法鸡胸肉的超级做法</p>
-				<span>
-					<p class="play-num">23323</p>
-					<p class="comments">213123</p>
-					<em>独家</em>
-				</span>
-			</a>
-		</li>
-		<li class="show">
-			<a href="#">
-				<img src="resource/img/390_280.jpg">
-				<p>鸡胸肉的超级做法</p>
-				<span>
-					<p class="play-num">23323</p>
-					<p class="comments">213123</p>
-					<em>独家</em>
-				</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<img src="resource/img/390_280.jpg">
-				<p>鸡胸肉的超级做法</p>
-				<span>
-					<p class="play-num">23323</p>
-					<p class="comments">213123</p>
-				</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<img src="resource/img/390_280.jpg">
-				<p>鸡胸肉的超级做法</p>
-				<span>
-					<p class="play-num">23323</p>
-					<p class="comments">213123</p>
-				</span>
-			</a>
-		</li>
-	</ul>
-</div>
-
 <%= require('html-loader!./include/footer.html') %>
 </body>
 </html>

@@ -1,8 +1,8 @@
-import '../css/personal.scss';
+import '../css/videoPlay.scss';
 
 const util = require('./common/util');
-function bindEnds(){
 
+function bindEnds(){
 }
 function init(){
 	bindEnds();

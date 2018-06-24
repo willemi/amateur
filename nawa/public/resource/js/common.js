@@ -33,14 +33,14 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 
 /***/ }),
 
-/***/ "./src/resource/css/diet.scss":
-/*!************************************!*\
-  !*** ./src/resource/css/diet.scss ***!
-  \************************************/
+/***/ "./src/resource/css/activity.scss":
+/*!****************************************!*\
+  !*** ./src/resource/css/activity.scss ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/resource/css/diet.scss?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/resource/css/activity.scss?");
 
 /***/ }),
 

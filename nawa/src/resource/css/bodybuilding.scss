@@ -1,5 +1,7 @@
 @import './common';
-
+body {
+    background-color: #fff;
+}
 .swiper-container {
     a {
         width:100%;
@@ -32,7 +34,7 @@
             width:25%;
             height:auto;
             overflow: hidden;
-            padding-right:10px;
+            padding:0 10px 0 0;	
             margin-top:10px;
             float:left;            
             img {
@@ -43,13 +45,16 @@
                 position: relative;
                 &:before {
                     content: '';
-                    width:100%;
-                    height:100%;
+                    width:auto!important;
+                    height:100%!important;
                     position: absolute;
                     left:0;
                     top:0;
+                    right:12px;
                     z-index: 1;
                     background-image: url('../img/bodybuilding/275_210_bj.png');
+                    background-repeat: no-repeat;
+                    background-color: transparent!important;
                     background-size: cover;
                     display: none;
                 }
@@ -162,12 +167,14 @@
                         background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(239, 73, 51, 1)), to(rgba(68, 46, 133, 1)));
                         @include webkit(background-clip, text);
                         -webkit-text-fill-color: transparent;
+                        font:600 30px/60px "微软雅黑";
                     }
                     &::before, &::after {                        
                         background-image: url('../img/bodybuilding/45_45.png');
-                        background-size: cover;
+                        background-size: 45px 45px;
                         background-position: center center;
                         background-color: #fff;
+                        background-repeat: no-repeat;
                     }
                     &::before {
                         left:-60px;
@@ -182,16 +189,15 @@
             }
         }
     }
-    .league {
-        
+    .league {        
         .league-table {
-            width: 1063px;
-            height: 597px;
-            padding:10px 40px 40px;
+            width: 1100px;
+            height: auto;
+            padding:0 40px 40px;
             background-color: #1e2049;
             margin:30px auto;
             h5 {
-                font:18px/55px "微软雅黑";
+                font:18px/70px "微软雅黑";
                 color:#fff;
                 text-align: center;
             }
@@ -203,12 +209,14 @@
                     border-top: 1px solid $c4b;
                     border-left: 1px solid $c4b;
                     float:left;
+                    &:last-child {
+                        border-right: 1px solid $c4b;
+                    }
                     li {
                         width:100%;
                         height:70px;
                         color:#fff;
                         border-bottom: 1px solid $c4b;
-                        border-right: 1px solid $c4b;
                         padding-left:10px;
                         &:first-child {
                             padding:0;
@@ -223,12 +231,22 @@
                         }
                         p:first-child {
                             @extend .els;
-                            font:14px/20px "微软雅黑"
+                            font:12px/24px "微软雅黑";
+                            i {
+                                margin-left:3px;
+                                background-color: #e64393;
+                                padding:1px;
+                                border-radius: 2px;
+                            }
                         }
                         dl {
                             width:100%;
                             font:12px/20px "微软雅黑";
-                            color:#2abedd;
+                            color:#31cce8;
+                            dt {
+                                float:left;
+                                margin-right:5px;
+                            }
                         }
                         p:last-child {
                             font:12px/20px "微软雅黑";
@@ -251,12 +269,94 @@
                     &.even {
                         li {
                             &:nth-of-type(odd) {
-                                background-color: $bc2a;
-                            }
-                            &:nth-of-type(even) {
                                 background-color: $bc26;
                             }
+                            &:nth-of-type(even) {
+                                background-color: $bc2a;
+                            }
                         } 
+                    }
+                }
+            }           
+        }
+        .league-table-ul {
+            width:1180px;
+            margin:10px uato;
+            @extend .clearfix;
+            padding-bottom:50px;
+            ul {
+                width:1190px;
+                li {
+                    width:25%;
+                    height:365x;
+                    float:left;
+                    padding-right: 10px;
+                    margin-top:10px;
+                    position: relative;
+                    img {
+                        @extend .img;
+                        z-index: 0
+                    }
+                    a {
+                        position: absolute;
+                        left:0;
+                        bottom:0;
+                        z-index: 1;
+                        background-color: rgba(255,255,255,.78);
+                        width:100%;
+                        padding:10px 25px;
+                        text-align: right;
+                        h3 {
+                            font:600 30px/32px "微软雅黑";
+                            color:#1f204a;
+                        }
+                        p {
+                            font:18px/32px "微软雅黑";
+                            color:#1f204a;
+                        }
+                        dl {                            
+                            color:#1f204a;
+                            font:18px/32px "微软雅黑";
+                            dt {
+                                float: right;
+                                font-weight: normal;
+                                font:18px/32px "微软雅黑";
+                            }
+                            dd {
+                                float: right;
+                                top:8px;
+                                right:5px;
+                            }
+                        }
+                    }
+                    & > dl {
+                        height:100%;
+                        position: absolute;
+                        left:0;
+                        right:10px;
+                        top:0;
+                        z-index: 3;
+                        background-color: rgba(31,32,74,.95);
+                        color:#fff;
+                        font-size: 32px;
+                        text-align: center;
+                        opacity: 0;
+                        transition: 0.6s;
+                        transform: rotateY(180deg);
+                        dt {
+                            width:120px;
+                            height:120px;
+                            padding:5px;
+                            background-color: #fff;
+                            margin:90px auto 30px;
+                            img {
+                                @extend .img;
+                            }
+                        }
+                    }
+                    &:hover  dl.hover-rotate {
+                        opacity: 1;
+                        transform: rotateY(0deg);
                     }
                 }
             }
@@ -295,6 +395,8 @@
                 padding-right:10px;
                 img {
                     @extend .img;
+                    width:100%;
+                    height: 100%;
                     &:hover {
                         @extend .hover-shadow;
                     }
