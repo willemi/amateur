@@ -4,6 +4,7 @@
 /******/ 		var chunkIds = data[0];
 /******/ 		var moreModules = data[1];
 /******/ 		var executeModules = data[2];
+/******/
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
@@ -20,6 +21,7 @@
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
@@ -93,17 +95,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -156,7 +173,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* WEBPACK VAR INJECTION */(function($) {\n\n__webpack_require__(/*! ../css/index.scss */ \"./src/resource/css/index.scss\");\n\n__webpack_require__(/*! ../css/swiper.css */ \"./src/resource/css/swiper.css\");\n\nvar util = __webpack_require__(/*! ./common/util */ \"./src/resource/js/common/util.js\");\nvar Swiper = __webpack_require__(/*! ./common/swiper.min */ \"./src/resource/js/common/swiper.min.js\");\n\nvar data = [{\n\t\"img\": \"resource/img/banner_01.jpg\",\n\t\"url\": \"#1\",\n\t\"title\": \"1111111111111\"\n}, {\n\t\"img\": \"resource/img/banner_01.jpg\",\n\t\"url\": \"#2\",\n\t\"title\": \"222222222\"\n}];\n\nvar $section1 = $(\".section1\");\nfunction bindEnds() {\n\tvar $doc = $(document);\n\tsetTimeout(function () {\n\t\t$(\"header\").hide();\n\t\t$section1.animate({\n\t\t\t\"height\": 0\n\t\t}, 1500);\n\t}, 5000);\n\tvar s = document.getElementsByClassName(\"waper\");\n\tdocument.addEventListener && document.addEventListener(\"scroll\", function (a) {\n\t\tfixModule(s);\n\t}), document.addEventListener && document.addEventListener(\"DOMMouseScroll\", function (a) {\n\t\tfixModule(s);\n\t}, !1);\n\t$doc.on(\"click\", \".playBtn\", function () {\n\t\tvar $this = $(this),\n\t\t    $video = $this.next(\"video\").get(0);\n\n\t\tif ($video.paused) {\n\t\t\t$this.hide();\n\t\t\t$video.play();\n\t\t}\n\t});\n}\n//background\nfunction fixModule(t) {\n\tfor (var a = $(window).scrollTop(), s = document.documentElement.clientHeight, e = 0; e < t.length - 1; e++) {\n\t\tvar i = t[e].offsetTop - 50;\n\t\tif (a + s >= i && a + s < i + s + 640) {\n\t\t\tvar n = 160 / (i + s + 640),\n\t\t\t    r = n * (a + s - i);\n\t\t\t$(t[e]).css(\"background-position\", \"center \" + (80 - r) + \"px\");\n\t\t}\n\t}\n}\nfunction banner() {\n\tvar html = \"\";\n\tfor (var i = 0, len = data.length; i < len; i++) {\n\t\thtml += '<div class=\"swiper-slide\"><a href=\"' + data[i].url + '\" style=\"background-image:url(' + data[i].img + ');background-size:cover;background-position:center center;\" title=\"' + data[i].title + '\"></a></div>';\n\t}\n\t$(\".swiper-wrapper\").html(html);\n\tseiper();\n}\nfunction seiper() {\n\tvar swiper = new Swiper('.swiper-container', {\n\t\tpagination: {\n\t\t\tel: '.swiper-pagination'\n\t\t},\n\t\tloop: true,\n\t\tautoplay: 1000\n\t});\n}\nfunction init() {\n\tbanner();\n\tvar windowH = $(window).height();\n\t$section1.height(windowH);\n\tsetTimeout(function () {\n\t\t$(\".totalTit\").addClass(\"active\");\n\t}, 500);\n\tbindEnds();\n}\ninit();\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/resource/js/index.js?");
+eval("/* WEBPACK VAR INJECTION */(function($) {\n\n__webpack_require__(/*! ../css/index.scss */ \"./src/resource/css/index.scss\");\n\n__webpack_require__(/*! ../css/swiper.css */ \"./src/resource/css/swiper.css\");\n\nvar util = __webpack_require__(/*! ./common/util */ \"./src/resource/js/common/util.js\");\nvar Swiper = __webpack_require__(/*! ./common/swiper.min */ \"./src/resource/js/common/swiper.min.js\");\n\nvar data = [{\n\t\"img\": \"resource/img/banner_01.jpg\",\n\t\"url\": \"#1\",\n\t\"title\": \"1111111111111\"\n}, {\n\t\"img\": \"resource/img/banner_01.jpg\",\n\t\"url\": \"#2\",\n\t\"title\": \"222222222\"\n}];\nvar $section1 = $(\".section1\");\nvar $header = $(\"header\");\nvar value = sessionStorage.getItem(\"key\");\nif (value) {\n\t$section1.hide();\n\t$header.hide();\n} else {\n\tconsole.log(value);\n\tsessionStorage.setItem(\"key\", \"value\");\n\tsetTimeout(function () {\n\t\t$header.hide();\n\t\t$section1.animate({\n\t\t\t\"height\": 0\n\t\t}, 1500);\n\t}, 5000);\n}\n\nfunction bindEnds() {\n\tvar $doc = $(document);\n\n\tvar s = document.getElementsByClassName(\"waper\");\n\tdocument.addEventListener && document.addEventListener(\"scroll\", function (a) {\n\t\tfixModule(s);\n\t}), document.addEventListener && document.addEventListener(\"DOMMouseScroll\", function (a) {\n\t\tfixModule(s);\n\t}, !1);\n\t$doc.on(\"click\", \".playBtn\", function () {\n\t\tvar $this = $(this),\n\t\t    $video = $this.next(\"video\").get(0);\n\n\t\tif ($video.paused) {\n\t\t\t$this.hide();\n\t\t\t$video.play();\n\t\t}\n\t});\n}\n//background\nfunction fixModule(t) {\n\tfor (var a = $(window).scrollTop(), s = document.documentElement.clientHeight, e = 0; e < t.length - 1; e++) {\n\t\tvar i = t[e].offsetTop - 50;\n\t\tif (a + s >= i && a + s < i + s + 640) {\n\t\t\tvar n = 160 / (i + s + 640),\n\t\t\t    r = n * (a + s - i);\n\t\t\t$(t[e]).css(\"background-position\", \"center \" + (80 - r) + \"px\");\n\t\t}\n\t}\n}\nfunction banner() {\n\tvar html = \"\";\n\tfor (var i = 0, len = data.length; i < len; i++) {\n\t\thtml += '<div class=\"swiper-slide\"><a href=\"' + data[i].url + '\" style=\"background-image:url(' + data[i].img + ');background-size:cover;background-position:center center;\" title=\"' + data[i].title + '\"></a></div>';\n\t}\n\t$(\".swiper-wrapper\").html(html);\n\tseiper();\n}\nfunction seiper() {\n\tvar swiper = new Swiper('.swiper-container', {\n\t\tpagination: {\n\t\t\tel: '.swiper-pagination'\n\t\t},\n\t\tloop: true,\n\t\tautoplay: 1000\n\t});\n}\nfunction init() {\n\tbanner();\n\tvar windowH = $(window).height();\n\t$section1.height(windowH);\n\tsetTimeout(function () {\n\t\t$(\".totalTit\").addClass(\"active\");\n\t}, 500);\n\tbindEnds();\n}\ninit();\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./src/resource/js/index.js?");
 
 /***/ })
 

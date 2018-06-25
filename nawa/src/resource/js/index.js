@@ -13,16 +13,27 @@ let data = [{
     "url": "#2",
     "title": "222222222"
 }]
-
 let $section1 = $(".section1");
-function bindEnds(){
-	let $doc = $(document);
+let $header = $("header");
+let value = sessionStorage.getItem("key"); 
+if(value){
+	$section1.hide();
+    $header.hide();
+}else{
+    console.log(value)
+	sessionStorage.setItem("key", "value"); 
 	setTimeout(function(){
-		$("header").hide();
+		$header.hide();
 		$section1.animate({
 			"height": 0
 		},1500)
 	},5000)
+}
+
+
+function bindEnds(){
+	let $doc = $(document);
+	
 	var s = document.getElementsByClassName("waper");
 	document.addEventListener && document.addEventListener("scroll", function(a) {
 		fixModule(s)
