@@ -136,6 +136,12 @@ function bindEvents(){
 			showMsg('选择权利来源！')
 		}
 	})
+	let $cont1 = $(".content-01"),
+		$cont2 = $(".content-02");
+	$doc.on("click", ".btn-adda", function(){
+		$cont1.hide();
+		$cont2.show();
+	})
 	//全选反选
 	$doc.on("click", ".batch", function(){
 		if($(this).hasClass("cut")){
@@ -162,7 +168,13 @@ function bindEvents(){
 		}
 	})
 	$doc.on("click", ".btn-ht", function(){
-		$(".htn").html(htTpl(data3));
+		let vla = $("#ht-name").val();
+		if(vla == 1){
+			$(".htn").html(htTpl(data3));
+		}else{
+			$(".htn").html('<button type="button" class="btn btn-primary">创建合同</button>');
+		}
+		
 		//util.pageinator("pageLimit2", "10", "url", tplData2);
 	})
 	$(".ipadd").on("click", ".btn-primary", function(){
@@ -184,6 +196,10 @@ function bindEvents(){
 			$main.hide();
 			$nextMain.show();
 		}
+	})
+	$doc.on("click", ".btn-xqu", function(){
+		$('#gengk-look').modal('hide');
+		$(".table-01").show();
 	})
 	$doc.on("click", ".pre-step", function(){
 		var $this = $(this);
@@ -324,6 +340,7 @@ function fileFun(){
 			console.log('删除回调', res);
 		}
 	});
+	
 }
 fileFun()
 

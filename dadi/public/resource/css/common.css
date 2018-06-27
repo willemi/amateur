@@ -10211,6 +10211,14 @@ button.close {
     line-height: 34px;
     text-align: left; }
 
+.btn-look a {
+  color: #fff !important; }
+
+.ip-list button.btn-primary {
+  margin-left: 15px; }
+  .ip-list button.btn-primary i {
+    color: #fff !important; }
+
 #gengk-ad .form-inline {
   padding-top: 0; }
 
