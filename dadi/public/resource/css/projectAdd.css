@@ -66,10 +66,10 @@ a {
   cursor: pointer; }
 
 /* 清除浮动 */
-.clearfix, .content .content-wrapper ul.step, .content .content-wrapper .right-title, .form-inline, .newly-added .row {
+.clearfix, .content .content-wrapper .right-title, ul.step, .form-inline, .newly-added .row {
   zoom: 1; }
 
-.clearfix:after, .content .content-wrapper ul.step:after, .content .content-wrapper .right-title:after, .form-inline:after, .newly-added .row:after {
+.clearfix:after, .content .content-wrapper .right-title:after, ul.step:after, .form-inline:after, .newly-added .row:after {
   content: "";
   display: block;
   clear: both;
@@ -234,33 +234,6 @@ html, body {
           font-size: 12px; }
     .content .content-wrapper input, .content .content-wrapper select, .content .content-wrapper .input-group {
       min-width: 60%; }
-    .content .content-wrapper ul.step {
-      background-color: #fff;
-      padding: 0 30px 20px; }
-      .content .content-wrapper ul.step li {
-        padding: 0 20px;
-        margin-top: 20px;
-        background-color: #dfdfdf;
-        position: relative;
-        height: 40px;
-        color: #fff;
-        font: 16px/40px "\5FAE\8F6F\96C5\9ED1";
-        text-align: center; }
-        .content .content-wrapper ul.step li:before, .content .content-wrapper ul.step li:after {
-          width: 0;
-          height: 0;
-          position: absolute;
-          top: 0;
-          content: '';
-          background-color: #dfdfdf; }
-        .content .content-wrapper ul.step li.step-left:before {
-          left: 0; }
-        .content .content-wrapper ul.step li.step-right:after {
-          right: 0; }
-        .content .content-wrapper ul.step li.active {
-          background-color: #4b70c1; }
-          .content .content-wrapper ul.step li.active:before, .content .content-wrapper ul.step li.active:after {
-            background-color: #4b70c1; }
     .content .content-wrapper .row.row-btn {
       position: relative;
       text-align: right;
@@ -332,6 +305,34 @@ html, body {
     .content .content-wrapper .quanli .btn-operation {
       width: 30%; }
 
+ul.step {
+  background-color: #fff;
+  padding: 0 30px 20px; }
+  ul.step li {
+    padding: 0 20px;
+    margin-top: 20px;
+    background-color: #dfdfdf;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font: 16px/40px "\5FAE\8F6F\96C5\9ED1";
+    text-align: center; }
+    ul.step li:before, ul.step li:after {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 0;
+      content: '';
+      background-color: #dfdfdf; }
+    ul.step li.step-left:before {
+      left: 0; }
+    ul.step li.step-right:after {
+      right: 0; }
+    ul.step li.active {
+      background-color: #4b70c1; }
+      ul.step li.active:before, ul.step li.active:after {
+        background-color: #4b70c1; }
+
 .messages {
   position: fixed;
   top: 50%;
@@ -346,25 +347,25 @@ html, body {
   display: none;
   z-index: 999999; }
 
-.b-lc, .content .content-wrapper ul.step li.step-left:after, .content .content-wrapper ul.step li.step-center:after {
+.b-lc, ul.step li.step-left:after, ul.step li.step-center:after {
   right: 0;
   border-top: 20px solid #fff;
   border-left: 20px solid #dfdfdf;
   border-bottom: 20px solid #fff; }
 
-.b-lc75, .content .content-wrapper ul.step li.active.step-left:after, .content .content-wrapper ul.step li.active.step-center:after {
+.b-lc75, ul.step li.active.step-left:after, ul.step li.active.step-center:after {
   right: 0;
   border-top: 20px solid #fff;
   border-left: 20px solid #4b70c1;
   border-bottom: 20px solid #fff; }
 
-.b-lf, .content .content-wrapper ul.step li.step-center:before, .content .content-wrapper ul.step li.step-right:before {
+.b-lf, ul.step li.step-center:before, ul.step li.step-right:before {
   left: 0;
   border-top: 20px solid #dfdfdf;
   border-left: 20px solid #fff;
   border-bottom: 20px solid #dfdfdf; }
 
-.b-lf75, .content .content-wrapper ul.step li.active.step-center:before, .content .content-wrapper ul.step li.active.step-right:before {
+.b-lf75, ul.step li.active.step-center:before, ul.step li.active.step-right:before {
   left: 0;
   border-top: 20px solid #4b70c1;
   border-left: 20px solid #fff;

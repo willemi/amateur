@@ -172,7 +172,7 @@ function bindEvents(){
 		if(vla == 1){
 			$(".htn").html(htTpl(data3));
 		}else{
-			$(".htn").html('<button type="button" class="btn btn-primary">创建合同</button>');
+			$(".htn").html('<a class="cjht" data-toggle="modal" data-target="#ht-tk">创建合同</a>');
 		}
 		
 		//util.pageinator("pageLimit2", "10", "url", tplData2);
@@ -184,6 +184,31 @@ function bindEvents(){
 		$('#Indexes').modal('hide');
 		//util.pageinator("pageLimit", "10", "url", tplData);
 	})
+	//下一步\提交
+	var $stepa = $(".stepa li");
+	$doc.on("click", ".next-stepa", function(){
+		var $this = $(this);
+		var $main = $this.parents(".main"),
+			$nextMain = $main.next(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$stepa.eq(++index).addClass("active").siblings().removeClass("active");
+			$main.hide();
+			$nextMain.show();
+		}
+	})
+	$doc.on("click", ".pre-stepa", function(){
+		var $this = $(this);
+		var $main = $this.parents(".main"),
+			$pretMain = $main.prev(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$stepa.eq(--index).addClass("active").siblings().removeClass("active");
+			$main.hide();
+			$pretMain.show();
+		}
+	})
+
 	//下一步\提交
 	var $step = $(".step li");
 	$doc.on("click", ".next-step", function(){
@@ -200,6 +225,10 @@ function bindEvents(){
 	$doc.on("click", ".btn-xqu", function(){
 		$('#gengk-look').modal('hide');
 		$(".table-01").show();
+	})
+	$doc.on("click",  ".btn-cjqr", function(){
+		$('#ht-tk').modal('hide');
+		$(".htn").html(htTpl(data3));
 	})
 	$doc.on("click", ".pre-step", function(){
 		var $this = $(this);
@@ -259,6 +288,10 @@ function bindEvents(){
 	//time
 	util.timepicker("datetimepicker");
 	util.timepicker("datetimepicker1");
+	util.timepicker("datetimepicker2");
+	util.timepicker("datetimepicker3");
+	util.timepicker("datetimepicker4");
+	util.timepicker("datetimepicker5");
 
 	util.timepicker("datetimeStart", "datetimeEnd");	
 	// $('#pageLimit').bootstrapPaginator({    
@@ -295,6 +328,9 @@ function bindEvents(){
 	util.pageinator("pageLimit1", "10", "url", tplData1);
 	util.pageinator("pageLimit2", "10", "url", tplData2);
 	util.pageinator("pageLimit3", "10", "url", tplData3);
+	util.pageinator("pageLimit4", "10", "url", tplData);
+	util.pageinator("pageLimit5", "10", "url", tplData);
+	util.pageinator("pageLimit6", "10", "url", tplData);
 	
 	
 }

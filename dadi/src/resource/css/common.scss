@@ -326,78 +326,7 @@ html, body {
 		input, select, .input-group {
 			min-width:60%;
 		}		
-		ul.step {
-			@extend .clearfix;
-			background-color:#fff;
-			padding:0 30px 20px;
-			li {
-				padding:0 20px;
-				margin-top:20px;
-				background-color:$c223;
-				position: relative;
-				height:40px;
-				color:#fff;
-				font:16px/40px "微软雅黑";
-				// text-indent:50px;
-				text-align: center;
-				&:before, &:after {
-					width: 0;
-					height: 0;
-					position: absolute;
-					top:0;
-					content:'';
-					background-color: $c223;
-				}				
-				&.step-left {
-					&:before {
-						left:0;
-					}
-					&:after {
-						@extend .b-lc;
-					}
-				}
-				&.step-center {					
-					&:before {
-						@extend .b-lf;
-					}
-					&:after {
-						@extend .b-lc;
-					}
-				}
-				&.step-right {					
-					&:before {
-						@extend .b-lf;
-					}
-					&:after {
-						right:0;
-					}
-				}
-				&.active {
-					background-color: $c75;
-					&:before, &:after {
-						background-color: $c75;						
-					}
-					&.step-left {
-						&:after {
-							@extend .b-lc75;
-						}
-					}
-					&.step-center {					
-						&:before {
-							@extend .b-lf75;
-						}
-						&:after {
-							@extend .b-lc75;
-						}
-					}
-					&.step-right {					
-						&:before {
-							@extend .b-lf75;
-						}
-					}
-				}
-			}
-        }
+		
 		.row.row-btn {
 			position: relative;
 			text-align: right;
@@ -508,6 +437,78 @@ html, body {
 			}
 			.btn-operation {
 				width:30%;
+			}
+		}
+	}
+}
+ul.step {
+	@extend .clearfix;
+	background-color:#fff;
+	padding:0 30px 20px;
+	li {
+		padding:0 20px;
+		margin-top:20px;
+		background-color:$c223;
+		position: relative;
+		height:40px;
+		color:#fff;
+		font:16px/40px "微软雅黑";
+		// text-indent:50px;
+		text-align: center;
+		&:before, &:after {
+			width: 0;
+			height: 0;
+			position: absolute;
+			top:0;
+			content:'';
+			background-color: $c223;
+		}				
+		&.step-left {
+			&:before {
+				left:0;
+			}
+			&:after {
+				@extend .b-lc;
+			}
+		}
+		&.step-center {					
+			&:before {
+				@extend .b-lf;
+			}
+			&:after {
+				@extend .b-lc;
+			}
+		}
+		&.step-right {					
+			&:before {
+				@extend .b-lf;
+			}
+			&:after {
+				right:0;
+			}
+		}
+		&.active {
+			background-color: $c75;
+			&:before, &:after {
+				background-color: $c75;						
+			}
+			&.step-left {
+				&:after {
+					@extend .b-lc75;
+				}
+			}
+			&.step-center {					
+				&:before {
+					@extend .b-lf75;
+				}
+				&:after {
+					@extend .b-lc75;
+				}
+			}
+			&.step-right {					
+				&:before {
+					@extend .b-lf75;
+				}
 			}
 		}
 	}
