@@ -152,6 +152,83 @@ html, body {
 .table {
   margin: 0; }
 
+.ipadd-look .modal-dialog {
+  width: 96% !important; }
+
+.cjht {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4; }
+
+.cjht:hover {
+  color: #fff; }
+
+.ht-tk .modal-dialog {
+  width: 96% !important;
+  height: 96% !important; }
+  .ht-tk .modal-dialog .modal-content {
+    height: 100%; }
+    .ht-tk .modal-dialog .modal-content .modal-body {
+      height: 80%;
+      overflow: auto; }
+      .ht-tk .modal-dialog .modal-content .modal-body .row-btn {
+        text-align: right; }
+      .ht-tk .modal-dialog .modal-content .modal-body .right-ht {
+        float: right; }
+  .ht-tk .modal-dialog .st-li li {
+    width: 33.3333%;
+    float: left; }
+  .ht-tk .modal-dialog .aasd li {
+    width: 50%; }
+  .ht-tk .modal-dialog .basics {
+    margin-top: 20px; }
+    .ht-tk .modal-dialog .basics .form-inline {
+      padding: 50px 30px; }
+  .ht-tk .modal-dialog .sign label {
+    width: 100px; }
+  .ht-tk .modal-dialog .sign textarea.form-control {
+    width: 83%; }
+  .ht-tk .modal-dialog .contract-party label {
+    width: 120px; }
+  .ht-tk .modal-dialog .contract-party textarea.form-control {
+    width: 83%; }
+  .ht-tk .modal-dialog .contract-party .border {
+    position: relative; }
+    .ht-tk .modal-dialog .contract-party .border:before {
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      top: 15px;
+      background-color: #ccc; }
+  .ht-tk .modal-dialog .set-up label {
+    width: 120px; }
+  .ht-tk .modal-dialog .set-up textarea.form-control {
+    width: 83%; }
+  .ht-tk .modal-dialog .sign, .ht-tk .modal-dialog .contract-party, .ht-tk .modal-dialog .set-up, .ht-tk .modal-dialog .contract-a {
+    display: none; }
+
 .content {
   margin-left: 210px;
   height: 100%; }

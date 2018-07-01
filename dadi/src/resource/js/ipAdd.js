@@ -208,6 +208,9 @@ function bindEvents(){
 			$pretMain.show();
 		}
 	})
+	// $doc.on("click", ".ip-click", function(){
+	// 	location.href = "ipdetails.html"
+	// })
 
 	//下一步\提交
 	var $step = $(".step li");

@@ -95,10 +95,13 @@
                 width:90%;
             }
         }
-        .participant, .resources {
+        .resources {
             display: none;
         }
     }
+}
+.tr-hide, .nes-table, .ht-1, .content-02 {
+    display: none;
 }
 .participant-modal {
     label {

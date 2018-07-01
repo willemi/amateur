@@ -39,10 +39,51 @@
 							<th>权利主体</th>
 							<th>权利来源</th>
 							<th>权利状况</th>
+							<th>审核状态</th>
 							<th>操作</th>
 						</tr>
 					</thead>
-					<tbody class="tabel-cont"><tr><th scope="row">孔子</th><td>电影</td><td>大地之作有点公司</td><td>采购</td><td>出版发行</td><td><button class="btn btn-primary btn-look"><a href="ipdetails.html">查看</a></button></td></tr><tr><th scope="row">孔子</th><td>电影1</td><td>大地之作有点公司1</td><td>采购1</td><td>出版发行1</td><td><button class="btn btn-primary btn-look">查看</button></td></tr></tbody>
+					<tbody class="tabel-cont">
+						<tr>
+							<th scope="row"><a href="ipdetails.html">孔子</a></th>
+							<td>电影</td>
+							<td>大地之作有点公司</td>
+							<td>采购</td>
+							<td>出版发行</td>
+							<td>待审核</td>
+							<td>
+								<button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+								<button class="btn btn-primary">修改</button>
+								<button class="btn btn-default">删除</button>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="ipdetails.html">孔子</a></th>
+							<td>电影</td>
+							<td>大地之作有点公司</td>
+							<td>采购</td>
+							<td>出版发行</td>
+							<td>已通过</td>
+							<td>
+								<button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+								<button class="btn btn-primary">修改</button>
+								<button class="btn btn-default">删除</button>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><a href="ipdetails.html">孔子</a></th>
+							<td>电影</td>
+							<td>大地之作有点公司</td>
+							<td>采购</td>
+							<td>出版发行</td>
+							<td>未通过</td>
+							<td>
+								<button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+								<button class="btn btn-primary">修改</button>
+								<button class="btn btn-default">删除</button>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 				<div id="example" class="example">
 					<ul id="pageLimit"></ul>
@@ -1103,6 +1144,42 @@
 						<div class="form-group col-sm-12 col-md-12 col-lg-12">
 							<label for="exampleInputEmail2">合同备注</label>
 							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" style="display:blo6ck" id="dit-bg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">权利变更</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-inline">
+					<div class="row col-md-12 col-lg-12">
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">原权利人</label>
+							<input type="text" class="form-control" id="" disabled placeholder="张三">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">原被授权人</label>
+							<input type="text" class="form-control" id="" disabled placeholder="张三">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputEmail2">新授权人</label>
+							<input type="text" class="form-control" id="" placeholder="请输入新授权人">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">新被授权人</label>
+							<input type="text" class="form-control" id="" placeholder="请输入新被授权人">
 						</div>
 					</div>
 				</form>

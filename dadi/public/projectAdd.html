@@ -121,297 +121,354 @@
 <!--cont start-->
 <div id="content" class="content contractAdd">
 	<div class="content-wrapper">
-		<h3>大地传播</h3>
-		<ul class="step">
-			<li class="col-md-4 col-lg-4 step-left active">1.产品信息</li>
-			<li class="col-md-4 col-lg-4 step-center ">2.产品资源信息</li>
-			<li class="col-md-4 col-lg-4 step-center ">3.合同及附件信息</li>
-        </ul>
-        <div>
-            <!--立项信息 start-->
-            <div class="set-project main">
-                <form class="form-inline">
-                    <div class="row col-md-12 col-lg-12">
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">产品编号</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">产品名称</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputEmail2">产品类型</label>
-                            <select class="form-control">
-                                <option>产品类型</option>
-                                <option>产品类型2</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">产品别名</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputEmail2">首发日期</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>                        
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">产品周期</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">产品金额</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">报备登记时间</label>
-                            <div class='input-group date' id='datetimepicker1'>  
-                                <input type='text' class="form-control" />  
-                                <span class="input-group-addon">  
-                                    <span class="glyphicon glyphicon-calendar"></span>  
-                                </span>  
-                            </div> 
-                        </div>
-                        <div class="form-group col-md-12 col-lg-12">
-                            <label for="exampleInputEmail2">报备登记机构</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>                    
-                    </div>                		
-                </form>
-                <!-- <div class="right-title">
-                    <h3 class="col-md-2 col-lg-2">立项附件</h3>
-                    <div class="right-ht col-md-10 col-lg-10">				
-                        <div class="btn-operation">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-                            <button type="button" class="btn btn-default">删除</button>					
-                        </div>
-                    </div>				
+        <h3>大地传播</h3>
+        <div class="content-01">
+            <div class="ip-list">
+                <div class="title-h3">
+                    <h3>产品授权管理列表</h3>
+                    <button type="button" class="btn btn-primary btn-adda"><i class="glyphicon glyphicon-plus"></i>新增</button>
+                    <button type="button" class="btn btn-default">导出数据<i class="glyphicon glyphicon-download-alt"></i></button>
                 </div>
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th class="th"><input type="checkbox" name="">序号</th>
-                            <th>附件名称</th>
-                            <th>附件类型</th>
-                            <th>附件大小</th>
-                            <th>上传日期</th>
-                            <th>备注</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="th" scope="row"><input type="checkbox" name="">1</th>
-                            <td>音乐作品登记</td>
-                            <td>JPG</td>
-                            <td>10.23MB</td>
-                            <td>2018-12-23 10:55</td>
-                            <td>备注备注备注备注备注备注备注备注备注</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="example" class="example">
-                    <ul id="pageLimit1"></ul>
-                </div> -->
-                <div class="row row-btn col-md-pull-1">				
-                    <!-- <button type="button" class="btn btn-default">重置</button> -->                
-                    <button type="button" class="btn btn-primary next-step">下一步</button>
-                </div>			
-            </div>
-            <!--立项信息 end-->
-            <!--项目参与方信息 start-->
-            <div class="participant main">
-                <div class="right-title">
-                    <h3 class="col-md-2 col-lg-2">已用原始库内作品</h3>
-                    <div class="right-ht col-md-10 col-lg-10">				
-                        <div class="btn-operation">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes"><i class="glyphicon glyphicon-plus"></i>引用原始库内作品</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newly-added"><i class="glyphicon glyphicon-plus"></i>创建产品信息</button>		
-                        </div>
-                    </div>				
-                </div>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th class="th"><input type="checkbox" name="">序号</th>
-                            <th>作品ID</th>
-                            <th>作品名称</th>
-                            <th>作品类型</th>
-                            <th>授权人</th>
-                            <th>被授权人</th>
-                            <th>授权权利</th>
-                            <th>授权时间</th>
-                            <th>授权方式</th>
-                            <th>授权地域</th>
-                            <th>授权语言</th>
-                            <th>转授权</th>
-                            <th>维权权利</th>
-                            <th>使用渠道限制</th>
-                            <th>使用次数</th>
+                            <th>资源名称</th>
+                            <th>资源类型</th>
+                            <th>权利主体</th>
+                            <th>权利来源</th>
+                            <th>权利状况</th>
+                            <th>审核状态</th>
                             <th>操作</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tabel-cont">
                         <tr>
-                            <th class="th" scope="row"><input type="checkbox" name="">1</th>
-                            <td>QLX20102020202</td>
-                            <td>七里香</td>
-                            <td>音乐</td>
-                            <td>杰威尔音乐</td>
-                            <td>大地影视</td>
-                            <td>信息网络传播权</td>
-                            <td>自音乐首播之日起一年</td>
-                            <td>非独家授权</td>
-                            <td>中国大陆不含港澳台</td>
-                            <td>中文、英文</td>
-                            <td>是</td>
-                            <td>是</td>
-                            <td>是，仅限移动终端</td>
-                            <td>无限制</td>
-                            <td>                                
-                                <button type="button" class="btn btn-default">查看</button>
-                                <button type="button" class="btn btn-default">删除</button>
+                            <th scope="row"><a href="ipdetails.html">孔子</a></th>
+                            <td>电影</td>
+                            <td>大地之作有点公司</td>
+                            <td>采购</td>
+                            <td>出版发行</td>
+                            <td>待审核</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+                                <button class="btn btn-primary">修改</button>
+                                <button class="btn btn-default">删除</button>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
-                <div id="example" class="example">
-                    <ul id="pageLimit1"></ul>
-                </div>
-                <div class="row row-btn col-md-pull-1">				
-                    <!-- <button type="button" class="btn btn-default">重置</button> -->
-                    <button type="button" class="btn btn-default pre-step">上一步</button>
-                    <button type="button" class="btn btn-primary next-step">下一步</button>
-                </div>	
-            </div>
-            <!--项目参与方信息 end-->
-            <!--项目资源信息 start-->
-            <div class="resources main">
-                <div class="row bcf">
-                    <ul id="myTab" class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab">梗概</a></li>
-                        <li><a href="#wz" data-toggle="tab">文字</a></li>
-                        <li><a href="#yy" data-toggle="tab">音乐</a></li>
-                        <li><a href="#ms" data-toggle="tab">美术</a></li>
-                        <li><a href="#st" data-toggle="tab">试听</a></li>
-                        <li><a href="#zc" data-toggle="tab">主创</a></li>
-                    </ul>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes">查询引用</button>
-                </div>
-                <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade in active" id="home">
-                        <p>暂无信息，请添加查询引用1</p>
-                    </div>
-                    <div class="tab-pane fade" id="wz">
-                        <p>暂无信息，请添加查询引用2</p>
-                    </div>
-                    <div class="tab-pane fade" id="yy">
-                        <p>暂无信息，请添加查询引用3</p>
-                    </div>
-                    <div class="tab-pane fade" id="ms">
-                        <p>暂无信息，请添加查询引用4</p>
-                    </div>
-                    <div class="tab-pane fade" id="st">
-                        <p>暂无信息，请添加查询引用5</p>
-                    </div>
-                    <div class="tab-pane fade" id="zc">
-                        <p>暂无信息，请添加查询引用6</p>
-                    </div>
-                </div>
-                <form class="form-inline">
-                    <div class="row col-md-12 col-lg-12">
-                        <div class="form-group col-md-3 col-lg-3">
-                            <label for="exampleInputName2">梗概名称</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                        </div>
-                        <div class="form-group col-md-3 col-lg-3">
-                            <label for="exampleInputName2">梗概内容</label>
-                            <select class="form-control">
-                                <option>有</option>
-                                <option>无</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3 col-lg-3">
-                            <label for="exampleInputEmail2">梗概题材</label>
-                            <select class="form-control">
-                                <option>有</option>
-                                <option>无</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3 col-lg-3">
-                            <label for="exampleInputName2">梗概来源</label>
-                            <select class="form-control">
-                                <option>有</option>
-                                <option>无</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3 col-lg-3">
-                            <label for="exampleInputName2">梗概版本</label>
-                            <select class="form-control">
-                                <option>有</option>
-                                <option>无</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3 col-lg-3">
-                            <label for="exampleInputEmail2">梗概日期</label>
-                            <div class='input-group date' id='datetimepicker5'>  
-                                <input type='text' class="form-control" />  
-                                <span class="input-group-addon">  
-                                    <span class="glyphicon glyphicon-calendar"></span>  
-                                </span>  
-                            </div> 
-                        </div>
-                        <div class="form-group col-md-12 col-lg-12">
-                            <label for="exampleInputEmail2">梗概介绍</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                    </div>
-                </form>
-                <div class="right-title">
-                    <h3 class="col-md-2 col-lg-2">产品附件</h3>
-                    <div class="right-ht col-md-10 col-lg-10">				
-                        <div class="btn-operation">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-                            <button type="button" class="btn btn-default">删除</button>					
-                        </div>
-                    </div>				
-                </div>
-                <table class="table table-hover">
-                    <thead>
                         <tr>
-                            <th><input type="checkbox" name="">序号</th>
-                            <th>附件名称</th>
-                            <th>附件类型</th>
-                            <th>附件大小</th>
-                            <th>上传日期</th>
-                            <th>备注</th>
+                            <th scope="row"><a href="ipdetails.html">孔子</a></th>
+                            <td>电影</td>
+                            <td>大地之作有点公司</td>
+                            <td>采购</td>
+                            <td>出版发行</td>
+                            <td>已通过</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+                                <button class="btn btn-primary">修改</button>
+                                <button class="btn btn-default">删除</button>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
                         <tr>
-                            <th scope="row"><input type="checkbox" name="">1</th>
-                            <td>音乐作品登记</td>
-                            <td>JPG</td>
-                            <td>10.23MB</td>
-                            <td>2018-12-23 10:55</td>
-                            <td>备注备注备注备注备注备注备注备注备注</td>
+                            <th scope="row"><a href="ipdetails.html">孔子</a></th>
+                            <td>电影</td>
+                            <td>大地之作有点公司</td>
+                            <td>采购</td>
+                            <td>出版发行</td>
+                            <td>未通过</td>
+                            <td>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+                                <button class="btn btn-primary">修改</button>
+                                <button class="btn btn-default">删除</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
                 <div id="example" class="example">
                     <ul id="pageLimit"></ul>
                 </div>
-                <div class="row row-btn col-md-pull-1">				
-                    <!-- <button type="button" class="btn btn-default">重置</button> -->
-                    <button type="button" class="btn btn-default pre-step">上一步</button>
-                    <button type="button" class="btn btn-primary">提交</button>
-                </div>	
             </div>
-            <!--项目资源信息 end-->
+        </div>
+		<div class="content-02">
+            <ul class="step">
+                <li class="col-md-6 col-lg-6 step-left active">1.产品资源信息</li>
+                <li class="col-md-6 col-lg-6 step-center ">2.合同及附件信息</li>
+            </ul>
+            <div>
+                <!--项目参与方信息 start-->
+                <div class="participant main">
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">已用原始库内作品</h3>
+                        <div class="right-ht col-md-10 col-lg-10">				
+                            <div class="btn-operation">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes"><i class="glyphicon glyphicon-plus"></i>引用原始库内作品</button>
+                                <button type="button" class="btn btn-default bnt-yy" ><i class="glyphicon glyphicon-plus"></i>创建产品信息</button>		
+                                <!-- data-toggle="modal" data-target="#newly-added" -->
+                            </div>
+                        </div>				
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="th"><input type="checkbox" name="">序号</th>
+                                <th>作品ID</th>
+                                <th>作品名称</th>
+                                <th>作品类型</th>
+                                <th>授权人</th>
+                                <th>被授权人</th>
+                                <th>授权权利</th>
+                                <th>授权时间</th>
+                                <th>授权方式</th>
+                                <th>授权地域</th>
+                                <th>授权语言</th>
+                                <th>转授权</th>
+                                <th>维权权利</th>
+                                <th>使用渠道限制</th>
+                                <th>使用次数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tr-hide">
+                                <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                <td>QLX20102020202</td>
+                                <td>七里香</td>
+                                <td>音乐</td>
+                                <td>杰威尔音乐</td>
+                                <td>大地影视</td>
+                                <td>信息网络传播权</td>
+                                <td>自音乐首播之日起一年</td>
+                                <td>非独家授权</td>
+                                <td>中国大陆不含港澳台</td>
+                                <td>中文、英文</td>
+                                <td>是</td>
+                                <td>是</td>
+                                <td>是，仅限移动终端</td>
+                                <td>无限制</td>
+                                <td>                                
+                                    <button type="button" class="btn btn-default">查看</button>
+                                    <button type="button" class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="example" class="example">
+                        <ul id="pageLimit1"></ul>
+                    </div>
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">新作品信息</h3>                        		
+                    </div>
+                    <table class="table table-hover nes-table">
+                        <thead>
+                            <tr>
+                                <th class="th">序号</th>
+                                <th>作品ID</th>
+                                <th>作品名称</th>
+                                <th>作品类型</th>
+                                <th>授权人</th>
+                                <th>被授权人</th>
+                                <th>授权权利</th>
+                                <th>授权时间</th>
+                                <th>授权方式</th>
+                                <th>授权地域</th>
+                                <th>授权语言</th>
+                                <th>转授权</th>
+                                <th>维权权利</th>
+                                <th>使用渠道限制</th>
+                                <th>使用次数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                <td>QLX20102020202</td>
+                                <td>七里香</td>
+                                <td>音乐</td>
+                                <td>杰威尔音乐</td>
+                                <td>大地影视</td>
+                                <td>信息网络传播权</td>
+                                <td>自音乐首播之日起一年</td>
+                                <td>非独家授权</td>
+                                <td>中国大陆不含港澳台</td>
+                                <td>中文、英文</td>
+                                <td>是</td>
+                                <td>是</td>
+                                <td>是，仅限移动终端</td>
+                                <td>无限制</td>
+                                <td>                                
+                                    <button type="button" class="btn btn-default">查看</button>
+                                    <button type="button" class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row row-btn col-md-pull-1">
+                        <button type="button" class="btn btn-primary next-step">下一步</button>
+                    </div>	
+                </div>
+                <!--项目参与方信息 end-->
+                <!--项目资源信息 start-->
+                <div class="resources main">
+                    <!-- <div class="row bcf">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active"><a href="#home" data-toggle="tab">梗概</a></li>
+                            <li><a href="#wz" data-toggle="tab">文字</a></li>
+                            <li><a href="#yy" data-toggle="tab">音乐</a></li>
+                            <li><a href="#ms" data-toggle="tab">美术</a></li>
+                            <li><a href="#st" data-toggle="tab">试听</a></li>
+                            <li><a href="#zc" data-toggle="tab">主创</a></li>
+                        </ul>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes">查询引用</button>
+                    </div>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <p>暂无信息，请添加查询引用1</p>
+                        </div>
+                        <div class="tab-pane fade" id="wz">
+                            <p>暂无信息，请添加查询引用2</p>
+                        </div>
+                        <div class="tab-pane fade" id="yy">
+                            <p>暂无信息，请添加查询引用3</p>
+                        </div>
+                        <div class="tab-pane fade" id="ms">
+                            <p>暂无信息，请添加查询引用4</p>
+                        </div>
+                        <div class="tab-pane fade" id="st">
+                            <p>暂无信息，请添加查询引用5</p>
+                        </div>
+                        <div class="tab-pane fade" id="zc">
+                            <p>暂无信息，请添加查询引用6</p>
+                        </div>
+                    </div>
+                    <form class="form-inline">
+                        <div class="row col-md-12 col-lg-12">
+                            <div class="form-group col-md-3 col-lg-3">
+                                <label for="exampleInputName2">梗概名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-3 col-lg-3">
+                                <label for="exampleInputName2">梗概内容</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 col-lg-3">
+                                <label for="exampleInputEmail2">梗概题材</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 col-lg-3">
+                                <label for="exampleInputName2">梗概来源</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 col-lg-3">
+                                <label for="exampleInputName2">梗概版本</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3 col-lg-3">
+                                <label for="exampleInputEmail2">梗概日期</label>
+                                <div class='input-group date' id='datetimepicker5'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="exampleInputEmail2">梗概介绍</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form> -->
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">产品合同信息</h3>
+                        <div class="right-ht col-md-10 col-lg-10">				
+                            <div class="btn-operation">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes1"><i class="glyphicon glyphicon-plus"></i>关联合同</button>
+                            </div>
+                        </div>				
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="">序号</th>
+                                <th>合同编号</th>
+                                <th>合同名称</th>
+                                <th>签约日期</th>
+                                <th>合同主体</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><input type="checkbox" name="">1</th>
+                                <td>XXXXXXX189675456WSPD</td>
+                                <td>七里香》2018XXX采购合同</td>
+                                <td>2019-08-23</td>
+                                <td>大地院线</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-look">查看详情</button>
+                                    <button type="button" class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">产品附件</h3>
+                        <div class="right-ht col-md-10 col-lg-10">				
+                            <div class="btn-operation">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
+                                <button type="button" class="btn btn-default">删除</button>					
+                            </div>
+                        </div>				
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="">序号</th>
+                                <th>附件名称</th>
+                                <th>附件类型</th>
+                                <th>附件大小</th>
+                                <th>上传日期</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><input type="checkbox" name="">1</th>
+                                <td>音乐作品登记</td>
+                                <td>JPG</td>
+                                <td>10.23MB</td>
+                                <td>2018-12-23 10:55</td>
+                                <td>备注备注备注备注备注备注备注备注备注</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="example" class="example">
+                        <ul id="pageLimit"></ul>
+                    </div>
+                    <div class="row row-btn col-md-pull-1">				
+                        <!-- <button type="button" class="btn btn-default">重置</button> -->
+                        <button type="button" class="btn btn-default pre-step">上一步</button>
+                        <button type="button" class="btn btn-primary">提交</button>
+                    </div>	
+                </div>
+                <!--项目资源信息 end-->
+            </div>
         </div>
 	</div>
 </div>
 <!--file-->
-<div class="modal fade" style="display:blo0ck" id="file-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" style="display:blo0ck; z-index:9999" id="file-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -461,7 +518,7 @@
                             <th>维权权利</th>
                             <th>使用渠道限制</th>
                             <th>使用次数</th>
-                            <th>操作</th>
+                            <!-- <th>操作</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -481,9 +538,9 @@
                             <td>是</td>
                             <td>是，仅限移动终端</td>
                             <td>无限制</td>
-                            <td>                                
+                            <!-- <td>                                
                                 <button type="button" class="btn btn-default">查看</button>
-                            </td>
+                            </td> -->
                         </tr>
                         <tr>
                             <th class="th" scope="row"><input type="checkbox" name="">1</th>
@@ -501,8 +558,59 @@
                             <td>是</td>
                             <td>是，仅限移动终端</td>
                             <td>无限制</td>
-                            <td>                                
+                            <!-- <td>                                
                                 <button type="button" class="btn btn-default">查看</button>
+                            </td> -->
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="example" class="example">
+                    <ul id="pageLimit-Indexes"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">				
+                <button type="button" class="btn btn-primary btn-index">引用</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<div class="modal fade Indexes1" id="Indexes1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">选择合同</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="ht-name" style="width:100%!important" placeholder="1有，2无">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-s" type="button">Go!</button>
+                        </span>
+                    </div>                  
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="th">合同编号</th>
+                            <th>合同名称</th>
+                            <th>签约时间</th>
+                            <th>生效日期</th>
+                            <th>失效日期</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ht-1">
+                        <tr>
+                            <th class="th" scope="row"><input type="checkbox" name="">XXXXXXX189675456WSPD</th>
+                            <td>《嗨！看电视》2018XXX采购合同</td>
+                            <td>2018-03-23</td>
+                            <td>2018-03-23</td>
+                            <td>2018-03-23</td>
+                            <td>                                
+                                <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#gengk-look">查看</button>
                             </td>
                         </tr>
                     </tbody>
@@ -512,11 +620,319 @@
                 </div>
             </div>
             <div class="modal-footer">				
-                <button type="button" class="btn btn-primary">引用</button>
+                <button type="button" class="btn btn-primary btn-index1">引用</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
+</div>
+<div class="modal fade" style="display:blo6ck" id="dit-bg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">权利变更</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="exampleInputName2">原权利人</label>
+                            <input type="text" class="form-control" id="" disabled placeholder="张三">
+                        </div>
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="exampleInputName2">原被授权人</label>
+                            <input type="text" class="form-control" id="" disabled placeholder="张三">
+                        </div>
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="exampleInputEmail2">新授权人</label>
+                            <input type="text" class="form-control" id="" placeholder="请输入新授权人">
+                        </div>
+                        <div class="form-group col-md-4 col-lg-4">
+                            <label for="exampleInputName2">新被授权人</label>
+                            <input type="text" class="form-control" id="" placeholder="请输入新被授权人">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">				
+                <button type="button" class="btn btn-primary">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade gengk-look " style="display:bl9ock;z-index:1051" id="gengk-look" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">合同详情</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <h4>基础信息</h4>
+                    <div class="row-cont">
+                        <ul>
+                            <li>
+                                <label>合同编号</label>
+                                <span>XXXXXXX189675456WSPD</span>
+                            </li>
+                            <li>
+                                <label>合同主体</label>
+                                <span>XXXXXXX</span>
+                            </li>
+                            <li>
+                                <label>呈文部门</label>
+                                <span>XXXXX部门</span>
+                            </li>
+                            <li>
+                                <label>合同名称</label>
+                                <span>XXXX合同</span>
+                            </li>
+                            <li>
+                                <label>合同金额</label>
+                                <span>1000元</span>
+                            </li>
+                            <li>
+                                <label>签约日期</label>
+                                <span>2017-06-10</span>
+                            </li>
+                            <li>
+                                <label>生效日期</label>
+                                <span>2017-06-10</span>
+                            </li>
+                            <li>
+                                <label>失效日期</label>
+                                <span>2017-06-10</span>
+                            </li>
+                            <li>
+                                <label>有效期</label>
+                                <span>2年</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4>签订信息</h4>
+                    <div class="row-cont">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>剧本名称</th>
+                                    <th>影视剧名称</th>
+                                    <th>集数/期数</th>
+                                    <th>原著</th>
+                                    <th>支付方式</th>
+                                    <th>支付计划</th>
+                                    <th>交付标准及方式</th>
+                                    <th>版权分成</th>
+                                    <th>合同备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>名称</td>
+                                    <td>名称</td>
+                                    <td>5</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXXXXXXXXXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td>名称</td>
+                                    <td>名称</td>
+                                    <td>5</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXX</td>
+                                    <td>XXXXXXXXXXXXXXXXXXXX</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <h4>权利信息</h4>
+                    <div class="row-cont">
+                        <div class="table-cont">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <!-- <th>权利来源</th>
+                                        <th>权利来源</th>
+                                        <th>权利来源主体</th> -->
+                                        <th>拥有权利内容</th>
+                                        <th>我方权利比重</th>
+                                        <th>是否专有</th>
+                                        <th>有无维权权利</th>
+                                        <th>有无转授权权利</th>
+                                        <th>有无合同</th>
+                                        <th>权利类型</th>
+                                        <th>授权许可使用方式</th>
+                                        <th>授权许可使用渠道</th>
+                                        <th>授权许可使用地域</th>
+                                        <th>授权许可使用次数</th>
+                                        <th>授权许可使用语言</th>
+                                        <th>授权许可使用开始日期</th>
+                                        <th>授权许可使用结束日期</th>
+                                        <th>合同权利描述</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="qlnews">
+                                    <tr> 
+                                        <!-- <td scope="row">自制</td> 
+                                        <td>XXX</td> 
+                                        <td>这里是内容</td>  -->
+                                        <td>备注备注备注备注备注备注备注备注备注</td> 
+                                        <td>是</td> 
+                                        <td>有</td> 
+                                        <td>有</td> 
+                                        <td>有</td> 
+                                        <td>复制权</td> 
+                                        <td>无限制</td> 
+                                        <td>无限制</td> 
+                                        <td>无限制</td> 
+                                        <td>1</td> 
+                                        <td>中文</td> 
+                                        <td>1990-10-22</td> 
+                                        <td>1990-10-22</td> 
+                                        <td>这里是描述这里是描述</td> 
+                                        <td>备注备注备注备注备注备注备注备注备注</td>
+                                    </tr>
+                                </tbody>
+                                <!-- <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>作品名称</th>
+                                        <th>集数/期数</th>
+                                        <th>单集价格</th>
+                                        <th>授权人</th>
+                                        <th>被授权人</th>
+                                        <th>产品形态</th>
+                                        <th>授权权利</th>
+                                        <th>授权权利描述（选填）</th>
+                                        <th>授权比例</th>
+                                        <th>授权价格</th>
+                                        <th>授权时间</th>
+                                        <th>授权方式</th>
+                                        <th>授权地域</th>
+                                        <th>授权语言</th>
+                                        <th>是否可以转授权</th>
+                                        <th>是否有维权权利</th>
+                                        <th>使用渠道限制</th>
+                                        <th>使用次数限制</th>
+                                        <th>合同权利描述</th>
+                                        <th>备注</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="qlnews">
+                                    <tr> 
+                                        <td scope="row"><input type="checkbox" name="a1">1</td> 
+                                        <td>孔子</td> 
+                                        <td>1</td> 
+                                        <td>50000</td> 
+                                        <td>北京英皇</td> 
+                                        <td>北京大地</td> 
+                                        <td>直接使用</td> 
+                                        <td>改编权</td> 
+                                        <td>无</td> 
+                                        <td>40%</td> 
+                                        <td>5000元人民币</td> 
+                                        <td>自网站上线之日起1年内</td> 
+                                        <td>独家授权</td> 
+                                        <td>中国大陆（含港澳台）</td> 
+                                        <td>中文、英文</td> 
+                                        <td>是</td> 
+                                        <td>是</td> 
+                                        <td>是，仅限移动终端</td> 
+                                        <td>无限制</td> 
+                                        <td>合同内文本描述</td> 
+                                        <td>备注备注备注备注备注备注备注备注备注</td>
+                                    </tr>
+                                </tbody> -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4>签约方信息</h4>
+                    <div class="row-cont">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>签约方</th>
+                                    <th>签约方类型</th>
+                                    <th>签约方名称</th>
+                                    <th>签约方电话</th>
+                                    <th>签约方联系人</th>
+                                    <th>签约方地址</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>XXX签约方</td>
+                                    <td>名称</td>
+                                    <td>5</td>
+                                    <td>13456789064</td>
+                                    <td>XXXXX</td>
+                                    <td>这里是签约方地址这里是签约方地址</td>
+                                </tr>
+                                <tr>
+                                    <td>XXX签约方</td>
+                                    <td>名称</td>
+                                    <td>5</td>
+                                    <td>13456789064</td>
+                                    <td>XXXXX</td>
+                                    <td>这里是签约方地址这里是签约方地址</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4>附件信息</h4>
+                    <div class="row-cont">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>附件名称</th>
+                                    <th>附件类型</th>
+                                    <th>附件大小</th>
+                                    <th>上传日期</th>
+                                    <th>上传人</th>
+                                    <th>最后修改日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>音乐作品版权登记证</td>
+                                    <td>JPG</td>
+                                    <td>10.23MB</td>
+                                    <td>20180909</td>
+                                    <td>JPG</td>
+                                    <td>20180909</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-primary btn-xqu">选取</button> -->
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- 模态框（Modal） -->
 <!-- 模态框（Modal） -->
@@ -525,10 +941,70 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">新增</h4>
+                <h4 class="modal-title" id="myModalLabel">创建产品信息</h4>
             </div>
             <div class="modal-body">
                 <div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品编号</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">作品名称</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品类型</label>
+                            <select class="form-control">
+                                <option>有</option>
+                                <option>无</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">首发日期</label>
+                            <div class='input-group date' id='datetimepicker'>  
+                                <input type='text' class="form-control" />  
+                                <span class="input-group-addon">  
+                                    <span class="glyphicon glyphicon-calendar"></span>  
+                                </span>  
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品周期</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品金额</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">报备登记机构</label>
+                            <select class="form-control">
+                                <option>有</option>
+                                <option>无</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">报备登记日期</label>
+                            <div class='input-group date' id='datetimepicker'>  
+                                <input type='text' class="form-control" />  
+                                <span class="input-group-addon">  
+                                    <span class="glyphicon glyphicon-calendar"></span>  
+                                </span>  
+                            </div>  
+                        </div>
+                    </div>
                     <div class="row col-md-12 col-lg-12">
                         <div class="form-group col-md-6 col-lg-6">
                             <label for="exampleInputName2">作品名称</label>
@@ -628,6 +1104,18 @@
                         <span class="col-md-2 col-lg-2">授权权利描述</span>
                         <div class="col-md-10 col-lg-10">
                             <textarea class="form-control ml10" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">授权比例</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">授权价格</label>
+                            <input type="text" class="form-control" id="" placeholder="">
+                            <i></i>
                         </div>
                     </div>					
                     <div class="row line">
@@ -768,11 +1256,236 @@
                 </div>
             </div>
             <div class="modal-footer">				
-                <button type="button" class="btn btn-primary">确认</button>
+                <button type="button" class="btn btn-primary btn-news">确认</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<div class="modal fade ht-tk " style="display: blck" id="ht-tk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">创建合同</h4>
+            </div>
+            <div class="modal-body aasd">
+                <ul class="step stepa st-li">
+                    <li class=" step-left active">1.基础信息</li>
+                    <li class=" step-right ">2.附件信息</li>
+                </ul>
+                <div>
+                    <!--基础信息 start-->
+                    <div class="basics main">
+                        <form class="form-inline">
+                            <div class="row col-md-12 col-lg-12">
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputName2">合同编号</label>
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <i>*</i>
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputName2">合同主体</label>
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <i>*</i>
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputName2">合同名称</label>
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <i>*</i>
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputName2">合同金额</label>
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputEmail2">签约日期</label>
+                                    <div class='input-group date' id='datetimepicker2'>  
+                                        <input type='text' class="form-control" />  
+                                        <span class="input-group-addon">  
+                                            <span class="glyphicon glyphicon-calendar"></span>  
+                                        </span>  
+                                    </div> 
+                                    <i>*</i>
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputName2">生效日期</label>
+                                    <div class='input-group date' id='datetimepicker3'>  
+                                        <input type='text' class="form-control" />  
+                                        <span class="input-group-addon">  
+                                            <span class="glyphicon glyphicon-calendar"></span>  
+                                        </span>  
+                                    </div> 
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputName2">失效日期</label>
+                                    <div class='input-group date' id='datetimepicker4'>  
+                                        <input type='text' class="form-control" />  
+                                        <span class="input-group-addon">  
+                                            <span class="glyphicon glyphicon-calendar"></span>  
+                                        </span>  
+                                    </div> 
+                                </div>
+                                <div class="form-group col-md-4 col-lg-4">
+                                    <label for="exampleInputEmail2">有效期</label>
+                                    <div class='input-group date' id='datetimepicker5'>  
+                                        <input type='text' class="form-control" />  
+                                        <span class="input-group-addon">  
+                                            <span class="glyphicon glyphicon-calendar"></span>  
+                                        </span>  
+                                    </div> 
+                                </div>
+                                <div class="form-group col-md-12 col-lg-12">
+                                    <label for="exampleInputEmail2">支付计划</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group col-md-12 col-lg-12">
+                                    <label for="exampleInputEmail2">交付标准及方式</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <div class="form-group col-md-12 col-lg-12">
+                                    <label for="exampleInputEmail2">合同备注</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>			
+                        </form>
+                        <div class="form-inline form-2 button-mt0 mt10">
+                            <div class="right-title m0 p0">
+                                <h3 class="col-md-3 col-lg-3 mt10">合同签约方信息列表</h3>
+                                <div class="pull-right col-md-2 col-lg-2 mt10">					
+                                    <div class="btn-operation">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added1"><i class="glyphicon glyphicon-plus"></i>新增</button>
+                                        <button type="button" class="btn btn-default">删除</button>					
+                                    </div>
+                                </div>				
+                            </div>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="th"><input type="checkbox" name="">签约方类型</th>
+                                        <th>签约方名称</th>
+                                        <th>签约方电话</th>
+                                        <th>签约方联系人</th>
+                                        <th>签约方地址</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="th" scope="row"><input type="checkbox" name="">甲方</th>
+                                        <td>XXX</td>
+                                        <td>13456789064</td>
+                                        <td>XXX</td>
+                                        <td>这里是签约方地址这里是签约方地址</td>
+                                        <td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div id="example" class="example">
+                                <ul id="pageLimit5"></ul>
+                            </div>
+                        </div>
+                        <div class="row row-btn col-md-pull-1">				
+                            <!-- <button type="button" class="btn btn-default">重置</button> -->
+                            <button type="button" class="btn btn-primary next-stepa">下一步</button>
+                        </div>			
+                    </div>                    
+                    <!--授权设置 start-->
+                    <div class="set-up main">
+                        <div class="right-title">
+                            <h3 class="col-md-2 col-lg-2">合同采购信息</h3>
+                            <div class="right-ht col-md-2 col-lg-2">				
+                                <div class="btn-operation">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
+                                    <button type="button" class="btn btn-default">删除</button>					
+                                </div>
+                            </div>				
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="th"><input type="checkbox" name="">序号</th>
+                                    <th>附件名称</th>
+                                    <th>附件类型</th>
+                                    <th>附件大小</th>
+                                    <th>上传日期</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                    <td>音乐作品登记</td>
+                                    <td>JPG</td>
+                                    <td>10.23MB</td>
+                                    <td>2018-12-23 10:55</td>
+                                    <td>备注备注备注备注备注备注备注备注备注</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="example" class="example">
+                            <ul id="pageLimit6"></ul>
+                        </div>
+                        
+                        <div class="row row-btn col-md-pull-1">				
+                            <!-- <button type="button" class="btn btn-default">重置</button> -->
+                            <button type="button" class="btn btn-default pre-stepa">上一步</button>
+                            <button type="button" class="btn btn-primary">完成</button>
+                        </div>	
+                    </div>
+                    <!--授权设置 end-->
+                </div>
+            </div>
+            <div class="modal-footer">				
+                <button type="button" class="btn btn-primary btn-cjqr">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" style="display:bock" id="gengk-added1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">新增</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="row col-md-12 col-lg-12">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">签约方类型</label>
+                                <select class="form-control">
+                                    <option>甲</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputEmail2">签约方名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                                <i></i>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">签约方电话</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">签约方联系人</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-12 col-lg-12">
+                                <label for="exampleInputEmail2">签约方地址</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>	
+                </div>
+                <div class="modal-footer">				
+                    <button type="button" class="btn btn-primary">确认</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <script type="text/javascript" src="resource/js/common.js"></script><script type="text/javascript" src="resource/js/projectAdd.js"></script></body>
 </html>

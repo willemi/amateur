@@ -2,6 +2,16 @@ import '../css/projectAdd.scss';
 
 const util = require("./common/util.js")
 const easyUpload = require("./common/easyUpload.js")
+var htmla = '<tr>'+
+			'<th class="th" scope="row"><input type="checkbox" name="">XXXXXXX189675456WSPD</th>'+
+			'			<td>《嗨！看电视》2018XXX采购合同</td>'+
+			'			<td>2018-03-23</td>'+
+			'			<td>2018-03-23</td>'+
+			'			<td>2018-03-23</td>'+
+			'			<td>     '+                           
+			'				<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#gengk-look">查看</button>'+
+			'			</td>'+
+			'			</tr>';
 
 function bindEvents(){
     var $doc = $(document);
@@ -57,7 +67,29 @@ function bindEvents(){
 	function tplData1(data){
 		console.log(data)
 	}
-    //下一步\提交
+	let $cont1 = $(".content-01"),
+		$cont2 = $(".content-02");
+	$doc.on("click", ".btn-adda", function(){
+		$cont1.hide();
+		$cont2.show();
+	})
+	$doc.on("click",  ".btn-cjqr", function(){
+		$('#ht-tk').modal('hide');
+		$(".ht-1").html(htmla);
+	})
+	//下一步\提交
+	var $stepa = $(".stepa li");
+	$doc.on("click", ".next-stepa", function(){
+		var $this = $(this);
+		var $main = $this.parents(".main"),
+			$nextMain = $main.next(".main");
+		let index = $main.index();
+		if(tatbInit($main)){
+			$stepa.eq(++index).addClass("active").siblings().removeClass("active");
+			$main.hide();
+			$nextMain.show();
+		}
+	})
 	var $step = $(".step li");
 	$doc.on("click", ".next-step", function(){
 		var $this = $(this);
@@ -69,6 +101,26 @@ function bindEvents(){
 			$main.hide();
 			$nextMain.show();
 		}
+	})
+	$doc.on("click", ".btn-index", function(){
+		$('#Indexes').modal('hide');
+		$(".tr-hide").show();
+		$(".bnt-yy").removeClass("btn-default").addClass("btn-primary").attr("data-toggle", "modal").attr("data-target", "#newly-added")
+
+	})
+	$doc.on("click", ".btn-s", function(){
+		let vla = $("#ht-name").val();
+		if(vla == 1){
+			$(".ht-1").show();
+		}else{
+			$(".ht-1").html('<a class="cjht" data-toggle="modal" data-target="#ht-tk">创建合同</a>').show();
+		}
+		
+		//util.pageinator("pageLimit2", "10", "url", tplData2);
+	})
+	$doc.on("click", ".btn-news", function(){
+		$('#newly-added').modal('hide');
+		$(".nes-table").show();
 	})
 	$doc.on("click", ".pre-step", function(){
 		var $this = $(this);
