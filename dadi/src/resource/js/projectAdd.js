@@ -46,7 +46,7 @@ function bindEvents(){
 		}
 	})
 	
-	
+	util.timepicker("datetimepicker");
 	util.timepicker("datetimepicker1");
 	util.timepicker("datetimepicker2");
 	util.timepicker("datetimepicker3");
