@@ -1,488 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Miminium Admin Template v.1">
-	<meta name="author" content="Isna Nur Azis">
-	<meta name="keyword" content="">
-	<title>大地</title>
-<link href="resource/css/common.css" rel="stylesheet"></head>
-<body>
-<!--header start-->
-<div id="header" class="header">
-	<div class="container-fluid">
-		
-	</div>
-</div>
-<!--header end-->
-<!--sidebar start-->
-<aside class="main-sidebar">
-    <section  class="sidebar">
-        <ul class="sidebar-menu">
-            <li class="header">大地后台管理系统</li>
-            <li>
-                <a href="index.html">
-                    <i class="fa fa-home"></i> <span>首页</span>
-                    <!-- <small class="label pull-right label-info">new</small> -->
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="javascript:;">
-                    <i class="fa fa-file-powerpoint-o"></i> <span>著作权管理</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-					<li>
-                        <a href="javascript:;"><i class="fa fa-credit-card"></i>作品信息管理<i class="fa fa-angle-left pull-right"></i></a>
-                        <ul class="treeview-menu">
-							<li><a href="ipAdd.html"><i class="fa fa-edit"></i>音乐作品管理</a></li>
-							<li><a href="ipAdd1.html"><i class="fa fa-edit"></i>美术作品管理</a></li>
-							<li><a href="ipAdd2.html"><i class="fa fa-edit"></i>文字作品管理</a></li>
-							<li><a href="ipAdd3.html"><i class="fa fa-edit"></i>戏剧作品管理</a></li>
-							<li><a href="ipAdd4.html"><i class="fa fa-edit"></i>影视动画作品管理</a></li>
-							<li><a href="ipList.html"><i class="fa fa-search-plus"></i>作品信息查询统计</a></li>
-                        </ul>
-                    </li>
-					<li>
-                        <a href="javascript:;"><i class="fa fa-credit-card"></i>产品信息管理<i class="fa fa-angle-left pull-right"></i></a>
-                        <ul class="treeview-menu">
-							<li><a href="projectAdd.html"><i class="fa fa-edit"></i>产品授权管理</a></li>
-							<li><a href="projectAdd.html"><i class="fa fa-edit"></i>产品转让管理</a></li>
-							<li><a href="project.html"><i class="fa fa-search-plus"></i>产品信息查询统计</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="javascript:;">
-                    <i class="fa fa-clipboard"></i> <span>合同管理</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="javascript:;"><i class="fa fa-credit-card"></i>采购合同信息管理<i class="fa fa-angle-left pull-right"></i></a>
-                        <ul class="treeview-menu">
-                            <li><a href="contractAdd.html"><i class="fa fa-edit"></i>作品采购合同管理</a></li>
-                            <li><a href="contractAdd.html"><i class="fa fa-edit"></i>晚会采购合同管理</a></li>
-                            <li><a href="contractAdd.html"><i class="fa fa-edit"></i>电影采购合同管理</a></li>
-                            <li><a href="contractAdd.html"><i class="fa fa-edit"></i>动画片采购合同管理</a></li>
-                            <li><a href="contractAdd1.html"><i class="fa fa-edit"></i>剧本采购合同管理</a></li>
-                            <li><a href="contractAdd2.html"><i class="fa fa-edit"></i>体育赛事采购合同管理</a></li>
-                            <li><a href="contractAdd3.html"><i class="fa fa-edit"></i>交换赠与合同管理</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contractAdd4.html"><i class="fa fa-handshake-o"></i>合作制作合同信息管理</i></a>
-                    </li>
-                    <li>
-                        <a href="contractAdd5.html"><i class="fa fa-handshake-o"></i>委托制作合同信息管理</i></a>
-                    </li>
-                    <li>
-                        <a href="contractAdd6.html"><i class="fa fa-handshake-o"></i>开发授权合同信息管理</a>
-                    </li>
-                    <li><a href="contract.html"><i class="fa fa-search-plus"></i>合同信息查询统计</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="javascript:;">
-                    <i class="fa fa-align-right"></i> <span>商标/专利管理</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="propertyRightAdd.html"><i class="fa fa-edit"></i>商标信息管理</a></li>
-                    <li><a href="propertyRightAddB.html"><i class="fa fa-edit"></i>专利信息管理</a></li>
-                </ul>
-            </li>
-			<li class="treeview">
-                <a href="javascript:;">
-                    <i class="fa fa-align-right"></i> <span>域名/作品登记管理</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="propertyRightAddC.html"><i class="fa fa-edit"></i>域名信息管理</a></li>
-                    <li><a href="propertyRightAddD.html"><i class="fa fa-edit"></i>作品登记证书信息管理</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="javascript:;">
-                    <i class="fa fa-cogs"></i> <span>系统管理</span> <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="system.html"><i class="fa fa-gear "></i>基础字典设置</a></li>
-                    <li><a href="systemAdd.html"><i class="fa fa-gear "></i>权利信息设置</a></li>
-                    <li><a href="system.html"><i class="fa fa-gear "></i>用户信息设置</a></li>
-                    <li><a href="system.html"><i class="fa fa-gear "></i>权限信息设置</a></li>
-                    <li><a href="system.html"><i class="fa fa-gear "></i>系统操作日志</a></li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-</aside>
-<!--sidbar end-->
-<!--cont start-->
-<div id="content" class="content">
-	<div class="content-wrapper">
-		<h3>大地传播</h3>
-		<div class="search">
-			<div class="row">
-				<div class="col-md-6 col-lg-6 col-md-push-3">
-					<div class="input-group col-md-12 col-lg-12">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">全部<span class="caret"></span></button>
-							<ul class="dropdown-menu">
-								<li><a href="javascript:;">音乐</a></li>								
-								<li><a href="javascript:;">美术</a></li>
-								<li><a href="javascript:;">文字</a></li>
-								<li><a href="javascript:;">戏剧</a></li>
-								<li><a href="javascript:;">影视动漫</a></li>
-							</ul>
-						</div><!-- /btn-group -->
-						<input type="text" class="form-control" aria-label="...">
-					</div><!-- /input-group -->
-				</div><!-- /.col-lg-6 -->
-				<button type="button" class="btn btn-primary col-md-push-3 btn-query">查询</button>
-			</div>
-		</div>
-		<div class="ip-list">
-			<div class="title-h3"><h3>IP资源池列表</h3><button type="button" class="btn btn-default">导出数据<i class="glyphicon glyphicon-download-alt"></i></button></div>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>资源名称</th>
-						<th>资源类型</th>
-						<th>权利主体</th>
-						<th>权利来源</th>
-						<th>权利状况</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody class="tabel-cont">
-				</tbody>
-			</table>
-			<div id="example" class="example">
-				<ul id="pageLimit"></ul>
-			</div>
-		</div>
-		<div class="ip-details">
-			<dl class="details-title">
-				<dt class="btn-list">IP资源池列表 / </dt>
-				<dd> 孔子</dd>
-			</dl>
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">项目基本信息</div>
-						<div class="panel-body">
-							项目基本信息
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-6 pr10">
-					<div class="panel panel-default">
-						<div class="panel-heading">权利链图谱</div>
-						<div class="panel-body">
-							<i class="glyphicon glyphicon-fullscreen btn-tree"></i>
-							<div class="container" id="container"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-6 pl10">
-					<div class="panel panel-default">
-						<div class="panel-heading">版权结构图谱</div>
-						<div class="panel-body">
-							<div class="container" id="container1"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- 模态框（Modal） -->
-<div class="modal fade delete" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel">
-					Modal
-				</h4>
-			</div>
-			<div class="modal-body">
-				确认要删除吗？
-			</div>
-			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary">确认</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div>
-<!-- 模态框（Modal） -->
-<!-- 模态框（Modal） -->
-<div class="modal fade newly-added tl" style="display:bock" id="newly-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">新增</h4>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <div class="row col-md-12 col-lg-12">
-                            <div class="form-group col-md-6 col-lg-6">
-                            <label for="exampleInputName2">拥有权利内容</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                            <i></i>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-6">
-                            <label for="exampleInputName2">我方权利比重</label>
-                            <input type="text" class="form-control" id="" placeholder="">
-                            <i></i>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">是否专有</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="radio-inline">
-                                <input type="radio" checked name="limit1" id="" value=""> 有
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="limit1" id="" value=""> 否
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">有无维权权利</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="radio-inline">
-                                <input type="radio" checked name="limit2" id="" value=""> 有
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="limit2" id="" value=""> 无
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">有无授权权利</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="radio-inline">
-                                <input type="radio" checked name="limit3" id="" value=""> 有
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="limit3" id="" value=""> 无
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">有无合同</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="radio-inline">
-                                <input type="radio" checked name="limit4" id="" value=""> 有
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="limit4" id="" value=""> 无
-                            </label>
-                        </div>
-                    </div>
-                    <!-- <div class="row">
-                        <span class="col-md-2 col-lg-2">授权限制</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="radio-inline">
-                                <input type="radio" checked name="limit" id="" value=""> 专有
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="limit" id="" value=""> 非专有
-                            </label>
-                        </div>
-                    </div> -->
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">授权类型</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="radio-inline">
-                                <input type="radio" checked name="type" id="" value=""> 复制权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 发行权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 出租权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 展览权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 表演权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 放映权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 广播权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 信息网络传播权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 摄制权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 翻译权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 汇编权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 改编权
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="type" id="" value=""> 其他
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">许可使用方式</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" checked name="mode" id="" value=""> 无限制
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="mode" id="" value=""> 有线
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="mode" id="" value=""> 无线
-                            </label>
-                            <!-- <label class="checkbox-inline">
-                                <input type="checkbox" name="mode" id="" value=""> 地面
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="mode" id="" value=""> 卫星
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="mode" id="" value=""> 互联网
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="mode" id="" value=""> 数字传输
-                            </label> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">许可使用渠道</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" checked name="channel" id="" value=""> 无限制
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="channel" id="" value=""> 电视
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="channel" id="" value=""> 广播
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="channel" id="" value=""> 学校
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="channel" id="" value=""> 影院
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="channel" id="" value=""> 户外
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="channel" id="" value=""> IPIV
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">许可使用地域</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" checked name="region" id="" value=""> 无限制
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="region" id="" value=""> 中国大陆
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="region" id="" value=""> 香港特别行政区
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="region" id="" value=""> 澳门特别行政区
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="region" id="" value=""> 台湾省
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="region" id="" value=""> 海外
-                            </label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">许可使用语言</span>
-                        <div class="col-md-10 col-lg-10">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" checked name="language" id="" value=""> 无限制
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="language" id="" value=""> 中文
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="language" id="" value=""> 英文
-                            </label>
-                            <label class="checkbox-inline">
-                                <input type="checkbox" name="language" id="" value=""> 日文
-                            </label>
-                            <!-- <label class="checkbox-inline new-inline col-md-10 col-lg-10">
-                                <i>新增语言</i> <input type="type" name="" id="" value="" class="form-control"> (每种语言之间请用“-”隔开)
-                            </label> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">起止时间</span>
-                        <div class="col-md-10 col-lg-10">
-                            <input size="16" type="text" id="datetimeStart" readonly class="form_datetime ml10 form-control">
-                            一
-                            <input size="16" type="text" id="datetimeEnd" readonly class="form_datetime form-control">
-                            <!-- <label class="checkbox-inline">
-                                <input type="checkbox" checked name="time" id="" value=""> 无限制
-                            </label> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">许可使用次数</span>
-                        <div class="col-md-10 col-lg-10">
-                            <input type="text" class="ml10 form-control"> 次
-                            <!-- <label class="checkbox-inline">
-                                <input type="checkbox" checked name="time" id="" value=""> 无限制
-                            </label> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">权利描述</span>
-                        <div class="col-md-10 col-lg-10">
-                            <textarea class="form-control ml10" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <span class="col-md-2 col-lg-2">备注</span>
-                        <div class="col-md-10 col-lg-10">
-                            <textarea class="form-control ml10" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">				
-                <button type="button" class="btn btn-primary">确认</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
-<div class="tree-fixed">
-	<p></p>
-	<div class="tree-cont">
-		<i class="tree-close glyphicon glyphicon-remove-circle"></i>
-		<div id="tree-content"></div>
-	</div>
-</div>
-<script type="text/javascript" src="resource/js/common.js"></script><script type="text/javascript" src="resource/js/ipList.js"></script></body>
-</html>
+<head><link href="resource/css/common.css" rel="stylesheet"></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed: Error: ENOENT: no such file or directory, open 'E:\Seek\amateur\dadi\src  \modal-newly-added.html':
+  Error: ENOENT: no such file or directory, open 'E:\Seek\amateur\dadi\src\modal-newly-added.ht  ml'
+  
+  - compiler.js:79 childCompiler.runAsChild
+    [dadi]/[html-webpack-plugin]/lib/compiler.js:79:16
+  
+  - Compiler.js:242 compile
+    [dadi]/[webpack]/lib/Compiler.js:242:11
+  
+  - Compiler.js:487 hooks.afterCompile.callAsync.err
+    [dadi]/[webpack]/lib/Compiler.js:487:14
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [dadi]/[tapable]/lib/Hook.js:35:21
+  
+  - Compiler.js:484 compilation.seal.err
+    [dadi]/[webpack]/lib/Compiler.js:484:30
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [dadi]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:966 hooks.optimizeAssets.callAsync.err
+    [dadi]/[webpack]/lib/Compilation.js:966:35
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [dadi]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:957 hooks.optimizeChunkAssets.callAsync.err
+    [dadi]/[webpack]/lib/Compilation.js:957:32
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [dadi]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:952 hooks.additionalAssets.callAsync.err
+    [dadi]/[webpack]/lib/Compilation.js:952:36
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [dadi]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:948 hooks.optimizeTree.callAsync.err
+    [dadi]/[webpack]/lib/Compilation.js:948:32
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [dadi]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:890 Compilation.seal
+    [dadi]/[webpack]/lib/Compilation.js:890:27
+  
+  - Compiler.js:481 hooks.make.callAsync.err
+    [dadi]/[webpack]/lib/Compiler.js:481:17
+  
+  
+  - Compilation.js:758 _addModuleChain
+    [dadi]/[webpack]/lib/Compilation.js:758:12
+  
+  - Compilation.js:697 processModuleDependencies.err
+    [dadi]/[webpack]/lib/Compilation.js:697:9
+  
+  - next_tick.js:131 _combinedTickCallback
+    internal/process/next_tick.js:131:7
+  
+  - next_tick.js:180 process._tickCallback
+    internal/process/next_tick.js:180:9
+  
+</pre><script type="text/javascript" src="resource/js/common.js"></script><script type="text/javascript" src="resource/js/ipList.js"></script>

@@ -57,6 +57,11 @@
 /******/ 		"ipList": 0
 /******/ 	};
 /******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "resource/js/" + ({}[chunkId]||chunkId) + ".js"
+/******/ 	}
+/******/
 /******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
@@ -156,7 +161,7 @@ eval("/* WEBPACK VAR INJECTION */(function($) {\n\nvar _typeof = typeof Symbol =
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function anonymous(it\n/**/) {\nvar encodeHTML = typeof _encodeHTML !== 'undefined' ? _encodeHTML : (function (doNotSkipEncoded) {\n\t\tvar encodeHTMLRules = { \"&\": \"&#38;\", \"<\": \"&#60;\", \">\": \"&#62;\", '\"': \"&#34;\", \"'\": \"&#39;\", \"/\": \"&#47;\" },\n\t\t\tmatchHTML = doNotSkipEncoded ? /[&<>\"'\\/]/g : /&(?!#?\\w+;)|<|>|\"|'|\\//g;\n\t\treturn function(code) {\n\t\t\treturn code ? code.toString().replace(matchHTML, function(m) {return encodeHTMLRules[m] || m;}) : \"\";\n\t\t};\n\t}());var out='';var arr1=it;if(arr1){var m,n=-1,l1=arr1.length-1;while(n<l1){m=arr1[n+=1];out+='//'+(m.vid_num || 0)+'<tr><th scope=\"row\">'+encodeHTML(m.title)+'</th><td>'+encodeHTML(m.type)+'</td><td>'+encodeHTML(m.sub)+'</td><td>'+encodeHTML(m.source)+'</td><td>'+encodeHTML(m.status)+'</td><td>';if(m.s=='1'){out+='<button class=\"btn btn-primary btn-md\" data-toggle=\"modal\" data-target=\"#newly-added\">修改</button><button class=\"btn btn-danger btn-md\" data-toggle=\"modal\" data-target=\"#delete\" data-id=\"1\">删除</button>';}else{out+='<button class=\"btn btn-primary btn-look\">查看</button>';}out+='</td></tr>';} } return out;\n}\n\n//# sourceURL=webpack:///./src/resource/tpl/item.tpl?");
+eval("module.exports = function anonymous(it\n/*``*/) {\nvar encodeHTML = typeof _encodeHTML !== 'undefined' ? _encodeHTML : (function (doNotSkipEncoded) {\n\t\tvar encodeHTMLRules = { \"&\": \"&#38;\", \"<\": \"&#60;\", \">\": \"&#62;\", '\"': \"&#34;\", \"'\": \"&#39;\", \"/\": \"&#47;\" },\n\t\t\tmatchHTML = doNotSkipEncoded ? /[&<>\"'\\/]/g : /&(?!#?\\w+;)|<|>|\"|'|\\//g;\n\t\treturn function(code) {\n\t\t\treturn code ? code.toString().replace(matchHTML, function(m) {return encodeHTMLRules[m] || m;}) : \"\";\n\t\t};\n\t}());var out='';var arr1=it;if(arr1){var m,n=-1,l1=arr1.length-1;while(n<l1){m=arr1[n+=1];out+='//'+(m.vid_num || 0)+'<tr><th scope=\"row\">'+encodeHTML(m.title)+'</th><td>'+encodeHTML(m.type)+'</td><td>'+encodeHTML(m.sub)+'</td><td>'+encodeHTML(m.source)+'</td><td>'+encodeHTML(m.status)+'</td><td>';if(m.s=='1'){out+='<button class=\"btn btn-primary btn-md\" data-toggle=\"modal\" data-target=\"#newly-added\">修改</button><button class=\"btn btn-danger btn-md\" data-toggle=\"modal\" data-target=\"#delete\" data-id=\"1\">删除</button>';}else{out+='<button class=\"btn btn-primary btn-look\">查看</button>';}out+='</td></tr>';} } return out;\n}\n\n//# sourceURL=webpack:///./src/resource/tpl/item.tpl?");
 
 /***/ })
 

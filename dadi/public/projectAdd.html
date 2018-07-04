@@ -309,86 +309,6 @@
                 <!--项目参与方信息 end-->
                 <!--项目资源信息 start-->
                 <div class="resources main">
-                    <!-- <div class="row bcf">
-                        <ul id="myTab" class="nav nav-tabs">
-                            <li class="active"><a href="#home" data-toggle="tab">梗概</a></li>
-                            <li><a href="#wz" data-toggle="tab">文字</a></li>
-                            <li><a href="#yy" data-toggle="tab">音乐</a></li>
-                            <li><a href="#ms" data-toggle="tab">美术</a></li>
-                            <li><a href="#st" data-toggle="tab">试听</a></li>
-                            <li><a href="#zc" data-toggle="tab">主创</a></li>
-                        </ul>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes">查询引用</button>
-                    </div>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade in active" id="home">
-                            <p>暂无信息，请添加查询引用1</p>
-                        </div>
-                        <div class="tab-pane fade" id="wz">
-                            <p>暂无信息，请添加查询引用2</p>
-                        </div>
-                        <div class="tab-pane fade" id="yy">
-                            <p>暂无信息，请添加查询引用3</p>
-                        </div>
-                        <div class="tab-pane fade" id="ms">
-                            <p>暂无信息，请添加查询引用4</p>
-                        </div>
-                        <div class="tab-pane fade" id="st">
-                            <p>暂无信息，请添加查询引用5</p>
-                        </div>
-                        <div class="tab-pane fade" id="zc">
-                            <p>暂无信息，请添加查询引用6</p>
-                        </div>
-                    </div>
-                    <form class="form-inline">
-                        <div class="row col-md-12 col-lg-12">
-                            <div class="form-group col-md-3 col-lg-3">
-                                <label for="exampleInputName2">梗概名称</label>
-                                <input type="text" class="form-control" id="" placeholder="">
-                            </div>
-                            <div class="form-group col-md-3 col-lg-3">
-                                <label for="exampleInputName2">梗概内容</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-3 col-lg-3">
-                                <label for="exampleInputEmail2">梗概题材</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-3 col-lg-3">
-                                <label for="exampleInputName2">梗概来源</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-3 col-lg-3">
-                                <label for="exampleInputName2">梗概版本</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-3 col-lg-3">
-                                <label for="exampleInputEmail2">梗概日期</label>
-                                <div class='input-group date' id='datetimepicker5'>  
-                                    <input type='text' class="form-control" />  
-                                    <span class="input-group-addon">  
-                                        <span class="glyphicon glyphicon-calendar"></span>  
-                                    </span>  
-                                </div> 
-                            </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="exampleInputEmail2">梗概介绍</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </form> -->
                     <div class="right-title">
                         <h3 class="col-md-2 col-lg-2">产品合同信息</h3>
                         <div class="right-ht col-md-10 col-lg-10">				
@@ -457,7 +377,6 @@
                         <ul id="pageLimit"></ul>
                     </div>
                     <div class="row row-btn col-md-pull-1">				
-                        <!-- <button type="button" class="btn btn-default">重置</button> -->
                         <button type="button" class="btn btn-default pre-step">上一步</button>
                         <button type="button" class="btn btn-primary">提交</button>
                     </div>	
@@ -467,25 +386,26 @@
         </div>
 	</div>
 </div>
+<!-- 模态框（Modal） -->
 <!--file-->
 <div class="modal fade" style="display:blo0ck; z-index:9999" id="file-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">新增</h4>
-            </div>
-            <div class="modal-body">
-                <div id="easyContainer"></div>
-            </div>
-            <div class="modal-footer">				
-                <button type="button" class="btn btn-primary">确认</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">新增</h4>
+			</div>
+			<div class="modal-body">
+				<div id="easyContainer"></div>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
 </div>
-<!-- 模态框（Modal） -->
+<!-- 引用原始库作品 -->
 <div class="modal fade Indexes" id="Indexes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -575,6 +495,7 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<!--选择合同/少表-->
 <div class="modal fade Indexes1" id="Indexes1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -626,42 +547,44 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<!-- 权利变更-->
 <div class="modal fade" style="display:blo6ck" id="dit-bg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">权利变更</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-inline">
-                    <div class="row col-md-12 col-lg-12">
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">原权利人</label>
-                            <input type="text" class="form-control" id="" disabled placeholder="张三">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">原被授权人</label>
-                            <input type="text" class="form-control" id="" disabled placeholder="张三">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputEmail2">新授权人</label>
-                            <input type="text" class="form-control" id="" placeholder="请输入新授权人">
-                        </div>
-                        <div class="form-group col-md-4 col-lg-4">
-                            <label for="exampleInputName2">新被授权人</label>
-                            <input type="text" class="form-control" id="" placeholder="请输入新被授权人">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">				
-                <button type="button" class="btn btn-primary">确认</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">权利变更</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-inline">
+					<div class="row col-md-12 col-lg-12">
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">原权利人</label>
+							<input type="text" class="form-control" id="" disabled placeholder="张三">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">原被授权人</label>
+							<input type="text" class="form-control" id="" disabled placeholder="张三">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputEmail2">新授权人</label>
+							<input type="text" class="form-control" id="" placeholder="请输入新授权人">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">新被授权人</label>
+							<input type="text" class="form-control" id="" placeholder="请输入新被授权人">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
 </div>
+<!--合同详情/附件和权利信息不同-->
 <div class="modal fade gengk-look " style="display:bl9ock;z-index:1051" id="gengk-look" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -934,7 +857,6 @@
         </div>
     </div>
 </div>
-<!-- 模态框（Modal） -->
 <!-- 模态框（Modal） -->
 <div class="modal fade newly-added tl" style="display:bock" id="newly-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -1262,6 +1184,7 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<!-- 创建合同、无权利信息 -->
 <div class="modal fade ht-tk " style="display: blck" id="ht-tk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -1443,49 +1366,50 @@
         </div>
     </div>
 </div>
+<!--合同签约方-->
 <div class="modal fade" style="display:bock" id="gengk-added1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">新增</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline">
-                        <div class="row col-md-12 col-lg-12">
-                            <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">签约方类型</label>
-                                <select class="form-control">
-                                    <option>甲</option>
-                                    <option>无</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputEmail2">签约方名称</label>
-                                <input type="text" class="form-control" id="" placeholder="">
-                                <i></i>
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">签约方电话</label>
-                                <input type="text" class="form-control" id="" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">签约方联系人</label>
-                                <input type="text" class="form-control" id="" placeholder="">
-                            </div>
-                            <div class="form-group col-md-12 col-lg-12">
-                                <label for="exampleInputEmail2">签约方地址</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </form>	
-                </div>
-                <div class="modal-footer">				
-                    <button type="button" class="btn btn-primary">确认</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">新增</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-inline">
+					<div class="row col-md-12 col-lg-12">
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">签约方类型</label>
+							<select class="form-control">
+								<option>甲</option>
+								<option>无</option>
+							</select>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputEmail2">签约方名称</label>
+							<input type="text" class="form-control" id="" placeholder="">
+							<i></i>
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">签约方电话</label>
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+						<div class="form-group col-md-4 col-lg-4">
+							<label for="exampleInputName2">签约方联系人</label>
+							<input type="text" class="form-control" id="" placeholder="">
+						</div>
+						<div class="form-group col-md-12 col-lg-12">
+							<label for="exampleInputEmail2">签约方地址</label>
+							<textarea class="form-control" rows="3"></textarea>
+						</div>
+					</div>
+				</form>	
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
 <script type="text/javascript" src="resource/js/common.js"></script><script type="text/javascript" src="resource/js/projectAdd.js"></script></body>
 </html>

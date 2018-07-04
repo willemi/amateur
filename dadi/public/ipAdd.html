@@ -306,7 +306,6 @@
 						</div>
 					</div>
 					<div class="row row-btn col-md-pull-1">				
-						<!-- <button type="button" class="btn btn-default">重置</button> -->
 						<button type="button" class="btn btn-primary next-step">下一步</button>
 					</div>			
 				</div>
@@ -399,7 +398,6 @@
 						<ul id="pageLimit2"></ul>
 					</div>
 					<div class="row row-btn col-md-pull-1">				
-						<!-- <button type="button" class="btn btn-default">重置</button> -->
 						<button type="button" class="btn btn-default pre-step">上一步</button>
 						<button type="button" class="btn btn-primary next-step">下一步</button>
 					</div>	
@@ -453,7 +451,6 @@
 						<ul id="pageLimit3"></ul>
 					</div>
 					<div class="row row-btn col-md-pull-1">				
-						<!-- <button type="button" class="btn btn-default">重置</button> -->
 						<button type="button" class="btn btn-default pre-step">上一步</button>
 						<button type="button" class="btn btn-primary">提交</button>
 					</div>	
@@ -466,7 +463,8 @@
 </div>
 <div class="messages"></div>
 <!-- 模态框（Modal） -->
-<div class="modal fade" style="display:bock" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--file-->
+<div class="modal fade" style="display:blo0ck; z-index:9999" id="file-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -474,46 +472,16 @@
 				<h4 class="modal-title" id="myModalLabel">新增</h4>
 			</div>
 			<div class="modal-body">
-				<form class="form-inline">
-                    <div class="form-group col-md-6 col-lg-6">
-                        <label for="exampleInputName2">权利人姓名</label>
-                        <input type="text" class="form-control" id="" placeholder="">
-					</div>
-					<div class="form-group col-md-6 col-lg-6">
-						<label for="exampleInputName2">权利人类型</label>
-						<select class="form-control">
-							<option>有</option>
-							<option>无</option>
-						</select>
-					</div>
-					<div class="form-group col-md-6 col-lg-6">
-						<label for="exampleInputName2">是否付酬</label>
-						<select class="form-control">
-							<option>有</option>
-							<option>无</option>
-						</select>
-					</div>
-					<div class="form-group col-md-6 col-lg-6">
-						<label for="exampleInputName2">币种</label>
-						<select class="form-control">
-							<option>有</option>
-							<option>无</option>
-						</select>
-					</div>
-					<div class="form-group col-md-6 col-lg-6">
-						<label for="exampleInputName2">付费金额</label>
-						<input type="text" class="form-control" id="" placeholder="">
-					</div>        
-				</form>
+				<div id="easyContainer"></div>
 			</div>
 			<div class="modal-footer">				
 				<button type="button" class="btn btn-primary">确认</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 			</div>
-		</div>
-	</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
 </div>
-
+<!--合同详情-->
 <div class="modal fade gengk-look " style="display:bl9ock;z-index:1051" id="gengk-look" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -564,102 +532,12 @@
 							</li>
 						</ul>
 					</div>
-				</div>
-				<!-- <div class="row">
-					<h4>签订信息</h4>
-					<div class="row-cont">
-						<table class="table table-bordered">
-							<thead>
-								<tr>
-									<th>剧本名称</th>
-									<th>影视剧名称</th>
-									<th>集数/期数</th>
-									<th>原著</th>
-									<th>支付方式</th>
-									<th>支付计划</th>
-									<th>交付标准及方式</th>
-									<th>版权分成</th>
-									<th>合同备注</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>名称</td>
-									<td>名称</td>
-									<td>5</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXXXXXXXXXXXXXXXXX</td>
-								</tr>
-								<tr>
-									<td>名称</td>
-									<td>名称</td>
-									<td>5</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXX</td>
-									<td>XXXXXXXXXXXXXXXXXXXX</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div> -->
-				
+				</div>				
 				<div class="row">
 					<h4>权利信息</h4>
 					<div class="row-cont">
 						<div class="table-cont">
 							<table class="table table-bordered">
-								<!-- <thead>
-									<tr>
-										<th>权利来源</th>
-										<th>权利来源</th>
-										<th>权利来源主体</th>
-										<th>拥有权利内容</th>
-										<th>我方权利比重</th>
-										<th>是否专有</th>
-										<th>有无维权权利</th>
-										<th>有无转授权权利</th>
-										<th>有无合同</th>
-										<th>权利类型</th>
-										<th>授权许可使用方式</th>
-										<th>授权许可使用渠道</th>
-										<th>授权许可使用地域</th>
-										<th>授权许可使用次数</th>
-										<th>授权许可使用语言</th>
-										<th>授权许可使用开始日期</th>
-										<th>授权许可使用结束日期</th>
-										<th>合同权利描述</th>
-										<th>备注</th>
-									</tr>
-								</thead>
-								<tbody class="qlnews">
-									<tr> 
-										<td scope="row">自制</td> 
-										<td>XXX</td> 
-										<td>这里是内容</td> 
-										<td>备注备注备注备注备注备注备注备注备注</td> 
-										<td>是</td> 
-										<td>有</td> 
-										<td>有</td> 
-										<td>有</td> 
-										<td>复制权</td> 
-										<td>无限制</td> 
-										<td>无限制</td> 
-										<td>无限制</td> 
-										<td>1</td> 
-										<td>中文</td> 
-										<td>1990-10-22</td> 
-										<td>1990-10-22</td> 
-										<td>这里是描述这里是描述</td> 
-										<td>备注备注备注备注备注备注备注备注备注</td>
-									</tr>
-								</tbody> -->
 								<thead>
 									<tr>
 										<th>序号</th>
@@ -757,25 +635,7 @@
 		</div>
 	</div>
 </div>
-<!-- 模态框（Modal） -->
-<!--file-->
-<div class="modal fade" style="display:blo0ck; z-index:9999" id="file-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel">新增</h4>
-			</div>
-			<div class="modal-body">
-				<div id="easyContainer"></div>
-			</div>
-			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary">确认</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal -->
-</div>
+<!--选择合同-->
 <div class="modal fade ipadd ipadd-look" style="display:blo1ck;" id="Indexes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog ">
 		<div class="modal-content">
@@ -883,68 +743,7 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
 </div>
-<!-- 模态框（Modal） -->
-<!-- <div class="modal fade Indexes" id="Indexes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel">查询引用</h4>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-6 col-lg-6 col-md-push-2">
-						<div class="input-group">
-							<div class="input-group-btn">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">全部 <span class="caret"></span></button>
-								<ul class="dropdown-menu">
-									<li><a href="javascript:;">音乐</a></li>
-									<li><a href="javascript:;">影视</a></li>
-									<li><a href="javascript:;">动漫</a></li>
-									<li><a href="javascript:;">美术</a></li>
-									<li><a href="javascript:;">文字</a></li>
-									<li><a href="javascript:;">戏剧</a></li>
-								</ul>
-							</div>
-							<input type="text" class="form-control" aria-label="...">
-						</div>
-					</div>
-					<button type="button" class="btn btn-primary col-md-push-3">查询</button>
-				</div>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>资源名称</th>
-							<th>资源类型</th>
-							<th>权利主体</th>
-							<th>权利来源</th>
-							<th>权利状况</th>
-							<th>创建时间</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th scope="row"><input type="checkbox">孔子</th>
-							<td>歌曲</td>
-							<td>大地之作有限公司</td>
-							<td>采购</td>
-							<td>出版发行</td>
-							<td>2018.02.02</td>
-						</tr>
-					</tbody>
-				</table>
-				<div id="example" class="example">
-					<ul id="pageLimit-Indexes"></ul>
-				</div>
-			</div>
-			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary">确认</button>
-				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-			</div>
-		</div>
-	</div>
-</div> -->
-<!-- 模态框（Modal） -->
+<!-- 创建合同 -->
 <div class="modal fade ht-tk" style="display: bock" id="ht-tk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -1203,8 +1002,55 @@
 		</div>
 	</div>
 </div>
-<!-- 模态框（Modal） -->
-<div class="modal fade" style="display:blo6ck" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- 权利人列表 -->
+<div class="modal fade" style="display:bock" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">新增</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-inline">
+                    <div class="form-group col-md-6 col-lg-6">
+                        <label for="exampleInputName2">权利人姓名</label>
+                        <input type="text" class="form-control" id="" placeholder="">
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">权利人类型</label>
+						<select class="form-control">
+							<option>有</option>
+							<option>无</option>
+						</select>
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">是否付酬</label>
+						<select class="form-control">
+							<option>有</option>
+							<option>无</option>
+						</select>
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">币种</label>
+						<select class="form-control">
+							<option>有</option>
+							<option>无</option>
+						</select>
+					</div>
+					<div class="form-group col-md-6 col-lg-6">
+						<label for="exampleInputName2">付费金额</label>
+						<input type="text" class="form-control" id="" placeholder="">
+					</div>        
+				</form>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="modal fade" style="display:blo6ck" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -1252,7 +1098,8 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
+<!-- 权利变更-->
 <div class="modal fade" style="display:blo6ck" id="dit-bg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -1289,6 +1136,7 @@
 		</div>
 	</div>
 </div>
+<!--合同签约方-->
 <div class="modal fade" style="display:bock" id="gengk-added1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
