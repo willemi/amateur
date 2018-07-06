@@ -14,10 +14,15 @@
     <td>{{!m.qd}}</td>
     <td>{{!m.dy}}</td>
     <td>{{!m.cs}}</td>
-    <td>{{!m.yy}}</td>						
+    <td>{{!m.yy}}</td>
     <td>{{!m.ks}}</td>
     <td>{{!m.js}}</td>
     <td>{{!m.ms}}</td>
-    <td>{{!m.bz}}</td>							
+    <td>{{!m.bz}}</td> 
+    <td>是</td> 
+    <td>是，仅限移动终端</td> 
+    <td>无限制</td> 
+    <td>合同内文本描述</td> 
+    <td>备注备注备注备注备注备注备注备注备注</td>
 </tr>
 {{~}}

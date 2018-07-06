@@ -2,9 +2,9 @@ import '../css/ipAdd.scss';
 
 const util = require("./common/util.js")
 const easyUpload = require("./common/easyUpload.js")
-const queryReferenceTpl = require('../tpl/queryReference.tpl');
+const rightNewsTpl = require('../tpl/item-right-news.tpl');
 const htTpl = require('../tpl/ht.tpl');
-const ht1Tpl = require('../tpl/ht1.tpl');
+const obligeeListTpl = require('../tpl/item-obligee-list.tpl');
 var data1 = [{
 	"ly": "自制",
 	"zt": "XXX",
@@ -128,7 +128,7 @@ function bindEvents(){
 		$(this).addClass("active").siblings().removeClass("active")
 	})
 	
-	$(".btn-yy").on("click", function(){
+	$("#query-reference").on("click", function(){
 		let $val = $("input[name='news']:checked").val();
 		if($val == 0){
 			$('#Indexes').modal('show')
@@ -161,7 +161,7 @@ function bindEvents(){
 		var $this = $(this);
 		let $val = $("input[name='news']:checked").val();
 		if($val == 1){
-			$(".qlnews").html(queryReferenceTpl(data2));
+			$(".right-news").html(rightNewsTpl(data2));
 			//util.pageinator("pageLimit", "10", "url", tplData);
 		}else{
 			showMsg('选择权利来源！')
@@ -178,7 +178,7 @@ function bindEvents(){
 		//util.pageinator("pageLimit2", "10", "url", tplData2);
 	})
 	$(".ipadd").on("click", ".btn-primary", function(){
-		$(".qlnews").html(queryReferenceTpl(data1));
+		$(".right-news").html(rightNewsTpl(data1));
 		let $val = $("input[name='htong']:checked").val();
 		$(".htNews").val($val);
 		$('#Indexes').modal('hide');
@@ -246,11 +246,11 @@ function bindEvents(){
 	})
 	let $selectDiv = $('.select-div');
 	$selectDiv.on("click", "li", function(){
-		$(".ht1").html(ht1Tpl(data4));
+		$(".obligee-list").html(obligeeListTpl(data4));
 		$selectDiv.hide();
 	})
 	
-	$("#zpname").keyup(function(e){
+	$("#work-name").keyup(function(e){
 		var $this = $(this);
 		//如果输入空格自动删除
 		this.value=$this.val().replace(' ','');
@@ -289,8 +289,8 @@ function bindEvents(){
 	// 	}
 	// })
 	//time
-	util.timepicker("datetimepicker");
-	util.timepicker("datetimepicker1");
+	util.timepicker("public-time");
+	util.timepicker("creation-time");
 	util.timepicker("datetimepicker2");
 	util.timepicker("datetimepicker3");
 	util.timepicker("datetimepicker4");

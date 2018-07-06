@@ -11,11 +11,7 @@
 </head>
 <body>
 <!--header start-->
-<div id="header" class="header">
-	<div class="container-fluid">
-		
-	</div>
-</div>
+<div id="header" class="header"><div class="container-fluid"></div></div>
 <!--header end-->
 <!--sidebar start-->
 <%= require('html-loader!./sidebar.html') %>
@@ -43,7 +39,7 @@
 							<th>操作</th>
 						</tr>
 					</thead>
-					<tbody class="tabel-cont">
+					<tbody class="tabel-cont" id="works-list">
 						<tr>
 							<th scope="row"><a href="ipdetails.html">孔子</a></th>
 							<td>电影</td>
@@ -102,11 +98,11 @@
 					<div class="form-inline form-2">
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">作品ID</label>
-							<input type="text" class="form-control" id="" placeholder="">
+							<input type="text" class="form-control" id="work-id" placeholder="">
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">作品名称</label>
-							<input type="text" class="form-control" id="zpname" value="">
+							<input type="text" class="form-control" id="work-name" value="">
 							<div class="select-div">
 								<ul>
 									<li>作</li>
@@ -118,7 +114,7 @@
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">作品类型</label>
-							<select class="form-control">
+							<select class="form-control" id="work-type">
 								<option>作品类型1</option>
 								<option>作品类型2</option>
 								<option>作品类型3</option>
@@ -128,7 +124,7 @@
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">题材类型</label>
-							<select class="form-control">
+							<select class="form-control" id="theme-type">
 								<option>题材类型1</option>
 								<option>题材类型2</option>
 								<option>题材类型3</option>
@@ -138,11 +134,11 @@
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">作品时长</label>
-							<input type="text" class="form-control" id="" placeholder="">
+							<input type="text" class="form-control" id="lenght-time" placeholder="">
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">发表时间</label>
-							<div class='input-group date' id='datetimepicker'>  
+							<div class='input-group date' id='public-time'>  
 								<input type='text' class="form-control" />  
 								<span class="input-group-addon">  
 									<span class="glyphicon glyphicon-calendar"></span>  
@@ -151,7 +147,7 @@
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">创作时间</label>
-							<div class='input-group date' id='datetimepicker1'>  
+							<div class='input-group date' id='creation-time'>  
 								<input type='text' class="form-control" />  
 								<span class="input-group-addon">  
 									<span class="glyphicon glyphicon-calendar"></span>  
@@ -160,22 +156,22 @@
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputEmail2">收录专辑</label>
-							<input type="text" class="form-control" id="" placeholder="">
+							<input type="text" class="form-control" id="album" placeholder="">
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">是否有原件</label>
-							<select class="form-control">
+							<select class="form-control" id="original-script">
 								<option>是</option>
 								<option>否</option>
 							</select>
 						</div>
 						<div class="form-group col-md-12 col-lg-12">
 							<label for="exampleInputEmail2">版本说明</label>
-							<textarea class="form-control" rows="3"></textarea>
+							<textarea class="form-control" rows="3" id="version-description"></textarea>
 						</div>   
 						<div class="form-group col-md-12 col-lg-12">
 							<label for="exampleInputEmail2">作品简介</label>
-							<textarea class="form-control" rows="3"></textarea>
+							<textarea class="form-control" rows="3" id="works-desc"></textarea>
 						</div>   
 					</div>
 					<div class="form-inline form-2 button-mt0 mt10">
@@ -199,7 +195,7 @@
 									<th>操作</th>
 								</tr>
 							</thead>
-							<tbody class="ht1">
+							<tbody class="obligee-list">
 								
 							</tbody>
 						</table>
@@ -218,12 +214,12 @@
 						<h3 class="col-md-2 col-lg-2">权利信息</h3>
 						<div class="right-ht col-md-10 col-lg-10 quanli ipht">
 							<div class="btn-group" role="group" aria-label="...">
-								<input type="radio" checked name="news" value="0"> 来源于合同
+								<input type="radio" checked name="news" value="0" id="source-contract-radiow"> 来源于合同
 							</div>
 							<div class="input-group ">
-								<input type="text" class="form-control htNews" placeholder="" disabled="disabled">
+								<input type="text" class="form-control htNews" placeholder="" id="source-contract-name" disabled="disabled">
 								<span class="input-group-btn">
-									<button class="btn btn-primary btn-yy" type="button">查询引用</button>
+									<button class="btn btn-primary btn-yy" type="button" id="query-reference">查询引用</button>
 								</span>
 							</div>
 							<div class="btn-operation">
@@ -266,7 +262,7 @@
 									<th>备注</th>
 								</tr>
 							</thead>
-							<tbody class="qlnews">
+							<tbody class="right-news">
 								<tr> 
 									<td scope="row">1</td> 
 									<td>XX18967545</td> 
@@ -328,7 +324,7 @@
 								<th>最后修改日期</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="enclosure-list">
 							<tr>
 								<th class="th" scope="row"><input type="checkbox" name="checkbox" class="checkbox" id="1201294">1</th>
 								<td>音乐作品登记</td>
