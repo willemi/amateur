@@ -1,5 +1,5 @@
-<!-- 创建合同 -->
-<div class="modal fade ht-tk" style="display: bock" id="ht-tk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- 创建合同 作品 ht-tk-->
+<div class="modal fade ht-tk" style="display: bock" id="modal-createContract" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -19,26 +19,26 @@
 							<div class="row col-md-12 col-lg-12">
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputName2">合同编号</label>
-									<input type="text" class="form-control" id="" placeholder="">
+									<input type="text" class="form-control" id="contract-num" placeholder="">
 									<i>*</i>
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputName2">合同主体</label>
-									<input type="text" class="form-control" id="" placeholder="">
+									<input type="text" class="form-control" id="contract-sub" placeholder="">
 									<i>*</i>
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputName2">合同名称</label>
-									<input type="text" class="form-control" id="" placeholder="">
+									<input type="text" class="form-control" id="contract-name" placeholder="">
 									<i>*</i>
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputName2">合同金额</label>
-									<input type="text" class="form-control" id="" placeholder="">
+									<input type="text" class="form-control" id="contract-money" placeholder="">
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputEmail2">签约日期</label>
-									<div class='input-group date' id='datetimepicker2'>  
+									<div class='input-group date' id='contract-signing-time'>  
 										<input type='text' class="form-control" />  
 										<span class="input-group-addon">  
 											<span class="glyphicon glyphicon-calendar"></span>  
@@ -48,7 +48,7 @@
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputName2">生效日期</label>
-									<div class='input-group date' id='datetimepicker3'>  
+									<div class='input-group date' id='contract-take-time'>  
 										<input type='text' class="form-control" />  
 										<span class="input-group-addon">  
 											<span class="glyphicon glyphicon-calendar"></span>  
@@ -57,7 +57,7 @@
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputName2">失效日期</label>
-									<div class='input-group date' id='datetimepicker4'>  
+									<div class='input-group date' id='contract-invalid-time'>  
 										<input type='text' class="form-control" />  
 										<span class="input-group-addon">  
 											<span class="glyphicon glyphicon-calendar"></span>  
@@ -66,7 +66,7 @@
 								</div>
 								<div class="form-group col-md-4 col-lg-4">
 									<label for="exampleInputEmail2">有效期</label>
-									<div class='input-group date' id='datetimepicker5'>  
+									<div class='input-group date' id='contract-yes-time'>  
 										<input type='text' class="form-control" />  
 										<span class="input-group-addon">  
 											<span class="glyphicon glyphicon-calendar"></span>  
@@ -75,32 +75,32 @@
 								</div>
 								<div class="form-group col-md-12 col-lg-12">
 									<label for="exampleInputEmail2">支付计划</label>
-									<textarea class="form-control" rows="3"></textarea>
+									<textarea class="form-control" rows="3" id="contract-payment-plan"></textarea>
 								</div>
 								<div class="form-group col-md-12 col-lg-12">
 									<label for="exampleInputEmail2">交付标准及方式</label>
-									<textarea class="form-control" rows="3"></textarea>
+									<textarea class="form-control" rows="3" id="contract-payment-method"></textarea>
 								</div>
 								<div class="form-group col-md-12 col-lg-12">
 									<label for="exampleInputEmail2">合同备注</label>
-									<textarea class="form-control" rows="3"></textarea>
+									<textarea class="form-control" rows="3" id="contract-notes"></textarea>
 								</div>
-							</div>			
+							</div>
 						</form>
 						<div class="form-inline form-2 button-mt0 mt10">
 							<div class="right-title m0 p0">
 								<h3 class="col-md-3 col-lg-3 mt10">合同签约方信息列表</h3>
-								<div class="pull-right col-md-2 col-lg-2 mt10">					
+								<div class="pull-right col-md-2 col-lg-2 mt10">
 									<div class="btn-operation">
-										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added1"><i class="glyphicon glyphicon-plus"></i>新增</button>
-										<button type="button" class="btn btn-default">删除</button>					
+										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-signatoryInformation"><i class="glyphicon glyphicon-plus"></i>新增</button>
+										<button type="button" class="btn btn-default">删除</button>
 									</div>
-								</div>				
+								</div>
 							</div>
 							<table class="table table-hover">
 								<thead>
 									<tr>
-										<th class="th"><input type="checkbox" name="">签约方类型</th>
+										<th class="th">签约方类型</th>
 										<th>签约方名称</th>
 										<th>签约方电话</th>
 										<th>签约方联系人</th>
@@ -108,7 +108,7 @@
 										<th>操作</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody id="contract-party-list">
 									<tr>
 										<th class="th" scope="row"><input type="checkbox" name="">甲方</th>
 										<td>XXX</td>
@@ -134,7 +134,7 @@
 							<h3 class="col-md-2 col-lg-2 mt10"></h3>
 							<div class="pull-right col-md-2 col-lg-2 mt10">					
 								<div class="btn-operation">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newly-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-newly-added1"><i class="glyphicon glyphicon-plus"></i>新增</button>
 									<!-- <button type="button" class="btn btn-default">删除</button>					 -->
 								</div>
 							</div>				
@@ -168,7 +168,7 @@
 											<th>操作</th>
 										</tr>
 									</thead>
-									<tbody class="qlnews">
+									<tbody class="qlnews-list">
 										<tr> 
 											<td scope="row">1</td> 
 											<td>孔子</td> 
@@ -218,7 +218,7 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th class="th"><input type="checkbox" name="">序号</th>
+									<th class="th">序号</th>
 									<th>附件名称</th>
 									<th>附件类型</th>
 									<th>附件大小</th>
@@ -226,7 +226,7 @@
 									<th>备注</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody class="contract-appendices-list">
 								<tr>
 									<th class="th" scope="row"><input type="checkbox" name="">1</th>
 									<td>音乐作品登记</td>

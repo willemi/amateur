@@ -40,7 +40,7 @@
 						</tr>
 					</thead>
 					<tbody class="tabel-cont" id="works-list">
-						<tr>
+						<!-- <tr>
 							<th scope="row"><a href="ipdetails.html">孔子</a></th>
 							<td>电影</td>
 							<td>大地之作有点公司</td>
@@ -48,7 +48,7 @@
 							<td>出版发行</td>
 							<td>待审核</td>
 							<td>
-								<button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+								<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
 								<button class="btn btn-primary">修改</button>
 								<button class="btn btn-default">删除</button>
 							</td>
@@ -61,7 +61,7 @@
 							<td>出版发行</td>
 							<td>已通过</td>
 							<td>
-								<button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+								<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
 								<button class="btn btn-primary">修改</button>
 								<button class="btn btn-default">删除</button>
 							</td>
@@ -74,11 +74,11 @@
 							<td>出版发行</td>
 							<td>未通过</td>
 							<td>
-								<button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+								<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
 								<button class="btn btn-primary">修改</button>
 								<button class="btn btn-default">删除</button>
 							</td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 				<div id="example" class="example">
@@ -179,15 +179,16 @@
 							<h3 class="col-md-2 col-lg-2 mt10">权利人列表</h3>
 							<div class="pull-right col-md-4 col-lg-4 mt10">					
 								<div class="btn-operation">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
-									<button type="button" class="btn btn-default">删除</button>					
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-qbligeeAdd"><i class="glyphicon glyphicon-plus"></i>新增</button>
+									<button type="button" class="btn btn-default btn-obligee-list-dele">删除</button>					
 								</div>
-							</div>				
+							</div>
 						</div>
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th class="th"><input type="checkbox" name="">权利人姓名</th>
+									<!-- <th class="th"><input type="checkbox" class="obligee-checkbox-btn" name="obligee-checkbox" value="0">权利人姓名</th> -->
+									<th class="th">权利人姓名</th>
 									<th>权利人类型</th>
 									<th>是否付酬</th>
 									<th>币种</th>
@@ -199,12 +200,12 @@
 								
 							</tbody>
 						</table>
-						<div id="example" class="example">
+						<!-- <div id="example" class="example">
 							<ul id="pageLimit1"></ul>
-						</div>
+						</div> -->
 					</div>
 					<div class="row row-btn col-md-pull-1">				
-						<button type="button" class="btn btn-primary next-step">下一步</button>
+						<button type="button" class="btn btn-primary next-step next-step-01">下一步</button>
 					</div>			
 				</div>
 				<!--基础信息 end-->
@@ -214,7 +215,7 @@
 						<h3 class="col-md-2 col-lg-2">权利信息</h3>
 						<div class="right-ht col-md-10 col-lg-10 quanli ipht">
 							<div class="btn-group" role="group" aria-label="...">
-								<input type="radio" checked name="news" value="0" id="source-contract-radiow"> 来源于合同
+								<input type="radio" checked name="news" value="0"> 来源于合同
 							</div>
 							<div class="input-group ">
 								<input type="text" class="form-control htNews" placeholder="" id="source-contract-name" disabled="disabled">
@@ -226,9 +227,9 @@
 								<label><input type="radio" name="news" value="1"> 来源于权利</label>
 								<select class="form-control sel-ly" value="1">
 									<option value="1">音著协</option>
-									<option value="2">互联网下载</option>	
+									<option value="2">互联网下载</option>
 									<option value="3">自制</option>
-									<option value="4">其他</option>						
+									<option value="4">其他</option>
 								</select>	
 							</div>
 						</div>
@@ -297,7 +298,7 @@
 					</div>
 					<div class="row row-btn col-md-pull-1">				
 						<button type="button" class="btn btn-default pre-step">上一步</button>
-						<button type="button" class="btn btn-primary next-step">下一步</button>
+						<button type="button" class="btn btn-primary next-step next-step-02">下一步</button>
 					</div>	
 				</div>
 				<!--权利信息 end-->
@@ -308,14 +309,14 @@
 						<div class="right-ht col-md-10 col-lg-10">				
 							<div class="btn-operation">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-								<button type="button" class="btn btn-default" id="delete">删除</button>					
+								<button type="button" class="btn btn-default" id="delete">删除</button>
 							</div>
-						</div>				
+						</div>
 					</div>
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th class="th"><input type="checkbox" name="" class="batch">序号</th>
+								<th class="th">序号</th>
 								<th>附件名称</th>
 								<th>附件类型</th>
 								<th>附件大小</th>
@@ -355,19 +356,26 @@
 				</div>
 				<!--附件信息 end-->
 			</div>
-		</div>
-		
+		</div>		
 	</div>
 </div>
 <div class="messages"></div>
 <!-- 模态框（Modal） -->
+<!--上传-->
 <%= require('html-loader!./include/modal-file.html') %>
+<!--合同详情-->
 <%= require('html-loader!./include/modal-detailsContract.html') %>
+<!--选择合同-->
 <%= require('html-loader!./include/modal-choiceContracts.html') %>
+<!--创建合同-->
 <%= require('html-loader!./include/modal-createContract.html') %>
-<%= require('html-loader!./include/modal-qbligeeAdd.html') %>
+<!--权利变更-->
 <%= require('html-loader!./include/modal-changeRights.html') %>
+<!--合同签约方-->
 <%= require('html-loader!./include/modal-signatoryInformation.html') %>
+<!--权利信息新增-->
 <%= require('html-loader!./include/modal-newly-added1.html') %>
+<!--权利人列表-->
+<%= require('html-loader!./include/modal-qbligeeAdd.html') %>
 </body>
 </html>

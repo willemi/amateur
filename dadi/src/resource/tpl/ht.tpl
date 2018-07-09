@@ -6,6 +6,6 @@
 	<td>2018-03-23</td>
 	<td>2018-03-23</td>
 	<td>2018-03-23</td>
-	<td><a class="loog" data-toggle="modal" data-target="#gengk-look">查看并选择权利</a></td>
+	<td><a class="loog" data-toggle="modal" data-target="#modal-detailsContract">查看并选择权利</a></td>
 </tr>
 {{~}}

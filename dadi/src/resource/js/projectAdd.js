@@ -9,7 +9,7 @@ var htmla = '<tr>'+
 			'			<td>2018-03-23</td>'+
 			'			<td>2018-03-23</td>'+
 			'			<td>     '+                           
-			'				<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#gengk-look">查看</button>'+
+			'				<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#modal-detailsContract1">查看</button>'+
 			'			</td>'+
 			'			</tr>';
 
@@ -74,7 +74,7 @@ function bindEvents(){
 		$cont2.show();
 	})
 	$doc.on("click",  ".btn-cjqr", function(){
-		$('#ht-tk').modal('hide');
+		$('#modal-createContract1').modal('hide');
 		$(".ht-1").html(htmla);
 	})
 	//下一步\提交
@@ -103,7 +103,7 @@ function bindEvents(){
 		}
 	})
 	$doc.on("click", ".btn-index", function(){
-		$('#Indexes').modal('hide');
+		$('#modal-referenceWorks').modal('hide');
 		$(".tr-hide").show();
 		$(".bnt-yy").removeClass("btn-default").addClass("btn-primary").attr("data-toggle", "modal").attr("data-target", "#newly-added")
 
@@ -113,7 +113,7 @@ function bindEvents(){
 		if(vla == 1){
 			$(".ht-1").show();
 		}else{
-			$(".ht-1").html('<a class="cjht" data-toggle="modal" data-target="#ht-tk">创建合同</a>').show();
+			$(".ht-1").html('<a class="cjht" data-toggle="modal" data-target="#modal-createContract1">创建合同</a>').show();
 		}
 		
 		//util.pageinator("pageLimit2", "10", "url", tplData2);

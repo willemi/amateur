@@ -52,7 +52,7 @@
                             <td>出版发行</td>
                             <td>待审核</td>
                             <td>
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
                                 <button class="btn btn-primary">修改</button>
                                 <button class="btn btn-default">删除</button>
                             </td>
@@ -65,7 +65,7 @@
                             <td>出版发行</td>
                             <td>已通过</td>
                             <td>
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
                                 <button class="btn btn-primary">修改</button>
                                 <button class="btn btn-default">删除</button>
                             </td>
@@ -78,7 +78,7 @@
                             <td>出版发行</td>
                             <td>未通过</td>
                             <td>
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#dit-bg">权利变更</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
                                 <button class="btn btn-primary">修改</button>
                                 <button class="btn btn-default">删除</button>
                             </td>
@@ -102,7 +102,7 @@
                         <h3 class="col-md-2 col-lg-2">已用原始库内作品</h3>
                         <div class="right-ht col-md-10 col-lg-10">				
                             <div class="btn-operation">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes"><i class="glyphicon glyphicon-plus"></i>引用原始库内作品</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-referenceWorks"><i class="glyphicon glyphicon-plus"></i>引用原始库内作品</button>
                                 <button type="button" class="btn btn-default bnt-yy" ><i class="glyphicon glyphicon-plus"></i>创建产品信息</button>		
                                 <!-- data-toggle="modal" data-target="#newly-added" -->
                             </div>
@@ -215,7 +215,7 @@
                         <h3 class="col-md-2 col-lg-2">产品合同信息</h3>
                         <div class="right-ht col-md-10 col-lg-10">				
                             <div class="btn-operation">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Indexes1"><i class="glyphicon glyphicon-plus"></i>关联合同</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-choiceContracts1"><i class="glyphicon glyphicon-plus"></i>关联合同</button>
                             </div>
                         </div>				
                     </div>
@@ -290,12 +290,12 @@
 </div>
 <!-- 模态框（Modal） -->
 <%= require('html-loader!./include/modal-file.html') %>
-<%= require('html-loader!./include/modal-referenceWorks.html') %>
-<%= require('html-loader!./include/modal-choiceContracts1.html') %>
-<%= require('html-loader!./include/modal-changeRights.html') %>
 <%= require('html-loader!./include/modal-detailsContract1.html') %>
-<%= require('html-loader!./include/modal-newly-added1.html') %>
+<%= require('html-loader!./include/modal-choiceContracts1.html') %>
 <%= require('html-loader!./include/modal-createContract1.html') %>
+<%= require('html-loader!./include/modal-changeRights.html') %>
 <%= require('html-loader!./include/modal-signatoryInformation.html') %>
+<%= require('html-loader!./include/modal-newly-added1.html') %>
+<%= require('html-loader!./include/modal-referenceWorks.html') %>
 </body>
 </html>

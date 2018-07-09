@@ -1,5 +1,5 @@
-<!--合同签约方-->
-<div class="modal fade" style="display:bock" id="gengk-added1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--合同签约方 gengk-added1-->
+<div class="modal fade" style="display:bock" id="modal-signatoryInformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -11,33 +11,33 @@
 					<div class="row col-md-12 col-lg-12">
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">签约方类型</label>
-							<select class="form-control">
+							<select class="form-control" id="modal-contract-party">
 								<option>甲</option>
 								<option>无</option>
 							</select>
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputEmail2">签约方名称</label>
-							<input type="text" class="form-control" id="" placeholder="">
+							<input type="text" class="form-control" id="modal-contract-name" placeholder="">
 							<i></i>
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">签约方电话</label>
-							<input type="text" class="form-control" id="" placeholder="">
+							<input type="text" class="form-control" id="modal-contract-iphone" placeholder="">
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">签约方联系人</label>
-							<input type="text" class="form-control" id="" placeholder="">
+							<input type="text" class="form-control" id="modal-contract-pepo" placeholder="">
 						</div>
 						<div class="form-group col-md-12 col-lg-12">
 							<label for="exampleInputEmail2">签约方地址</label>
-							<textarea class="form-control" rows="3"></textarea>
+							<textarea class="form-control" rows="3" id="modal-contract-diz"></textarea>
 						</div>
 					</div>
 				</form>	
 			</div>
 			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-primary modal-contract-btn" >确认</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 			</div>
 		</div>
