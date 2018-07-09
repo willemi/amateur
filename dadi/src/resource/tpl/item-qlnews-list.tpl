@@ -1,5 +1,6 @@
 {{~it :m:n}}
 //{{=m.vid_num || 0}}
+//作品权利信息
 <tr> 
 	<td scope="row">1</td> 
 	<td>孔子</td> 

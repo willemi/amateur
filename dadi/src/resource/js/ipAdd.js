@@ -3,7 +3,7 @@ import '../css/ipAdd.scss';
 const util = require("./common/util.js")
 
 const rightNewsTpl = require('../tpl/item-right-news.tpl');
-const htTpl = require('../tpl/ht.tpl');
+const itemSearchListTpl = require('../tpl/item-search-list.tpl');
 const worksListTpl = require('../tpl/item-works-list.tpl');
 const obligeeListTpl = require('../tpl/item-obligee-list.tpl');
 var data1 = [{
@@ -105,21 +105,20 @@ function workslist(){
 		"zt": 0,
 		"name": "孔子",
 		"type": "电影",
-		"fu": "大地之作有点公司",
-		"mony": "采购",
-		"jine": "出版发行"
+		"fu": "XXX",
+		"mony": "显示来源于权利组的名称或显示来源于合同的名称"
 	},{
 		"id": 1,
 		"zt": 1,
 		"name": "孔子",
 		"type": "电影",
-		"fu": "大地之作有点公司",
-		"mony": "采购",
-		"jine": "出版发行"
+		"fu": "XXX",
+		"mony": "显示来源于权利组的名称或显示来源于合同的名称"
 	}]
 	$("#works-list").html(worksListTpl(listData));
 }
-
+let $stepa = $(".stepa li");
+let $step = $(".step li");
 function bindEvents(){
 	var $doc = $(document);
 	//合同信息
@@ -170,7 +169,7 @@ function bindEvents(){
 		$modalNAuthorizingPerson = $("#modal-n-authorizing-person"),
 		$modalNAuthorizedPerson = $("#modal-n-authorized-person"),
 		$modalBAuthorization = $("#modal-b-authorization");
-	$('#dit-bg').on('show.bs.modal', function () {
+	$('#modal-changeRights').on('show.bs.modal', function () {
 		// 执行一些动作...
 		$modalPObligee.val("11111");
 		$modalPAuthorizedPerson.val("22222");
@@ -251,10 +250,10 @@ function bindEvents(){
 	//选择合同
 	//搜索
 	$doc.on("click", ".btn-ht", function(){
-		let vla = $("#ht-name").val();
-		if(vla == 1){
-			$(".htn-list").html(htTpl(data3));
-		}else if(val == 2){
+		let val = $("#ht-name").val();
+		if(val == 1){//搜索
+			$(".htn-list").html(itemSearchListTpl(data3));
+		}else if(val == 2){//创建
 			$(".htn-list").html('<a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a>');
 		}else{
 			util.showMsg('不能为空')
@@ -272,9 +271,9 @@ function bindEvents(){
 		// 		dataType: "json",
 		// 		cache: false,
 		// 		success: function(res) {
-		// 			if(res && res.errno ==0){
-		// 				$(".htn-list").html(htTpl(data3));
-		// 			}else{
+		// 			if(res && res.errno == 0){//搜索
+		// 				$(".htn-list").html(itemSearchListTpl(data3));
+		// 			}else{//创建
 		// 				$(".htn-list").html('<a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a>');
 		// 			}
 		// 		},
@@ -303,10 +302,9 @@ function bindEvents(){
 	// 创建合同、无权利信确认
 	$doc.on("click", ".btn-cjqr", function(){
 		$('#modal-createContract').modal('hide');
-		$(".htn-list").html(htTpl(data3));
+		$(".htn-list").html(itemSearchListTpl(data3));
 	})	
-	//合同下一步\提交
-	let $stepa = $(".stepa li");
+	//合同下一步\提交	
 	$doc.on("click", ".next-stepa", function(){
 		let $this = $(this);
 		if($this.hasClass("next-step-01")){
@@ -415,8 +413,7 @@ function bindEvents(){
 	// 	location.href = "ipdetails.html"
 	// })
 
-	//作品下一步\提交
-	var $step = $(".step li");
+	//作品下一步\提交	
 	$doc.on("click", ".next-step", function(){
 		var $this = $(this);
 		if($this.hasClass("next-step-01")){

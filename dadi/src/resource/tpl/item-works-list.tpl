@@ -1,11 +1,11 @@
 {{~it :m:n}}
 //{{=m.vid_num || 0}}
 <tr>
-	<th scope="row"><a href="ipdetails.html">{{!m.name}}</a></th>
+	<th scope="row"><a href="ipdetails.html">{{=m.id}}</a></th>
+	<td>{{!m.name}}</td>
 	<td>{{!m.type}}</td>
 	<td>{{!m.fu}}</td>
 	<td>{{!m.mony}}</td>
-	<td>{{!m.jine}}</td>
 	<td id="{{=m.zt}}">{{=formatState(m.zt)}}</td>
 	<td id="{{!m.id}}">
 		<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>

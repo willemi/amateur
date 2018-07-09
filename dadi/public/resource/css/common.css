@@ -10164,9 +10164,6 @@ button.close {
 .content .content-wrapper textarea.form-control {
   width: 83%; }
 
-.content .content-wrapper .right, .content .content-wrapper .copyright {
-  display: none; }
-
 .content .content-wrapper .select-div {
   position: absolute;
   left: 105px;
