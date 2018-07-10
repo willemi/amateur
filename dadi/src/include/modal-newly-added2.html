@@ -1,38 +1,139 @@
-<!-- 作品创建合同新增权利信息 newly-added1-->
-<div class="modal fade newly-added tl" style="display:bock" id="modal-newly-added1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- 权利信息新增 newly-added1-->
+<div class="modal fade newly-added tl" style="display:lock" id="modal-newly-added2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">新增</h4>
+                <h4 class="modal-title" id="myModalLabel">创建产品信息</h4>
             </div>
             <div class="modal-body">
                 <div>
-                    <div class="row col-md-12 col-lg-12">                        
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品编号</label>
+                            <input type="text" class="form-control" id="modal-right-info-numb" placeholder="">
+                            <i></i>
+                        </div>
                         <div class="form-group col-md-6 col-lg-6">
                             <label for="exampleInputName2">作品名称</label>
                             <input type="text" class="form-control"  id="modal-right-info-name" placeholder="">
                             <i></i>
                         </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品类型</label>
+                            <select class="form-control" id="modal-right-info-type">
+                                <option>有</option>
+                                <option>无</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">首发日期</label>
+                            <div class='input-group date' id='modal-right-start-time'>  
+                                <input type='text' class="form-control" />  
+                                <span class="input-group-addon">  
+                                    <span class="glyphicon glyphicon-calendar"></span>  
+                                </span>  
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品周期</label>
+                            <input type="text" class="form-control" id="modal-right-info-cpz" placeholder="">
+                            <i></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">产品金额</label>
+                            <input type="text" class="form-control" id="modal-right-info-cpm" placeholder="">
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">报备登记机构</label>
+                            <select class="form-control" id="modal-right-info-jigou">
+                                <option>有</option>
+                                <option>无</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">报备登记日期</label>
+                            <div class='input-group date' id='modal-right-dj-time'>  
+                                <input type='text' class="form-control" />  
+                                <span class="input-group-addon">  
+                                    <span class="glyphicon glyphicon-calendar"></span>  
+                                </span>  
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <p>已用原始库内作品</p>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="th">序号</th>
+                                    <th>作品ID</th>
+                                    <th>作品名称</th>
+                                    <th>作品类型</th>
+                                    <th>授权人</th>
+                                    <th>被授权人</th>
+                                    <!-- <th>授权权利</th>
+                                    <th>授权时间</th>
+                                    <th>授权方式</th>
+                                    <th>授权地域</th>
+                                    <th>授权语言</th>
+                                    <th>转授权</th>
+                                    <th>维权权利</th>
+                                    <th>使用渠道限制</th>
+                                    <th>使用次数</th>
+                                    <th>操作</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr-hide">
+                                    <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                    <td>QLX20102020202</td>
+                                    <td>七里香</td>
+                                    <td>音乐</td>
+                                    <td>杰威尔音乐</td>
+                                    <td>大地影视</td>
+                                    <!-- <td>信息网络传播权</td>
+                                    <td>自音乐首播之日起一年</td>
+                                    <td>非独家授权</td>
+                                    <td>中国大陆不含港澳台</td>
+                                    <td>中文、英文</td>
+                                    <td>是</td>
+                                    <td>是</td>
+                                    <td>是，仅限移动终端</td>
+                                    <td>无限制</td>
+                                    <td>                                
+                                        <button type="button" class="btn btn-default">查看</button>
+                                        <button type="button" class="btn btn-default">删除</button>
+                                    </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row col-md-12 col-lg-12 aa">
                         <div class="form-group col-md-6 col-lg-6">
                             <label for="exampleInputName2">集数/期数</label>
                             <input type="text" class="form-control" id="modal-right-info-set" placeholder="">
                             <i></i>
                         </div>
-                    </div>
-                    <div class="row col-md-12 col-lg-12 aa">                        
                         <div class="form-group col-md-6 col-lg-6 aa">
                             <label for="exampleInputName2">单价</label>
                             <input type="text" class="form-control" id="modal-right-info-until" placeholder="">
                             <i></i>
                         </div>
-                        <div class="form-group col-md-6 col-lg-6">
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                            <div class="form-group col-md-6 col-lg-6">
                             <label for="exampleInputName2">授权人</label>
                             <input type="text" class="form-control" id="modal-right-info-s" placeholder="">
                             <i></i>
                         </div>
-                    </div>
-                    <div class="row col-md-12 col-lg-12">                        
                         <div class="form-group col-md-6 col-lg-6">
                             <label for="exampleInputName2">被授权人</label>
                             <input type="text" class="form-control" id="modal-right-info-sqr" placeholder="">
@@ -104,12 +205,25 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="row">
                         <span class="col-md-2 col-lg-2">授权权利描述</span>
                         <div class="col-md-10 col-lg-10">
                             <textarea class="form-control ml10" rows="3" id="modal-right-info-qldesc"></textarea>
                         </div>
-                    </div>				
+                    </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">授权比例</label>
+                            <input type="text" class="form-control" id="modal-right-info-pro" placeholder="">
+                            <i></i>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-6">
+                            <label for="exampleInputName2">授权价格</label>
+                            <input type="text" class="form-control" id="modal-right-info-mon" placeholder="">
+                            <i></i>
+                        </div>
+                    </div>					
                     <div class="row line">
                         <span class="col-md-2 col-lg-2">授权时间</span>
                         <div class="col-md-10 col-lg-10">
@@ -245,10 +359,60 @@
                             <textarea class="form-control ml10" rows="3" id="modal-right-info-remarks"></textarea>
                         </div>
                     </div>
+                    <div class="row col-md-12 col-lg-12">
+                        <button type="button" class="btn btn-primary btn-scql" style="margin:30px auto;display: block">生成权利</button>
+                    </div>
+                    <div class="row col-md-12 col-lg-12 xzql-list">
+                        <p>已选权利列表</p>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="th">序号</th>
+                                    <th>作品ID</th>
+                                    <th>作品名称</th>
+                                    <th>作品类型</th>
+                                    <th>授权人</th>
+                                    <th>被授权人</th>
+                                    <th>授权权利</th>
+                                    <th>授权时间</th>
+                                    <th>授权方式</th>
+                                    <th>授权地域</th>
+                                    <th>授权语言</th>
+                                    <th>转授权</th>
+                                    <th>维权权利</th>
+                                    <th>使用渠道限制</th>
+                                    <th>使用次数</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr-hide">
+                                    <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                    <td>QLX20102020202</td>
+                                    <td>七里香</td>
+                                    <td>音乐</td>
+                                    <td>杰威尔音乐</td>
+                                    <td>大地影视</td>
+                                    <td>信息网络传播权</td>
+                                    <td>自音乐首播之日起一年</td>
+                                    <td>非独家授权</td>
+                                    <td>中国大陆不含港澳台</td>
+                                    <td>中文、英文</td>
+                                    <td>是</td>
+                                    <td>是</td>
+                                    <td>是，仅限移动终端</td>
+                                    <td>无限制</td>
+                                    <td>
+                                        <button type="button" class="btn btn-default">删除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">				
-                <button type="button" class="btn btn-primary btn-news modal-right-info-btn">确认</button>
+                <button type="button" class="btn btn-primary btn-news ">确认</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div><!-- /.modal-content -->

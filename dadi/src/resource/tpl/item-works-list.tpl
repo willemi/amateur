@@ -1,8 +1,8 @@
 {{~it :m:n}}
 //{{=m.vid_num || 0}}
 <tr>
-	<th scope="row"><a href="ipdetails.html">{{=m.id}}</a></th>
-	<td>{{!m.name}}</td>
+	<th scope="row">{{=m.id}}</th>
+	<td><a href="ipdetails.html">{{!m.name}}</a></td>
 	<td>{{!m.type}}</td>
 	<td>{{!m.fu}}</td>
 	<td>{{!m.mony}}</td>
