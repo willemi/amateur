@@ -3,7 +3,6 @@ import '../css/works-search.scss';
 const util = require("./common/util.js")
 
 const echarts = require('echarts');
-const data = require('../data/flare.json');
 
 const tabelTpl = require('../tpl/item.tpl');
 
@@ -24,33 +23,11 @@ let data1 =[{
 	"status": "出版发行1",
 	"s": 1
 }]
-//查询表
-let data2 =[{
-	"title": "孔子",
-	"type": "电影",
-	"sub": "大地之作有点公司",
-	"source": "采购",
-	"status": "出版发行",
-	"s": 2
-},{
-	"title": "孔子",
-	"type": "电影1",
-	"sub": "大地之作有点公司1",
-	"source": "采购1",
-	"status": "出版发行1",
-	"s": 2
-}]
 //默认数据
 function initDaya(){
 	let data = data1;
 	renderData(data)
 }
-//搜索数据
-function searchDaya(){
-	let data = data2;
-	renderData(data)
-}
-
 function renderData(data) {
 	$tabelCont.html(tabelTpl(data))
 }
@@ -71,31 +48,6 @@ function bindEvents(){
 	// 		$(this).addClass("cut")
 	// 	}
 	// })
-	//树形图谱
-	var $treeFixed = $(".tree-fixed");
-	$doc.on("click", ".btn-tree", function(){
-		$treeFixed.show();
-		treeFun("tree-content");
-		
-	})
-	$treeFixed.on("click", "i", function(){
-		$treeFixed.hide();
-	})
-	//搜索
-	var $ipList = $(".ip-list");
-	var $ipDetails = $(".ip-details");
-	$doc.on("click", ".btn-query", function(){
-		searchDaya()
-	})
-	$doc.on("click", ".btn-look", function(){
-		$ipList.hide();
-		$ipDetails.show();
-		treeFun("container");
-	})
-	$doc.on("click", ".btn-list", function(){
-		$ipList.show();
-		$ipDetails.hide();
-	})
 	//pages
 	util.pageinator("pageLimit", "10", "url", tplData);
 	function tplData(data){
@@ -110,6 +62,19 @@ function bindEvents(){
 	// $('#delete').on('hide.bs.modal', function () {
 	// 	// 执行一些动作...
 	// });	
+	let chart = true;
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		// 获取已激活的标签页的名称
+		let activeTab = $(e.target).text(); 
+		if(activeTab == "数据图" && chart){
+			chart = false;
+			initEcharts()
+		}
+		//e.target // 激活的标签页
+		//e.relatedTarget // 前一个激活的标签页
+	  })
+
+
 	$doc.on("click", ".dropdown-menu li", function(){
 		var $this = $(this)
 		var $text = $this.text(),
@@ -117,42 +82,113 @@ function bindEvents(){
 		$button.html($text +'<span class="caret"></span>');
 	})
 }
-//echarts 树图谱
-function treeFun(cont){
-	var dom = document.getElementById(cont);
+
+function initEcharts(){
+	var dom = document.getElementById("container");
 	var myChart = echarts.init(dom);
 	var app = {},
 		option = null;
-	myChart.showLoading();
-	//$.get('data/asset/data/flare.json', function (data) {
-		myChart.hideLoading();	
-		myChart.setOption(option = {
-			tooltip: {
-				trigger: 'item',
-				triggerOn: 'mousemove'
-			},
-			series: [{
-				type: 'tree',
-				data: [data],
-				top: '14%',
-				bottom: '14%',
-				layout: 'radial',
-				symbol: 'emptyCircle',
-				symbolSize: 7,
-				initialTreeDepth: 3,
-				animationDurationUpdate: 750
-			}]
-		});
-		myChart.on('click', function(params){  
-			console.log(params);  
-		});
-	//});
+	option = {
+	    // title : {
+	    //     text: '某站点用户访问来源',
+	    //     subtext: '纯属虚构',
+	    //     x:'center'
+	    // },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        orient: 'vertical',
+	        bottom: 'bottom',
+	        icon: 'circle',
+	        data: ['音乐','影视动漫','美术','文字','戏剧']
+	    },
+	    series : [
+	        {
+	            name: '名称',
+	            type: 'pie',
+	            radius : '55%',
+	            center: ['50%', '50%'],
+	            data:[
+	                {value:335, name:'音乐'},
+	                {value:234, name:'影视动漫'},
+	                {value:135, name:'美术'},
+	                {value:135, name:'文字'},
+	                {value:1548, name:'戏剧'}
+	            ],
+	            itemStyle: {
+	                emphasis: {
+	                    shadowBlur: 10,
+	                    shadowOffsetX: 0,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            }
+	        }
+	    ]
+	};
 	if (option && typeof option === "object") {
-		myChart.setOption(option, true);
+	    myChart.setOption(option, true);
+	}
+
+	var dom1 = document.getElementById("container1");
+	var myChart1 = echarts.init(dom1);
+	var app1 = {},
+	option1 = null;
+	app1.title = '环形图';
+
+	option1 = {
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    legend: {
+	        orient: 'horizontal',
+	        y: 'bottom',
+	        icon: 'circle',
+	        data:['音乐','影视动漫','美术','文字','戏剧']
+	    },
+	    series: [
+	        {
+	            name:'访问来源',
+	            type:'pie',
+	            radius: ['40%', '60%'],
+	            center: ['50%', '50%'],
+	            avoidLabelOverlap: false,
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'center'
+	                },
+	                emphasis: {
+	                    show: true,
+	                    textStyle: {
+	                        fontSize: '30',
+	                        fontWeight: 'bold'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    show: false
+	                }
+	            },
+	            data:[
+					{value:335, name:'音乐'},
+	                {value:234, name:'影视动漫'},
+	                {value:135, name:'美术'},
+	                {value:135, name:'文字'},
+	                {value:1548, name:'戏剧'}
+	            ]
+	        }
+	    ]
+	};
+	if (option1 && typeof option1 === "object") {
+	    myChart1.setOption(option1, true);
 	}
 }
 function init(){
-	initDaya()
+	initDaya()	
 	bindEvents();
 }
 init();

@@ -45,60 +45,56 @@
 			</div>
 		</div>
 		<div class="ip-list">
-			<div class="title-h3"><h3>IP资源池列表</h3><button type="button" class="btn btn-default">导出数据<i class="glyphicon glyphicon-download-alt"></i></button></div>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>资源名称</th>
-						<th>资源类型</th>
-						<th>权利主体</th>
-						<th>权利来源</th>
-						<th>权利状况</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody class="tabel-cont">
-				</tbody>
-			</table>
-			<div id="example" class="example">
-				<ul id="pageLimit"></ul>
-			</div>
-		</div>
-		<div class="ip-details">
-			<dl class="details-title">
-				<dt class="btn-list">IP资源池列表 / </dt>
-				<dd> 孔子</dd>
-			</dl>
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">项目基本信息</div>
-						<div class="panel-body">
-							项目基本信息
+			<div class="title-h3"><h3>作品信息查询统计</h3><button type="button" class="btn btn-default">导出数据<i class="glyphicon glyphicon-download-alt"></i></button></div>
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active">
+					<a href="#list" data-toggle="tab">列表</a>
+				</li>
+				<li><a href="#charst" data-toggle="tab">数据图</a></li>
+			</ul>
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="list">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>序号</th>
+								<th>作品ID</th>
+								<th>作品名称</th>
+								<th>作品类型</th>
+								<th>题材类型</th>
+								<th>权利信息</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody class="tabel-cont">
+						</tbody>
+					</table>
+					<div id="example" class="example">
+						<ul id="pageLimit"></ul>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="charst">
+					<div class="ip-details">						
+						<div class="row">
+							<div class="col-md-6 col-lg-6 pr10">
+								<div class="panel panel-default">									
+									<div class="panel-body">
+									   <div id="container" style="height: 100%"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-6 pl10">
+								<div class="panel panel-default">
+									<div class="panel-body">
+									   <div id="container1" style="height: 100%"></div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 col-lg-6 pr10">
-					<div class="panel panel-default">
-						<div class="panel-heading">权利链图谱</div>
-						<div class="panel-body">
-							<i class="glyphicon glyphicon-fullscreen btn-tree"></i>
-							<div class="container" id="container"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-6 pl10">
-					<div class="panel panel-default">
-						<div class="panel-heading">版权结构图谱</div>
-						<div class="panel-body">
-							<div class="container" id="container1"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			</div>			
+		</div>		
 	</div>
 </div>
 <!-- 模态框（Modal） -->
@@ -120,13 +116,6 @@
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
-</div>
-<div class="tree-fixed">
-	<p></p>
-	<div class="tree-cont">
-		<i class="tree-close glyphicon glyphicon-remove-circle"></i>
-		<div id="tree-content"></div>
-	</div>
 </div>
 </body>
 </html>

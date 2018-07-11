@@ -23,7 +23,7 @@ function initEcharts(){
 	        orient: 'vertical',
 	        bottom: 'bottom',
 	        icon: 'circle',
-	        data: ['音乐','影视','动漫','美术','文字','戏剧']
+	        data: ['音乐','影视动漫','美术','文字','戏剧']
 	    },
 	    series : [
 	        {
@@ -33,8 +33,7 @@ function initEcharts(){
 	            center: ['50%', '50%'],
 	            data:[
 	                {value:335, name:'音乐'},
-	                {value:310, name:'影视'},
-	                {value:234, name:'动漫'},
+	                {value:234, name:'影视动漫'},
 	                {value:135, name:'美术'},
 	                {value:135, name:'文字'},
 	                {value:1548, name:'戏剧'}
@@ -68,7 +67,7 @@ function initEcharts(){
 	        orient: 'horizontal',
 	        y: 'bottom',
 	        icon: 'circle',
-	        data:['音乐','影视','动漫','美术','文字','戏剧']
+	        data:['音乐','影视动漫','美术','文字','戏剧']
 	    },
 	    series: [
 	        {
@@ -97,8 +96,7 @@ function initEcharts(){
 	            },
 	            data:[
 					{value:335, name:'音乐'},
-	                {value:310, name:'影视'},
-	                {value:234, name:'动漫'},
+	                {value:234, name:'影视动漫'},
 	                {value:135, name:'美术'},
 	                {value:135, name:'文字'},
 	                {value:1548, name:'戏剧'}
@@ -112,9 +110,6 @@ function initEcharts(){
 }
 
 function bindEvents(){
-	util.storage.set("sider", "sid1", "");
-	util.storage.set("sider", "sid2", "");
-	util.storage.set("sider", "sid3", "");
     var $doc = $(document);
     // $doc.on("click", "#sideNav > li", function(e){
     //     var $this = $(this);
