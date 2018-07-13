@@ -11,3 +11,35 @@
         margin-top:30px;
     }
 }
+.admin-tabel {
+    .panel-body {
+        padding:15px 0;
+        ul {
+            li {
+                padding:0 10px;
+                line-height: 24px;
+                &:hover {
+                    background-color: rgba(242, 242, 242, 1);                    
+                }
+                position: relative;
+            }
+        }
+    }
+}
+.dl-tk {
+    width:135px;
+    height:auto;
+    border:1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    background-color: #fff;
+    z-index: 99;
+    dt, dd {
+        padding:0 10px;
+        line-height: 36px;
+    }
+    dt {
+        border-bottom: 1px solid #ccc;
+    }
+}

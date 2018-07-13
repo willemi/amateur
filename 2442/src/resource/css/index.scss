@@ -1,0 +1,168 @@
+@import './common.scss';
+html, body {
+	width:100%;
+	height:100%;
+}
+.logo {
+	width:95px;
+	height:90px;
+	background-image: url('../img/95_90.png');
+	position: fixed;
+	left:85px;
+	top:25px;
+	z-index: 9;
+	font-size: 0;
+}
+.copyright {
+	position: fixed;
+	right:150px;
+	bottom:25px;
+	z-index: 5;
+	color:#fff;
+	font-size: 14px;
+}
+ul.banner {
+    width:100%;
+    height:100%;
+    position: relative;
+    display: block;
+	background-color: #000;
+	overflow: hidden;
+	li {
+		list-style: none;
+		width:33.33%;
+		height:100%;
+		float:left;
+		transform: skewX(-15deg);   
+		overflow: hidden;
+		position: relative;		
+		& > i {
+			width:200%;
+			height:100%;
+			display: block;
+			position: absolute;
+			z-index: 0;
+			top:0;
+			right:-50%;
+			transform: skewX(15deg);
+			&.bj-01 {
+				background-image: url('../img/1240_950_01.jpg');
+			}
+			&.bj-02 {
+				background-image: url('../img/1240_950_02.jpg');
+			}
+			&.bj-03 {
+				background-image: url('../img/1240_950_03.jpg');
+			}			
+			background-size: cover;
+			background-position: center center
+		}
+		& > a {
+			width:100%;
+			height:100%;
+			display: block;
+			position: relative;
+			-webkit-transition: all 0.35s ease-in-out;
+			transition: all 0.35s ease-in-out;			
+			h3 {
+				width:100%;
+				height:60px;
+				position: absolute;
+				top:20%;
+				z-index: 9;
+				&.title-01 {
+					background-image: url('../img/title-01.png');
+				}
+				&.title-02 {
+					background-image: url('../img/title-02.png');
+				}
+				&.title-03 {
+					background-image: url('../img/title-03.png');
+				}
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+				background-position: top center;
+			}
+			.rest-div {
+				width:80%;
+				height:auto;
+				margin:0 auto;
+				position: relative;
+				z-index: 2;
+				top:50%;
+				transform: translateY(-50%) skewX(15deg);			
+				.info {
+					width:100%;
+					min-height: 300px;
+					padding:40px 0;
+					// transform :translate3d(0,0,0);
+					-webkit-transition: all 0.35s ease-in-out;
+					transition: all 0.35s ease-in-out;
+					color:#fff;
+					opacity: 0;
+					position: relative;
+					line-height: 24px;
+				}
+				em {
+					width: 50%;
+					min-height: 200px;    
+					background-color: transparent;
+					&.em1 {
+						float: left;
+						margin-left:-35%;
+						shape-outside: polygon(0 0, 100% 0, 0 100%, 0 100%);
+					}
+					&.em2 {
+						float: right;
+						margin-right:-35%;
+						shape-outside: polygon(0 100%, 0 100%, 100% 100%, 100% 0);
+					}
+				}
+			}
+			.mask {
+				position: absolute;
+				z-index: 1;
+				background: #333333;
+				background: rgba(0, 0, 0, 0.6);
+				height: 100%;
+				width: 100%;
+				-webkit-transition: all 0.35s ease-in-out;
+				transition: all 0.35s ease-in-out;
+				left:0;
+				bottom:-100%;
+			}
+			.btn-p {
+				width:320px;
+				height:56px;
+				transform: skewX(-15deg);
+				display: block;
+				background-color: #01e7a7;
+				border:5px solid #01e7a7;
+				text-align: center;
+				font:16px/46px "微软雅黑";
+				color:#161616;
+				position: absolute;
+				z-index: 9;
+				left:50%;
+				transform: translateX(-50%);
+				bottom:20%;
+			}
+			&:hover {
+				color:#fff;
+				.mask {
+					bottom:0
+				}
+				.info {
+					opacity: 1
+				}
+				.btn-p {
+					background-color: #282828;
+					border-color:#0ba29a;
+					color:#fff;
+				}
+			}
+		}
+		
+	}
+}
+@import './resive.scss';
