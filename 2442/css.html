@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>快剪辑新版本视频指南</title>
+</head>
+<body>
+<style>
+html, body {
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+ul {
+    width:100%;
+    height:100%;
+    position: relative;
+    display: block;
+    background-color: #ccc
+}
+li {
+    list-style: none;
+    width:33.33%;
+    height:100%;
+    float:left;
+    transform: skewX(-15deg);   
+    overflow: hidden;
+    position: relative;
+}
+li i {
+    width:200%;
+    height:100%;
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top:0;
+    right:-50%;
+    transform: skewX(15deg);
+    background-image: url(http://p8.qhimg.com/t01e8043cbc572a289a.png#1287x713);
+    background-size: cover;
+    background-position: center center
+}
+li a {
+    width:100%;
+    height:100%;
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+.rest-div {
+    width:80%;
+    height:auto;
+    margin:0 auto;
+    position: relative;
+    z-index: 2;
+    top:50%;
+    transform: translateY(-50%) skewX(15deg);
+}
+.mask {
+    position: absolute;
+    z-index: 1;
+    background: #333333;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    left:0;
+    bottom:-100%;
+}
+a,
+a:hover,
+a:active {
+	text-decoration: none;
+	outline: 0
+}
+.info {
+    width:100%;
+    min-height: 300px;
+    padding:40px 0;
+    transform :translate3d(0,0,0);
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    color:#fff;
+    opacity: 0;
+    position: relative;
+    line-height: 24px;
+}
+.info em {
+    width: 50%;
+    min-height: 200px;    
+    background-color: transparent;
+}
+.info em.em1 {
+    float: left;
+    margin-left:-35%;
+    shape-outside: polygon(0 0, 100% 0, 0 100%, 0 100%);
+}
+.info em.em2 {
+    float: right;
+    margin-right:-35%;
+    shape-outside: polygon(0 100%, 0 100%, 100% 100%, 100% 0);
+}
+a:hover {
+    color:#fff;
+}
+a:hover .mask {
+    bottom:0
+}
+a:hover .info {
+    opacity: 1
+}
+</style>
+<ul>
+    <li>
+        <i></i>
+        <a href="#">
+            <div class="rest-div">
+                <h3>111111111</h3>
+                <div class="info"><em class="em1"></em><em class="em2"></em>快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频快剪辑新版本视频</div>
+                <h5>快剪辑新版本视频</h5>
+            </div>
+            <p class="mask"></p>
+        </a>        
+    </li>
+</ul>
+
+</body>
+</html>
