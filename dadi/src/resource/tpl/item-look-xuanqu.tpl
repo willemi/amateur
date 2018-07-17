@@ -1,0 +1,41 @@
+{{~it :m:n}}
+<!--合同详情 作品 gengk-look-->
+<ul>
+	<li>
+		<label>合同编号</label>
+		<span>{{!m.contract_code}}</span>
+	</li>
+	<li>
+		<label>合同主体</label>
+		<span>{{!m.contract_subject}}</span>
+	</li>
+	<li>
+		<label>呈文部门</label>
+		<span>{{!m.sub_dept}}</span>
+	</li>
+	<li>
+		<label>合同名称</label>
+		<span>{{!m.contract_name}}</span>
+	</li>
+	<li>
+		<label>合同金额</label>
+		<span>{{!m.contract_amount}}</span>
+	</li>
+	<li>
+		<label>签约日期</label>
+		<span>{{!m.sign_date}}</span>
+	</li>
+	<li>
+		<label>生效日期</label>
+		<span>{{!m.effect_date}}</span>
+	</li>
+	<li>
+		<label>失效日期</label>
+		<span>{{!m.invalid_date}}</span>
+	</li>
+	<li>
+		<label>有效期</label>
+		<span>{{!m.effect_period}}</span>
+	</li>
+</ul>
+{{~}}

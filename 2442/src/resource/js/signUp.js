@@ -1,6 +1,7 @@
-import '../css/personal.scss';
+import '../css/signUp.scss';
 
 const util = require('./common/util');
+
 function bindEnds(){
 
 }

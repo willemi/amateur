@@ -69,7 +69,7 @@ easyUpload.js
 					$html = '<div class="easy_upload-container"><div class="easy_upload-head">';
 					$html += '<input type="file" '
 					$html += option.multi ? 'multiple ' : '';
-					$html += 'class="fileInput" data-count="0" style="display:none;" />';
+					$html += 'class="fileInput" data-count="0" style="display:none;"  />';
 					$html += '<span class="easy_upload_select noselect">' + option.selectText + '</span>';
 					$html += '<span class="easy_upload_head_btn1 noselect">上传</span>';
 					$html += '<span class="easy_upload_head_btn2 noselect">删除</span>';
@@ -305,10 +305,11 @@ easyUpload.js
 								contentType: false,
 								timeout: option.timeout,
 								success: function (res) {
+									console.log(res)
 									// 标记索引，用于删除操作
 									res.easyFileIndex = file.index;
 									var param = _this._findEle(file.index, target);
-									if (res.code!=200){
+									if (res.status!=1){
 										allowNewPost = true;
 										if (option.multi) {
 											response.error.push(res);

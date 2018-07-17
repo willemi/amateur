@@ -40,45 +40,6 @@
 						</tr>
 					</thead>
 					<tbody class="tabel-cont" id="works-list">
-						<!-- <tr>
-							<th scope="row"><a href="works-details.html">孔子</a></th>
-							<td>电影</td>
-							<td>大地之作有点公司</td>
-							<td>采购</td>
-							<td>出版发行</td>
-							<td>待审核</td>
-							<td>
-								<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
-								<button class="btn btn-primary">修改</button>
-								<button class="btn btn-default">删除</button>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><a href="works-details.html">孔子</a></th>
-							<td>电影</td>
-							<td>大地之作有点公司</td>
-							<td>采购</td>
-							<td>出版发行</td>
-							<td>已通过</td>
-							<td>
-								<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
-								<button class="btn btn-primary">修改</button>
-								<button class="btn btn-default">删除</button>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><a href="works-details.html">孔子</a></th>
-							<td>电影</td>
-							<td>大地之作有点公司</td>
-							<td>采购</td>
-							<td>出版发行</td>
-							<td>未通过</td>
-							<td>
-								<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
-								<button class="btn btn-primary">修改</button>
-								<button class="btn btn-default">删除</button>
-							</td>
-						</tr> -->
 					</tbody>
 				</table>
 				<div id="example" class="example">
@@ -86,7 +47,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="content-02" style="display: n1one">
+		<div class="content-02" style="display: none">
 			<ul class="step">
 				<li class="col-md-4 col-lg-4 step-left active">1.基础信息</li>
 				<li class="col-md-4 col-lg-4 step-center ">2.权利信息</li>
@@ -96,10 +57,10 @@
 				<!--基础信息 start-->
 				<div class="basics main">
 					<div class="form-inline form-2">
-						<div class="form-group col-md-4 col-lg-4">
+						<!-- <div class="form-group col-md-4 col-lg-4">
 							<label for="exampleInputName2">作品ID</label>
 							<input type="text" class="form-control" id="work-id" placeholder="">
-						</div>
+						</div> -->
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">作品名称</label>
 							<input type="text" class="form-control" id="work-name" value="">
@@ -115,21 +76,21 @@
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">作品类型</label>
 							<select class="form-control" id="work-type">
-								<option>作品类型1</option>
-								<option>作品类型2</option>
-								<option>作品类型3</option>
-								<option>作品类型4</option>
-								<option>作品类型5</option>
+								<option value="1">歌曲</option>
+								<option value="2">乐曲</option>
+								<option value="3">戏剧 </option>
+								<option value="4">戏曲</option>
 							</select>
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">题材类型</label>
 							<select class="form-control" id="theme-type">
-								<option>题材类型1</option>
-								<option>题材类型2</option>
-								<option>题材类型3</option>
-								<option>题材类型4</option>
-								<option>题材类型5</option>
+								<option value="1">通俗 </option>
+								<option value="2">美声 </option>
+								<option value="3">嘻哈 </option>
+								<option value="4">摇滚 </option>
+								<option value="5">民谣 </option>
+								<option value="6">影视 </option>
 							</select>
 						</div>
 						<div class="form-group col-md-4 col-lg-4">
@@ -161,8 +122,8 @@
 						<div class="form-group col-md-4 col-lg-4">
 							<label for="name">是否有原件</label>
 							<select class="form-control" id="original-script">
-								<option>是</option>
-								<option>否</option>
+								<option value="1">是</option>
+								<option value="0">否</option>
 							</select>
 						</div>
 						<div class="form-group col-md-12 col-lg-12">
@@ -180,7 +141,6 @@
 							<div class="pull-right col-md-4 col-lg-4 mt10">					
 								<div class="btn-operation">
 									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-qbligeeAdd"><i class="glyphicon glyphicon-plus"></i>新增</button>
-									<button type="button" class="btn btn-default btn-obligee-list-dele">删除</button>					
 								</div>
 							</div>
 						</div>
@@ -224,7 +184,7 @@
 								</span>
 							</div>
 							<div class="btn-operation">
-								<label><input type="radio" name="news" value="1"> 来源于权利</label>
+								<label><input type="radio" name="news" value="1"> 来源于权利组</label>
 								<select class="form-control sel-ly" value="1">
 									<option value="1">音著协</option>
 									<option value="2">互联网下载</option>
@@ -238,24 +198,25 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
-									<th>权利来源</th>
-									<th>权利来源主体</th>
-									<th>拥有权利内容</th>
-									<th>我方权利比重</th>
-									<th>是否专有</th>
-									<th>有无维权权利</th>
-									<th>有无转授权权利</th>
-									<th>有无合同</th>
-									<th>权利类型</th>
-									<th>授权许可使用方式</th>
-									<th>授权许可使用渠道</th>
-									<th>授权许可使用地域</th>
-									<th>授权许可使用次数</th>
-									<th>授权许可使用语言</th>
-									<th>授权许可使用开始日期</th>
-									<th>授权许可使用结束日期</th>
-									<th>合同权利描述</th>
-									<th>备注</th>
+									<tr>
+										<th>序号</th>
+										<th>拥有权利内容</th>
+										<th>我方权利比重</th>
+										<th>是否专有</th>
+										<th>有无维权权利</th>
+										<th>有无转授权权利</th>
+										<th>有无合同</th>
+										<th>权利类型</th>
+										<th>授权许可使用方式</th>
+										<th>授权许可使用渠道</th>
+										<th>授权许可使用地域</th>
+										<th>授权许可使用次数</th>
+										<th>授权许可使用语言</th>
+										<th>授权许可使用开始日期</th>
+										<th>授权许可使用结束日期</th>
+										<th>合同权利描述</th>
+										<th>备注</th>
+									</tr>
 								</tr>
 								<!-- <tr>
 									<th>序号</th>
@@ -325,45 +286,27 @@
 				<!--附件信息 start-->
 				<div class="copyright main">
 					<div class="right-title">
-						<h3 class="col-md-2 col-lg-2">梗概权利许可</h3>
+						<h3 class="col-md-2 col-lg-2">附件列表</h3>
 						<div class="right-ht col-md-10 col-lg-10">				
 							<div class="btn-operation">
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-								<button type="button" class="btn btn-default" id="delete">删除</button>
+								<button type="button" class="btn btn-primary" id="btn-added" data-class="enclosure-list"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
 							</div>
 						</div>
 					</div>
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th class="th">序号</th>
+								<!-- <th class="th">序号</th> -->
 								<th>附件名称</th>
 								<th>附件类型</th>
 								<th>附件大小</th>
 								<th>上传日期</th>
 								<th>上传人</th>
 								<th>最后修改日期</th>
+								<th>操作</th>
 							</tr>
 						</thead>
 						<tbody id="enclosure-list">
-							<tr>
-								<th class="th" scope="row"><input type="checkbox" name="checkbox" class="checkbox" id="1201294">1</th>
-								<td>音乐作品登记</td>
-								<td>JPG</td>
-								<td>10.23MB</td>
-								<td>2018-12-23 10:55</td>
-								<td>安先生</td>
-								<td>2018-12-23 10:55</td>
-							</tr>
-							<tr>
-								<th class="th" scope="row"><input type="checkbox" name="checkbox" class="checkbox" id="22222222">1</th>
-								<td>音乐作品登记</td>
-								<td>JPG</td>
-								<td>10.23MB</td>
-								<td>2018-12-23 10:55</td>
-								<td>安先生</td>
-								<td>2018-12-23 10:55</td>
-							</tr>
 						</tbody>
 					</table>
 					<div id="example" class="example">
@@ -371,7 +314,7 @@
 					</div>
 					<div class="row row-btn col-md-pull-1">				
 						<button type="button" class="btn btn-default pre-step">上一步</button>
-						<button type="button" class="btn btn-primary">提交</button>
+						<button type="button" class="btn btn-primary next-step">提交</button>
 					</div>	
 				</div>
 				<!--附件信息 end-->
@@ -381,8 +324,6 @@
 </div>
 <div class="messages"></div>
 <!-- 模态框（Modal） -->
-<!--上传-->
-<%= require('html-loader!./include/modal-file.html') %>
 <!--合同详情-->
 <%= require('html-loader!./include/modal-detailsContract.html') %>
 <!--选择合同-->

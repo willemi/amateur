@@ -9325,32 +9325,41 @@ html, body {
 .ipadd-look .modal-dialog {
   width: 96% !important; }
 
-.cjht {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4; }
-
-.cjht:hover {
-  color: #fff; }
+.ht-list-s {
+  width: 200px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center; }
+  .ht-list-s p {
+    display: block;
+    padding: 20px 0; }
+  .ht-list-s .cjht {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4; }
+    .ht-list-s .cjht:hover {
+      color: #fff; }
 
 .ht-tk .modal-dialog {
   width: 96% !important;
@@ -9550,7 +9559,7 @@ html, body {
       float: left;
       margin-right: 10px; }
     .content .content-wrapper .quanli .btn-operation {
-      width: 30%; }
+      width: 40%; }
 
 ul.step {
   background-color: #fff;
@@ -10042,7 +10051,7 @@ label {
   float: right !important; }
   .content .content-wrapper .ipht .btn-operation label {
     margin: 0;
-    width: 100px;
+    width: 120px;
     line-height: 34px;
     text-align: left; }
 

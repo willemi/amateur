@@ -11,42 +11,244 @@
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
-<div class="banner"></div>
-<div class="main">
-	<div>
-		<h3>在线留言<i>Online Message</i></h3>
-		<div>
-			<form>
-				<div>
-					<span><input class="form-control" type="text" placeholder="姓名"></span>
-					<span><input class="form-control" type="tel" placeholder="手机"></span>
-				</div>
-				<div>
-					<input class="form-control" type="email" placeholder="邮箱">
-				</div>
-				<div>
-					<input class="form-control" type="tel" placeholder="电话">
-				</div>
-				<div>
-					<textarea class="form-control" placeholder="你想对呐咓说~"></textarea>
-				</div>
-				<button type="button" class="btn btn-primary">提交留言</button>
-			</form>
+<div class="main scroll">
+	<div class="title">
+		<h6></h6>
+		<h3>Participation method</h3>
+		<h4>参与办法</h4>
+	</div>
+	<div class="main-cont">
+		<span><i></i><i></i></span>
+		<div class="scroll-cont">
+			<div>
+				<p>为了让沿路更多跑团及跑者能参与到活动中，从246个路段中挑选11段开放助跑，助力长江跑，一起挑战吉尼斯纪录，如挑战成功，每个助力跑团将获得吉尼斯世界纪录证书一份。同时每段将邀请一个行业领袖助力长江跑。</p>
+				<dl>
+					<dt>助力形式</dt>
+					<dd>1、当RUN2442长江跑到达助力开放路段时，报名并通过组委会审核的跑团加入到接力跑活动中，以线下陪跑的形式助力长江跑。					</dd>
+					<dd>2、每个开放路段有且只有一个跑团助力。</dd>
+					<dd>3、组委会不提供补给物品，助力跑团须自行准备水及其它补给物品。</dd>
+					<dd>4、每个路段的助力时间以RUN2442长江跑接力跑实际进展情况确定，组委会将提前24小时以电话和邮件形式通知各助力跑团。</dd>
+					<dd>5、	根据路段情况，设定各路段容纳人数。</dd>
+				</dl>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>分段编号</th>
+							<th>所处省份</th>
+							<th>所处城市</th>
+							<th>助力人数</th>
+						</tr>
+					</thead>
+					<tbody class="tabel-cont" id="works-list">
+						<tr>
+							<th scope="row">1</th>
+							<td>M1</td>
+							<td>江苏</td>
+							<td>启东市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">12</th>
+							<td>M17</td>
+							<td>江苏</td>
+							<td>南京市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>M31</td>
+							<td>安徽</td>
+							<td>安庆市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">4</th>
+							<td>M38</td>
+							<td>江西</td>
+							<td>九江市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">5</th>
+							<td>M51</td>
+							<td>湖北</td>
+							<td>武汉市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">6</th>
+							<td>M64</td>
+							<td>湖北</td>
+							<td>宜昌市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">7</th>
+							<td>M69</td>
+							<td>湖北</td>
+							<td>巴东县</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">8</th>
+							<td>M97</td>
+							<td>重庆</td>
+							<td>渝中区</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">9</th>
+							<td>M109</td>
+							<td>四川</td>
+							<td>宜宾市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">10</th>
+							<td>M123</td>
+							<td>云南</td>
+							<td>邵通市</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<th scope="row">11</th>
+							<td>M196</td>
+							<td>青海</td>
+							<td>玉树州</td>
+							<td>12</td>
+						</tr>
+					</tbody>
+				</table>
+				<dl>
+					<dt>助力条件</dt>
+					<dd>1、	跑团在当地具有一定号召和影响力，跑团人数不低于200人。申请助力须提交一张以往跑团活动照和一篇跑团相关的推文。	</dd>
+					<dd>2、	跑团报名助力人数须达到所报路段人数要求。</dd>
+					<dd>3、	跑团提交助力口号，助力时统一穿着官方助力速干T。</dd>
+					<dd>4、	跑团中有以下情况的团员不能参加助力跑：从未跑过10公里或者参加跑步训练少于3个月；先天性心脏病、风湿性心脏病患者、心肌炎以及其他心脏病患者；高血压和脑血管疾病患者；冠状动脉患者和严重心律不齐这；血糖过高或过低的糖尿病患者；其他不适合运动的疾病患者。</dd>
+				</dl>
+				<dl>
+					<dt团长的工作></dt>
+					<dd>1、	统计所报路段的助力团员人数，收集信息及费用上交组委会。</dd>
+					<dd>2、	对所报团员进行审核，确保报名团员具备助力24.42KM的条件。</dd>
+					<dd>3、	给跑团助力成员准备必要的补给物品，如水、盐丸、能量胶等。</dd>
+					<dd>4、	和组委会保持沟通顺畅，按组委会通知时间集合已报名助力的团员按时赶到助力集合位置。</dd>
+					<dd>5、	组织报名助力团员签署免责申明，非报名助力团员不能参与助力活动。</dd>
+					<dd>6、	助力活动是开放场地，集合队伍，听从组委会现场工作人员指挥，保障助力活动的顺利进行。</dd>
+					<dd>7、	当自己的跑团助力团员遇到紧急情况时，请配合组委会工作人员做好应急处理。</dd>
+				</dl>
+				<dl>
+					<dt>助力流程</dt>
+					<dd>1、	各路段报名助力的跑团成员须按组委会通知时间提前两小时在该路段起点集合。</dd>
+					<dd>2、	跑团团长签署RUN2442长江跑24小时不间断滚动接力跑助力免责申明，助力团员都须亲自签名。</dd>
+					<dd>3、	团长将一瓶当地长江水递交组委会，装入RUN2442组委会指定容器中。</dd>
+					<dd>4、	领取跑团活动纹身贴、手环、头绳并分发佩戴。</dd>
+					<dd>5、	领取跑团助力成员的物品包，包含助力速干T/跑团专属助力头绳/定制手环/定制折叠背包，物品包人手一份。助力跑中须穿戴助力速干T。</dd>
+					<dd>6、	起点现场DIY彩绘及个性化道具进行装扮，摄影师拍照。</dd>
+					<dd>7、	陪跑助力RUN2442长江跑，和长江跑者一起用跑动形式致敬长江，摄影师全程跟随拍照并上传官网，助力跑者可免费去官网浏览及下载属于自己的精彩瞬间。</dd>
+					<dd>8、	完成该路段助力后，组委会在路段终点给团长佩戴助力花环，颁发长江跑助力荣誉证书，团长在长江跑全程路线图上签名留念，跑团全体成员录制一分钟助力视频。</dd>
+					<dd>9、	助力跑团在跑团公众发助力长江跑活动推文一篇，助力成员将助力活动发朋友圈，微博发送助力图片并@RUN2442官方微博。</dd>
+				</dl>
+				<dl>
+					<dt>通过资格审核并助跑完成赛段后，助跑团将得到：</dt>
+					<dd>1、	所助跑路段的冠名，如：RUN2442长江跑 M10“XX跑团段”</dd>
+					<dd>2、	在RUN2442官网展示。包括但不限于：助冠名路段、跑团及队长名字、助力RUN2442长江跑的口号、跑团宣传照（1张）、跑团介绍（100字以内）、助跑终点短视频</dd>
+					<dd>3、	RUN2442微信公众号发送介绍助跑团及助力跑的文章（1篇）</dd>
+					<dd>4、	RUN2442官方微博发送并@助跑团微博（1条）</dd>
+					<dd>5、	头条号，网易号，凤凰网，搜狐号，百度网，360网，新浪微博，微信公众号，腾讯网宣传。</dd>
+					<dd>6、	RUN2442助力活动包（定制服装、头带、徽章、纹身贴、折叠双肩背包、RUN2442定制手环）</dd>
+					<dd>7、	专属每支跑团的定制徽章，每位助跑跑者均可别在胸前，展示所属跑团风采</dd>
+					<dd>8、	组委会在现场提供彩绘物品、纹身贴等个性道具，供跑者装扮。</dd>
+					<dd>9、	专业的摄影师和摄像师现场记录，并在跑团跑完全程的路段终点，为助跑团拍摄大合影、短视频</dd>
+					<dd>10、现场有组委会服务车为跑者们提供物品寄存服务</dd>
+					<dd>11、基础人身意外伤害保险（报名者每人1份）</dd>
+					<dd>12、参与RUN2442长江跑助力的跑团将优先获得RUN2442挑战24小时接力跑吉尼斯世界纪录的资格。(详见RUN2442官网挑战24小时接力跑世界吉尼斯纪录规程一栏)</dd>
+				</dl>
+				<dl>
+					<dt>助力报名及费用</dt>
+					<dd>1、	跑团团体参与，每个开放路段由一个跑团助力。</dd>
+					<dd>2、	团长在RUN2442官网申请参与助力，注册跑团基础信息/跑团简介/跑团LOGO源文件（AI或PSD格式），并根据开放路段的位置等情况选择适合的路段。</dd>
+					<dd>3、	每个跑团助力费用1399元，团长负责收集团内报名助力跑者名单，将费用及名单提交组委会。</dd>
+					<dd>4、	团长对跑团内报名参与RUN2442助力长江跑助力的队员进行资格审核，并全员签署免责申明。</dd>
+				</dl>
+				<dl>
+					<dt>RUN2442长江跑助力跑团信息登记表</dt>
+					<dd>跑团名称：</dd>
+					<dd>团长姓名：</dd>
+					<dd>团长电话：</dd>
+					<dd>团长邮箱：</dd>
+					<dd>助力赛段编号：</dd>
+					<dd>助力口号：</dd>
+				</dl>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>证件类型</th>
+							<th>证件号</th>
+							<th>衣服尺码</th>
+							<th>手机号</th>
+						</tr>
+					</thead>
+					<tbody class="tabel-cont" id="works-list">
+						<tr>
+							<th scope="row">1</th>
+							<td>张三</td>
+							<td>男</td>
+							<td>身份证</td>
+							<td>111111111111111111</td>
+							<td>L</td>
+							<td>1333333333</td>
+						</tr>
+					</tbody>
+					<p></p>
+				</table>
+			</div>
 		</div>
 	</div>
-	<div>
-		<h3>联系我们<i>Contact us</i></h3>
-		<div class="news-nawa">
-			<p>中国  北京</p>
-			<p><i class="glyphicon glyphicon-map-marker"></i>呐咓运动健身体验馆</p>
-			<p><i class="glyphicon glyphicon-home"></i>地址：北京市朝阳区百子湾路33号万利中心6号楼B2层</p>
-			<p><i class="glyphicon glyphicon-earphone"></i>电话：400058599       010-56919975</p>
-			<p><i class="glyphicon glyphicon-envelope"></i>邮箱：iduoduozhao@leadwestedu.com</p>
+</div>
+<div class="main baom">
+	<div class="title">
+		<h6></h6>
+		<h3>Registration registration</h3>
+		<h4>注册报名</h4>
+	</div>
+	<div class="girl"></div>
+	<div class="main-cont">		
+		<div class="baom-form">
+			<input type="text" class="form-control" placeholder="受邀跑团注册报名">
 			<span>
-				<img id="lp_map_picture" src="http://api.map.baidu.com/staticimage/v2?ak=A4Bj1G04I7tBS7VUrea4zM57&amp;center=116.476016,39.908681&amp;width=280&amp;height=135&amp;zoom=15&amp;markers=116.476016,39.908681" alt="">
+				<a href="#">创建团队</a>
+				<a href="#">加入已创建团队</a>
 			</span>
 		</div>
 	</div>
+</div>	
+<div class="main QA">
+	<div class="title">
+		<h6></h6>
+		<h3>question and answer</h3>
+		<h4>QA问答</h4>
+	</div>
+	<div class="main-cont">
+		<ul>
+			<li>
+				<dl class="fl"><dt>Q</dt><dd>RUN2442的官方网站是？RUN2442的官方网站是？RUN2442的官方网站是？RUN2442的官方网站是？RUN2442的官方网站是？RUN2442的官方网站是？RUN2442的官方网站是？RUN2442的官方网站是？</dd></dl>
+				<dl class="fr"><dt>A</dt><dd>RUN2442唯一指定官方网站：http://www.run2442.com</dd></dl>
+			</li>
+		</ul>
+
+	</div>
+</div>
+<div class="main down">
+	<div class="title">
+		<h6></h6>
+		<h3>Responsible for downloading</h3>
+		<h4>免责声明下载</h4>
+	</div>
+	<a href="#"><i class="glyphicon glyphicon-folder-open"></i><p>点此下载此文件</p></a>
 </div>
 <%= require('html-loader!./include/footer.html') %>
 </body>

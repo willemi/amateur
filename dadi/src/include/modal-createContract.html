@@ -1,5 +1,5 @@
 <!-- 创建合同 作品 ht-tk-->
-<div class="modal fade ht-tk" style="display: bock" id="modal-createContract" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade ht-tk in" style="display: block" id="modal-createContract" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -93,7 +93,6 @@
 								<div class="pull-right col-md-2 col-lg-2 mt10">
 									<div class="btn-operation">
 										<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-signatoryInformation"><i class="glyphicon glyphicon-plus"></i>新增</button>
-										<button type="button" class="btn btn-default">删除</button>
 									</div>
 								</div>
 							</div>
@@ -109,14 +108,7 @@
 									</tr>
 								</thead>
 								<tbody id="contract-party-list">
-									<tr>
-										<th class="th" scope="row"><input type="checkbox" name="">甲方</th>
-										<td>XXX</td>
-										<td>13456789064</td>
-										<td>XXX</td>
-										<td>这里是签约方地址这里是签约方地址</td>
-										<td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
-									</tr>
+									
 								</tbody>
 							</table>
 							<div id="example" class="example">
@@ -207,13 +199,12 @@
 					<!--授权设置 start-->
 					<div class="set-up main">
 						<div class="right-title">
-							<h3 class="col-md-2 col-lg-2">合同采购信息</h3>
+							<h3 class="col-md-2 col-lg-2">合同附件信息</h3>
 							<div class="right-ht col-md-2 col-lg-2">				
 								<div class="btn-operation">
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-									<button type="button" class="btn btn-default">删除</button>					
+									<button type="button" class="btn btn-primary" id="btn-added" data-class="contract-appendices-list"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
 								</div>
-							</div>				
+							</div>
 						</div>
 						<table class="table table-hover">
 							<thead>
@@ -226,23 +217,15 @@
 									<th>备注</th>
 								</tr>
 							</thead>
-							<tbody class="contract-appendices-list">
-								<tr>
-									<th class="th" scope="row"><input type="checkbox" name="">1</th>
-									<td>音乐作品登记</td>
-									<td>JPG</td>
-									<td>10.23MB</td>
-									<td>2018-12-23 10:55</td>
-									<td>备注备注备注备注备注备注备注备注备注</td>
-								</tr>
+							<tbody class="contract-appendices-list" id="contract-appendices-list">
+								
 							</tbody>
 						</table>
 						<div id="example" class="example">
 							<ul id="pageLimit6"></ul>
 						</div>
 						
-						<div class="row row-btn col-md-pull-1">				
-							<!-- <button type="button" class="btn btn-default">重置</button> -->
+						<div class="row row-btn col-md-pull-1">
 							<button type="button" class="btn btn-default pre-stepa">上一步</button>
 							<button type="button" class="btn btn-primary">完成</button>
 						</div>	

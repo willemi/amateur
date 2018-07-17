@@ -1,4 +1,4 @@
-import '../css/videoPlay.scss';
+import '../css/periphery.scss';
 
 const util = require('./common/util');
 
