@@ -9,7 +9,7 @@
 			width: 83%;
 		}
         .right, .copyright {
-            display:none;
+           display:none;
 		}	
 		.select-div {
 			position: absolute;
@@ -299,6 +299,13 @@ thead th {
 			th {
 				border:0;
 			}
+		}
+	}
+}
+.qlnews-list {
+	tr {
+		input {
+			display: none;
 		}
 	}
 }

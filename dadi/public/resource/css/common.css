@@ -10146,3 +10146,6 @@ thead th {
   border-top: 1px solid #ddd; }
   .ipadd .modal-body thead th {
     border: 0; }
+
+.qlnews-list tr input {
+  display: none; }
