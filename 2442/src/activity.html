@@ -11,7 +11,7 @@
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
-<div class="main active">
+<div class="main active" id="description">
 	<div class="title">
 		<h6></h6>
 		<h3>Activity description</h3>
@@ -32,14 +32,29 @@
 		</dl>
 	</div>
 </div>
-<div class="main video">
+<div class="main video" id="video">
 	<div class="title">
 		<h6></h6>
 		<h3>Video display</h3>
 		<h4>视频展示</h4>
 	</div>
+	<div class="main-cont">
+		<section class="pc-banner">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide swiper-slide-center none-effect"><a href="#"><img src="resource/img/818_520.jpg" ></a></div>
+					<div class="swiper-slide"><a href="#"><img src="resource/img/818_520.jpg" ></a></div>
+					<div class="swiper-slide"><a href="#"><img src="resource/img/818_520.jpg" ></a></div>
+					<div class="swiper-slide"><a href="#"><img src="resource/img/818_520.jpg" ></a></div>
+					<div class="swiper-slide"><a href="#"><img src="resource/img/818_520.jpg" ></a></div>
+				</div>
+			</div>
+			<div class="swiper-button-prev">prev</div>
+			<div class="swiper-button-next">next</div>
+		</section>
+	</div>
 </div>
-<div class="main tzz">
+<div class="main challenger" id="challenger">
 	<div class="title">
 		<h6></h6>
 	</div>
@@ -72,7 +87,7 @@
 
 	</div>
 </div>
-<div class="main news-hot">
+<div class="main news-hot" id="hotspot">
 	<div class="title">
 		<h6></h6>
 		<h3>News hotspot</h3>
@@ -115,7 +130,7 @@
 		</ul>
 	</div>
 </div>
-<div class="main photo">
+<div class="main photo" id="photo">
 	<div class="title">
 		<h6></h6>
 		<h3>Photo download</h3>

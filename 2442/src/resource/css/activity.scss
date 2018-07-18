@@ -48,7 +48,53 @@
         }
     }
 }
-.tzz {
+.pc-banner {	
+	width: 100%;
+	@extend .clearfix;
+}
+.swiper-container {
+	width: 100%;
+	margin: 35px 0;
+}
+.swiper-slide {
+    -webkit-transition: transform 1.0s;
+    transition: transform 1.0s;
+	-webkit-transform: scale(0.7);
+	transform: scale(0.7);
+}
+.swiper-slide-active,.swiper-slide-duplicate-active {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.none-effect {
+    -webkit-transition: none;
+    transition: none;
+}
+.swiper-slide a {
+	background: #fff;
+	padding:10px;
+	display: block;
+	border-radius: 14px;
+}
+.swiper-slide-active a:after {
+	background: none;
+}
+.swiper-slide img {
+	width: 100%;
+	border-radius: 14px;
+	display: block;
+}
+.swiper-button-prev {
+	width: 40px;
+    height: 40px;
+}
+
+.swiper-button-next {
+	width: 40px;
+    height: 40px;
+}
+
+.challenger {
     background-image: url('../img/1920_950_01.jpg');
     background-size: cover;
     background-position: center center;
@@ -309,7 +355,7 @@
             font:20px/40px "微软雅黑";
             transform: skewX(-20deg);
             a {
-                border-bottom:1px solid #000;
+                border-bottom:1px dotted #000;
                 padding-bottom:5px;
                 transform: skewX(20deg);
                 display: block;

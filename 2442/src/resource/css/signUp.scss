@@ -1,5 +1,5 @@
 @import './common';
-.scroll {
+.method {
 	background-image: url('../img/1920_950_03.jpg');
 	background-size: cover;
 	background-position: center center;
@@ -39,7 +39,7 @@
 	}
 	
 }
-.baom {
+.registration {
 	background-color: #efefef;
 	height:945px;
 	position: relative;
@@ -55,7 +55,7 @@
 		margin-left:-900px;
 	}
 	.main-cont {
-		.baom-form {
+		.registration-form {
 			width:575px;
 			height:auto;
 			background-color: #000;
@@ -155,7 +155,7 @@
 		}
 	}
 }
-.down {
+.downloading {
 	background-color: #30ddd4;
 	.title {
 		h3 {

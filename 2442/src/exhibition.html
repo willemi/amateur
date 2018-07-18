@@ -11,57 +11,75 @@
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
-<div class="main running">
+<div class="main show" id="show">
 	<div class="title">
 		<h6></h6>
 		<h3>Running group show</h3>
 		<h4>跑团展示</h4>
 	</div>
-	<div class="main-cont">
-		<div class="swiper">
-			<div class="fl">
-				<h4>冠名路段名称</h4>
-				<h5>这里是名称</h5>
-				<h4>助力口号</h4>
-				<h5>这里是助力口号</h5>
-				<h4>跑团名</h4>
-				<h5>RUN2442</h5>
-				<dl>
-					<dt>
-						<h4>团长介绍</h4>
-						<h5>张会</h5>
-					</dt>
-					<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
-				</dl>
-				<dl>
-					<dt>
-						<h4>跑团介绍</h4>
-					</dt>
-					<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
-				</dl>
+	<div class="main-cont">		
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide swiper">
+					<div class="fl">
+						<h4>冠名路段名称</h4>
+						<h5>这里是名称</h5>
+						<h4>助力口号</h4>
+						<h5>这里是助力口号</h5>
+						<h4>跑团名</h4>
+						<h5>RUN2442</h5>
+						<dl>
+							<dt>
+								<h4>团长介绍</h4>
+								<h5>张会</h5>
+							</dt>
+							<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
+						</dl>
+						<dl>
+							<dt>
+								<h4>跑团介绍</h4>
+							</dt>
+							<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
+						</dl>
+					</div>
+					<div class="fr">
+						<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>						
+					</div>
+				</div>
+				<div class="swiper-slide swiper">
+					<div class="fl">
+						<h4>冠名路段名称</h4>
+						<h5>这里是名称</h5>
+						<h4>助力口号</h4>
+						<h5>这里是助力口号</h5>
+						<h4>跑团名</h4>
+						<h5>RUN2442</h5>
+						<dl>
+							<dt>
+								<h4>团长介绍</h4>
+								<h5>张会</h5>
+							</dt>
+							<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
+						</dl>
+						<dl>
+							<dt>
+								<h4>跑团介绍</h4>
+							</dt>
+							<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
+						</dl>
+					</div>
+					<div class="fr">
+						<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>
+					</div>
+				</div>
 			</div>
-			<div class="fr">
-				<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>
-				<p class="swiper-btn s-btn-pre">pre</p>
-				<p class="swiper-btn s-btn-next">next</p>
-			</div>
+			<div class="swiper-btn s-btn-pre"></div><!--左箭头-->
+			<div class="swiper-btn s-btn-next"></div><!--右箭头-->
 		</div>
-		<ol>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团某某跑团某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-			<li><img src="resource/img/70_100.jpg"><p>某某跑团</p></li>
-		</ol>
+		<ol class="s-pagination"></ol>
 	</div>
 </div>
-<div class="main vote">
+<div class="main vote" id="vote">
 	<div class="title">
 		<h6></h6>
 		<h3>vote</h3>
