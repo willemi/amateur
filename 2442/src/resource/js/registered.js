@@ -8,6 +8,9 @@ if(action == "login"){
 }else{
 	$(".registered").show()
 }
+$("html, body").animate({
+	"scrollTop": 600
+},500)
 function bindEnds(){
 }
 function init(){

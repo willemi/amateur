@@ -66,10 +66,10 @@ a {
   cursor: pointer; }
 
 /* 清除浮动 */
-.clearfix, .content .content-wrapper .right-title, ul.step, .form-inline, .newly-added .row {
+.clearfix, .modal-row .row .row-cont, .content .content-wrapper .right-title, ul.step, .form-inline, .newly-added .row {
   zoom: 1; }
 
-.clearfix:after, .content .content-wrapper .right-title:after, ul.step:after, .form-inline:after, .newly-added .row:after {
+.clearfix:after, .modal-row .row .row-cont:after, .content .content-wrapper .right-title:after, ul.step:after, .form-inline:after, .newly-added .row:after {
   content: "";
   display: block;
   clear: both;
@@ -237,6 +237,55 @@ html, body {
     width: 83%; }
   .ht-tk .modal-dialog .sign, .ht-tk .modal-dialog .contract-party, .ht-tk .modal-dialog .set-up, .ht-tk .modal-dialog .contract-a {
     display: none; }
+
+.table-cont {
+  width: 100%;
+  height: auto;
+  overflow: auto; }
+  .table-cont::-webkit-scrollbar {
+    width: 6px;
+    height: 6px; }
+  .table-cont::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px white;
+    border-radius: 10px; }
+  .table-cont::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #1da2e5;
+    background-color: #e2e2e2; }
+  .table-cont table {
+    min-width: 1600px; }
+
+.modal-row .row {
+  margin: 0; }
+  .modal-row .row h4 {
+    position: relative;
+    padding-left: 10px;
+    font: 16px/20px '\5FAE\8F6F\96C5\9ED1'; }
+    .modal-row .row h4:before {
+      content: "";
+      width: 5px;
+      height: 18px;
+      background-color: #337ab7;
+      position: absolute;
+      left: 0;
+      top: 1px; }
+  .modal-row .row .row-cont {
+    padding: 20px 0; }
+    .modal-row .row .row-cont li {
+      width: 33%;
+      float: Left;
+      margin-top: 10px; }
+      .modal-row .row .row-cont li label {
+        padding-right: 10px; }
+      .modal-row .row .row-cont li.w100 {
+        width: 100%; }
+  .modal-row .row td {
+    border: 0;
+    border-top: 1px solid #ddd; }
+  .modal-row .row table, .modal-row .row td, .modal-row .row th {
+    text-align: center; }
+    .modal-row .row table.table-hover, .modal-row .row td.table-hover, .modal-row .row th.table-hover {
+      min-width: 1600px; }
 
 .content {
   margin-left: 210px;

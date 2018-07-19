@@ -344,6 +344,71 @@ html, body {
 		}
 	}
 }
+.table-cont {
+	width:100%;
+	height:auto;
+	overflow:auto;
+	&::-webkit-scrollbar {  
+		width: 6px;  
+		height: 6px;  
+	}
+	&::-webkit-scrollbar-track {  
+		-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1);  
+		border-radius: 10px;  
+	}
+	&::-webkit-scrollbar-thumb {  
+		border-radius: 10px;  				
+		-webkit-box-shadow: inset 0 0 6px rgba(29,162,229,1);  
+		background-color: #e2e2e2;  
+	}  
+	table {
+		min-width: 1600px;
+	}
+}
+.modal-row {
+	.row {
+		margin:0;
+		h4 {
+			position: relative;
+			padding-left:10px;
+			font:16px/20px '微软雅黑';
+			&:before{
+				content: "";
+				width:5px;
+				height:18px;
+				background-color: #337ab7;
+				position: absolute;
+				left:0;
+				top:1px;
+			}
+		}
+		.row-cont {
+			@extend .clearfix;
+			padding:20px 0;
+			li {
+				width:33%;
+				float:Left;
+				margin-top:10px;
+				label {
+					padding-right:10px;
+				}
+				&.w100 {
+					width:100%;
+				}
+			}
+		}
+		td {
+			border:0;
+			border-top:1px solid #ddd
+		}
+		table, td, th {
+			text-align: center;
+			&.table-hover {
+				min-width: 1600px;
+			}
+		}
+	}
+}
 .content {
 	margin-left:210px;
 	height:100%;

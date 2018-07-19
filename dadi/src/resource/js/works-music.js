@@ -11,6 +11,11 @@ const itemSearchListLookTpl = require('../tpl/item-look-xuanqu.tpl');
 const itemSearchListLook1Tpl = require('../tpl/item-look-xuanqu.1.tpl');
 const itemSearchListLook2Tpl = require('../tpl/item-look-xuanqu.2.tpl');
 
+const detailsJicTpl = require('../tpl/item-details-jic.tpl');
+const detailsListTpl = require('../tpl/item-details-list.tpl');
+const detailsQlnewsTpl = require('../tpl/item-details-qlnews.tpl');
+const detailsFjianTpl = require('../tpl/item-details-fjian.tpl');
+
 let $RightNews = $(".right-news");
 
 window.formatobligee_type = function(state){
@@ -1019,6 +1024,36 @@ function bindEvents(){
 				util.showMsg("error")
 			}
 		});
+	})
+
+	//查看详情
+	$doc.on("click", ".btn-details", function(){
+		let id = $(this).data("id");
+		$.ajax({
+			type: "GET",
+			url: "http://140.143.142.191/dadi/obligee/delete",
+			data: JSON.stringify({id: id}),
+			dataType: "json",
+			cache: false,
+			contentType: "application/json;charset=UTF-8",
+			success: function(res) {
+				if(res && res.status == 1){
+
+
+					// $(".details-jic").html(detailsJicTpl(res.data));
+					// $(".details-list").html(detailsListTpl(res.data));
+					// $(".details-qlnews").html(detailsQlnewsTpl(res.data));
+					// $(".details-fjian").html(detailsFjianTpl(res.data));
+
+					$('#modal-details-look').modal('show');
+				}
+			},
+			error: function(error){
+				util.showMsg("error")
+			}
+		});
+
+		
 	})
 	// $doc.on("click", ".basics .add", function(){		
 	// 	var $this = $(this);

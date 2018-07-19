@@ -1,0 +1,23 @@
+{{~it :m:n}}
+//作品权利信息
+<tr>
+	<td>{{=n}}</td>
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td> 
+	<td>{{=m.name}}</td>
+	<td>{{=m.name}}</td>
+</tr>
+{{~}}
