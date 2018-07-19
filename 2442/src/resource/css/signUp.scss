@@ -90,23 +90,39 @@
 	}
 }
 .QA {
-	ul {
+	.main-cont > ul {
 		width:100%;
 		height:auto;
 		overflow: hidden;
 		margin:30px auto 0;
+		position: relative;
+		&:before {
+			content: '';
+			width:10px;
+			height:470px;
+			background-color: #0ba29a;
+			position: absolute;
+			left:0;
+			bottom:0;
+		}
 		li {
-			margin-top:15px;
+			margin-top:45px;
+			overflow: hidden;
+			height:auto;
+			display: flex;
+			justify-content:flex-start;
 			dl {
 				width:50%;
-				float:left;
+				height:85px;
+				display: flex;
 				dt {
 					width:85px;
 					height:85px;
 					position: relative;
 					color:#fff;
 					font:70px/85px "宋体";
-					text-align: center;
+					text-align: center;		
+					font-style:italic;			
 					&:before {
 						content: '';
 						position: absolute;
@@ -117,13 +133,15 @@
 				}
 				dd {
 					font:20px/24px "微软雅黑";
+					flex:1;
+					align-self:center;
 					@include lines(3)
 				}
 			}
 			.fl {
 				padding-right:20px;
+				flex-direction:row-reverse;
 				dt {
-					float:right;
 					background-color: #0ba29a;
 					&::before {
 						border-left:10px solid #0ba29a;
@@ -133,13 +151,12 @@
 				}
 				dd {
 					text-align: right;
-					margin-right:110px;
+					margin-right:10px;
 				}
 			}
 			.fr {
 				padding-left: 20px;
 				dt {
-					float:left;
 					background-color: #e72a2e;
 					&::before {
 						border-right:10px solid #e72a2e;
@@ -149,10 +166,15 @@
 				}
 				dd {
 					text-align: left;
-					margin-left: 101px;
+					margin-left: 10px;
 				}
 			}
 		}
+	}
+	nav {
+		
+		text-align: center;
+		padding-top:50px;
 	}
 }
 .downloading {

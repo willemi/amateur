@@ -7,31 +7,26 @@ if (window.console) {
 	let log = window.console.log;
 	window.console.log = process.env.NODE_ENV == 'production' ? () => {} : log
 }
-
+util.GetQueryString = (name) => {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!=null)return  unescape(r[2]); return null;
+}
 
 function bindEvents(){
 	var $doc = $(document);
-	var $phoneNav = $('div.phoneNav'),
-		$menus = $('.menus');
-	$doc.on("click", '.menus', function(){
-		var $this = $(this);
-		if($this.hasClass('active'),$phoneNav.hasClass('active')){
-			$this.removeClass('active');
-			$phoneNav.removeClass('active');
-		}
-		else{
-			$this.addClass('active');
-			$phoneNav.addClass('active');
-		}
-	});
-	$phoneNav.on("click", '.gb', function(){
-		if($menus.hasClass('active'),$phoneNav.hasClass('active')){
-			$menus.removeClass('active');
-			$phoneNav.removeClass('active');
-		}
-		else{
-			$(this).addClass('active');
-			$phoneNav.addClass('active');
+	let $fixed = $(".fixed");
+	$doc.on("click", ".go-top", function(){
+		$("html, body").animate({
+			"scrollTop": 0
+		},500)
+	})
+	$(window).on("scroll load", function(){
+		var scrollTop = $(window).scrollTop();
+		if(scrollTop > 100){
+			$fixed.show();
+		}else{
+			$fixed.hide()
 		}
 	});
 }

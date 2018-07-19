@@ -10147,5 +10147,5 @@ thead th {
   .ipadd .modal-body thead th {
     border: 0; }
 
-.qlnews-list tr input {
+.qlnews-list tr input, .qlnews-xuanqu tr input, .right-news tr input {
   display: none; }

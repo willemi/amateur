@@ -1,0 +1,50 @@
+@import './common.scss';
+.main {
+	display: none;
+	.main-cont {
+		padding:50px 0;
+		div {
+			width:495px;
+			height:auto;
+			overflow: hidden;
+			margin:10px auto 0;
+			display: flex;
+			justify-content: space-between;
+			input {
+				border:1px solid #a0a0a0;
+				padding:0 10px;
+				height:42px;
+				font:16px/40px "微软雅黑";
+				width:100%;
+				color:#b5b5b6;
+				flex:1;
+			}
+			span {				
+				width:175px;
+				@extend .btn-span;
+				&.yzm {
+					margin-left:10px;
+				}
+			}
+			&.buttom {
+				@extend .btn-span;
+			}
+			p {
+				cursor: pointer;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.btn-span {
+	display: flex;
+	justify-content: center;
+	height:42px;
+	font:16px/42px "微软雅黑";
+	color:#fff;
+	text-align: center;
+	background-color: #343434;
+	cursor: pointer;
+}

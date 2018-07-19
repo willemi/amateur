@@ -7,118 +7,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="Keywords" content="" />
-	<title>注册</title>
+	<title>注册登录</title>
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
-<div class="main show" id="show">
+<div class="main registered" id="registered">
 	<div class="title">
 		<h6></h6>
-		<h3>Running group show</h3>
-		<h4>跑团展示</h4>
-	</div>
-	<div class="main-cont">		
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide swiper">
-					<div class="fl">
-						<h4>冠名路段名称</h4>
-						<h5>这里是名称</h5>
-						<h4>助力口号</h4>
-						<h5>这里是助力口号</h5>
-						<h4>跑团名</h4>
-						<h5>RUN2442</h5>
-						<dl>
-							<dt>
-								<h4>团长介绍</h4>
-								<h5>张会</h5>
-							</dt>
-							<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
-						</dl>
-						<dl>
-							<dt>
-								<h4>跑团介绍</h4>
-							</dt>
-							<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
-						</dl>
-					</div>
-					<div class="fr">
-						<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>						
-					</div>
-				</div>
-				<div class="swiper-slide swiper">
-					<div class="fl">
-						<h4>冠名路段名称</h4>
-						<h5>这里是名称</h5>
-						<h4>助力口号</h4>
-						<h5>这里是助力口号</h5>
-						<h4>跑团名</h4>
-						<h5>RUN2442</h5>
-						<dl>
-							<dt>
-								<h4>团长介绍</h4>
-								<h5>张会</h5>
-							</dt>
-							<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
-						</dl>
-						<dl>
-							<dt>
-								<h4>跑团介绍</h4>
-							</dt>
-							<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
-						</dl>
-					</div>
-					<div class="fr">
-						<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>
-					</div>
-				</div>
-			</div>
-			<div class="swiper-btn s-btn-pre"></div><!--左箭头-->
-			<div class="swiper-btn s-btn-next"></div><!--右箭头-->
-		</div>
-		<ol class="s-pagination"></ol>
-	</div>
-</div>
-<div class="main vote" id="vote">
-	<div class="title">
-		<h6></h6>
-		<h3>vote</h3>
-		<h4>投票</h4>
+		<h3>registered</h3>
+		<h4>注册</h4>
 	</div>
 	<div class="main-cont">
-		<ul>
-			<li>
-				<img src="resource/img/305_160.jpg">
-				<h4>我是我</h4>
-				<p>中国区总票数<br />123456</p>
-				<span class="btn-vote"></span>
-			</li>
-			<li>
-				<img src="resource/img/305_160.jpg">
-				<h4>我是我</h4>
-				<p>中国区总票数<br />123456</p>
-				<span class="btn-vote"></span>
-			</li>
-			<li>
-				<img src="resource/img/305_160.jpg">
-				<h4>我是我</h4>
-				<p>中国区总票数<br />123456</p>
-				<span class="btn-vote"></span>
-			</li>
-			<li>
-				<img src="resource/img/305_160.jpg">
-				<h4>我是我</h4>
-				<p>中国区总票数<br />123456</p>
-				<span class="btn-vote"></span>
-			</li>
-			<li>
-				<img src="resource/img/305_160.jpg">
-				<h4>我是我</h4>
-				<p>中国区总票数<br />123456</p>
-				<span class="btn-vote"></span>
-			</li>
-		</ul>
-
+		<div>
+			<input type="text" id="" value="" placeholder="手机号">
+		</div>
+		<div>
+			<input type="text" id="" value="" placeholder="手机验证码">
+			<span class="yzm">获取验证码</span>
+		</div>
+		<div>
+			<input type="text" id="" value="" placeholder="邮箱">
+		</div>
+		<div>
+			<input type="password" id="" value="" placeholder="密码">
+		</div>
+		<div>
+			<input type="password" id="" value="" placeholder="确认密码">
+		</div>
+		<div class="buttom">确认注册</div>
+	</div>
+</div>
+<div class="main login" id="login">
+	<div class="title">
+		<h6></h6>
+		<h3>login</h3>
+		<h4>登录</h4>
+	</div>
+	<div class="main-cont">
+		<div>
+			<input type="text" id="" value="" placeholder="邮箱/手机号">
+		</div>
+		<div>
+			<input type="password" id="" value="" placeholder="密码">
+		</div>
+		<div class="buttom">立即登录</div>
+		<div><p>3秒注册！</p><p>忘记密码？</p></div>
 	</div>
 </div>
 <%= require('html-loader!./include/footer.html') %>

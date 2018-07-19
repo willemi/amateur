@@ -151,7 +151,7 @@ function workslist(page){
 		type: "GET",
 		url: "http://140.143.142.191/dadi/opus/list",
 		data: {
-			opusClassify: 1,
+			opus_classify: 1,
 			pageNum: page,
 			pageSize: 10
 		},
@@ -836,7 +836,7 @@ function bindEvents(){
 				}
 				console.log(files)
 				let da = {
-					opusClassify: 1,
+					opus_classify: 1,
 					opus_name: $workNameVal,
 					opus_type: $workTypeVal,
 					theme_type: $themeTypeVal,
