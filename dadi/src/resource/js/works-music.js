@@ -1031,19 +1031,17 @@ function bindEvents(){
 		let id = $(this).data("id");
 		$.ajax({
 			type: "GET",
-			url: "http://140.143.142.191/dadi/obligee/delete",
+			url: "http://140.143.142.191/dadi/opus/findById",
 			data: JSON.stringify({id: id}),
 			dataType: "json",
 			cache: false,
 			contentType: "application/json;charset=UTF-8",
 			success: function(res) {
 				if(res && res.status == 1){
-
-
-					// $(".details-jic").html(detailsJicTpl(res.data));
-					// $(".details-list").html(detailsListTpl(res.data));
-					// $(".details-qlnews").html(detailsQlnewsTpl(res.data));
-					// $(".details-fjian").html(detailsFjianTpl(res.data));
+					$(".details-jic").html(detailsJicTpl(res.opus));
+					$(".details-list").html(detailsListTpl(res.obligee));
+					$(".details-qlnews").html(detailsQlnewsTpl(res.droit));
+					$(".details-fjian").html(detailsFjianTpl(res.fileobj));
 
 					$('#modal-details-look').modal('show');
 				}
@@ -1052,8 +1050,6 @@ function bindEvents(){
 				util.showMsg("error")
 			}
 		});
-
-		
 	})
 	// $doc.on("click", ".basics .add", function(){		
 	// 	var $this = $(this);
