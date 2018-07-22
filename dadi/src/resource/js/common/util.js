@@ -41,6 +41,7 @@ Date.prototype.Format = function(fmt) {
 };
 
 util.isEmpty = (str) => {
+	str = $.trim(str)
 	return (str === '' || typeof(str) === 'undefined' || str === null) ? true : false;
 }
 //提示弹框

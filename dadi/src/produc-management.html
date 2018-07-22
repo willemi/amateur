@@ -35,7 +35,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>序号</th>
+                                <th>id</th>
                                 <th>产品编号</th>
                                 <th>产品名称</th>
                                 <th>产品类型</th>
@@ -56,31 +56,7 @@
                                 <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody class="tabel-cont">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>12345</td>
-                                <td>产品</td>
-                                <td>电影</td>
-                                <td>XX形态</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>2017-6-21</td>
-                                <td>2017-6-21</td>
-                                <td>XXX</td>
-                                <td>大陆</td>
-                                <td>中文</td>
-                                <td>是</td>
-                                <td>是</td>
-                                <td>XXX</td>
-                                <td>100次</td>
-                                <td>待审核</td>
-                                <td>
-                                    <button class="btn btn-primary">修改</button>
-                                    <button class="btn btn-default">删除</button>
-                                </td>
-                            </tr>
+                        <tbody class="tabel-cont produc-list">
                         </tbody>
                     </table>
                 </div>               
@@ -110,7 +86,6 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="th">序号</th>
                                 <th>作品ID</th>
                                 <th>作品名称</th>
                                 <th>作品类型</th>
@@ -125,31 +100,9 @@
                                 <th>维权权利</th>
                                 <th>使用渠道限制</th>
                                 <th>使用次数</th>
-                                <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="tr-hide">
-                                <th class="th" scope="row"><input type="checkbox" name="">1</th>
-                                <td>QLX20102020202</td>
-                                <td>七里香</td>
-                                <td>音乐</td>
-                                <td>杰威尔音乐</td>
-                                <td>大地影视</td>
-                                <td>信息网络传播权</td>
-                                <td>自音乐首播之日起一年</td>
-                                <td>非独家授权</td>
-                                <td>中国大陆不含港澳台</td>
-                                <td>中文、英文</td>
-                                <td>是</td>
-                                <td>是</td>
-                                <td>是，仅限移动终端</td>
-                                <td>无限制</td>
-                                <td>                                
-                                    <button type="button" class="btn btn-default">查看</button>
-                                    <button type="button" class="btn btn-default">删除</button>
-                                </td>
-                            </tr>
+                        <tbody class="yy-list">
                         </tbody>
                     </table>
                     <div id="example" class="example">
@@ -158,10 +111,9 @@
                     <div class="right-title">
                         <h3 class="col-md-2 col-lg-2">新产品信息</h3>                        		
                     </div>
-                    <table class="table table-hover nes-table">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="th">序号</th>
                                 <th>作品ID</th>
                                 <th>作品名称</th>
                                 <th>作品类型</th>
@@ -176,34 +128,14 @@
                                 <th>维权权利</th>
                                 <th>使用渠道限制</th>
                                 <th>使用次数</th>
-                                <th>操作</th>
+                                <!-- <th>操作</th> -->
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th class="th" scope="row"><input type="checkbox" name="">1</th>
-                                <td>QLX20102020202</td>
-                                <td>七里香</td>
-                                <td>音乐</td>
-                                <td>杰威尔音乐</td>
-                                <td>大地影视</td>
-                                <td>信息网络传播权</td>
-                                <td>自音乐首播之日起一年</td>
-                                <td>非独家授权</td>
-                                <td>中国大陆不含港澳台</td>
-                                <td>中文、英文</td>
-                                <td>是</td>
-                                <td>是</td>
-                                <td>是，仅限移动终端</td>
-                                <td>无限制</td>
-                                <td>                                
-                                    <button type="button" class="btn btn-default">删除</button>
-                                </td>
-                            </tr>
+                        <tbody class="news-list">
                         </tbody>
                     </table>
                     <div class="row row-btn col-md-pull-1">
-                        <button type="button" class="btn btn-primary next-step">下一步</button>
+                        <button type="button" class="btn btn-primary next-step next-step-01">下一步</button>
                     </div>	
                 </div>
                 <!--项目参与方信息 end-->
@@ -213,64 +145,43 @@
                         <h3 class="col-md-2 col-lg-2">产品合同信息</h3>
                         <div class="right-ht col-md-10 col-lg-10">				
                             <div class="btn-operation">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-choiceContracts1"><i class="glyphicon glyphicon-plus"></i>关联合同</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-choiceContracts-produc"><i class="glyphicon glyphicon-plus"></i>关联合同</button>
                             </div>
                         </div>				
                     </div>
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><input type="checkbox" name="">序号</th>
                                 <th>合同编号</th>
                                 <th>合同名称</th>
                                 <th>签约日期</th>
-                                <th>合同主体</th>
+                                <th>生效日期</th>
+                                <th>失效日期</th>
                                 <th>备注</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"><input type="checkbox" name="">1</th>
-                                <td>XXXXXXX189675456WSPD</td>
-                                <td>七里香》2018XXX采购合同</td>
-                                <td>2019-08-23</td>
-                                <td>大地院线</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-look">查看详情</button>
-                                    <button type="button" class="btn btn-default">删除</button>
-                                </td>
-                            </tr>
+                        <tbody class="hl-ht-list">
                         </tbody>
                     </table>
                     <div class="right-title">
                         <h3 class="col-md-2 col-lg-2">产品附件</h3>
                         <div class="right-ht col-md-10 col-lg-10">				
                             <div class="btn-operation">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-                                <button type="button" class="btn btn-default">删除</button>					
+                                <button type="button" class="btn btn-primary" data-class="produc-fj-list" id="btn-added-produc" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
                             </div>
                         </div>				
                     </div>
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th><input type="checkbox" name="">序号</th>
+                                <!-- <th>序号</th> -->
                                 <th>附件名称</th>
                                 <th>附件类型</th>
                                 <th>附件大小</th>
-                                <th>上传日期</th>
-                                <th>备注</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"><input type="checkbox" name="">1</th>
-                                <td>音乐作品登记</td>
-                                <td>JPG</td>
-                                <td>10.23MB</td>
-                                <td>2018-12-23 10:55</td>
-                                <td>备注备注备注备注备注备注备注备注备注</td>
-                            </tr>
+                        <tbody id="produc-fj-list">
                         </tbody>
                     </table>
                     <div id="example" class="example">
@@ -278,7 +189,7 @@
                     </div>
                     <div class="row row-btn col-md-pull-1">				
                         <button type="button" class="btn btn-default pre-step">上一步</button>
-                        <button type="button" class="btn btn-primary">提交</button>
+                        <button type="button" class="btn btn-primary next-step">提交</button>
                     </div>	
                 </div>
                 <!--项目资源信息 end-->
@@ -286,15 +197,14 @@
         </div>
 	</div>
 </div>
+<div class="messages"></div>
 <!-- 模态框（Modal） -->
-<!--上传-->
-<%= require('html-loader!./include/modal-file.html') %>
 <!--合同详情-->
-<%= require('html-loader!./include/modal-detailsContract1.html') %>
+<%= require('html-loader!./include/modal-detailsContract-produc.html') %>
 <!--选择合同-->
-<%= require('html-loader!./include/modal-choiceContracts1.html') %>
+<%= require('html-loader!./include/modal-choiceContracts-produc.html') %>
 <!--创建合同-->
-<%= require('html-loader!./include/modal-createContract1.html') %>
+<%= require('html-loader!./include/modal-createContract-produc.html') %>
 <!--权利变更-->
 <%= require('html-loader!./include/modal-changeRights.html') %>
 <!--合同签约方-->
@@ -303,5 +213,9 @@
 <%= require('html-loader!./include/modal-newly-added2.html') %>
 <!--引用原始库作品 -->
 <%= require('html-loader!./include/modal-referenceWorks.html') %>
+<!--产品详情 -->
+<%= require('html-loader!./include/modal-produc-details-look.html') %>
+<!--作品详情 -->
+<%= require('html-loader!./include/modal-details-look.html') %>
 </body>
 </html>

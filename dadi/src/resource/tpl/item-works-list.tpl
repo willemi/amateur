@@ -3,8 +3,8 @@
 <tr>
 	<th scope="row">{{=m.id}}</th>
 	<td><a class="btn-details" data-id="{{=m.id}}">{{!m.opus_name}}</a></td>
-	<td>{{=formatopus(m.opus_type)}}</td>
-	<td>{{=formattheme(m.theme_type)}}</td>
+	<td>{{=m.opus_type}}</td>
+	<td>{{=m.theme_type}}</td>
 	<td>{{!m.droitList}}</td>
 	<td id="{{=m.data_status}}">{{=formatState(m.data_status)}}</td>
 	<td id="{{!m.id}}">

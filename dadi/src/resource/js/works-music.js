@@ -794,6 +794,9 @@ function bindEvents(){
 			$lenghtTimeVal = $("#lenght-time").val(),
 			$publicTimeVal = $("#public-time input").val(),
 			$creationTimeVal = $("#creation-time input").val(),
+			$registration_number = $("#registration_number").val(),
+			$work_registration_institution = $("#work_registration_institution").val(),
+			$commission_agency = $("#commission_agency").val(),
 			// $albumVal = $("#album").val(),
 			// $originalScriptVal = $("#original-script").val(),
 			$versionDescriptionVal = $("#version-description").val(),
@@ -801,7 +804,7 @@ function bindEvents(){
 			$obligeeListHtml = $(".obligee-list").html();
 		if($this.hasClass("next-step-01")){
 			//第一步			
-			if(util.isEmpty($workNameVal) || util.isEmpty($workTypeVal) || util.isEmpty($themeTypeVal) || util.isEmpty($lenghtTimeVal) || util.isEmpty($publicTimeVal) || util.isEmpty($creationTimeVal) || util.isEmpty($versionDescriptionVal) || util.isEmpty($worksDescVal) || util.isEmpty($obligeeListHtml)){
+			if(util.isEmpty($registration_number) || util.isEmpty($work_registration_institution) || util.isEmpty($commission_agency) || util.isEmpty($workNameVal) || util.isEmpty($workTypeVal) || util.isEmpty($themeTypeVal) || util.isEmpty($lenghtTimeVal) || util.isEmpty($publicTimeVal) || util.isEmpty($creationTimeVal) || util.isEmpty($versionDescriptionVal) || util.isEmpty($worksDescVal) || util.isEmpty($obligeeListHtml)){
 				util.showMsg("作品基础信息不能为空！")
 			}else{
 				nextBtn($this, $step);
@@ -845,6 +848,9 @@ function bindEvents(){
 					opus_name: $workNameVal,
 					opus_type: $workTypeVal,
 					theme_type: $themeTypeVal,
+					registration_number: $registration_number,
+					work_registration_institution: $work_registration_institution,
+					commission_agency: $commission_agency,
 					opus_duration: $lenghtTimeVal,
 					publish_date: $publicTimeVal,
 					indite_date: $creationTimeVal,
@@ -1032,16 +1038,19 @@ function bindEvents(){
 		$.ajax({
 			type: "GET",
 			url: "http://140.143.142.191/dadi/opus/findById",
-			data: JSON.stringify({id: id}),
+			data: {
+				id: id
+			},
 			dataType: "json",
 			cache: false,
 			contentType: "application/json;charset=UTF-8",
 			success: function(res) {
 				if(res && res.status == 1){
-					$(".details-jic").html(detailsJicTpl(res.opus));
-					$(".details-list").html(detailsListTpl(res.obligee));
-					$(".details-qlnews").html(detailsQlnewsTpl(res.droit));
-					$(".details-fjian").html(detailsFjianTpl(res.fileobj));
+					let data = res.data;
+					$(".details-jic").html(detailsJicTpl(data.opus));
+					$(".details-list").html(detailsListTpl(data.obligee));
+					$(".details-qlnews").html(detailsQlnewsTpl(data.droit));
+					$(".details-fjian").html(detailsFjianTpl(data.fileobj));
 
 					$('#modal-details-look').modal('show');
 				}
