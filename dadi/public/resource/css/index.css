@@ -606,7 +606,7 @@ label {
     top: 2px; }
 
 @media (max-width: 1329px) {
-  input[type="text"], select {
+  input[type="text"], select, .data-w {
     width: 135px !important;
     min-width: 135px !important; }
   .form-group {
@@ -618,7 +618,7 @@ label {
     min-width: 75px !important; } }
 
 @media (min-width: 1330px) {
-  input[type="text"], select {
+  input[type="text"], select, .data-w {
     width: 50% !important;
     min-width: 50% !important; }
   .input-group.date input {
@@ -637,7 +637,7 @@ label {
       width: 80%; } }
 
 @media (max-width: 1380px) {
-  .cg-added.modal .modal-dialog input[type="text"], .cg-added.modal .modal-dialog select {
+  .cg-added.modal .modal-dialog input[type="text"], .cg-added.modal .modal-dialog select, .cg-added.modal .modal-dialog .data-w {
     width: 135px !important;
     min-width: 135px !important; } }
 

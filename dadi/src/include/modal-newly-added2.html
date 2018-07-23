@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form id="add-form">
                     <div>
-                        <div class="row col-md-12 col-lg-12">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <div class="form-group col-md-6 col-lg-6">
                                 <label for="exampleInputName2">产品编号</label>
                                 <input type="text" class="form-control" id="modal-right-info-numb" placeholder="">
@@ -21,25 +21,25 @@
                                 <i></i>
                             </div>
                         </div>
-                        <div class="row col-md-12 col-lg-12">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">产品类型</label>
+                                <label for="exampleInputName2" style="float:left">产品类型</label>
                                 <select class="form-control" id="modal-right-info-type">
                                     <option value="产品类型">产品类型</option>
                                     <option value="产品类型">产品类型</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">首发日期</label>
-                                <div class='input-group date' id='modal-right-start-time'>  
+                                <label for="exampleInputName2" style="float:left">首发日期</label>
+                                <div class='input-group date data-w' id='modal-right-start-time'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
-                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                        <span style="margin:6px;" class="glyphicon glyphicon-calendar"></span>  
                                     </span>  
                                 </div> 
                             </div>
                         </div>
-                        <div class="row col-md-12 col-lg-12">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <div class="form-group col-md-6 col-lg-6">
                                 <label for="exampleInputName2">产品周期</label>
                                 <input type="text" class="form-control" id="modal-right-info-cpz" placeholder="">
@@ -51,36 +51,47 @@
                                 <i></i>
                             </div>
                         </div>
-                        <div class="row col-md-12 col-lg-12">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <div class="form-group col-md-6 col-lg-6">
                                 <label for="exampleInputName2">报备登记机构</label>
                                 <input type="text" class="form-control" id="modal-right-info-jigou" placeholder="">
                             </div>
                             <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">报备登记日期</label>
-                                <div class='input-group date' id='modal-right-dj-time'>  
+                                <label for="exampleInputName2" style="float:left">报备登记日期</label>
+                                <div class='input-group date data-w' id='modal-right-dj-time'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
-                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                        <span style="margin:6px;" class="glyphicon glyphicon-calendar"></span>  
                                     </span>  
                                 </div> 
                             </div>
                         </div>
-                        <div class="row">
-                            <span class="col-md-2 col-lg-2">产品形态</span>
-                            <div class="col-md-10 col-lg-10">
-                                <label class="radio-inline">
-                                    <input type="radio" checked name="limit1" id="" value="直接使用">直接使用
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="limit1" id="" value="衍生授权"> 衍生授权
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="limit1" id="" value="素材授权"> 素材授权
-                                </label>
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
+                            <div class="form-group col-md-6 col-lg-6">
+                                <label for="exampleInputName2">授权人</label>
+                                <input type="text" class="form-control" id="modal-right-info-s" placeholder="">
+                                <i></i>
+                            </div>
+                            <div class="form-group col-md-6 col-lg-6">
+                                <label for="exampleInputName2">被授权人</label>
+                                <input type="text" class="form-control" id="modal-right-info-sqr" placeholder="">
+                                <i></i>
                             </div>
                         </div>
-                        <div class="row col-md-12 col-lg-12">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
+                            <div class="form-group col-md-6 col-lg-6">
+                                <label for="exampleInputName2">授权比例</label>
+                                <input type="text" class="form-control" id="modal-right-info-sqp" placeholder="">
+                                <i></i>
+                            </div>
+                            <div class="form-group col-md-6 col-lg-6">
+                                <label for="exampleInputName2">授权价格</label>
+                                <input type="text" class="form-control" id="modal-right-info-sqm" placeholder="">
+                                <i></i>
+                            </div>
+                        </div>
+                        
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <p>已用原始库内作品</p>
                             <div class="table-cont">
                                 <table class="table table-hover">
@@ -108,8 +119,21 @@
                                 </table>
                             </div>
                         </div>  
-                        
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
+                            <span class="col-md-2 col-lg-2">产品形态</span>
+                            <div class="col-md-10 col-lg-10">
+                                <label class="radio-inline">
+                                    <input type="radio" checked name="limit1" id="" value="直接使用">直接使用
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="limit1" id="" value="衍生授权"> 衍生授权
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="limit1" id="" value="素材授权"> 素材授权
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">授权权利</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="checkbox-inline">
@@ -147,37 +171,14 @@
                                 </label> -->
                             </div>
                         </div>
-                        <div class="row col-md-12 col-lg-12">
-                                <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">授权人</label>
-                                <input type="text" class="form-control" id="modal-right-info-s" placeholder="">
-                                <i></i>
-                            </div>
-                            <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">被授权人</label>
-                                <input type="text" class="form-control" id="modal-right-info-sqr" placeholder="">
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="row col-md-12 col-lg-12">
-                            <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">授权比例</label>
-                                <input type="text" class="form-control" id="modal-right-info-sqp" placeholder="">
-                                <i></i>
-                            </div>
-                            <div class="form-group col-md-6 col-lg-6">
-                                <label for="exampleInputName2">授权价格</label>
-                                <input type="text" class="form-control" id="modal-right-info-sqm" placeholder="">
-                                <i></i>
-                            </div>
-                        </div>
-                        <div class="row">
+                        
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">授权权利描述</span>
                             <div class="col-md-10 col-lg-10">
                                 <textarea class="form-control ml10" rows="3" id="modal-right-info-qldesc"></textarea>
                             </div>
                         </div>	
-                        <div class="row line">
+                        <div class="row col-md-12 col-lg-12 line" style="float: inherit">
                             <span class="col-md-2 col-lg-2">授权时间</span>
                             <div class="col-md-10 col-lg-10">
                                 <div class="col-md-12 col-lg-12">
@@ -201,7 +202,7 @@
                                 </div> -->
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">授权方式</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="radio-inline">
@@ -215,7 +216,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="row line">
+                        <div class="row col-md-12 col-lg-12 line" style="float: inherit">
                             <span class="col-md-2 col-lg-2">授权地域</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="checkbox-inline">
@@ -233,7 +234,7 @@
                                 </label> -->
                             </div>
                         </div>
-                        <div class="row line">
+                        <div class="row col-md-12 col-lg-12 line" style="float: inherit">
                             <span class="col-md-2 col-lg-2">授权语言</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="checkbox-inline">
@@ -251,7 +252,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">是否可以转授权</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="radio-inline">
@@ -262,7 +263,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">是否有维权权利</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="radio-inline">
@@ -273,7 +274,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">使用渠道限制</span>
                             <div class="col-md-10 col-lg-10">
                                 <label class="checkbox-inline">
@@ -291,7 +292,7 @@
                             </div>
                         </div>
                         
-                        <div class="row line">
+                        <div class="row col-md-12 col-lg-12 line" style="float: inherit">
                             <span class="col-md-2 col-lg-2">许可使用次数</span>
                             <div class="col-md-10 col-lg-10">
                                 <input type="text" class="ml10 form-control" id="modal-right-info-f"> 次
@@ -300,28 +301,28 @@
                                 </label> -->
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">合同权利描述</span>
                             <div class="col-md-10 col-lg-10">
-                                <textarea class="form-control ml10" rows="3" id="modal-right-info-desc"></textarea>
+                                <textarea class="form-control ml10"  rows="3" id="modal-right-info-desc"></textarea>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <span class="col-md-2 col-lg-2">备注</span>
                             <div class="col-md-10 col-lg-10">
-                                <textarea class="form-control ml10" rows="3" id="modal-right-info-remarks"></textarea>
+                                <textarea class="form-control ml10"  rows="3" id="modal-right-info-remarks"></textarea>
                             </div>
                         </div>
-                        <div class="row col-md-12 col-lg-12">
+                        <div class="row col-md-12 col-lg-12" style="float: inherit">
                             <button type="button" class="btn btn-primary btn-scql" style="margin:30px auto;display: block">生成权利</button>
                         </div>
-                        <div class="row col-md-12 col-lg-12 xzql-list">
+                        <div class="row col-md-12 col-lg-12 xzql-list" style="float: inherit">
                             <p>已生成产品列表</p>
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>产品ID</th>
-                                        <th产品名称</th>
+                                        <th>产品名称</th>
                                         <th>产品类型</th>
                                         <th>授权人</th>
                                         <th>被授权人</th>

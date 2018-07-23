@@ -862,7 +862,7 @@ label {
 	}
 }
 @media (max-width: 1329px) {
-    input[type="text"], select {
+    input[type="text"], select, .data-w {
 		width:135px!important;
 		min-width:135px!important;
 	}
@@ -878,7 +878,7 @@ label {
 	}
 }
 @media (min-width: 1330px) {	
-	input[type="text"], select {
+	input[type="text"], select, .data-w {
 		width:50%!important;
 		min-width:50%!important;
 	}
@@ -908,7 +908,7 @@ label {
 @media (max-width: 1380px) {
 	.cg-added.modal {
 		.modal-dialog {
-			input[type="text"], select {
+			input[type="text"], select, .data-w {
 				width:135px!important;
 				min-width:135px!important;
 			}
