@@ -9510,33 +9510,6 @@ html, body {
           height: 10px;
           margin-right: 10px;
           display: inline-block; }
-    .content .content-wrapper .title-h3 {
-      width: 100%;
-      height: 55px;
-      padding: 10px 0 15px; }
-      .content .content-wrapper .title-h3 h3 {
-        float: left;
-        font: 16px/30px "\5FAE\8F6F\96C5\9ED1";
-        padding-left: 15px;
-        position: relative; }
-        .content .content-wrapper .title-h3 h3:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 5px;
-          width: 5px;
-          height: 20px;
-          background-color: #999; }
-      .content .content-wrapper .title-h3 button {
-        float: right;
-        height: 30px;
-        padding: 0 15px;
-        font: 14px/30px "\5FAE\8F6F\96C5\9ED1"; }
-        .content .content-wrapper .title-h3 button i {
-          float: left;
-          margin: 8px 8px 0 0;
-          color: #999;
-          font-size: 12px; }
     .content .content-wrapper input, .content .content-wrapper select, .content .content-wrapper .input-group {
       min-width: 60%; }
     .content .content-wrapper .row.row-btn {
@@ -9609,6 +9582,34 @@ html, body {
       margin-right: 10px; }
     .content .content-wrapper .quanli .btn-operation {
       width: 40%; }
+
+.title-h3 {
+  width: 100%;
+  height: 55px;
+  padding: 10px 0 15px; }
+  .title-h3 h3 {
+    float: left;
+    font: 16px/30px "\5FAE\8F6F\96C5\9ED1";
+    padding-left: 15px;
+    position: relative; }
+    .title-h3 h3:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 5px;
+      height: 20px;
+      background-color: #999; }
+  .title-h3 button {
+    float: right;
+    height: 30px;
+    padding: 0 15px;
+    font: 14px/30px "\5FAE\8F6F\96C5\9ED1"; }
+    .title-h3 button i {
+      float: left;
+      margin: 8px 8px 0 0;
+      color: #999;
+      font-size: 12px; }
 
 ul.step {
   background-color: #fff;
@@ -10163,33 +10164,6 @@ html, body {
           height: 10px;
           margin-right: 10px;
           display: inline-block; }
-    .content .content-wrapper .title-h3 {
-      width: 100%;
-      height: 55px;
-      padding: 10px 0 15px; }
-      .content .content-wrapper .title-h3 h3 {
-        float: left;
-        font: 16px/30px "\5FAE\8F6F\96C5\9ED1";
-        padding-left: 15px;
-        position: relative; }
-        .content .content-wrapper .title-h3 h3:before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 5px;
-          width: 5px;
-          height: 20px;
-          background-color: #999; }
-      .content .content-wrapper .title-h3 button {
-        float: right;
-        height: 30px;
-        padding: 0 15px;
-        font: 14px/30px "\5FAE\8F6F\96C5\9ED1"; }
-        .content .content-wrapper .title-h3 button i {
-          float: left;
-          margin: 8px 8px 0 0;
-          color: #999;
-          font-size: 12px; }
     .content .content-wrapper input, .content .content-wrapper select, .content .content-wrapper .input-group {
       min-width: 60%; }
     .content .content-wrapper .row.row-btn {
@@ -10262,6 +10236,34 @@ html, body {
       margin-right: 10px; }
     .content .content-wrapper .quanli .btn-operation {
       width: 40%; }
+
+.title-h3 {
+  width: 100%;
+  height: 55px;
+  padding: 10px 0 15px; }
+  .title-h3 h3 {
+    float: left;
+    font: 16px/30px "\5FAE\8F6F\96C5\9ED1";
+    padding-left: 15px;
+    position: relative; }
+    .title-h3 h3:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 5px;
+      height: 20px;
+      background-color: #999; }
+  .title-h3 button {
+    float: right;
+    height: 30px;
+    padding: 0 15px;
+    font: 14px/30px "\5FAE\8F6F\96C5\9ED1"; }
+    .title-h3 button i {
+      float: left;
+      margin: 8px 8px 0 0;
+      color: #999;
+      font-size: 12px; }
 
 ul.step {
   background-color: #fff;

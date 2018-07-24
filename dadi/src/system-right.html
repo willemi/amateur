@@ -22,37 +22,86 @@
 <div id="content" class="content">
 	<div class="content-wrapper">
 		<h3>大地传播</h3>
-		<div class="right-title">
-			<h3 class="col-md-2 col-lg-2">权利信息</h3>
-			<div class="right-ht col-md-10 col-lg-10">					
-				<div class="btn-operation">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
-					<button type="button" class="btn btn-default">删除</button>					
+		<div class="title-h3"><h3>权利信息设置</h3></div>
+		<div class="row col-md-5 col-lg-5">
+			<div class="row row-title">
+				<h6>权利组</h6>
+				<ul>
+					<li data-toggle="modal" data-target="#modal-newly-added3">添加</li>
+					<li data-toggle="modal" data-target="#modal-system-right-edit">编辑</li>
+					<li>删除</li>
+				</ul>
+				<div class="input-group">
+					<input type="text" class="form-control" id="ht-name" placeholder="">
+					<span class="input-group-btn">
+						<button class="btn btn-default btn-ht" type="button">搜索</button>
+					</span>
 				</div>
-			</div>				
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="th"><input type="checkbox" name="">权利组名</th>
+						<th>备注</th>
+						<th>操作时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="th" scope="row"><input type="checkbox" name="">张三</th>
+						<td>无限制</td>
+						<td>2018-12-21 12:11</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th class="th"><input type="checkbox" name="">权利组名</th>
-					<th>备注</th>
-					<th>操作时间</th>
-					<th>操作</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th class="th" scope="row"><input type="checkbox" name="">张三</th>
-					<td>无限制</td>
-					<td>2018-12-21 12:11</td>
-					<td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
-				</tr>
-			</tbody>
-		</table>
-		<div id="example" class="example">
-			<ul id="pageLimit"></ul>
+		<div class="row col-md-7 col-lg-7" style="padding-left:10px;">
+			<div class="row row-title">
+				<h6>权利组权利</h6>
+				<ul>
+					<li data-toggle="modal" data-target="#modal-newly-added3">添加</li>
+					<li data-toggle="modal" data-target="#modal-system-right-edit">编辑</li>
+					<li>删除</li>
+				</ul>
+				<div class="input-group">
+					<input type="text" class="form-control" id="ht-name" placeholder="">
+					<span class="input-group-btn">
+						<button class="btn btn-default btn-ht" type="button">搜索</button>
+					</span>
+				</div>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th class="th"><input type="checkbox" name="">授权限制</th>
+						<th>授权类型</th>
+						<th>许可传播方式</th>
+						<th>许可使用地域</th>
+						<th>许可使用语言</th>
+						<th>许可使用次数</th>
+						<th>开始日期</th>
+						<th>结束日期</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th class="th" scope="row"><input type="checkbox" name="">张三</th>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>无限制</td>
+						<td>2018-12-21 12:11</td>
+						<td>2018-12-21 12:11</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
+<!--添加-->
+<%= require('html-loader!./include/modal-newly-added3.html') %>
+<!--编辑-->
+<%= require('html-loader!./include/modal-system-right-edit.html') %>
 </body>
 </html>
