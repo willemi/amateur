@@ -22,8 +22,51 @@
 <div id="content" class="content">
 	<div class="content-wrapper">
         <h3>大地传播</h3>
-        
+        <div class="title-h3">
+			<h3>流程管理</h3>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-system-process"><i class="glyphicon glyphicon-plus"></i>新增</button>
+			<div class="input-group">
+				<input type="text" class="form-control" id="ht-name" placeholder="">
+				<span class="input-group-btn">
+					<button class="btn btn-default btn-ht" type="button">搜索</button>
+				</span>
+			</div>
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th class="th">序号</th>
+					<th>流程名称</th>
+					<th>流程类型</th>
+					<th>节点数</th>
+					<th>审批节点1</th>
+					<th>审批节点2</th>
+					<th>审批节点3</th>
+					<th>审批节点4</th>
+					<th>审批节点5</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="th" scope="row">1</th>
+					<td>XXXXXX</td>
+					<td>版本流程</td>
+					<td>5</td>
+					<td>--</td>
+					<td>--</td>
+					<td>--</td>
+					<td>--</td>
+					<td>--</td>
+					<td>
+						<a>删除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
     </div>
 </div>
+<!--添加-->
+<%= require('html-loader!./include/modal-system-process.html') %>
 </body>
 </html>

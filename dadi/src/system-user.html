@@ -22,8 +22,53 @@
 <div id="content" class="content">
 	<div class="content-wrapper">
         <h3>大地传播</h3>
-        
+        <div class="title-h3">
+			<h3>用户信息设置</h3>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-system-user"><i class="glyphicon glyphicon-plus"></i>新增</button>
+			<div class="input-group">
+				<input type="text" class="form-control" id="ht-name" placeholder="">
+				<span class="input-group-btn">
+					<button class="btn btn-default btn-ht" type="button">搜索</button>
+				</span>
+			</div>
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th class="th">序号</th>
+					<th>用户名</th>
+					<th>性别</th>
+					<th>密码</th>
+					<th>联系电话</th>
+					<th>邮箱</th>
+					<th>地址</th>
+					<th>归属部门</th>
+					<th>角色组</th>
+					<th>用户状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="th" scope="row">1</th>
+					<td>wanwang</td>
+					<td>男</td>
+					<td>******</td>
+					<td>1382345098</td>
+					<td>dadi@dadi.com</td>
+					<td>XXXXX</td>
+					<td>XXXXX</td>
+					<td>XXXXX</td>
+					<td>锁定</td>
+					<td>
+						<a>修改</a><a>删除</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
     </div>
 </div>
+<!--添加-->
+<%= require('html-loader!./include/modal-system-user.html') %>
 </body>
 </html>
