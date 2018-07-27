@@ -2,7 +2,10 @@ import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 let util = {};
-
+util.isEmpty = (str) => {
+	str = $.trim(str);
+	return (str === '' || typeof(str) === 'undefined' || str === null || str === 'null') ? true : false;
+}
 if (window.console) {
 	let log = window.console.log;
 	window.console.log = process.env.NODE_ENV == 'production' ? () => {} : log
