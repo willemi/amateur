@@ -37,7 +37,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th class="th">序号</th>
+                        <th class="th">id</th>
                         <th>专利号</th>
                         <th>专利名称</th>
                         <th>证书号</th>
@@ -56,26 +56,7 @@
                         <th>操作</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th class="th" scope="row">1</th>
-                        <td>123</td>
-                        <td>专利</td>
-                        <td>1231-2323</td>
-                        <td>XXXXX</td>
-                        <td>XXXXX</td>
-                        <td>XXXXX</td>
-                        <td>XXXXX</td>
-                        <td>XXXXX-2323</td>
-                        <td>XXXXX</td>
-                        <td>XXXXX</td>
-                        <td>2018-02-23</td>
-                        <td>2018-02-23</td>
-                        <td>大陆-2323</td>
-                        <td>XXXXX</td>
-                        <td>XXXXX</td>
-                        <td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button><button type="button" class="btn btn-default">删除</button>	</td>
-                    </tr>
+                <tbody class="management-list">
                 </tbody>
             </table>
         </div>
@@ -84,6 +65,7 @@
         </div>
     </div>
 </div>
+<div class="messages"></div>
 <!-- 模态框（Modal） -->
 <div class="modal fade proRiht" style="display:bock" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -105,41 +87,41 @@
                         <form class="form-inline">
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">证书号</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="zs-nub" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">权利状态</label>
-                                <select class="form-control">
-                                    <option>有效</option>
-                                    <option>终止</option>
+                                <select class="form-control" id="qlzt">
+                                    <option value="有效">有效</option>
+                                    <option value="终止">终止</option>
                                 </select>
                             </div>                            
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">权利类型</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="qllx">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">专利名称</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="name" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">发明人/设计人 </label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="designer" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">专利号 </label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="number" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">专利权人 </label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="paten" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">专利申请日</label>
-                                <div class='input-group date' id='datetimepicker'>  
+                                <div class='input-group date' id='apply_date'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
                                         <span class="glyphicon glyphicon-calendar"></span>  
@@ -148,7 +130,7 @@
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权公告日</label>
-                                <div class='input-group date' id='datetimepicker1'>  
+                                <div class='input-group date' id='notice_date'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
                                         <span class="glyphicon glyphicon-calendar"></span>  
@@ -157,19 +139,19 @@
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">代理机构</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="agency" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">产品名称</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="product_name" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">下次缴费时间</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="next_payment_time" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">费用总额 </label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="total_cost" placeholder="">
                             </div>
                             <!-- <div class="form-group col-md-12 col-lg-12">
                                 <label for="exampleInputName2">费用详情</label>
@@ -189,37 +171,33 @@
                         <form class="form-inline">
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">专利信息</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="is_patent">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
-                                <label for="exampleInputName2">专利号</label>
-                                <input type="text" class="form-control" id="" placeholder="">
-                            </div>
-                            <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">项目</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="project" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权单位</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="authorize_unit" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">被授权单位</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="authorized_unit" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权形式</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="authorize_type">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>                            
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">有效期</label>
-                                <div class='input-group date' id='datetimepicker2'>  
+                                <div class='input-group date' id='term_of_validity_start'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
                                         <span class="glyphicon glyphicon-calendar"></span>  
@@ -228,7 +206,7 @@
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">至</label>
-                                <div class='input-group date' id='datetimepicker3'>  
+                                <div class='input-group date' id='term_of_validity_end'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
                                         <span class="glyphicon glyphicon-calendar"></span>  
@@ -237,102 +215,95 @@
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权年限</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="authorized_years">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权区域</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="authorized_area">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授式范围</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="scope_of_authorization">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权单位经营范围</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="scope_of_operation" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">授权金额</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="authorized_amount" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">合同信息</label>
-                                <input type="text" class="form-control" id="" placeholder="" data-toggle="modal" data-target="#modal-choiceContracts">
+                                <input type="text" class="form-control" id="ht-news" placeholder="" data-toggle="modal" data-target="#modal-choiceContracts">
                             </div>
-                            <div class="form-group col-md-4 col-lg-4">
+                            <!-- <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">合同金额</label>
                                 <input type="text" class="form-control" id="" placeholder="">
-                            </div>
+                            </div> -->
                             <div class="form-group col-md-12 col-lg-12">
-                                <label for="exampleInputName2">备注信息</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <label for="exampleInputName2">备注</label>
+                                <textarea style="width:80%;" class="form-control" rows="3" id="bz"></textarea>
                             </div>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="yy">
                         <div class="right-title">
-                            <div class="right-ht col-md-10 col-lg-10">				
-                                <div class="btn-operation">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-                                    <button type="button" class="btn btn-default">删除</button>					
+                            <div class="right-ht col-md-12 col-lg-12">				
+                                <div class="btn-operation" style="text-align: right;padding:20px;">
+                                    <button type="button" class="btn btn-primary" id="btn-added" data-class="manage-file"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
                                 </div>
                             </div>				
                         </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" name="">序号</th>
+                                    <!-- <th class="th">序号</th> -->
                                     <th>附件名称</th>
                                     <th>附件类型</th>
                                     <th>附件大小</th>
                                     <th>上传日期</th>
-                                    <th>备注</th>
+                                    <th>上传人</th>
+                                    <th>最后修改日期</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row"><input type="checkbox" name="">1</th>
-                                    <td>音乐作品登记</td>
-                                    <td>JPG</td>
-                                    <td>10.23MB</td>
-                                    <td>2018-12-23 10:55</td>
-                                    <td>备注备注备注备注备注备注备注备注备注</td>
-                                </tr>
+                            <tbody id="manage-file">
+                                
                             </tbody>
                         </table>
                     </div>
                 </div>
 			</div>
 			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-primary btn-xz-qr">确认</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
 </div>
 <!-- 模态框（Modal） -->
-<!--上传-->
-<%= require('html-loader!./include/modal-file.html') %>
 <!--合同详情-->
 <%= require('html-loader!./include/modal-detailsContract.html') %>
 <!--选择合同-->
 <%= require('html-loader!./include/modal-choiceContracts.html') %>
 <!--创建合同-->
 <%= require('html-loader!./include/modal-createContract.html') %>
+
 <!--权利变更-->
-<%= require('html-loader!./include/modal-changeRights.html') %>
+<!-- <%= require('html-loader!./include/modal-changeRights.html') %> -->
 <!--合同签约方-->
-<%= require('html-loader!./include/modal-signatoryInformation.html') %>
+<!-- <%= require('html-loader!./include/modal-signatoryInformation.html') %> -->
 <!--权利信息新增-->
-<%= require('html-loader!./include/modal-newly-added1.html') %>
+<!-- <%= require('html-loader!./include/modal-newly-added1.html') %> -->
 </body>
 </html>

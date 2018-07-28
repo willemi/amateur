@@ -7,217 +7,91 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="Keywords" content="" />
-	<title>活动介绍</title>
+	<title>报名-志愿者</title>
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
-<div class="main active" id="description">
+<div class="main volunteer">
 	<div class="title">
 		<h6></h6>
-		<h3>Activity description</h3>
-		<h4>活动简介</h4>
+		<h3>event registration</h3>
+		<h4>活动报名</h4>
 	</div>
-	<div class="main-cont">
-		<i></i><i></i>
-		<dl>
-			<dt>
-				<p>长江，我们伟大的母亲河，一江清水绵延几千公里，从姜根迪如冰川的绵绵细流，穿越九省两市，到崇明岛浩荡入海，中间连起的是亘古不变的乡情。滚滚长江水，见证了国运兴衰和时代变迁。</p>
-				<p>这次我们用脚步去见证母亲河的雄伟壮丽。用脚下的每一步，记录母亲河沿线的无限风情。</p>
-				<p>全程6007.32公里，共分246个路段，每段长24.42公里，全程无休，24小时滚动接力跑。</p>
-				<a href="#"><i>Read More</i></a>
-			</dt>
-			<dd><img src="resource/img/205_440.jpg"></dd>
-			<dd><img src="resource/img/205_440.jpg"></dd>
-			<dd><img src="resource/img/205_440.jpg"></dd>
-		</dl>
-	</div>
-</div>
-<div class="main video" id="video">
-	<div class="title">
-		<h6></h6>
-		<h3>Video display</h3>
-		<h4>视频展示</h4>
-	</div>
-	<div class="main-cont">
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide swiper-slide-center none-effect">
-					<div class="player">
-						<span class="playBtn"></span>
-						<div class="video-ui">
-							<div class="control paused"></div>
-							<div class="ui-meun">
-								<div class="progressBar"><div class="timeBar"></div></div>
-								<div class="play-time">00:00</div>
-								<a class="muted"><i></i></a>
-							</div>
-						</div>
-						<video poster="resource/img/818_520.jpg" src="http://dv.browser.360.cn/Object.access/upload4cutter/NDU5ZDRkYjE1NzRhYTYwZDU3NjFhZjY4Y2IwMDhjZTUv5b6u5L-h572R6aG154mILm1wNA==" onplay="onVideoPlay(this)" onpause="onVideoPause(this)" onended="onVideoEnded(this)" preload="none"></video>
-						<p class="video-loading"></p>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="player">
-						<span class="playBtn"></span>
-						<div class="video-ui">
-							<div class="control paused"></div>
-							<div class="ui-meun">
-								<div class="progressBar"><div class="timeBar"></div></div>
-								<div class="play-time">00:00</div>
-								<a class="muted"><i></i></a>
-							</div>
-						</div>
-						<video poster="resource/img/818_520.jpg" src="http://dv.browser.360.cn/Object.access/upload4cutter/NDU5ZDRkYjE1NzRhYTYwZDU3NjFhZjY4Y2IwMDhjZTUv5b6u5L-h572R6aG154mILm1wNA==" onplay="onVideoPlay(this)" onpause="onVideoPause(this)" onended="onVideoEnded(this)" preload="none"></video>
-						<p class="video-loading"></p>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="player">
-						<span class="playBtn"></span>
-						<div class="video-ui">
-							<div class="control paused"></div>
-							<div class="ui-meun">
-								<div class="progressBar"><div class="timeBar"></div></div>
-								<div class="play-time">00:00</div>
-								<a class="muted"><i></i></a>
-							</div>
-						</div>
-						<video poster="resource/img/818_520.jpg" src="http://dv.browser.360.cn/Object.access/upload4cutter/NDU5ZDRkYjE1NzRhYTYwZDU3NjFhZjY4Y2IwMDhjZTUv5b6u5L-h572R6aG154mILm1wNA==" onplay="onVideoPlay(this)" onpause="onVideoPause(this)" onended="onVideoEnded(this)" preload="none"></video>
-						<p class="video-loading"></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="button s-button-prev">prev</div>
-		<div class="button s-button-next">next</div>
-	</div>
-</div>
-<div class="main challenger" id="challenger">
-	<div class="title">
-		<h6></h6>
-	</div>
-	<div class="main-cont">
-		<div class="fl">
-			<img src="resource/img/525_525.jpg">
-			<dl>
-				<dt>张会</dt>
-				<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩（无）</dd>
-			</dl>
-		</div>
-		<div class="fr">
-			<dl class="dl-title">
-				<dt>Challenger</dt>
-				<dd>introduction<i>挑战者介绍</i></dd>
-			</dl>
-			<p>跑步宣言：将跑步进行到底，胜利属于你！（退役前很不喜欢跑步，退役后因体力下降偶尔跑步锻炼，结识了很多朋友，突然觉得跑步不仅可以使我身体健康，还可以解决生活的压力。生活离不开运动，坚持是意志，是生存的意义，继续坚持下去，你会愈来愈体会到跑步的乐趣 ！）</p>
-			<dl class="dl-more">
-				<dt>其他挑战者</dt>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-				<dd><a href="#"><img src="resource/img/70_100.jpg"></a></dd>
-			</dl>
-		</div>
-
-	</div>
-</div>
-<div class="main news-hot" id="hotspot">
-	<div class="title">
-		<h6></h6>
-		<h3>News hotspot</h3>
-		<h4>新闻热点</h4>
-	</div>
-	<div class="main-cont">
+	<div class="step">
 		<ul>
-			<li>
-				<p>2018-02-12</p>
-				<dl>
-					<dt>“科学跑步、健康人生”奥森公园10公里拉练赛</dt>
-					<dd>跑团活动发起者对活动进行组织协调，但活动性质属于自愿参加、风险自担、责任自负，参与者均应为</dd>
-				</dl>
-				<a href="#">Read More</a>
-			</li>
-			<li>
-				<p>2018-02-12</p>
-				<dl>
-					<dt>“科学跑步、健康人生”奥森公园10公里拉练赛</dt>
-					<dd>跑团活动发起者对活动进行组织协调，但活动性质属于自愿参加、风险自担、责任自负，参与者均应为跑团活动发起者对活动进行组织协调，但活动性质属于自愿参加、风险自担、责任自负，参与者均应为</dd>
-				</dl>
-				<a href="#">Read More</a>
-			</li>
-			<li>
-				<p>2018-02-12</p>
-				<dl>
-					<dt>“科学跑步、健康人生”奥森公园10公里拉练赛</dt>
-					<dd>跑团活动发起者对活动进行组织协调，但活动性质属于自愿参加、风险自担、责任自负，参与者均应为</dd>
-				</dl>
-				<a href="#">Read More</a>
-			</li>
-			<li>
-				<p>2018-02-12</p>
-				<dl>
-					<dt>“科学跑步、健康人生”奥森公园10公里拉练赛</dt>
-					<dd>跑团活动发起者对活动进行组织协调，但活动性质属于自愿参加、风险自担、责任自负，参与者均应为</dd>
-				</dl>
-				<a href="#">Read More</a>
-			</li>
+			<li class="active"><p>STEP</p><span>01</span><h4>免责声明</h4></li>
+			<li><p>STEP</p><span>02</span><h4>填写表格</h4></li>
+			<li><p>STEP</p><span>03</span><h4>报名成功</h4></li>
 		</ul>
 	</div>
-</div>
-<div class="main photo" id="photo">
-	<div class="title">
-		<h6></h6>
-		<h3>Photo download</h3>
-		<h4>照片下载</h4>
-	</div>
 	<div class="main-cont">
-		<div class="excellent">			
-			<ul>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-				<li>
-					<img src="resource/img/340_340.jpg">
-					<a href="#"></a>
-				</li>
-			</ul>		
+		<div class="step-cont step-01 rule" style="display: block">
+			<h4>遵守免责声明同意书</h4>
+			<dl>
+				<dt>作为一位参赛选手，我坚决支持并同意：</dt>
+				<dd>1.全程马拉松、半程马拉松和11公里组对所有身体状况良好的人开放报名（参见与保险有关的报名条件）。建议跑步者在赛前做一个健康检查。所有参赛者必须注意竞赛所涉及的安全问题。</dd>
+				<dd>2.每位参赛者必须通读竞赛规则的全部内容及参赛指南，开始比赛将被视为接受竞赛规则所列内容。</dd>
+				<dd>3.只能使用腿部力量。不允许使用任何自动化或机械辅助。</dd>
+				<dd>4.所有参赛选手应随时遵守体育比赛道德，不应阻挠速度更快的选手超越。</dd>
+				<dd>5.所有参赛选手必须在比赛前进行注册。</dd>
+				<dd>6.比赛前，运动员将在竞赛办公室领到自己的比赛套包，里面装有号码簿。运动员须按照指定方式将号码簿别在身前，并且不能以任何方式折叠或更改。没有佩戴号码簿的参赛者将被禁止进入起点区。</dd>
+				<dd>7.参赛运动员须在比赛开始前至少15分钟到达起点区。</dd>
+			</dl>
+			<span>下载【官方比赛规则】请点击：<a href="#">《挑战者-免责声明-RUN2442长江跑-吉尼斯世界纪录挑战赛》</a></span>
+			<div class="checkbox"><label><input type="checkbox">我已阅读并同意</label></div>
+			<div class="error"></div>
+			<div class="btn-click"><span class="btn-01 next-step">同意</span></div>
 		</div>
-		<div class="btn-an">
-			<span class="btn-pre"><i class="glyphicon glyphicon-arrow-left"></i></span>
-			<span class="btn-next"><i class="glyphicon glyphicon-arrow-right"></i></span>
-			<a href="#"><i>Read More</i></a>
+		<div class="step-cont step-03">
+			<form id="input">
+				<div class="input"><label>姓名：</label><input class="value" type="text" id="name"><p></p></div>
+				<div class="input"><label>性别：</label><input class="value" type="text" id="sex"><p></p></div>
+				<div class="input"><label>生日：</label><input class="value" type="text" id="birthday"><p></p></div>
+				<div class="input"><label>国家/地区：</label><input class="value" type="text" id="country"><p></p></div>
+				<div class="input"><label>证件类型：</label><input class="value" type="text" id="type"><p></p></div>
+				<div class="input"><label>证件号码：</label><input class="value" type="text" id="number"><p></p></div>
+				<div class="input"><label>手机：</label><input class="value" type="text" id="phone"><p></p></div>
+				<div class="input"><label>上衣尺码：</label><input class="value" type="text" id="size"><p></p></div>
+				<div class="input"><label>电子邮箱：</label><input class="value" type="text" id="mailbox"><p></p></div>
+				<div class="input"><label>现居地址：</label><input class="value" type="text" id="address"><p></p></div>
+				<div class="input">
+					<span><label>紧急联系人：</label><input class="value" type="text" id="urgent"><p></p></span>
+					<span><label>联系人关系：</label><input class="value" type="text" id="relationship"><p></p></span>
+					<span><label>联系人电话：</label><input class="value" type="text" id="telephone"><p></p></span>
+				</div>
+				<div class="input">
+					<span><label>过敏源：</label><input class="value" type="text" id="anaphylaxis"><p></p></span>
+					<span><label>既往病史：</label><input class="value" type="text" id="illness"><p></p></span>
+					<span><label>血型：</label><input class="value" type="text" id="blood"><p></p></span>
+				</div>
+				<div class="input"><label style="width:120px">是否做过志愿者：</label>
+					<span class="radio span-hide"><input type="radio" name="radio" value="是">是</span>
+					<span class="radio span-hide"><input type="radio" name="radio" value="否">否</span>
+					<p class="radio-p"></p>
+				</div>
+				<div class="input"><label style="width:150px">请简述志愿者服务经历:</label><textarea class="form-control value" rows="3" type="text" id=""></textarea><p></p></div>
+				<div class="input"><label>报名志愿者岗位:</label>
+					<span class="radio-inline span-hide">
+						<input type="checkbox" name="checkbox1" id="" value="核心志愿者"> 核心志愿者
+					</span>
+					<span class="radio-inline span-hide">
+						<input type="checkbox" name="checkbox1" id="" value="核心志愿者1"> 核心志愿者1
+					</span>
+					<span class="radio-inline span-hide">
+						<input type="checkbox" name="checkbox1" id="" value="核心志愿者2"> 核心志愿者2
+					</span>
+					<p class="checkbox-p"></p>
+				</div>
+				<div class="checkbox"><label><input type="checkbox">我接受并同意网站《用户服务条款》</label></div>
+				<div class="error"></div>
+				<div class="btn-click"><span class="pre-step">返回</span><span class="btn-03 next-step">下一步</span></div>
+			</form>
 		</div>
-		<div class="down">
-			<a href="#">点击下载“爱运动”拍摄的照片<i class="glyphicon glyphicon-download-alt"></i></a>
+		<div class="step-cont step-04">
+			<dl class="dl">
+				<dt>报名成功</dt>
+				<dd>请等待审核志愿者资格</dd>
+			</dl>
 		</div>
 	</div>
 </div>

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="Keywords" content="" />
-	<title>活动介绍</title>
+	<title>报名-个人报名</title>
 </head>
 <body>
 <%= require('html-loader!./include/header.html') %>
@@ -27,7 +27,7 @@
 		</ul>
 	</div>
 	<div class="main-cont">
-		<div class="step-01">
+		<div class="step-cont step-01 rule" style="display: block">
 			<h4>遵守赛事规则同意书</h4>
 			<dl>
 				<dt>作为一位参赛选手，我坚决支持并同意：</dt>
@@ -42,9 +42,9 @@
 			<span>下载【官方比赛规则】请点击：<a href="#">官方比赛规则</a></span>
 			<div class="checkbox"><label><input type="checkbox">我已阅读并同意</label></div>
 			<div class="error"></div>
-			<div class="btn-click"><span class="btn-01">同意</span></div>
+			<div class="btn-click"><span class="btn-01 next-step">同意</span></div>
 		</div>
-		<div class="step-01">
+		<div class="step-cont step-02 rule">
 			<h4>遵守免责声明同意书</h4>
 			<dl>
 				<dt>作为一位参赛选手，我坚决支持并同意：</dt>
@@ -59,9 +59,9 @@
 			<span>下载【官方比赛规则】请点击：<a href="#">《挑战者-免责声明-RUN2442长江跑-吉尼斯世界纪录挑战赛》</a></span>
 			<div class="checkbox"><label><input type="checkbox">我已阅读并同意</label></div>
 			<div class="error"></div>
-			<div class="btn-click" class="btn-02"><span>同意</span></div>
+			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-02 next-step">同意</span></div>
 		</div>
-		<div class="step-03">
+		<div class="step-cont step-03">
 			<form id="input">
 				<div class="input"><label>姓名：</label><input class="value" type="text" id="name"><p></p></div>
 				<div class="input"><label>1KM最好成绩：</label><input class="value" type="text" id="achievement"><p></p></div>
@@ -86,10 +86,101 @@
 				</div>
 				<div class="checkbox"><label><input type="checkbox">我接受并同意网站《用户服务条款》</label></div>
 				<div class="error"></div>
-				<div class="btn-click"><span class="btn-03">同意</span></div>
+				<div class="btn-click"><span class="pre-step">返回</span><span class="btn-03 next-step">确认报名</span></div>
 			</form>
 		</div>
+		<div class="step-cont step-04">
+			<ul>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+			</ul>
+			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-04 next-step">下一步</span></div>
+		</div>
+		<div class="step-cont step-05">
+			<div>
+				<h4>订单信息</h4>
+				<h5><p>项目</p><p>金额</p></h5>
+				<dl>
+					<dt>￥700.00</dt>
+					<dd><i class="glyphicon glyphicon-map-marker"></i>2018年RUN2442长江跑</dd>
+					<dd><i class="glyphicon glyphicon-user"></i>姓名：某某某</dd>
+				</dl>
+			</div>
+			<div>
+				<h4>点击下面图标完成支付</h4>
+				<span class="payment">
+					<p class="zfb active"><input type="radio" name="payment" checked></p>
+					<p class="wx"><input type="radio" name="payment"></p>
+				</span>
+				<p>15分钟内支付有效</p>
+			</div>
+			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-05 next-step">确认支付</span></div>
+		</div>
 	</div>
+	
 </div>
 <%= require('html-loader!./include/footer.html') %>
 </body>

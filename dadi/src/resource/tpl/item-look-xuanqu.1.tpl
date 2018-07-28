@@ -1,7 +1,7 @@
 {{~it :m:n}}
 <!--合同详情 作品 gengk-look-->
-<tr id="{{!m.id}}" class="c_{{!m.id}}"> 
-	<td scope="row"><input type="checkbox" name="a1" value="{{!m.id}}">{{=n + 1}}</td> 
+<tr data-id="{{!m._id}}" id="{{!m.id}}" class="c_{{!m.id}}"> 
+	<td scope="row"><input type="checkbox" name="a1" id="{{!m._id}}" value="{{!m.id}}">{{=n + 1}}</td> 
 	<td>{{!m.droit_source}}</td>
 	<td>{{!m.droit_subject}}</td>
 	<td>{{!m.droit_content}}</td> 

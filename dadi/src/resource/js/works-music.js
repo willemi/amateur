@@ -365,6 +365,9 @@ function bindEvents(){
 			contentType: "application/json;charset=UTF-8",
 			success: function(res) {
 				if(res && res.status == 1){
+					for(var i = 0;i < res.data.droit.length;i++){
+						res.data.droit[i]._id = res.data.contract.id;
+					}
 					$.extend(droitJson, res.data.droit)
 					$(".look-details-01").html(itemSearchListLookTpl([res.data.contract]))
 					$(".qlnews-cont").html(itemSearchListLook1Tpl(res.data.droit))
@@ -381,13 +384,14 @@ function bindEvents(){
 	//批量选取id
 	function copy(){
 		var checkbox = $("input[name=a1]");
-		let html = '',id;
+		let html = '',id, _id;
 		for (let i = 0; i < checkbox.length; i++) {
 			var $this = checkbox[i];
 			if($this.checked){
 				id = $this.value;
+				_id = $this.id;
 				kkid.push(id)
-				html += '<tr class="a b_'+ id +'" id="'+ id +'">'+ $(".c_"+ id).html() +'</tr>';
+				html += '<tr class="a b_'+ id +'" id="'+ id +'" data-id="'+ _id +'">'+ $(".c_"+ id).html() +'</tr>';
 			}
 		}
 		return html;
@@ -441,7 +445,7 @@ function bindEvents(){
 			$contractPaymentPlanVal = $("#contract-payment-plan").val(),
 			$contractPaymentMethodVal = $("#contract-payment-method").val(),
 			$contractNotesVal = $("#contract-notes").val(),
-			$contractPartyPistHtml = $("#contract-party-list").html();	
+			$contractPartyPistHtml = $("#contract-party-list").html();
 		if($this.hasClass("next-step-01")){
 			//第一步
 			
