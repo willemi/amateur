@@ -1,20 +1,15 @@
 import '../css/trademark-management.scss';
 
 const util = require("./common/util.js")
-const easyUpload = require("./common/easyUpload.js")
 
-const rightNewsTpl = require('../tpl/item-right-news.tpl');
-const worksListTpl = require('../tpl/item-works-list.tpl');
-const obligeeListTpl = require('../tpl/item-obligee-list.tpl');
 const managementList = require('../tpl/item-management-list.tpl');
-
 const itemSearchListTpl = require('../tpl/item-search-list.tpl');
 const itemSearchListLookTpl = require('../tpl/item-look-xuanqu.tpl');
 const itemSearchListLook1Tpl = require('../tpl/item-look-xuanqu.1.tpl');
 const itemSearchListLook2Tpl = require('../tpl/item-look-xuanqu.2.tpl');
 const qianyuetTpl = require('../tpl/item-qianyue-list.tpl');
 
-let $RightNews = $(".right-news");
+// let $RightNews = $(".right-news");
 
 window.formatobligee_type = function(state){
 	state = parseInt(state)
@@ -85,10 +80,7 @@ function bindEvents(){
 
 	util.timepickerSection("datetimeStart", "datetimeEnd");	
 	
-	util.pageinator("pageLimit", "10", "url", tplData);
-	function tplData(data){
-		console.log(data)
-	}
+	
 	//列表删除
 	$doc.on("click", ".worksList-dele", function(){
 		let $this = $(this),
@@ -268,7 +260,7 @@ function bindEvents(){
 			// 	contract_id.push($tr2[b].id)
 			// }
 			// console.log(contract_id)
-
+			$contract_idVal = $contract_idVal.split("-")
 			
 			let $tr3 = $("#manage-file tr");
 			let files = [];
@@ -305,7 +297,7 @@ function bindEvents(){
 				bz: $bzVal,
 				status: $statusVal,
 
-				contract_id: $contract_idVal,
+				contract_id: $contract_idVal[1],
 				files: files
 			}
 			$.ajax({
@@ -423,7 +415,7 @@ function bindEvents(){
 			success: function(res) {
 				if(res && res.status == 1){
 					for(var i = 0;i < res.data.droit.length;i++){
-						res.data.droit[i]._id = res.data.contract.id;
+						res.data.droit[i]._id = res.data.contract.contract_name +"-"+ res.data.contract.id;
 					}
 					$.extend(droitJson, res.data.droit)
 					$(".look-details-01").html(itemSearchListLookTpl([res.data.contract]))
@@ -579,7 +571,8 @@ function bindEvents(){
 
 							//合同详情选取
 							$('#modal-createContract').modal('hide');
-							$(".qlnews-list tr").attr("data-id", res.data.id)
+							let dataId = res.data.contract_name +"-"+ res.data.id;
+							$(".qlnews-list tr").attr("data-id", dataId)
 							$(".qlnews-xuanqu").append($(".qlnews-list").html());
 							$(".right-news input").remove();
 							// setTimeout(function(){

@@ -9322,6 +9322,9 @@ html, body {
 .table {
   margin: 0; }
 
+.label110 label {
+  width: 110px; }
+
 .ipadd-look .modal-dialog {
   width: 96% !important; }
 
@@ -9975,6 +9978,9 @@ html, body {
 
 .table {
   margin: 0; }
+
+.label110 label {
+  width: 110px; }
 
 .ipadd-look .modal-dialog {
   width: 96% !important; }

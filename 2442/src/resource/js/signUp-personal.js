@@ -64,6 +64,47 @@ function bindEnds(){
 		if($this.hasClass("btn-04")){
 			nextBtn($this, $step);
 		}
+		if($this.hasClass("btn-05")){
+			let $nameVal = $("#name").val(),
+				$achievementVal = $("#achievement").val(),
+				$sexVal = $("#sex").val(),
+				$birthdayVal = $("#birthday").val(),
+				$countryVal = $("#country").val(),
+				$typeVal = $("#type").val(),
+				$numberVal = $("#number").val(),
+				$phoneVal = $("#phone").val(),
+				$sizeVal = $("#size").val(),
+				$mailboxVal = $("#mailbox").val(),
+				$addressVal = $("#address").val(),
+				$urgentVal = $("#urgent").val(),
+				$relationshipVal = $("#relationship").val(),
+				$telephoneVal = $("#telephone").val(),
+				$anaphylaxisVal = $("#anaphylaxis").val(),
+				$illnessVal = $("#illness").val(),
+				$bloodVal = $("#blood").val(),
+				$commodityVal = showArr("commodity");
+			let data = {
+				username: $nameVal,
+				zhcj1km: $achievementVal,
+				xb: $sexVal,
+				shengri: $birthdayVal,
+				gjdq: $countryVal,
+				zjlx: $typeVal,
+				zjhm: $numberVal,
+				phone: $phoneVal,
+				sycm: $sizeVal,
+				email: $mailboxVal,
+				adderss: $addressVal,
+				jjlxr: $urgentVal,
+				lxrgx: $relationshipVal,
+				lxrphone: $telephoneVal,
+				gmy: $anaphylaxisVal,
+				jwbs: $illnessVal,
+				xylx: $bloodVal,
+				111: $commodityVal
+			}
+
+		}
 	})
 	$main.on("click", ".pre-step", function(){
 		let $this = $(this);
@@ -87,7 +128,15 @@ function bindEnds(){
 		$(this).addClass("active").siblings().removeClass("active");
 	})
 }
-
+function showArr(name){
+    let obj = document.getElementsByName(name) || "";
+    let check_val = '';
+    for(let k in obj){
+        if(obj[k].checked)
+		check_val = check_val + obj[k].value + ",";
+    }
+    return check_val.slice(0,-1);
+}
 
 //下一步
 function nextBtn(me, $li){

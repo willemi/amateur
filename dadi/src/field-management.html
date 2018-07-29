@@ -45,17 +45,7 @@
                     <th>操作</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th class="th" scope="row">1</th>
-                    <td>www.dadi.com</td>
-                    <td>大地</td>
-                    <td>dadi@dadi.com</td>
-                    <td>wanwang</td>
-                    <td>2018-12-21 12:11</td>
-                    <td>2018-12-21 12:11</td>
-                    <td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button><button type="button" class="btn btn-default">删除</button></td>
-                </tr>
+            <tbody class="management-list">
             </tbody>
         </table>
         <div id="example" class="example">
@@ -63,6 +53,7 @@
         </div>
     </div>
 </div>
+<div class="messages"></div>
 <!-- 模态框（Modal） -->
 <div class="modal fade proRiht" style="display:bock" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -90,31 +81,31 @@
                         <form class="form-inline">
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">合同名称</label>
-                                <input type="text" class="form-control" id="" placeholder="" data-toggle="modal" data-target="#modal-choiceContracts">
+                                <input type="text" class="form-control" id="contract_id" placeholder="" data-toggle="modal" data-target="#modal-choiceContracts">
                             </div>
-                            <div class="form-group col-md-4 col-lg-4">
+                            <!-- <div class="form-group col-md-4 col-lg-4">
                                     <label for="exampleInputName2">合同金额</label>
                                 <input type="text" class="form-control" id="" placeholder="">
-                            </div>
+                            </div> -->
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">域名地址</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="realmname_address" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                     <label for="exampleInputName2">所有者</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="owner" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">所有者邮箱 </label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="owner_email" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">注册商</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="registrar" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">注册日期</label>
-                                <div class='input-group date' id='datetimepicker'>  
+                                <div class='input-group date' id='regist_date'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
                                         <span class="glyphicon glyphicon-calendar"></span>  
@@ -123,7 +114,7 @@
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">到期日期</label>
-                                <div class='input-group date' id='datetimepicker1'>  
+                                <div class='input-group date' id='end_date'>  
                                     <input type='text' class="form-control" />  
                                     <span class="input-group-addon">  
                                         <span class="glyphicon glyphicon-calendar"></span>  
@@ -132,76 +123,65 @@
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">费用</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="cost" placeholder="">
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">域名状态</label>
-                                <select class="form-control">
-                                    <option>有</option>
-                                    <option>无</option>
+                                <select class="form-control" id="realm_status">
+                                    <option value="有">有</option>
+                                    <option value="无">无</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">DNS服务器</label>
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" class="form-control" id="dns_server" placeholder="">
                             </div>
                             <div class="form-group col-md-12 col-lg-12">
                                 <label for="exampleInputName2">备注 </label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" style="width:80%" rows="3" id="remarks"></textarea>
                             </div>
                         </form>                        
                     </div>
                     <div class="tab-pane fade" id="wz">
                         <div class="right-title">
-                            <div class="right-ht col-md-10 col-lg-10">				
-                                <div class="btn-operation">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
-                                    <button type="button" class="btn btn-default">删除</button>					
+                            <div class="right-ht col-md-12 col-lg-12">				
+                                <div class="btn-operation" style="text-align: right;padding:20px;">
+                                    <button type="button" class="btn btn-primary" id="btn-added" data-class="manage-file"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
                                 </div>
                             </div>				
                         </div>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" name="">序号</th>
+                                    <!-- <th class="th">序号</th> -->
                                     <th>附件名称</th>
                                     <th>附件类型</th>
                                     <th>附件大小</th>
                                     <th>上传日期</th>
-                                    <th>备注</th>
+                                    <th>上传人</th>
+                                    <th>最后修改日期</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row"><input type="checkbox" name="">1</th>
-                                    <td>音乐作品登记</td>
-                                    <td>JPG</td>
-                                    <td>10.23MB</td>
-                                    <td>2018-12-23 10:55</td>
-                                    <td>备注备注备注备注备注备注备注备注备注</td>
-                                </tr>
+                            <tbody id="manage-file">
                             </tbody>
                         </table>
                     </div>
                 </div>
 			</div>
 			<div class="modal-footer">				
-				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-primary btn-xz-qr">确认</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
 </div>
-<!--上传-->
-<%= require('html-loader!./include/modal-file.html') %>
 <!--合同详情-->
 <%= require('html-loader!./include/modal-detailsContract.html') %>
 <!--选择合同-->
 <%= require('html-loader!./include/modal-choiceContracts.html') %>
 <!--创建合同-->
 <%= require('html-loader!./include/modal-createContract.html') %>
-<!--权利变更-->
-<%= require('html-loader!./include/modal-changeRights.html') %>
 <!--合同签约方-->
 <%= require('html-loader!./include/modal-signatoryInformation.html') %>
 <!--权利信息新增-->

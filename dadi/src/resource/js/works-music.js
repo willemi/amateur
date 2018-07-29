@@ -16,6 +16,7 @@ const detailsListTpl = require('../tpl/item-details-list.tpl');
 const detailsQlnewsTpl = require('../tpl/item-details-qlnews.tpl');
 const detailsFjianTpl = require('../tpl/item-details-fjian.tpl');
 
+let worksId;
 let $RightNews = $(".right-news");
 
 window.formatobligee_type = function(state){
@@ -1057,6 +1058,53 @@ function bindEvents(){
 					$(".details-fjian").html(detailsFjianTpl(data.fileobj));
 
 					$('#modal-details-look').modal('show');
+				}
+			},
+			error: function(error){
+				util.showMsg("error")
+			}
+		});
+	})
+	$doc.on("click", ".works-list-edit", function(){
+		let id = $(this).parent("td").attr("id");
+		$.ajax({
+			type: "GET",
+			url: "http://140.143.142.191/dadi/opus/findById",
+			data: {
+				id: id
+			},
+			dataType: "json",
+			cache: false,
+			contentType: "application/json;charset=UTF-8",
+			success: function(res) {
+				if(res && res.status == 1){
+					let data = res.data;
+					// $(".details-jic").html(detailsJicTpl(data.opus));
+					// $(".details-list").html(detailsListTpl(data.obligee));
+					// $(".details-qlnews").html(detailsQlnewsTpl(data.droit));
+					// $(".details-fjian").html(detailsFjianTpl(data.fileobj));	
+					worksId = data.opus.id;
+					$("#work-name").val(data.opus.opus_name);
+					$("#work-type").val(data.opus.opus_type);
+					$("#theme-type").val(data.opus.theme_type);
+					$("#registration_number").val(data.opus.registration_number);
+					$("#work_registration_institution").val(data.opus.work_registration_institution);
+					$("#commission_agency").val(data.opus.commission_agency);
+					$("#lenght-time").val(data.opus.opus_duration);
+					$("#public-time input").val(data.opus.publish_date);
+					$("#creation-time input").val(data.opus.indite_date);
+					$("#album").val(data.opus.embody_album);
+					$("#original-script").val(data.opus.is_original);
+					$("#version-description").val(data.opus.version_explain);
+					$("#works-desc").val(data.opus.opus_briefing);
+					$(".obligee-list").html(obligeeListTpl(data.obligee));
+
+					// $("#").val();
+					// $("#").val();
+					// $("#").val();
+					// $("#").val();
+					$cont1.hide();
+					$cont2.show();
 				}
 			},
 			error: function(error){

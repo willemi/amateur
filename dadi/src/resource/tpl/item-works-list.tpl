@@ -8,8 +8,8 @@
 	<td>{{!m.droitList}}</td>
 	<td id="{{=m.data_status}}">{{=formatState(m.data_status)}}</td>
 	<td id="{{!m.id}}">
-		<!--<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>
-		<button class="btn btn-primary">修改</button>-->
+		<!--<button class="btn btn-primary" data-toggle="modal" data-target="#modal-changeRights">权利变更</button>-->
+		<button class="btn btn-primary works-list-edit">修改</button>
 		<button class="btn btn-default worksList-dele">删除</button>
 	</td>
 </tr>

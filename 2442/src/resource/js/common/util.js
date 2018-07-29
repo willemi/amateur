@@ -15,7 +15,26 @@ util.GetQueryString = (name) => {
 	var r = window.location.search.substr(1).match(reg);
 	if(r!=null)return  unescape(r[2]); return null;
 }
-
+util.regArr = {
+	phone: /^1([38][0-9]{9}|(4[57]|5[0-35-9])[0-9]{8})$/,
+	emial: /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/,
+	password: /^(?!^\d+$)(?!^[a-zA-Z]+$)[0-9a-zA-Z]{6,20}$/
+}
+util.time = (element) => {//验证码倒计时
+	var second = 60;
+	element.addClass("btngrey");
+	element.text(second+"s");
+	let timeInterval = setInterval(function(){
+		second--;
+		element.text(second+'s');
+		if(second <= 0){
+			timeFlag = true;
+			element.removeClass("btngrey");
+			element.text('获取验证码');
+			clearInterval(timeInterval);
+		}
+	}, 1000);
+}
 function bindEvents(){
 	var $doc = $(document);
 	let $fixed = $(".fixed");
