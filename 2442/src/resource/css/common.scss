@@ -545,3 +545,17 @@ footer {
 		}
 	}
 }
+.messages {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: rgba(0,0,0,.8);
+	padding: 30px 50px;;
+	font-size: 20px;
+	border-radius: 10px;
+	color: #fff;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	display: none;
+	z-index: 999999;
+}

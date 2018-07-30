@@ -35,27 +35,27 @@
 			</div>
 			<div class="step-01-02 step-03">
 				<h6>创建战队</h6>
-				<form id="input">
-					<div class="input"><label>助力跑团团名：</label><input class="value" type="text" id=""> </div>
+				<form id="input" enctype="multipart/form-data" action="" method="post">
+					<div class="input"><label>助力跑团团名：</label><input class="value" type="text" id="zjptname"> </div>
 					<div class="input"><label>助力路段：</label>
-						<select class="form-control" id="" style="width:200px">
+						<select class="form-control" id="zlld" style="width:200px">
 							<option value="第一路段">第一路段</option>
 							<option value="第二路段">第二路段</option>
 						</select> 
 					</div>					
-					<div class="input"><label>助力口号：</label><input class="value" type="text" id=""> </div>
-					<div class="input"><label>团长名字：</label><input class="value" type="text" id=""> </div>
-					<div class="input"><label>联系邮箱：</label><input class="value" type="text" id=""> </div>
-					<div class="input"><label>联系手机号：</label><input class="value" type="text" id=""> </div>
+					<div class="input"><label>助力口号：</label><input class="value" type="text" id="zlkh"> </div>
+					<div class="input"><label>团长名字：</label><input class="value" type="text" id="tzname"> </div>
+					<div class="input"><label>联系邮箱：</label><input class="value" type="text" id="lxemail"> </div>
+					<div class="input"><label>联系手机号：</label><input class="value" type="text" id="lxphone"> </div>
 					<div class="input"><label>跑团照片：</label>
 						<div class="file">
-							<input type="file" name="filedata" class="filepath" accept="image/*" />
+							<input type="file" name="filedata" class="filepath" accept="image/*" / id="ptzp">
 							<img src="resource/img/blank.gif" class="img" />
-						</div>						
+						</div>
 					</div>
-					<div class="input"><label>跑团介绍：</label><textarea style="width:410px" class="value" type="text" id=""></textarea> </div>
-					<div class="input"><label>密码：</label><input class="value" type="password" id=""> </div>
-					<div class="input"><label>确认密码：</label><input class="value" type="password" id=""> </div>
+					<div class="input"><label>跑团介绍：</label><textarea style="width:410px" class="value" type="text" id="ptjs"></textarea> </div>
+					<div class="input"><label>密码：</label><input class="value" type="password" id="password"> </div>
+					<div class="input"><label>确认密码：</label><input class="value" type="password" id="cppassword"> </div>
 					<div class="error"></div>
 					<div class="btn-click"><span>返回</span><span class="btn-cj-02">创建</span></div>
 				</form>
@@ -77,8 +77,8 @@
 					<a class="a-close">X</a>
 					<dl>
 						<dt>战队创建成功</dt>
-						<dd>战队名称：张三张三</dd>
-						<dd>ID：123456</dd>
+						<dd class="zdName">战队名称：张三张三</dd>
+						<dd class="zdId">ID：123456</dd>
 					</dl>
 					<div>
 						<span>个人报名</span>
@@ -86,7 +86,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="btn-click"><span class="btn-01 next-step">下一步</span></div>
+			<div class="btn-click"><span class="btn-01 next-step" style="display: none">下一步</span></div>
 		</div>
 		<div class="step-cont step-02 rule">
 			<h4>遵守免责声明同意书</h4>
@@ -105,32 +105,32 @@
 			<div class="error"></div>
 			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-02 next-step">同意</span></div>
 		</div>
-		<div class="step-cont step-03 step-p-show">
-			<form id="input">
-				<div class="input"><label>姓名：</label><p>张三</p></div>
-				<div class="input"><label>1KM最好成绩：</label><p>3分钟</p></div>
-				<div class="input"><label>性别：</label><p>男</p></div>
-				<div class="input"><label>生日：</label><p>1980/01/02</p></div>
-				<div class="input"><label>国家/地区：</label><p>中国</p></div>
-				<div class="input"><label>证件类型：</label><p>身份证</p></div>
-				<div class="input"><label>证件号码：</label><p>121212111111111111</p></div>
-				<div class="input"><label>手机：</label><p>13333333333</p></div>
-				<div class="input"><label>上衣尺码：</label><p>XL</p></div>
-				<div class="input"><label>电子邮箱：</label><p>123@qq.com</p></div>
-				<div class="input"><label>现居地址：</label><p>北京市东城区</p></div>
+		<div class="step-cont step-03">
+			<form idad="input">
+				<div class="input"><label>姓名：</label><input class="value" type="text" id="name"><p></p></div>
+				<div class="input"><label>1KM最好成绩：</label><input class="value" type="text" id="achievement"><p></p></div>
+				<div class="input"><label>性别：</label><input class="value" type="text" id="sex"><p></p></div>
+				<div class="input"><label>生日：</label><input class="value" type="text" id="birthday"><p></p></div>
+				<div class="input"><label>国家/地区：</label><input class="value" type="text" id="country"><p></p></div>
+				<div class="input"><label>证件类型：</label><input class="value" type="text" id="type"><p></p></div>
+				<div class="input"><label>证件号码：</label><input class="value" type="text" id="number"><p></p></div>
+				<div class="input"><label>手机：</label><input class="value" type="text" id="phone"><p></p></div>
+				<div class="input"><label>上衣尺码：</label><input class="value" type="text" id="size"><p></p></div>
+				<div class="input"><label>电子邮箱：</label><input class="value" type="text" id="mailbox"><p></p></div>
+				<div class="input"><label>现居地址：</label><input class="value" type="text" id="address"><p></p></div>
 				<div class="input">
-					<span><label>紧急联系人：</label><p>李四</p></span>
-					<span><label>联系人关系：</label><p>朋友</p></span>
-					<span><label>联系人电话：</label><p>1333333333</p></span>
+					<span><label>紧急联系人：</label><input class="value" type="text" id="urgent"><p></p></span>
+					<span><label>联系人关系：</label><input class="value" type="text" id="relationship"><p></p></span>
+					<span><label>联系人电话：</label><input class="value" type="text" id="telephone"><p></p></span>
 				</div>
 				<div class="input">
-					<span><label>过敏源：</label><p>无</p></span>
-					<span><label>既往病史：</label><p>无</p></span>
-					<span><label>血型：</label><p>O</p></span>
+					<span><label>过敏源：</label><input class="value" type="text" id="anaphylaxis"><p></p></span>
+					<span><label>既往病史：</label><input class="value" type="text" id="illness"><p></p></span>
+					<span><label>血型：</label><input class="value" type="text" id="blood"><p></p></span>
 				</div>
 				<div class="checkbox"><label><input type="checkbox">我接受并同意网站《用户服务条款》</label></div>
 				<div class="error"></div>
-				<div class="btn-click"><span class="pre-step">返回</span><span class="btn-03 next-step">下一步</span></div>
+				<div class="btn-click"><span class="pre-step">返回</span><span class="btn-03 next-step">确认报名</span></div>
 			</form>
 		</div>
 		<div class="step-cont step-04">
@@ -225,6 +225,7 @@
 		</div>
 	</div>
 </div>
+<div class="messages"></div>
 <%= require('html-loader!./include/footer.html') %>
 </body>
 </html>

@@ -55,7 +55,7 @@ function bindEnds(){
 			return
 		}
 		$.ajax({
-			type: "post",
+			type: "GET",
 			url: "http://47.105.47.69:8080/run2442/pro1/reg",
 			data: {
 				phone: $mobileVal,
@@ -67,11 +67,13 @@ function bindEnds(){
 			jsonp: "callback",
 			cache: false,
 			success: function(res) {
-				console.log(res)
-				// if(res[0].message == "验证码错误"){
-					
-				// }
-				$error.html(res[0].message)
+				util.Cookie.set("_iphone", $mobileVal, {
+					expires: 1000 * 60 * 60 * 24 * 365
+				});
+				$error.html(res[0].Message)
+			},
+			error: function(){
+				util.showMsg("失败！")
 			}
 		});
 	})
@@ -96,16 +98,20 @@ function bindEnds(){
 			}
 		}
 		$.ajax({
-			type: "post",
+			type: "GET",
 			url: "http://47.105.47.69:8080/run2442/pro1/login",
 			data: data,
 			dataType: "jsonp",
 			jsonp: "callback",
 			cache: false,
+			// contentType: "application/json;charset=UTF-8",
 			success: function(res) {
-				console.log(res)
+				util.showMsg(res[0].Message)
+			},
+			error: function(){
+				util.showMsg("失败！")
 			}
-		});		
+		});	
 	})
 	$main.on("click", ".yzm", function(){
 		let $error = $(this).parent("div").nextAll(".error");
@@ -117,7 +123,7 @@ function bindEnds(){
 				return;
 			}
 			$.ajax({
-				type: "post",
+				type: "GET",
 				url: "http://47.105.47.69:8080/run2442/pro1/yzm",
 				data: {
 					phone: $mobileVal
@@ -126,16 +132,18 @@ function bindEnds(){
 				jsonp: "callback",
 				cache: false,
 				success: function(res) {
-					console.log(res)
-					if(res[0].message == "发送成功"){
+					if(res[0].Message == "Ok"){
 						util.time($yzmBtn);
 						timeFlag = false
+						util.showMsg("发送成功")
 					}
-					$error.html(res[0].message);
+					$error.html(res[0].Message);
+				},
+				error: function(){
+					util.showMsg("失败！")
 				}
 			});
 		}
-		
 	})
 	$main.on("click", "input", function(){
 		$(".error").html('')

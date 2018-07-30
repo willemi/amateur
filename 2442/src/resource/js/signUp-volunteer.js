@@ -20,7 +20,63 @@ function bindEnds(){
 			}
 		}
 		if($this.hasClass("btn-03-go")){
-			nextBtn($this, $step);
+			let $nameVal = $("#name").val(),
+				$sexVal = $("#sex").val(),
+				$birthdayVal = $("#birthday").val(),
+				$countryVal = $("#country").val(),
+				$typeVal = $("#type").val(),
+				$numberVal = $("#number").val(),
+				$phoneVal = $("#phone").val(),
+				$sizeVal = $("#size").val(),
+				$mailboxVal = $("#mailbox").val(),
+				$addressVal = $("#address").val(),
+				$urgentVal = $("#urgent").val(),
+				$relationshipVal = $("#relationship").val(),
+				$telephoneVal = $("#telephone").val(),
+				$anaphylaxisVal = $("#anaphylaxis").val(),
+				$illnessVal = $("#illness").val(),
+				$bloodVal = $("#blood").val(),
+				$sfzgzyz = $("input[name='radio']:checked").val(),
+				$jszyzjl = $("#jszyzjl").val(),
+				$bmzyzgw = showArr("checkbox1");
+			let data = {
+				username: $nameVal,
+				xb: $sexVal,
+				shengri: $birthdayVal,
+				gjdq: $countryVal,
+				zjlx: $typeVal,
+				zjhm: $numberVal,
+				phone: $phoneVal,
+				sycm: $sizeVal,
+				email: $mailboxVal,
+				adderss: $addressVal,
+				jjlxr: $urgentVal,
+				lxrgx: $relationshipVal,
+				lxrphone: $telephoneVal,
+				gmy: $anaphylaxisVal,
+				jwbs: $illnessVal,
+				xylx: $bloodVal,
+				sfzgzyz: $sfzgzyz,
+				jszyzjl: $jszyzjl,
+				bmzyzgw: $bmzyzgw
+			}
+			$.ajax({
+				type: "GET",
+				url: "http://47.105.47.69:8080/run2442/pro1/regZyzxxb",
+				data: data,
+				dataType: "jsonp",
+				jsonp: "callback",
+				cache: false,
+				success: function(res) {
+					util.showMsg(res[0].Message)
+					setTimeout(function(){
+						nextBtn($this, $step);
+					},2000)
+				},
+				error: function(){
+					util.showMsg("失败！")
+				}
+			});
 		}
 		if($this.hasClass("btn-03")){
 			if($check.prop("checked")){

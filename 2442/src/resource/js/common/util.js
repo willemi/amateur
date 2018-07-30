@@ -20,6 +20,36 @@ util.regArr = {
 	emial: /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/,
 	password: /^(?!^\d+$)(?!^[a-zA-Z]+$)[0-9a-zA-Z]{6,20}$/
 }
+util.Cookie = {
+	get: function(key) {
+		try {
+			var doc = document,
+			a, reg = new RegExp("(^| )" + key + "=([^;]*)(;|$)");
+			if (a = doc.cookie.match(reg)) {
+				return unescape(a[2]);
+			} else {
+				return "";
+			}
+		} catch (e) {
+		return "";
+		}
+	},
+	set: function(key, val, options) {
+		options = options || {};
+		var expires = options.expires;
+		var doc = document;
+		if (typeof(expires) === "number") {
+			expires = new Date();
+			expires.setTime(expires.getTime() + options.expires);
+		}
+
+		try {
+			doc.cookie =
+			key + "=" + escape(val) + (expires ? ";expires=" + expires.toGMTString() : "") + (options.path ? ";path=" + options.path : "") + (options.domain ? "; domain=" + options.domain : "");
+		} catch (e) {}
+	}
+};
+
 util.time = (element) => {//验证码倒计时
 	var second = 60;
 	element.addClass("btngrey");
@@ -34,6 +64,17 @@ util.time = (element) => {//验证码倒计时
 			clearInterval(timeInterval);
 		}
 	}, 1000);
+}
+//提示弹框
+let msgTimer = null;
+util.showMsg = (msg) => {
+	let $tip = $('.messages');
+	$tip.html(msg).show();
+	clearTimeout(msgTimer);
+	msgTimer = setTimeout(() => {
+		$tip.hide();
+		clearTimeout(msgTimer);
+	},2e3)
 }
 function bindEvents(){
 	var $doc = $(document);
