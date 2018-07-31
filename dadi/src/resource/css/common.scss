@@ -222,6 +222,39 @@ html, body {
 // 		}
 // 	}	
 // }
+.h3-aa {
+	font:16px/40px "微软雅黑";
+	padding-left:10px!important;
+	position: relative;
+	&::before {
+		content: '';
+		width:3px;
+		height:18px;
+		background-color: #337ab7;
+		position: absolute;
+		top:11px;
+		left:0;
+	}
+}
+.p0 label {
+	padding:0
+}
+.w16 label {
+	width:16%;
+}
+.w110 label {
+	min-width:110px!important;
+}
+.w110-span .row>span {
+	min-width:110px!important;
+	width:110px!important;
+}
+.lar {
+	label {
+		text-align: right!important;
+		padding-right:10px;
+	}
+}
 .table {
 	margin:0
 }

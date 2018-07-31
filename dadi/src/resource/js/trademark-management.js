@@ -220,7 +220,7 @@ function bindEvents(){
 	})
 	let $box;
 	$doc.on("click", ".ht-name-add", function(){
-		$('#modal-choiceContracts').modal('show');
+		$('#modal-choiceContracts-produc').modal('show');
 		$box = $(this);
 	})
 	//搜索
@@ -245,7 +245,7 @@ function bindEvents(){
 						if(res.data){//搜索
 							$(".htn-list").html(itemSearchListTpl(res.data));
 						}else{//创建
-							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a></div>');
+							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract-produc">创建合同</a></div>');
 						}
 					}					
 				},
@@ -310,12 +310,12 @@ function bindEvents(){
 		if(util.isEmpty(c)){
 			util.showMsg("请选取权利信息");
 		}else{
-			$('#modal-detailsContract').modal('hide');
+			$('#modal-detailsContract-produc').modal('hide');
 			$(".qlnews-xuanqu").append(c);
 		}
 		$(".a input").remove();
 	})
-	$('#modal-choiceContracts').on('hidden.bs.modal' ,function(e){
+	$('#modal-choiceContracts-produc').on('hidden.bs.modal' ,function(e){
     	$("#ht-name").val('');
 		$(".htn-list").html('');
 		$(".qlnews-xuanqu").html('');
@@ -324,7 +324,7 @@ function bindEvents(){
 		// if(util.isEmpty($RightNews.html())){
 		// 	util.showMsg("请选取权利信息");
 		// }else{			
-			$('#modal-choiceContracts').modal('hide');
+			$('#modal-choiceContracts-produc').modal('hide');
 			let id = $(".qlnews-xuanqu tr").data("id");
 			//$RightNews.html($(".qlnews-xuanqu").html());
 			id = id.split("-");
@@ -361,7 +361,7 @@ function bindEvents(){
 	//创建合同
 	// 创建合同、无权利信确认
 	// $doc.on("click", ".btn-cjqr", function(){
-	// 	$('#modal-createContract').modal('hide');
+	// 	$('#modal-createContract-produc').modal('hide');
 	// 	$(".htn-list").html(itemSearchListTpl(data3));
 	// })	
 	//合同下一步\提交	
@@ -455,7 +455,7 @@ function bindEvents(){
 							util.showMsg("提交成功！")
 
 							//合同详情选取
-							$('#modal-createContract').modal('hide');
+							$('#modal-createContract-produc').modal('hide');
 							let dataId = res.data.contract_name +"-"+ res.data.id;
 							$(".qlnews-list tr").attr("data-id", dataId)
 							$(".qlnews-xuanqu").append($(".qlnews-list").html());

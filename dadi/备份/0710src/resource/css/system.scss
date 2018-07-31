@@ -1,0 +1,13 @@
+@import './common.scss';
+.table-responsive {
+    background-color: #fff;
+    margin-top:20px;
+    h3 {
+        padding:0 30px;
+        font:16px/50px "微软雅黑";
+        border-bottom:1px solid #ccc;        
+    }
+    .row {
+        margin-top:30px;
+    }
+}

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Miminium Admin Template v.1">
+	<meta name="author" content="Isna Nur Azis">
+	<meta name="keyword" content="">
+	<title>大地-产品信息管理</title>
+</head>
+<body>
+<!--header start-->
+<div id="header" class="header">
+	<div class="container-fluid">
+		
+	</div>
+</div>
+<!--header end-->
+<!--sidebar start-->
+<%= require('html-loader!./sidebar.html') %>
+<!--sidbar end-->
+<!--cont start-->
+<div id="content" class="content contractAdd">
+	<div class="content-wrapper">
+        <h3>大地传播</h3>
+        <div class="content-01">
+            <div class="ip-list">
+                <div class="title-h3">
+                    <h3>产品信息管理列表</h3>
+                    <button type="button" class="btn btn-primary btn-adda"><i class="glyphicon glyphicon-plus"></i>新增</button>
+                    <button type="button" class="btn btn-default">导出数据<i class="glyphicon glyphicon-download-alt"></i></button>
+                </div>
+                <div class="table-cont">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>产品编号</th>
+                                <th>产品名称</th>
+                                <th>产品类型</th>
+                                <th>产品形态</th>
+                                <th>授权人</th>
+                                <th>被授权人</th>
+                                <th>授权权利</th>
+                                <th>授权开始时间</th>
+                                <th>授权结束时间</th>
+                                <th>授权方式</th>
+                                <th>授权地域</th>
+                                <th> 授权语言</th>
+                                <th>是否转授权</th>
+                                <th>是否有维权权利</th>
+                                <th>使用渠道限制</th>
+                                <th> 使用次数限制</th>
+                                <th>审核状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabel-cont">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>12345</td>
+                                <td>产品</td>
+                                <td>电影</td>
+                                <td>XX形态</td>
+                                <td>XXX</td>
+                                <td>XXX</td>
+                                <td>XXX</td>
+                                <td>2017-6-21</td>
+                                <td>2017-6-21</td>
+                                <td>XXX</td>
+                                <td>大陆</td>
+                                <td>中文</td>
+                                <td>是</td>
+                                <td>是</td>
+                                <td>XXX</td>
+                                <td>100次</td>
+                                <td>待审核</td>
+                                <td>
+                                    <button class="btn btn-primary">修改</button>
+                                    <button class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>               
+                <div id="example" class="example">
+                    <ul id="pageLimit"></ul>
+                </div>
+            </div>
+        </div>
+		<div class="content-02">
+            <ul class="step">
+                <li class="col-md-6 col-lg-6 step-left active">1.产品资源信息</li>
+                <li class="col-md-6 col-lg-6 step-center ">2.合同及附件信息</li>
+            </ul>
+            <div>
+                <!--项目参与方信息 start-->
+                <div class="participant main">
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">已用原始库内作品</h3>
+                        <div class="right-ht col-md-10 col-lg-10">				
+                            <div class="btn-operation">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-referenceWorks"><i class="glyphicon glyphicon-plus"></i>引用原始库内作品</button>
+                                <button type="button" class="btn btn-default bnt-yy" ><i class="glyphicon glyphicon-plus"></i>创建产品信息</button>		
+                                <!-- data-toggle="modal" data-target="#modal-newly-added2" -->
+                            </div>
+                        </div>				
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="th">序号</th>
+                                <th>作品ID</th>
+                                <th>作品名称</th>
+                                <th>作品类型</th>
+                                <th>授权人</th>
+                                <th>被授权人</th>
+                                <th>授权权利</th>
+                                <th>授权时间</th>
+                                <th>授权方式</th>
+                                <th>授权地域</th>
+                                <th>授权语言</th>
+                                <th>转授权</th>
+                                <th>维权权利</th>
+                                <th>使用渠道限制</th>
+                                <th>使用次数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tr-hide">
+                                <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                <td>QLX20102020202</td>
+                                <td>七里香</td>
+                                <td>音乐</td>
+                                <td>杰威尔音乐</td>
+                                <td>大地影视</td>
+                                <td>信息网络传播权</td>
+                                <td>自音乐首播之日起一年</td>
+                                <td>非独家授权</td>
+                                <td>中国大陆不含港澳台</td>
+                                <td>中文、英文</td>
+                                <td>是</td>
+                                <td>是</td>
+                                <td>是，仅限移动终端</td>
+                                <td>无限制</td>
+                                <td>                                
+                                    <button type="button" class="btn btn-default">查看</button>
+                                    <button type="button" class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="example" class="example">
+                        <ul id="pageLimit1"></ul>
+                    </div>
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">新产品信息</h3>                        		
+                    </div>
+                    <table class="table table-hover nes-table">
+                        <thead>
+                            <tr>
+                                <th class="th">序号</th>
+                                <th>作品ID</th>
+                                <th>作品名称</th>
+                                <th>作品类型</th>
+                                <th>授权人</th>
+                                <th>被授权人</th>
+                                <th>授权权利</th>
+                                <th>授权时间</th>
+                                <th>授权方式</th>
+                                <th>授权地域</th>
+                                <th>授权语言</th>
+                                <th>转授权</th>
+                                <th>维权权利</th>
+                                <th>使用渠道限制</th>
+                                <th>使用次数</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="th" scope="row"><input type="checkbox" name="">1</th>
+                                <td>QLX20102020202</td>
+                                <td>七里香</td>
+                                <td>音乐</td>
+                                <td>杰威尔音乐</td>
+                                <td>大地影视</td>
+                                <td>信息网络传播权</td>
+                                <td>自音乐首播之日起一年</td>
+                                <td>非独家授权</td>
+                                <td>中国大陆不含港澳台</td>
+                                <td>中文、英文</td>
+                                <td>是</td>
+                                <td>是</td>
+                                <td>是，仅限移动终端</td>
+                                <td>无限制</td>
+                                <td>                                
+                                    <button type="button" class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row row-btn col-md-pull-1">
+                        <button type="button" class="btn btn-primary next-step">下一步</button>
+                    </div>	
+                </div>
+                <!--项目参与方信息 end-->
+                <!--项目资源信息 start-->
+                <div class="resources main">
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">产品合同信息</h3>
+                        <div class="right-ht col-md-10 col-lg-10">				
+                            <div class="btn-operation">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-choiceContracts1"><i class="glyphicon glyphicon-plus"></i>关联合同</button>
+                            </div>
+                        </div>				
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="">序号</th>
+                                <th>合同编号</th>
+                                <th>合同名称</th>
+                                <th>签约日期</th>
+                                <th>合同主体</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><input type="checkbox" name="">1</th>
+                                <td>XXXXXXX189675456WSPD</td>
+                                <td>七里香》2018XXX采购合同</td>
+                                <td>2019-08-23</td>
+                                <td>大地院线</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-look">查看详情</button>
+                                    <button type="button" class="btn btn-default">删除</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="right-title">
+                        <h3 class="col-md-2 col-lg-2">产品附件</h3>
+                        <div class="right-ht col-md-10 col-lg-10">				
+                            <div class="btn-operation">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#file-added"><i class="glyphicon glyphicon-plus"></i>上传附件</button>
+                                <button type="button" class="btn btn-default">删除</button>					
+                            </div>
+                        </div>				
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" name="">序号</th>
+                                <th>附件名称</th>
+                                <th>附件类型</th>
+                                <th>附件大小</th>
+                                <th>上传日期</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><input type="checkbox" name="">1</th>
+                                <td>音乐作品登记</td>
+                                <td>JPG</td>
+                                <td>10.23MB</td>
+                                <td>2018-12-23 10:55</td>
+                                <td>备注备注备注备注备注备注备注备注备注</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="example" class="example">
+                        <ul id="pageLimit"></ul>
+                    </div>
+                    <div class="row row-btn col-md-pull-1">				
+                        <button type="button" class="btn btn-default pre-step">上一步</button>
+                        <button type="button" class="btn btn-primary">提交</button>
+                    </div>	
+                </div>
+                <!--项目资源信息 end-->
+            </div>
+        </div>
+	</div>
+</div>
+<!-- 模态框（Modal） -->
+<!--上传-->
+<%= require('html-loader!./include/modal-file.html') %>
+<!--合同详情-->
+<%= require('html-loader!./include/modal-detailsContract1.html') %>
+<!--选择合同-->
+<%= require('html-loader!./include/modal-choiceContracts1.html') %>
+<!--创建合同-->
+<%= require('html-loader!./include/modal-createContract1.html') %>
+<!--权利变更-->
+<%= require('html-loader!./include/modal-changeRights.html') %>
+<!--合同签约方-->
+<%= require('html-loader!./include/modal-signatoryInformation.html') %>
+<!--权利信息新增-->
+<%= require('html-loader!./include/modal-newly-added2.html') %>
+<!--引用原始库作品 -->
+<%= require('html-loader!./include/modal-referenceWorks.html') %>
+</body>
+</html>

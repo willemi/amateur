@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Miminium Admin Template v.1">
+	<meta name="author" content="Isna Nur Azis">
+	<meta name="keyword" content="">
+	<title>大地</title>
+</head>
+<body>
+<!--header start-->
+<div id="header" class="header">
+	<div class="container-fluid">
+		
+	</div>
+</div>
+<!--header end-->
+<!--sidebar start-->
+<%= require('html-loader!./sidebar.html') %>
+<!--sidbar end-->
+<!--cont start-->
+<div id="content" class="content contractAdd">
+	<div class="content-wrapper">
+        <h3>大地传播</h3>
+        <div class="right-title">
+            <h3 class="col-md-2 col-lg-2">商标信息管理</h3>
+            <div class="right-ht col-md-10 col-lg-10">					
+                <div class="btn-operation">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gengk-added"><i class="glyphicon glyphicon-plus"></i>新增</button>
+                    <button type="button" class="btn btn-default">删除</button>					
+                </div>
+            </div>				
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="th"><input type="checkbox" name="">商标进度</th>
+                    <th>商标名称</th>
+                    <th>申请代理机构</th>
+                    <th>商标类别</th>
+                    <th>注册类型</th>
+                    <th>注册日期</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="th" scope="row"><input type="checkbox" name="">张三</th>
+                    <td>在线支付</td>
+                    <td>100元</td>
+                    <td>人民币</td>
+                    <td>无限制</td>
+                    <td>2018-12-21 12:11</td>
+                    <td><button type="button" class="btn btn-default" ><i class="glyphicon glyphicon-pencil"></i>修改</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="example" class="example">
+            <ul id="pageLimit"></ul>
+        </div>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade proRiht" style="display:bock" id="gengk-added" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">新增</h4>
+			</div>
+			<div class="modal-body">
+                <div class="form-group col-md-12 col-lg-12 sel">
+                    <label for="exampleInputName2">申请进度</label>
+                    <select class="form-control">
+                        <option>有</option>
+                        <option>无</option>
+                    </select>
+                </div>
+				<div class="row bcf">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">商标信息</a></li>
+                        <li><a href="#wz" data-toggle="tab">驳回复审信息</a></li>
+                        <li><a href="#yy" data-toggle="tab">公信息告</a></li>
+                        <li><a href="#ms" data-toggle="tab">公示期信息</a></li>
+                        <li><a href="#st" data-toggle="tab">核准注册信息</a></li>
+                        <li><a href="#zc" data-toggle="tab">附件管理</a></li>
+                    </ul>
+                </div>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="home">
+                        <form class="form-inline">
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">商标名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">商标类别</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">注册类别</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理机构</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理合同名称</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">商标群组</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">合同编号</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">合同金额</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">合同日期</label>
+                                <div class='input-group date' id='datetimepicker'>  
+                                    <input type='text' class="form-control" />  
+                                    <span class="input-group-addon">  
+                                        <span class="glyphicon glyphicon-calendar"></span>  
+                                    </span>  
+                                </div> 
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">单项金额</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">制作团队</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">联系方式</label>
+                                <input type="text" class="form-control" id="" placeholder="">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">注册类型</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4">
+                                <label for="exampleInputName2">代理商标</label>
+                                <select class="form-control">
+                                    <option>有</option>
+                                    <option>无</option>
+                                </select>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <div class="tab-pane fade" id="wz">
+                        <p>暂无信息，请添加查询引用2</p>
+                    </div>
+                    <div class="tab-pane fade" id="yy">
+                        <p>暂无信息，请添加查询引用3</p>
+                    </div>
+                    <div class="tab-pane fade" id="ms">
+                        <p>暂无信息，请添加查询引用4</p>
+                    </div>
+                    <div class="tab-pane fade" id="st">
+                        <p>暂无信息，请添加查询引用5</p>
+                    </div>
+                    <div class="tab-pane fade" id="zc">
+                        <p>暂无信息，请添加查询引用6</p>
+                    </div>
+                </div>
+			</div>
+			<div class="modal-footer">				
+				<button type="button" class="btn btn-primary">确认</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 模态框（Modal） -->
+</body>
+</html>

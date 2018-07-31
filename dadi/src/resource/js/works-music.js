@@ -450,29 +450,29 @@ function bindEvents(){
 		if($this.hasClass("next-step-01")){
 			//第一步
 			
-			if(util.isEmpty($contractNumVal) || util.isEmpty($contractSubVal) || util.isEmpty($contractNameVal) || util.isEmpty($contractMoneyVal) || util.isEmpty($contractSigningTimeVal) || util.isEmpty($contractYakeTimeVal) || util.isEmpty($contractInvalidTimeVal) || util.isEmpty($contractYesTimeVal) || util.isEmpty($contractPaymentPlanVal) || util.isEmpty($contractPaymentMethodVal) || util.isEmpty($contractNotesVal) || util.isEmpty($contractPartyPistHtml)){
-				util.showMsg("合同基础信息不能为空！")
+			//if(util.isEmpty($contractNumVal) || util.isEmpty($contractSubVal) || util.isEmpty($contractNameVal) || util.isEmpty($contractMoneyVal) || util.isEmpty($contractSigningTimeVal) || util.isEmpty($contractYakeTimeVal) || util.isEmpty($contractInvalidTimeVal) || util.isEmpty($contractYesTimeVal) || util.isEmpty($contractPaymentPlanVal) || util.isEmpty($contractPaymentMethodVal) || util.isEmpty($contractNotesVal) || util.isEmpty($contractPartyPistHtml)){
+			//	util.showMsg("合同基础信息不能为空！")
 				//return
-			}else{
+			//}else{
 				nextBtn($this, $stepa);
-			}			
+			//}			
 
 		}else if($this.hasClass("next-step-02")) {
 			//第二步
 			let $qlnewsListHtml = $(".qlnews-list").html();
-			if(util.isEmpty($qlnewsListHtml)){
-				util.showMsg("合同权利信息不能为空！")
+			//if(util.isEmpty($qlnewsListHtml)){
+			//	util.showMsg("合同权利信息不能为空！")
 				//return
-			}else{
+			//}else{
 				nextBtn($this, $stepa);
-			}
+			//}
 		}else{
 			//提交
 			let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
-			if(util.isEmpty($contractAppendicesListtHtml)){
-				util.showMsg("合同附件信息不能为空！")
+			//if(util.isEmpty($contractAppendicesListtHtml)){
+			//	util.showMsg("合同附件信息不能为空！")
 				//return
-			}else{
+			//}else{
 				let $tr1 = $("#contract-party-list tr");
 				let sign_ids = [];
 				for(let a = 0;a < $tr1.length;a++){
@@ -534,7 +534,7 @@ function bindEvents(){
 						util.showMsg("error")
 					}
 				});		
-			}
+			//}
 		}		
 	})	
 	//附件
@@ -728,7 +728,7 @@ function bindEvents(){
 			$limit3Val = $("input[name='limit3']:checked").val(),
 			$limit4Val = $("input[name='limit4']:checked").val(),
 			$limit5Val = $("input[name='limit5']:checked").val(),
-			mode0 = showArr("mode0"),
+			mode0 = $("input[name='mode0']:checked").val(),
 			language = showArr("language"),
 			mode = showArr("mode");
 		if(util.isEmpty($modalRightInfoRemarks) || util.isEmpty($modalRightInfoNameVal) || util.isEmpty($modalRightInfoSetVal) || util.isEmpty($modalRightInfoUntilVal) || util.isEmpty($modalRightInfoSVal) || util.isEmpty($modalRightInfoSqrVal) || util.isEmpty($modalRightInfoSqpVal) || util.isEmpty($modalRightInfoSqmVal) || util.isEmpty($modalRightInfoQldescVal) || util.isEmpty($datetimeStartVal) || util.isEmpty($datetimeEndVal) || util.isEmpty($modalRightInfoDescVal) || util.isEmpty($modalRightInfoFVal) || util.isEmpty($limitVal) || util.isEmpty($limit1Val) || util.isEmpty($limit3Val) || util.isEmpty($limit4Val) || util.isEmpty(mode0) || util.isEmpty($limit5Val) || util.isEmpty(language) || util.isEmpty(mode)){
@@ -809,25 +809,25 @@ function bindEvents(){
 			$obligeeListHtml = $(".obligee-list").html();
 		if($this.hasClass("next-step-01")){
 			//第一步			
-			if(util.isEmpty($registration_number) || util.isEmpty($work_registration_institution) || util.isEmpty($commission_agency) || util.isEmpty($workNameVal) || util.isEmpty($workTypeVal) || util.isEmpty($themeTypeVal) || util.isEmpty($lenghtTimeVal) || util.isEmpty($publicTimeVal) || util.isEmpty($creationTimeVal) || util.isEmpty($versionDescriptionVal) || util.isEmpty($worksDescVal) || util.isEmpty($obligeeListHtml)){
-				util.showMsg("作品基础信息不能为空！")
-			}else{
+			//if(util.isEmpty($registration_number) || util.isEmpty($work_registration_institution) || util.isEmpty($commission_agency) || util.isEmpty($workNameVal) || util.isEmpty($workTypeVal) || util.isEmpty($themeTypeVal) || util.isEmpty($lenghtTimeVal) || util.isEmpty($publicTimeVal) || util.isEmpty($creationTimeVal) || util.isEmpty($versionDescriptionVal) || util.isEmpty($worksDescVal) || util.isEmpty($obligeeListHtml)){
+			//	util.showMsg("作品基础信息不能为空！")
+			//}else{
 				nextBtn($this, $step);
-			}			
+			//}			
 		}else if($this.hasClass("next-step-02")) {
 			//第二步
 			let $rightNewsHtml = $RightNews.html();
-			if(util.isEmpty($rightNewsHtml)){
-				util.showMsg("作品权利信息不能为空！")
-			}else{
+			//if(util.isEmpty($rightNewsHtml)){
+			//	util.showMsg("作品权利信息不能为空！")
+			//}else{
 				nextBtn($this, $step);
-			}
+			//}
 		}else{
 			//提交
 			let $enclosureListHtml = $("#enclosure-list").html();
-			if(util.isEmpty($enclosureListHtml)){
-				util.showMsg("作品附件信息不能为空！")
-			}else{
+			//if(util.isEmpty($enclosureListHtml)){
+			//	util.showMsg("作品附件信息不能为空！")
+			//}else{
 				let $tr1 = $(".obligee-list tr");
 				let obligeeIds = [];
 				for(let a = 0;a < $tr1.length;a++){
@@ -885,7 +885,7 @@ function bindEvents(){
 						util.showMsg("error")
 					}
 				});	
-			}
+			//}
 		}
 	})
 	$doc.on("click", ".pre-step", function(){

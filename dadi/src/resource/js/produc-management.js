@@ -429,7 +429,7 @@ function bindEvents(){
 			$limit1Val = $("input[name='limit1']:checked").val(),
 			$limit3Val = $("input[name='limit3']:checked").val(),
 			$limit4Val = $("input[name='limit4']:checked").val(),
-			mode0 = showArr("mode0"),
+			mode0 = $("input[name='mode0']:checked").val(),
 			language = showArr("language"),
 			mode = showArr("mode");
 		if(util.isEmpty($modalRightInfoRemarks) || util.isEmpty($modalRightInfoSVal) || util.isEmpty($modalRightInfoSqrVal) || util.isEmpty($modalRightInfoSqpVal) || util.isEmpty($modalRightInfoSqmVal) || util.isEmpty($modalRightInfoQldescVal) || util.isEmpty($datetimeStartVal) || util.isEmpty($datetimeEndVal) || util.isEmpty($modalRightInfoDescVal) || util.isEmpty($modalRightInfoFVal) || util.isEmpty($limitVal) || util.isEmpty($limit1Val) || util.isEmpty($limit3Val) || util.isEmpty($limit4Val) || util.isEmpty(mode0) || util.isEmpty(language) || util.isEmpty(mode)){
@@ -685,75 +685,64 @@ function bindEvents(){
 			$contractPaymentMethodVal = $("#contract-payment-method").val(),
 			$contractNotesVal = $("#contract-notes").val(),
 			$contractPartyPistHtml = $("#contract-party-list").html();	
-		if($this.hasClass("next-step-01")){
-			//第一步			
-			if(util.isEmpty($contractNumVal) || util.isEmpty($contractSubVal) || util.isEmpty($contractNameVal) || util.isEmpty($contractMoneyVal) || util.isEmpty($contractSigningTimeVal) || util.isEmpty($contractYakeTimeVal) || util.isEmpty($contractInvalidTimeVal) || util.isEmpty($contractYesTimeVal) || util.isEmpty($contractPaymentPlanVal) || util.isEmpty($contractPaymentMethodVal) || util.isEmpty($contractNotesVal) || util.isEmpty($contractPartyPistHtml)){
-				util.showMsg("合同基础信息不能为空！")
-				//return
-			}else{
-				nextBtn($this, $stepa);
-			}			
-
+		//提交
+		let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
+		if(util.isEmpty($contractAppendicesListtHtml)){
+			util.showMsg("合同附件信息不能为空！")
+			//return
 		}else{
-			//提交
-			let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
-			if(util.isEmpty($contractAppendicesListtHtml)){
-				util.showMsg("合同附件信息不能为空！")
-				//return
-			}else{
-				let $tr1 = $("#contract-party-list tr");
-				let sign_ids = [];
-				for(let a = 0;a < $tr1.length;a++){
-					sign_ids.push($tr1[a].id)
-				}
-				console.log(sign_ids)
-				
-				let $tr3 = $("#contract-appendices-list tr");
-				let files = [];
-				for(let c = 0;c < $tr3.length;c++){
-					files.push($tr3[c].id)
-				}
-				console.log(files)
-				let da = {
-					contract_code: $contractNumVal,
-					contract_subject: $contractSubVal,
-					contract_name: $contractNameVal,
-					contract_amount: $contractMoneyVal,
-					sign_date: $contractSigningTimeVal,
-					effect_date: $contractYakeTimeVal,
-					invalid_date: $contractInvalidTimeVal,
-					effect_period: $contractYesTimeVal,
-					pay_plan: $contractPaymentPlanVal,
-					pay_standard: $contractPaymentMethodVal,
-					contract_explain: $contractNotesVal,
-					sign_ids: sign_ids,
-					files: files
-				}
-				$.ajax({
-					type: "POST",
-					url: "http://140.143.142.191/dadi/contract/update",
-					data: JSON.stringify(da),				
-					dataType: "json",
-					cache: false,
-					contentType: "application/json;charset=UTF-8",
-					success: function(res) {
-						if(res && res.status == 1){
-							console.log(res)
-							util.showMsg("提交成功！")
-
-							//合同详情选取
-							$(".htn-list-xq").html(searchListProduc([res.data]));
-							$(".htn-list-xq input").remove();
-
-							$('#modal-createContract-produc').modal('hide');
-						}					
-					},
-					error: function(error){
-						util.showMsg("error")
-					}
-				});		
+			let $tr1 = $("#contract-party-list tr");
+			let sign_ids = [];
+			for(let a = 0;a < $tr1.length;a++){
+				sign_ids.push($tr1[a].id)
 			}
-		}		
+			console.log(sign_ids)
+			
+			let $tr3 = $("#contract-appendices-list tr");
+			let files = [];
+			for(let c = 0;c < $tr3.length;c++){
+				files.push($tr3[c].id)
+			}
+			console.log(files)
+			let da = {
+				contract_code: $contractNumVal,
+				contract_subject: $contractSubVal,
+				contract_name: $contractNameVal,
+				contract_amount: $contractMoneyVal,
+				sign_date: $contractSigningTimeVal,
+				effect_date: $contractYakeTimeVal,
+				invalid_date: $contractInvalidTimeVal,
+				effect_period: $contractYesTimeVal,
+				pay_plan: $contractPaymentPlanVal,
+				pay_standard: $contractPaymentMethodVal,
+				contract_explain: $contractNotesVal,
+				sign_ids: sign_ids,
+				files: files
+			}
+			$.ajax({
+				type: "POST",
+				url: "http://140.143.142.191/dadi/contract/update",
+				data: JSON.stringify(da),				
+				dataType: "json",
+				cache: false,
+				contentType: "application/json;charset=UTF-8",
+				success: function(res) {
+					if(res && res.status == 1){
+						console.log(res)
+						util.showMsg("提交成功！")
+
+						//合同详情选取
+						$(".htn-list-xq").html(searchListProduc([res.data]));
+						$(".htn-list-xq input").remove();
+
+						$('#modal-createContract-produc').modal('hide');
+					}					
+				},
+				error: function(error){
+					util.showMsg("error")
+				}
+			});		
+		}
 	})	
 	//附件
 	let className;

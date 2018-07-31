@@ -1,0 +1,83 @@
+@import './common.scss';
+.ip-details {
+    display: none;
+    .row {
+        margin:0;
+    }
+    dl{
+        @extend .clearfix;
+        margin:0;
+        padding:10px;
+        font:14px/20px "微软雅黑";
+        dt, dd {
+            float:left;
+            color: rgb(102, 102, 102);
+            font-weight: normal;
+        }
+        dt {
+            color: rgb(153, 153, 153); 
+            margin-right:10px;  
+            cursor: pointer; 
+        }
+    }
+    .panel-body {
+        position: relative;
+        i {
+           font-size: 20px;
+            position: absolute;
+            right:10px;
+            top:10px;
+            z-index: 99;
+            cursor: pointer;
+            color:#666;
+        }       
+        .container {
+            width:100%;
+            height:300px;
+        }
+    }
+}
+.tree-fixed {
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 999;
+    width:100%;
+    height:100%;
+    display: none;
+    p {
+        width:100%;
+        height:100%;
+        background-color: rgba(0,0,0,.5);
+        position: absolute;
+        left:0;
+        top:0;
+        z-index: 0;
+    }
+    .tree-cont {
+        width:90%;
+        height:90%;
+        position: relative;
+        z-index: 1;
+        background-color: #fff;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        i {
+            position: absolute;
+            right:10px;
+            top:10px;
+            font-size: 20px;
+            color:#f00;
+            z-index: 2;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        #tree-content {
+            width:100%;
+            height:100%;
+            position: relative;
+            z-index: 0;
+        }
+    }
+}

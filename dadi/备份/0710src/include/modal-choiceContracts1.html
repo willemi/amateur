@@ -1,0 +1,52 @@
+<!--选择合同/少表 产权 choiceContracts1-->
+<div class="modal fade Indexes1" id="modal-choiceContracts1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">选择合同</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="ht-name" style="width:100%!important" placeholder="1有，2无">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-s" type="button">Go!</button>
+                        </span>
+                    </div>                  
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="th">合同编号</th>
+                            <th>合同名称</th>
+                            <th>签约时间</th>
+                            <th>生效日期</th>
+                            <th>失效日期</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ht-1">
+                        <tr>
+                            <th class="th" scope="row"><input type="checkbox" name="">XXXXXXX189675456WSPD</th>
+                            <td>《嗨！看电视》2018XXX采购合同</td>
+                            <td>2018-03-23</td>
+                            <td>2018-03-23</td>
+                            <td>2018-03-23</td>
+                            <td>                                
+                                <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#modal-detailsContract1">查看</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="example" class="example">
+                    <ul id="pageLimit-Indexes"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">				
+                <button type="button" class="btn btn-primary btn-index1">引用</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
