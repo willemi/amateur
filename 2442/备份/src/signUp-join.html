@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="Keywords" content="" />
+	<title>报名-加入队伍</title>
+</head>
+<body>
+<%= require('html-loader!./include/header.html') %>
+<div class="main join">
+	<div class="title">
+		<h6></h6>
+		<h3>Team registration</h3>
+		<h4>队伍报名</h4>
+	</div>
+	<div class="step">
+		<ul>
+			<li class="active"><p>STEP</p><span>01</span><h4>搜索队伍</h4></li>
+			<li><p>STEP</p><span>02</span><h4>队长须知</h4></li>
+			<li><p>STEP</p><span>03</span><h4>队长信息</h4></li>
+			<li><p>STEP</p><span>04</span><h4>衍生商品</h4></li>
+			<li><p>STEP</p><span>05</span><h4>支付费用</h4></li>
+		</ul>
+	</div>
+	<div class="main-cont">
+		<div class="step-cont step-01 join-01" style="display: block">
+			<h3>加入战队</h3>			
+			<div class="form-div">
+				<input type="text" placeholder="请输战队名称或ID查找" id="dwxxbid">
+				<a class="btn-a btn-saerch">查询</a>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>战队ID</th>
+						<th>战队名称</th>
+						<th>参赛类型</th>
+						<th>队员人数</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody class="htn-list">
+					<tr>
+						<td>12333</td>
+						<td>wanwang</td>
+						<td>女子组</td>
+						<td>10</td>
+						<td>
+							<a class="btn-a btn-go">加入战队</a>
+						</td>
+					</tr>
+					<tr>
+						<td>12333</td>
+						<td>wanwang</td>
+						<td>女子组</td>
+						<td>10</td>
+						<td>
+							<a class="btn-a btn-go">加入战队</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>当前共有2个战队</p>
+			<div class="btn-click"><span class="btn-01 next-step">下一步</span></div>
+			<div class="fixed-div yam-fixed">
+				<div class="yam-fixed-cont">
+					<h6>请输入加入邀请码<a class="a-close">X</a></h6>
+					<p>这不是一个公开战队，需要邀请码才能加入</p>
+					<input type="text" placeholder="请输入邀请码" id="yqm">
+					<em>注：请输入邀请码验证报名资格</em>
+					<div>
+						<span>取消</span>
+						<span class="btn-ja">确认</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="step-cont step-02 rule">
+			<h4>遵守免责声明同意书</h4>
+			<dl>
+				<dt>作为一位参赛选手，我坚决支持并同意：</dt>
+				<dd>1.全程马拉松、半程马拉松和11公里组对所有身体状况良好的人开放报名（参见与保险有关的报名条件）。建议跑步者在赛前做一个健康检查。所有参赛者必须注意竞赛所涉及的安全问题。</dd>
+				<dd>2.每位参赛者必须通读竞赛规则的全部内容及参赛指南，开始比赛将被视为接受竞赛规则所列内容。</dd>
+				<dd>3.只能使用腿部力量。不允许使用任何自动化或机械辅助。</dd>
+				<dd>4.所有参赛选手应随时遵守体育比赛道德，不应阻挠速度更快的选手超越。</dd>
+				<dd>5.所有参赛选手必须在比赛前进行注册。</dd>
+				<dd>6.比赛前，运动员将在竞赛办公室领到自己的比赛套包，里面装有号码簿。运动员须按照指定方式将号码簿别在身前，并且不能以任何方式折叠或更改。没有佩戴号码簿的参赛者将被禁止进入起点区。</dd>
+				<dd>7.参赛运动员须在比赛开始前至少15分钟到达起点区。</dd>
+			</dl>
+			<span>下载【官方比赛规则】请点击：<a href="#">《挑战者-免责声明-RUN2442长江跑-吉尼斯世界纪录挑战赛》</a></span>
+			<div class="checkbox"><label><input type="checkbox">我已阅读并同意</label></div>
+			<div class="error"></div>
+			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-02 next-step">同意</span></div>
+		</div>
+		<div class="step-cont step-03 step-p-show">
+			<form id="input">
+				<div class="input"><label>姓名：</label><p>张三</p></div>
+				<div class="input"><label>1KM最好成绩：</label><p>3分钟</p></div>
+				<div class="input"><label>性别：</label><p>男</p></div>
+				<div class="input"><label>生日：</label><p>1980/01/02</p></div>
+				<div class="input"><label>国家/地区：</label><p>中国</p></div>
+				<div class="input"><label>证件类型：</label><p>身份证</p></div>
+				<div class="input"><label>证件号码：</label><p>121212111111111111</p></div>
+				<div class="input"><label>手机：</label><p>13333333333</p></div>
+				<div class="input"><label>上衣尺码：</label><p>XL</p></div>
+				<div class="input"><label>电子邮箱：</label><p>123@qq.com</p></div>
+				<div class="input"><label>现居地址：</label><p>北京市东城区</p></div>
+				<div class="input">
+					<span><label>紧急联系人：</label><p>李四</p></span>
+					<span><label>联系人关系：</label><p>朋友</p></span>
+					<span><label>联系人电话：</label><p>1333333333</p></span>
+				</div>
+				<div class="input">
+					<span><label>过敏源：</label><p>无</p></span>
+					<span><label>既往病史：</label><p>无</p></span>
+					<span><label>血型：</label><p>O</p></span>
+				</div>
+				<div class="checkbox"><label><input type="checkbox">我接受并同意网站《用户服务条款》</label></div>
+				<div class="error"></div>
+				<div class="btn-click"><span class="pre-step">返回</span><span class="btn-03 next-step">下一步</span></div>
+			</form>
+		</div>
+		<div class="step-cont step-04">
+			<ul>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+				<li>
+					<img src="resource/img/295_210.jpg">
+					<div>
+						<span>
+							<h3>Essential cottonT恤</h3>
+							<p class="line">￥200.00</p>
+							<p>￥100.00</p>
+						</span>
+						<span class="span-checkbox">
+							<input type="checkbox">
+						</span>
+					</div>
+				</li>
+			</ul>
+			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-04 next-step">下一步</span></div>
+		</div>
+		<div class="step-cont step-05">
+			<div>
+				<h4>订单信息</h4>
+				<h5><p>项目</p><p>金额</p></h5>
+				<dl>
+					<dt>￥700.00</dt>
+					<dd><i class="glyphicon glyphicon-map-marker"></i>2018年RUN2442长江跑</dd>
+					<dd><i class="glyphicon glyphicon-user"></i>姓名：某某某</dd>
+				</dl>
+			</div>
+			<div>
+				<h4>点击下面图标完成支付</h4>
+				<span class="payment">
+					<p class="zfb active"><input type="radio" name="payment" checked></p>
+					<p class="wx"><input type="radio" name="payment"></p>
+				</span>
+				<p>15分钟内支付有效</p>
+			</div>
+			<div class="btn-click"><span class="pre-step">返回</span><span class="btn-05 next-step">确认支付</span></div>
+		</div>
+	</div>
+</div>
+<div class="messages"></div>
+<%= require('html-loader!./include/footer.html') %>
+</body>
+</html>

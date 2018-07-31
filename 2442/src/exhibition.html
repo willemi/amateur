@@ -17,66 +17,67 @@
 		<h3>RUN TEAM SHOW</h3>
 		<h4>跑团展示</h4>
 	</div>
-	<div class="main-cont">		
+	<div class="main-cont">
 		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide swiper">
-					<div class="fl">
-						<h4>精英跑团助力RUN2442长江跑口号</h4>
-						<h5>跑团名称</h5>
-						<h4>跑团所在地</h4>
-						<!-- <h5>这里是助力口号</h5>
-						<h4>跑团名</h4>
-						<h5>RUN2442</h5> -->
-						<dl>
-							<dt>
-								<h4>团长介绍</h4>
-								<h5>张会</h5>
-							</dt>
-							<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
-						</dl>
-						<dl>
-							<dt>
-								<h4>跑团介绍</h4>
-							</dt>
-							<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
-						</dl>
-					</div>
-					<div class="fr">
-						<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>						
-					</div>
-				</div>
-				<div class="swiper-slide swiper">
-					<div class="fl">
-						<h4>精英跑团助力RUN2442长江跑口号</h4>
-						<h5>跑团名称</h5>
-						<h4>跑团所在地</h4>
-						<!-- <h5>这里是助力口号</h5>
-						<h4>跑团名</h4>
-						<h5>RUN2442</h5> -->
-						<dl>
-							<dt>
-								<h4>团长介绍</h4>
-								<h5>张会</h5>
-							</dt>
-							<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
-						</dl>
-						<dl>
-							<dt>
-								<h4>跑团介绍</h4>
-							</dt>
-							<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
-						</dl>
-					</div>
-					<div class="fr">
-						<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>
-					</div>
-				</div>
+			<div id="ban_pic1">
+				<ul>
+					<li>
+						<div class="fl">
+							<h4>精英跑团助力RUN2442长江跑口号</h4>
+							<h5>跑团名称</h5>
+							<h4>跑团所在地</h4>
+							<dl>
+								<dt>
+									<h4>团长介绍</h4>
+									<h5>张会</h5>
+								</dt>
+								<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
+							</dl>
+							<dl>
+								<dt>
+									<h4>跑团介绍</h4>
+								</dt>
+								<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
+							</dl>
+						</div>
+						<div class="fr">
+							<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>						
+						</div>
+					</li>
+					<li>
+						<div class="fl">
+							<h4>精英跑团助力RUN2442长江跑口号</h4>
+							<h5>跑团名称</h5>
+							<h4>跑团所在地</h4>
+							<dl>
+								<dt>
+									<h4>团长介绍</h4>
+									<h5>张会</h5>
+								</dt>
+								<dd>跑龄3年 <br />最长跑步距离20公里 <br />参加马拉松比赛及成绩</dd>
+							</dl>
+							<dl>
+								<dt>
+									<h4>跑团介绍</h4>
+								</dt>
+								<dd>当我们学会起步，迈开步子向前，每一步都是进步。 <br />每一次相遇都是财富。 <br />跑步为马，不负韶华！</dd>
+							</dl>
+						</div>
+						<div class="fr">
+							<div class="fr-right"><img src="resource/img/1055_470.jpg"></div>						
+						</div>
+					</li>
+				</ul>
 			</div>
-			<div class="swiper-btn s-btn-pre"></div><!--左箭头-->
-			<div class="swiper-btn s-btn-next"></div><!--右箭头-->
+			<div class="swiper-btn s-btn-pre" id="prev1"></div><!--左箭头-->
+			<div class="swiper-btn s-btn-next" id="next1"></div><!--右箭头-->
 		</div>
-		<ol class="s-pagination"></ol>
+		<div id="ban_num1">
+			<ul class="s-pagination">
+				<li><img src="resource/img/70_100.jpg"><p>某某跑团某某跑团某某跑团</p></li>
+				<li><img src="resource/img/70_100.jpg"><p>某某跑团某某跑团某某跑团2</p></li>
+			</ul>
+		</div>
 	</div>
 </div>
 <div class="main vote" id="vote">
@@ -86,7 +87,7 @@
 		<h4>投票</h4>
 	</div>
 	<div class="main-cont">
-		<ul>
+		<ul class="ul-vote">
 			<li>
 				<img src="resource/img/305_160.jpg">
 				<h4>我是我</h4>
@@ -118,7 +119,9 @@
 				<span class="btn-vote"></span>
 			</li>
 		</ul>
-
+	</div>
+	<div id="example" class="example">
+		<ul id="pageLimit"></ul>
 	</div>
 </div>
 <%= require('html-loader!./include/footer.html') %>

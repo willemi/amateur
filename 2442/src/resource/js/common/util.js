@@ -1,6 +1,8 @@
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const bootstrapPaginator = require("./bootstrap-paginator.js");
+
 let util = {};
 util.isEmpty = (str) => {
 	str = $.trim(str);
@@ -14,6 +16,29 @@ util.GetQueryString = (name) => {
 	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
 	var r = window.location.search.substr(1).match(reg);
 	if(r!=null)return  unescape(r[2]); return null;
+}
+util.pageinator = (cont, page, totalP, tplData) => {
+	var $cont = $("#"+ cont);
+	$cont.bootstrapPaginator({    
+		currentPage: page,//当前页码
+		totalPages: totalP,//总页码
+		size:"normal",
+		bootstrapMajorVersion: 3,//bootstrap版本
+		alignment:"right",
+		numberOfPages:5,//一页显示几个按钮
+		itemTexts: function(type, page, current){
+			switch (type){ 
+				case "first": return "首页";
+				case "prev": return "上一页";
+				case "next": return "下一页";
+				case "last": return "末页";
+				case "page": return page;
+			}
+		},
+		onPageClicked: function(event, originalEvent, type, page){
+			tplData(page)
+		}
+	});
 }
 util.regArr = {
 	phone: /^1([38][0-9]{9}|(4[57]|5[0-35-9])[0-9]{8})$/,

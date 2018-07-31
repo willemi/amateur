@@ -1,18 +1,31 @@
 import '../css/exhibition.scss'
 
-import '../css/swiper.css';
-const Swiper = require('../js/common/swiper.min');
+const banqh = require('../js/common/pic_tab');
 
 const util = require('./common/util');
-
-var mySwiper = new Swiper('.swiper-container', {
-    // autoplay: true,//可选选项，自动滑动
-    pagination: '.s-pagination',
-    paginationClickable:true,
-    // 自定义分页器，必须的type类型
-    paginationBulletRender: function (swiper, index, className) {
-        return '<li class="' + className + '"><img src="resource/img/70_100.jpg"><p>某某跑团某某跑团某某跑团</p></li>'
-    },
-    nextButton: '.s-btn-next',
-    prevButton: '.s-btn-pre'
+$('#demo1').banqh({
+	box:"#demo1",//总框架
+	pic:"#ban_pic1",//大图框架
+	pnum:"#ban_num1",//小图框架
+	prev:"#prev1",//大图左箭头
+	next:"#next1",//大图右箭头
+	autoplay:false,//是否自动播放
+	interTime:5000,//图片自动切换间隔
+	delayTime:400,//切换一张图片时间
+	order:0,//当前显示的图片（从0开始）
+	picdire:true,//大图滚动方向（true为水平方向滚动）
+	mindire:true,//小图滚动方向（true为水平方向滚动）
+	min_picnum:11//小图显示数量
 })
+function workslistData(){
+
+}
+function bindEnds(){
+	util.pageinator("pageLimit", 1, 10, workslistData);
+}
+
+
+function init(){
+    bindEnds()
+}
+init()

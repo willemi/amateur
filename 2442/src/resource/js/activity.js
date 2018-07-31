@@ -22,7 +22,12 @@ var swiper = new Swiper('.swiper-container',{
 		swiper.slides[2].className="swiper-slide swiper-slide-active";//第一次打开不要动画
 	}
 });
+function workslistData(){
+
+}
 function bindEnds(){
+	util.pageinator("pageLimit", 1, 10, workslistData);
+
 	//播放\暂停
 	let $video = $(".video");
 	$video.on('click', '.button', function() {

@@ -68,11 +68,12 @@ body {
         }
     }
 }
-.main .main-cont {
+.main.signUp .main-cont {
     width:1200px;
     min-width: 1200px;
     background-color: #fff;
     padding:40px 0 90px;
+    margin-top:30px;
     .step-cont {
         display: none;
         position: relative;
@@ -222,10 +223,11 @@ body {
             }
             textarea {
                 display: inline-block;
-                width:370px;
+                width:410px;
                 padding:10px;
                 background-color: #f9f9f9;
                 border:1px solid #bfbfbf;
+                border-radius: 0;
             }
             select {
                 background-color: #f9f9f9;
