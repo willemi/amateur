@@ -95,36 +95,6 @@ let $step = $(".step li");
 
 function bindEvents(){
     var $doc = $(document);
-    // $doc.on("click", ".dropdown-menu li", function(){
-	// 	var $this = $(this)
-	// 	var $text = $this.text(),
-	// 		$button = $this.parent().prev();
-	// 	$button.html($text +'<span class="caret"></span>');
-	// })
-    // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-	// 	// 获取已激活的标签页的名称
-	// 	var activeTab = $(e.target).text(); 
-	// 	// 获取前一个激活的标签页的名称
-	// 	var previousTab = $(e.relatedTarget).text(); 
-	// 	$(".active-tab span").html(activeTab);
-	// 	$(".previous-tab span").html(previousTab);
-    // });
-    //合同信息
-	// $doc.on("change", "#right-news", function(){
-	// 	var $this = $(this);
-	// 	var $div = $this.parents(".btn-group"),
-	// 		$button = $div.next("button"),
-	// 		$btnOperation = $div.nextAll(".btn-operation");
-	// 	var val = $this.val();
-	// 	if(val == 0){
-	// 		//是
-	// 		$button.removeAttr("disabled");
-	// 		$btnOperation.hide();
-	// 	}else{
-	// 		$button.attr("disabled", "disabled");
-	// 		$btnOperation.show();
-	// 	}
-	// })
 	//查看产品详情
 	$doc.on("click", ".btn-details", function(){
 		let id = $(this).data("id");
@@ -184,10 +154,6 @@ function bindEvents(){
 	
 	util.timepicker("modal-right-start-time");
 	util.timepicker("modal-right-dj-time");
-	// util.timepicker("datetimepicker2");
-	// util.timepicker("datetimepicker3");
-	// util.timepicker("datetimepicker4");
-	// util.timepicker("datetimepicker5");
 
 	util.timepicker("contract-signing-time");
 	util.timepicker("contract-take-time");
@@ -195,19 +161,6 @@ function bindEvents(){
 	util.timepicker("contract-yes-time");
 
 	util.timepickerSection("datetimeStart", "datetimeEnd");	
-    //pages
-	util.pageinator("pageLimit", "10", "url", tplData);
-	function tplData(data){
-		console.log(data)
-	}
-	util.pageinator("pageLimit1", "10", "url", tplData2);
-	function tplData2(data){
-		console.log(data)
-	}
-	util.pageinator("pageLimit-Indexes", "10", "url", tplData1);
-	function tplData1(data){
-		console.log(data)
-	}
 
 	//新增
 	let $cont1 = $(".content-01"),
@@ -216,10 +169,10 @@ function bindEvents(){
 		$cont1.hide();
 		$cont2.show();
 	})
-	$doc.on("click", ".pre-stepa", function(){
-		let $this = $(this);
-		preBtn($this, $stepa);
-	})
+	// $doc.on("click", ".pre-stepa", function(){
+	// 	let $this = $(this);
+	// 	preBtn($this, $stepa);
+	// })
 	$doc.on("click", ".pre-step", function(){
 		let $this = $(this);
 		preBtn($this, $step);
@@ -332,8 +285,6 @@ function bindEvents(){
 		}
 		$(".yy-list input").remove();
 
-
-
 		//$('#modal-referenceWorks').modal('hide');
 		//$(".tr-hide").show();
 		//$(".bnt-yy").removeClass("btn-default").addClass("btn-primary").attr("data-toggle", "modal").attr("data-target", "#modal-newly-added2")
@@ -362,16 +313,16 @@ function bindEvents(){
 		}
 	})
 	//搜索
-	$doc.on("click", ".btn-s", function(){
-		let vla = $("#ht-name").val();
-		if(vla == 1){
-			$(".ht-1").show();
-		}else{
-			$(".ht-1").html('<a class="cjht" data-toggle="modal" data-target="#modal-createContract1">创建合同</a>').show();
-		}
+	// $doc.on("click", ".btn-s", function(){
+	// 	let vla = $("#ht-name").val();
+	// 	if(vla == 1){
+	// 		$(".ht-1").show();
+	// 	}else{
+	// 		$(".ht-1").html('<a class="cjht" data-toggle="modal" data-target="#modal-createContract1">创建合同</a>').show();
+	// 	}
 		
-		//util.pageinator("pageLimit2", "10", "url", tplData2);
-	})
+	// 	//util.pageinator("pageLimit2", "10", "url", tplData2);
+	// })
 	//创建产品信息
 	let cpnews = {}
 	$doc.on("click", ".btn-news", function(){

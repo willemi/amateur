@@ -3,6 +3,9 @@ import '../css/activity.scss';
 import '../css/swiper.min.css';
 const Swiper = require('../js/common/swiper.min');
 
+const itemNewsListTpl = require('../tpl/item-news-list-tpl.tpl');
+const itemPicListTpl = require('../tpl/item-pic-list-tpl.tpl');
+
 var $excellent = $(".excellent"),
 	obj = $excellent.find("ul");
 var $btnl = $(".btn-pre"),
@@ -22,12 +25,50 @@ var swiper = new Swiper('.swiper-container',{
 		swiper.slides[2].className="swiper-slide swiper-slide-active";//第一次打开不要动画
 	}
 });
-function workslistData(){
-
+let page;
+function newslistData(page){
+	page = page || 1;
+	$.ajax({
+		type: "get",
+		url: "http://47.105.47.69:8080/run2442/pro1/queryArticlePage",
+		data: {
+			start: page,
+			num: 6
+		},
+		dataType: "jsonp",
+		jsonp: "callback",
+		cache: false,
+		success: function(res) {
+			if(res.Message == "Ok"){
+				$(".news-list").html(itemNewsListTpl(res.data));
+				util.pageinator("pageLimit", page, res.totalPage, newslistData);
+			}
+		},
+		error: function(){
+			alert("失败！")
+		}
+	});
 }
-function bindEnds(){
-	util.pageinator("pageLimit", 1, 10, workslistData);
+function piclistData(){
+	$.ajax({
+		type: "get",
+		url: "http://47.105.47.69:8080/run2442/pro1/queryPictureAll",
+		dataType: "jsonp",
+		jsonp: "callback",
+		cache: false,
+		success: function(res) {
+			if(res.Message == "Ok"){
+				$(".pic-list").html(itemPicListTpl(res.data));
+				morePic()
+			}
+		},
+		error: function(){
+			alert("失败！")
+		}
+	});
+}
 
+function bindEnds(){
 	//播放\暂停
 	let $video = $(".video");
 	$video.on('click', '.button', function() {
@@ -245,7 +286,8 @@ $btnr.on("click", function() {
 
 
 function init(){
-	morePic()
+	newslistData();
+	piclistData();	
 	bindEnds();
 }
 init()
