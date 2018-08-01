@@ -76,17 +76,18 @@
                         <li><a href="#wz" data-toggle="tab">域名附件</a></li>
                     </ul>
                 </div>
-                <div id="myTabContent" class="tab-content">
+                <div id="myTabContent" class="tab-content label110">
                     <div class="tab-pane fade in active" id="home">
                         <form class="form-inline">
-                            <div class="form-group col-md-4 col-lg-4">
+                            <div class="form-group col-md-4 col-lg-4 htname">
                                 <label for="exampleInputName2">合同名称</label>
-                                <input type="text" class="form-control" id="contract_id" placeholder="" data-toggle="modal" data-target="#modal-choiceContracts">
+                                <input type="text" class="form-control ht-name-add" readonly id="contract_id" placeholder="" data-toggle="modal" data-target="#modal-choiceContracts-produc">
                             </div>
                             <!-- <div class="form-group col-md-4 col-lg-4">
                                     <label for="exampleInputName2">合同金额</label>
                                 <input type="text" class="form-control" id="" placeholder="">
                             </div> -->
+                            <input type="hidden" id="mark_contract_id" class="htid">
                             <div class="form-group col-md-4 col-lg-4">
                                 <label for="exampleInputName2">域名地址</label>
                                 <input type="text" class="form-control" id="realmname_address" placeholder="">
@@ -177,15 +178,13 @@
 	</div><!-- /.modal -->
 </div>
 <!--合同详情-->
-<%= require('html-loader!./include/modal-detailsContract.html') %>
+<%= require('html-loader!./include/modal-detailsContract-produc.html') %>
 <!--选择合同-->
-<%= require('html-loader!./include/modal-choiceContracts.html') %>
+<%= require('html-loader!./include/modal-choiceContracts-produc.html') %>
 <!--创建合同-->
-<%= require('html-loader!./include/modal-createContract.html') %>
+<%= require('html-loader!./include/modal-createContract-produc.html') %>
 <!--合同签约方-->
 <%= require('html-loader!./include/modal-signatoryInformation.html') %>
-<!--权利信息新增-->
-<%= require('html-loader!./include/modal-newly-added1.html') %>
 
 </body>
 </html>

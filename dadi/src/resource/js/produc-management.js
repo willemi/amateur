@@ -497,6 +497,9 @@ function bindEvents(){
 				success: function(res) {
 					if(res && res.status == 1){
 						if(res.data){//搜索
+							for(var i = 0;i < res.data.length;i++){
+								res.data[i]._id = res.data[i].contract_name +"-"+ res.data[i].id;
+							}
 							$(".htn-list").html(searchListProduc(res.data));
 						}else{//创建
 							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract-produc">创建合同</a></div>');

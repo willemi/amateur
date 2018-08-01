@@ -1,9 +1,11 @@
 import '../css/trademark-management.scss';
 
 const util = require("./common/util.js")
-
+const trademarkList = require('../tpl/item-trademark-list.tpl')
 const managementList = require('../tpl/item-management-list.tpl');
+const itemSearchListLook3Tpl = require('../tpl/item-look-xuanqu.3.tpl');
 const itemSearchListTpl = require('../tpl/item-search-list.tpl');
+const searchListProduc = require('../tpl/item-search-list-produc.tpl');
 const itemSearchListLookTpl = require('../tpl/item-look-xuanqu.tpl');
 const itemSearchListLook1Tpl = require('../tpl/item-look-xuanqu.1.tpl');
 const itemSearchListLook2Tpl = require('../tpl/item-look-xuanqu.2.tpl');
@@ -212,158 +214,13 @@ function bindEvents(){
 			}
 		});
 	})
-	$doc.on("click", ".btn-xz-qr", function(){
-		let $this = $(this);
-		let $zsNubVal = $("#zs-nub").val(),
-			$qlztVal = $("#qlzt").val(),
-			$qllxVal = $("#qllx").val(),
-			$nameVal = $("#name").val(),
-			$designerVal = $("#designer").val(),
-			$numberVal = $("#number").val(),
-			$patenVal = $("#paten").val(),
-			$apply_dateVal = $("#apply_date input").val(),
-			$notice_dateVal = $("#notice_date input").val(),
-			$agencyVal = $("#agency").val(),
-			$product_nameVal = $("#product_name").val(),
-			$next_payment_timeVal = $("#next_payment_time").val(),
-			$total_costVal = $("#total_cost").val(),
-			$is_patentVal = $("#is_patent").val(),
-			$projectVal = $("#project").val(),
-			$authorize_unitVal = $("#authorize_unit").val(),
-			$authorized_unitVal = $("#authorized_unit").val(),
-			$authorize_typeVal = $("#authorize_type").val(),
-			$term_of_validity_startVal = $("#term_of_validity_start input").val(),
-			$term_of_validity_endVal = $("#term_of_validity_end input").val(),
-			$authorized_yearsVal = $("#authorized_years").val(),
-			$authorized_areaVal = $("#authorized_area").val(),
-			$scope_of_authorizationVal = $("#scope_of_authorization").val(),
-			$scope_of_operationVal = $("#scope_of_operation").val(),
-			$authorized_amountVal = $("#authorized_amount").val(),
-			$bzVal = $("#bz").val(),
-			$statusVal = $("#qlzt").val(),
-			$contract_idVal = $("#ht-news").val();
+	
 
-		if(util.isEmpty($statusVal) || util.isEmpty($nameVal) || util.isEmpty($designerVal) || util.isEmpty($numberVal) || util.isEmpty($patenVal) || util.isEmpty($apply_dateVal) || util.isEmpty($notice_dateVal) || util.isEmpty($agencyVal) || util.isEmpty($product_nameVal) || util.isEmpty($next_payment_timeVal) || util.isEmpty($total_costVal) || util.isEmpty($is_patentVal) || util.isEmpty($projectVal) || util.isEmpty($authorize_unitVal) || util.isEmpty($authorized_unitVal) || util.isEmpty($authorize_typeVal) || util.isEmpty($term_of_validity_startVal) || util.isEmpty($term_of_validity_endVal) || util.isEmpty($authorized_yearsVal) || util.isEmpty($authorized_areaVal) || util.isEmpty($scope_of_authorizationVal) || util.isEmpty($scope_of_operationVal) || util.isEmpty($authorized_amountVal) || util.isEmpty($bzVal)){
-			util.showMsg("专利信息不能为空！")
-			//return
-		}else {
-			// let $tr1 = $("#contract-party-list tr");
-			// let sign_ids = [];
-			// for(let a = 0;a < $tr1.length;a++){
-			// 	sign_ids.push($tr1[a].id)
-			// }
-			// console.log(sign_ids)
-
-			// let $tr2 = $(".qlnews-list tr");
-			// let contract_id = [];
-			// for(let b = 0;b < $tr2.length;b++){
-			// 	contract_id.push($tr2[b].id)
-			// }
-			// console.log(contract_id)
-			$contract_idVal = $contract_idVal.split("-")
-			
-			let $tr3 = $("#manage-file tr");
-			let files = [];
-			for(let c = 0;c < $tr3.length;c++){
-				files.push($tr3[c].id)
-			}
-			console.log(files)
-			let da = {
-				// contract_code: $zsNubVal,
-				// contract_subject: $qlztVal,
-				// contract_name: $qllxVal,
-				name: $nameVal,
-				designer: $designerVal,
-				number: $numberVal,
-				paten: $patenVal,
-				apply_date: $apply_dateVal,
-				notice_date: $notice_dateVal,
-				agency: $agencyVal,
-				product_name: $product_nameVal,
-				next_payment_time: $next_payment_timeVal,
-				total_cost: $total_costVal,
-				is_patent: $is_patentVal,
-				project: $projectVal,
-				authorize_unit: $authorize_unitVal,
-				authorized_unit: $authorized_unitVal,
-				authorize_type: $authorize_typeVal,
-				term_of_validity_start: $term_of_validity_startVal,
-				term_of_validity_end: $term_of_validity_endVal,
-				authorized_years: $authorized_yearsVal,
-				authorized_area: $authorized_areaVal,
-				scope_of_authorization: $scope_of_authorizationVal,
-				scope_of_operation: $scope_of_operationVal,
-				authorized_amount: $authorized_amountVal,
-				bz: $bzVal,
-				status: $statusVal,
-
-				contract_id: $contract_idVal[1],
-				files: files
-			}
-			$.ajax({
-				type: "POST",
-				url: "http://140.143.142.191/dadi/patent/update",
-				data: JSON.stringify(da),				
-				dataType: "json",
-				cache: false,
-				contentType: "application/json;charset=UTF-8",
-				success: function(res) {
-					if(res && res.status == 1){
-						console.log(res)
-						util.showMsg("提交成功！")
-
-						$('#gengk-added').modal('hide');
-						$(".qlnews-xuanqu").append($(".qlnews-list").html());
-						$(".right-news input").remove();
-						setTimeout(function(){
-							location.reload();
-						})
-					}					
-				},
-				error: function(error){
-					util.showMsg("error")
-				}
-			});	
-		}
-		
+	let $box;
+	$doc.on("click", ".ht-name-add", function(){
+		$('#modal-choiceContracts-produc').modal('show');
+		$box = $(this);
 	})
-
-	// //选择合同
-	// //搜索
-	// $doc.on("click", ".btn-ht", function(){
-	// 	let val = $("#ht-name").val();
-	// 	if(val == 1){//搜索
-	// 		$(".htn-list").html(itemSearchListTpl(data3));
-	// 	}else if(val == 2){//创建
-	// 		$(".htn-list").html('<a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a>');
-	// 	}else{
-	// 		util.showMsg('搜索字段不能为空')
-	// 	}
-	// })
-	// //选取
-	// $(".ipadd").on("click", ".btn-primary", function(){
-	// 	$(".right-news").html(rightNewsTpl(data1));
-	// 	let $val = $("input[name='htong']:checked").val();
-	// 	$(".htNews").val($val);
-	// 	$('#modal-choiceContracts').modal('hide');
-	// 	//util.pageinator("pageLimit", "10", "url", tplData);
-	// })
-	// //合同详情选取
-	// $doc.on("click", ".btn-xqu", function(){
-	// 	$('#modal-detailsContract').modal('hide');
-	// 	$(".table-01").show();
-	// })
-	// //创建合同
-	// // 创建合同、无权利信确认
-	// $doc.on("click", ".btn-cjqr", function(){
-	// 	$('#modal-createContract').modal('hide');
-	// 	$(".htn-list").html(itemSearchListTpl(data3));
-	// })	
-	// //合同下一步\提交	
-	// $doc.on("click", ".next-stepa", function(){
-	// 	let $this = $(this);
-	// 	nextBtn($this);
-	// })	
 	//选择合同
 	//搜索
 	$doc.on("click", ".btn-ht", function(){
@@ -385,9 +242,13 @@ function bindEvents(){
 				success: function(res) {
 					if(res && res.status == 1){
 						if(res.data){//搜索
-							$(".htn-list").html(itemSearchListTpl(res.data));
+							for(var i = 0;i < res.data.length;i++){
+								res.data[i]._id = res.data[i].contract_name +"-"+ res.data[i].id;
+							}
+							$(".htn-list").html(searchListProduc(res.data));
+							//$(".htn-list").html(itemSearchListTpl(res.data));
 						}else{//创建
-							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a></div>');
+							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract-produc">创建合同</a></div>');
 						}
 					}					
 				},
@@ -398,7 +259,7 @@ function bindEvents(){
 		}
 		
 	})
-	//查看并选择权利
+	//查看合同详情
 	let droitJson = [];
 	$doc.on("click", ".btn-ht-news", function(){
 		let $this = $(this);
@@ -421,6 +282,9 @@ function bindEvents(){
 					$(".look-details-01").html(itemSearchListLookTpl([res.data.contract]))
 					$(".qlnews-cont").html(itemSearchListLook1Tpl(res.data.droit))
 					$(".qyfNews").html(itemSearchListLook2Tpl(res.data.sign))
+					$(".fileobj").html(itemSearchListLook3Tpl(res.data.fileobj))
+					$(".qlnews-cont input").remove();
+				
 				}					
 			},
 			error: function(error){
@@ -430,34 +294,21 @@ function bindEvents(){
 		
 
 	})	
-	//批量选取id
-	function copy(){
-		var checkbox = $("input[name=a1]");
-		let html = '',id, _id;
+	//合同详情选取
+	$doc.on("click", ".htn-list input[name=ht-list]", function(){
+		var checkbox = $(".htn-list input[name=ht-list]");
+		let kkidTr = [];
 		for (let i = 0; i < checkbox.length; i++) {
 			var $this = checkbox[i];
 			if($this.checked){
-				id = $this.value;
-				_id = $this.id;
-				//kkid.push(id)
-				html += '<tr class="a b_'+ id +'" id="'+ id +'" data-id="'+ _id +'">'+ $(".c_"+ id).html() +'</tr>';
+				let $tr =$this.parentNode.parentNode.cloneNode(true);
+				kkidTr.push($tr)
 			}
 		}
-		return html;
-	}	
-	//合同详情选取
-	$doc.on("click", ".btn-xqu", function(){
-		console.log(droitJson)
-		let c = copy();	
-		if(util.isEmpty(c)){
-			util.showMsg("请选取权利信息");
-		}else{
-			$('#modal-detailsContract').modal('hide');
-			$(".qlnews-xuanqu").append(c);
-		}
-		$(".a input").remove();
+		$(".htn-list-xq").html(kkidTr);
+		$(".htn-list-xq input").remove()
 	})
-	$('#modal-choiceContracts').on('hidden.bs.modal' ,function(e){
+	$('#modal-choiceContracts-produc').on('hidden.bs.modal' ,function(e){
     	$("#ht-name").val('');
 		$(".htn-list").html('');
 		$(".qlnews-xuanqu").html('');
@@ -466,19 +317,43 @@ function bindEvents(){
 		// if(util.isEmpty($RightNews.html())){
 		// 	util.showMsg("请选取权利信息");
 		// }else{			
-			$('#modal-choiceContracts').modal('hide');
-			let id = $(".qlnews-xuanqu tr").data("id");
+			$('#modal-choiceContracts-produc').modal('hide');
+			let id = $(".htn-list-xq tr").data("id");
 			//$RightNews.html($(".qlnews-xuanqu").html());
-			$("#ht-news").val(id)
+			id = id.split("-");
+			// console.log(id[1])
+			 $box.val(id[0])
+			let $name = $box.parents(".htname");
+			$name.nextAll(".htid").val(id[1]);
 			//console.log(kkid)
+			// $.ajax({
+			// 	type: "GET",
+			// 	url: "http://140.143.142.191/dadi/contract/findById",
+			// 	data: {
+			// 		id: id[1]
+			// 	},				
+			// 	dataType: "json",
+			// 	cache: false,
+			// 	contentType: "application/json;charset=UTF-8",
+			// 	success: function(res) {
+			// 		if(res && res.status == 1){
+			// 			let data = res.data;
+			// 			$box.val(data.contract.contract_name)
+			// 			let $name = $box.parents(".htname");
+			// 			$name.nextAll(".htid").val(data.contract.id);
+			// 			$name.nextAll(".htbh").find("input").val(data.contract.contract_code);
+			// 			$name.nextAll(".htje").find("input").val(data.contract.contract_amount);
+			// 			$name.nextAll(".hrq").find("input").val(data.contract.effect_date);
+			// 			$name.nextAll(".hrqend").find("input").val(data.contract.invalid_date);
+			// 		}					
+			// 	},
+			// 	error: function(error){
+			// 		util.showMsg("error")
+			// 	}
+			// });		
 		//}		
 	})
 	//创建合同
-	// 创建合同、无权利信确认
-	// $doc.on("click", ".btn-cjqr", function(){
-	// 	$('#modal-createContract').modal('hide');
-	// 	$(".htn-list").html(itemSearchListTpl(data3));
-	// })	
 	//合同下一步\提交	
 	let $stepa = $(".stepa li");
 	$doc.on("click", ".next-stepa", function(){
@@ -495,96 +370,68 @@ function bindEvents(){
 			$contractPaymentMethodVal = $("#contract-payment-method").val(),
 			$contractNotesVal = $("#contract-notes").val(),
 			$contractPartyPistHtml = $("#contract-party-list").html();
-		if($this.hasClass("next-step-01")){
-			//第一步
-			
-			if(util.isEmpty($contractNumVal) || util.isEmpty($contractSubVal) || util.isEmpty($contractNameVal) || util.isEmpty($contractMoneyVal) || util.isEmpty($contractSigningTimeVal) || util.isEmpty($contractYakeTimeVal) || util.isEmpty($contractInvalidTimeVal) || util.isEmpty($contractYesTimeVal) || util.isEmpty($contractPaymentPlanVal) || util.isEmpty($contractPaymentMethodVal) || util.isEmpty($contractNotesVal) || util.isEmpty($contractPartyPistHtml)){
-				util.showMsg("合同基础信息不能为空！")
-				//return
-			}else{
-				nextBtn($this, $stepa);
-			}			
-
-		}else if($this.hasClass("next-step-02")) {
-			//第二步
-			let $qlnewsListHtml = $(".qlnews-list").html();
-			if(util.isEmpty($qlnewsListHtml)){
-				util.showMsg("合同权利信息不能为空！")
-				//return
-			}else{
-				nextBtn($this, $stepa);
-			}
+		
+		//提交
+		let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
+		if(util.isEmpty($contractAppendicesListtHtml)){
+			util.showMsg("合同附件信息不能为空！")
+			//return
 		}else{
-			//提交
-			let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
-			if(util.isEmpty($contractAppendicesListtHtml)){
-				util.showMsg("合同附件信息不能为空！")
-				//return
-			}else{
-				let $tr1 = $("#contract-party-list tr");
-				let sign_ids = [];
-				for(let a = 0;a < $tr1.length;a++){
-					sign_ids.push($tr1[a].id)
-				}
-				console.log(sign_ids)
-
-				let $tr2 = $(".qlnews-list tr");
-				let droit_ids = [];
-				for(let b = 0;b < $tr2.length;b++){
-					droit_ids.push($tr2[b].id)
-				}
-				console.log(droit_ids)
-				
-				let $tr3 = $("#contract-appendices-list tr");
-				let files = [];
-				for(let c = 0;c < $tr3.length;c++){
-					files.push($tr3[c].id)
-				}
-				console.log(files)
-				let da = {
-					contract_code: $contractNumVal,
-					contract_subject: $contractSubVal,
-					contract_name: $contractNameVal,
-					contract_amount: $contractMoneyVal,
-					sign_date: $contractSigningTimeVal,
-					effect_date: $contractYakeTimeVal,
-					invalid_date: $contractInvalidTimeVal,
-					effect_period: $contractYesTimeVal,
-					pay_plan: $contractPaymentPlanVal,
-					pay_standard: $contractPaymentMethodVal,
-					contract_explain: $contractNotesVal,
-					sign_ids: sign_ids,
-					droit_ids: droit_ids,
-					files: files
-				}
-				$.ajax({
-					type: "POST",
-					url: "http://140.143.142.191/dadi/contract/update",
-					data: JSON.stringify(da),				
-					dataType: "json",
-					cache: false,
-					contentType: "application/json;charset=UTF-8",
-					success: function(res) {
-						if(res && res.status == 1){
-							console.log(res)
-							util.showMsg("提交成功！")
-
-							//合同详情选取
-							$('#modal-createContract').modal('hide');
-							let dataId = res.data.contract_name +"-"+ res.data.id;
-							$(".qlnews-list tr").attr("data-id", dataId)
-							$(".qlnews-xuanqu").append($(".qlnews-list").html());
-							$(".right-news input").remove();
-							// setTimeout(function(){
-							// 	location.reload();
-							// })
-						}					
-					},
-					error: function(error){
-						util.showMsg("error")
-					}
-				});		
+			let $tr1 = $("#contract-party-list tr");
+			let sign_ids = [];
+			for(let a = 0;a < $tr1.length;a++){
+				sign_ids.push($tr1[a].id)
 			}
+			console.log(sign_ids)
+			
+			let $tr3 = $("#contract-appendices-list tr");
+			let files = [];
+			for(let c = 0;c < $tr3.length;c++){
+				files.push($tr3[c].id)
+			}
+			console.log(files)
+			let da = {
+				contract_code: $contractNumVal,
+				contract_subject: $contractSubVal,
+				contract_name: $contractNameVal,
+				contract_amount: $contractMoneyVal,
+				sign_date: $contractSigningTimeVal,
+				effect_date: $contractYakeTimeVal,
+				invalid_date: $contractInvalidTimeVal,
+				effect_period: $contractYesTimeVal,
+				pay_plan: $contractPaymentPlanVal,
+				pay_standard: $contractPaymentMethodVal,
+				contract_explain: $contractNotesVal,
+				sign_ids: sign_ids,
+				files: files
+			}
+			$.ajax({
+				type: "POST",
+				url: "http://140.143.142.191/dadi/contract/update",
+				data: JSON.stringify(da),				
+				dataType: "json",
+				cache: false,
+				contentType: "application/json;charset=UTF-8",
+				success: function(res) {
+					if(res && res.status == 1){
+						console.log(res)
+						util.showMsg("提交成功！")
+
+						//合同详情选取
+						let dataId = res.data.contract_name +"-"+ res.data.id;
+												
+
+						$(".htn-list-xq").html(searchListProduc([res.data]));
+						$(".htn-list-xq input").remove();
+						$(".htn-list-xq tr").attr("data-id", dataId)
+
+						$('#modal-createContract-produc').modal('hide');
+					}					
+				},
+				error: function(error){
+					util.showMsg("error")
+				}
+			});	
 		}		
 	})	
 	//附件
@@ -640,82 +487,121 @@ function bindEvents(){
 			});		
 		}
 	})
-	//权利信息新增
-	$doc.on("click", ".modal-right-info-btn", function(){
-		let $modalRightInfoNameVal = $("#modal-right-info-name").val(),
-			$modalRightInfoSetVal = $("#modal-right-info-set").val(),
-			$modalRightInfoUntilVal = $("#modal-right-info-until").val(),
-			$modalRightInfoSVal = $("#modal-right-info-s").val(),
-			$modalRightInfoSqrVal = $("#modal-right-info-sqr").val(),
-			$modalRightInfoSqpVal = $("#modal-right-info-sqp").val(),
-			$modalRightInfoSqmVal = $("#modal-right-info-sqm").val(),
-			$modalRightInfoQldescVal = $("#modal-right-info-qldesc").val(),
-			$datetimeStartVal = $("#datetimeStart").val(),
-			$datetimeEndVal = $("#datetimeEnd").val(),
-			$modalRightInfoDescVal = $("#modal-right-info-desc").val(),
-			$modalRightInfoRemarks = $("#modal-right-info-remarks").val(),
-			$modalRightInfoFVal = $("#modal-right-info-f").val();
-		let $limitVal = $("input[name='limit']:checked").val(),
-			$limit1Val = $("input[name='limit1']:checked").val(),
-			$limit3Val = $("input[name='limit3']:checked").val(),
-			$limit4Val = $("input[name='limit4']:checked").val(),
-			$limit5Val = $("input[name='limit5']:checked").val(),
-			mode0 = showArr("mode0"),
-			language = showArr("language"),
-			mode = showArr("mode");
-		if(util.isEmpty($modalRightInfoRemarks) || util.isEmpty($modalRightInfoNameVal) || util.isEmpty($modalRightInfoSetVal) || util.isEmpty($modalRightInfoUntilVal) || util.isEmpty($modalRightInfoSVal) || util.isEmpty($modalRightInfoSqrVal) || util.isEmpty($modalRightInfoSqpVal) || util.isEmpty($modalRightInfoSqmVal) || util.isEmpty($modalRightInfoQldescVal) || util.isEmpty($datetimeStartVal) || util.isEmpty($datetimeEndVal) || util.isEmpty($modalRightInfoDescVal) || util.isEmpty($modalRightInfoFVal) || util.isEmpty($limitVal) || util.isEmpty($limit1Val) || util.isEmpty($limit3Val) || util.isEmpty($limit4Val) || util.isEmpty(mode0) || util.isEmpty($limit5Val) || util.isEmpty(language) || util.isEmpty(mode)){
-			util.showMsg("权利信息新增不能为空！")
-			return
-		}else{
-			let data = {
-				opus_name: $modalRightInfoNameVal,
-				peri_num: $modalRightInfoSetVal,
-				unit_price: $modalRightInfoUntilVal,
-				droit_subject: $modalRightInfoSVal,
-				bdroit_per: $modalRightInfoSqrVal,
-				droit_propor: $modalRightInfoSqpVal,
-				droit_price: $modalRightInfoSqmVal,
-				is_propri: $limit1Val,
-				ishave_contract: mode0,
-				droit_content: $modalRightInfoQldescVal,
-				sqxk_ksrq: $datetimeStartVal,
-				sqxk_jsrq: $datetimeEndVal,
-				droit_mode: $limit3Val,
-				sqxk_sydy: $limit5Val,
-				sqxk_syyy: language,
-				is_deleg: $limit4Val,
-				is_wripr: $limitVal,
-				sqxk_syqd: mode,
-				sqxk_sycs: $modalRightInfoFVal,
-				htql_ms: $modalRightInfoDescVal,
-				droit_des: $modalRightInfoRemarks
+	
+	$doc.on("click", ".btn-xz-qr", function(){
+		let $this = $(this);
+		let $zsNubVal = $("#zs-nub").val(),
+			$qlztVal = $("#qlzt").val(),
+			$qllxVal = $("#qllx").val(),
+			$nameVal = $("#name").val(),
+			$designerVal = $("#designer").val(),
+			$numberVal = $("#number").val(),
+			$patenVal = $("#paten").val(),
+			$apply_dateVal = $("#apply_date input").val(),
+			$notice_dateVal = $("#notice_date input").val(),
+			$agencyVal = $("#agency").val(),
+			$product_nameVal = $("#product_name").val(),
+			$next_payment_timeVal = $("#next_payment_time").val(),
+			$total_costVal = $("#total_cost").val(),
+			$is_patentVal = $("#is_patent").val(),
+			$projectVal = $("#project").val(),
+			$authorize_unitVal = $("#authorize_unit").val(),
+			$authorized_unitVal = $("#authorized_unit").val(),
+			$authorize_typeVal = $("#authorize_type").val(),
+			$term_of_validity_startVal = $("#term_of_validity_start input").val(),
+			$term_of_validity_endVal = $("#term_of_validity_end input").val(),
+			$authorized_yearsVal = $("#authorized_years").val(),
+			$authorized_areaVal = $("#authorized_area").val(),
+			$scope_of_authorizationVal = $("#scope_of_authorization").val(),
+			$scope_of_operationVal = $("#scope_of_operation").val(),
+			$authorized_amountVal = $("#authorized_amount").val(),
+			$bzVal = $("#bz").val(),
+			$statusVal = $("#qlzt").val(),
+			$contract_idVal = $("#mark_contract_id").val();
+
+		if(util.isEmpty($statusVal) || util.isEmpty($nameVal) || util.isEmpty($designerVal) || util.isEmpty($numberVal) || util.isEmpty($patenVal) || util.isEmpty($apply_dateVal) || util.isEmpty($notice_dateVal) || util.isEmpty($agencyVal) || util.isEmpty($product_nameVal) || util.isEmpty($next_payment_timeVal) || util.isEmpty($total_costVal) || util.isEmpty($is_patentVal) || util.isEmpty($projectVal) || util.isEmpty($authorize_unitVal) || util.isEmpty($authorized_unitVal) || util.isEmpty($authorize_typeVal) || util.isEmpty($term_of_validity_startVal) || util.isEmpty($term_of_validity_endVal) || util.isEmpty($authorized_yearsVal) || util.isEmpty($authorized_areaVal) || util.isEmpty($scope_of_authorizationVal) || util.isEmpty($scope_of_operationVal) || util.isEmpty($authorized_amountVal) || util.isEmpty($bzVal)){
+			util.showMsg("专利信息不能为空！")
+			//return
+		}else {
+			// let $tr1 = $("#contract-party-list tr");
+			// let sign_ids = [];
+			// for(let a = 0;a < $tr1.length;a++){
+			// 	sign_ids.push($tr1[a].id)
+			// }
+			// console.log(sign_ids)
+
+			// let $tr2 = $(".qlnews-list tr");
+			// let contract_id = [];
+			// for(let b = 0;b < $tr2.length;b++){
+			// 	contract_id.push($tr2[b].id)
+			// }
+			// console.log(contract_id)
+			//$contract_idVal = $contract_idVal.split("-")
+			
+			let $tr3 = $("#manage-file tr");
+			let files = [];
+			for(let c = 0;c < $tr3.length;c++){
+				files.push($tr3[c].id)
 			}
-			console.log(data)
+			console.log(files)
+			let da = {
+				// contract_code: $zsNubVal,
+				// contract_subject: $qlztVal,
+				// contract_name: $qllxVal,
+				name: $nameVal,
+				designer: $designerVal,
+				number: $numberVal,
+				paten: $patenVal,
+				apply_date: $apply_dateVal,
+				notice_date: $notice_dateVal,
+				agency: $agencyVal,
+				product_name: $product_nameVal,
+				next_payment_time: $next_payment_timeVal,
+				total_cost: $total_costVal,
+				is_patent: $is_patentVal,
+				project: $projectVal,
+				authorize_unit: $authorize_unitVal,
+				authorized_unit: $authorized_unitVal,
+				authorize_type: $authorize_typeVal,
+				term_of_validity_start: $term_of_validity_startVal,
+				term_of_validity_end: $term_of_validity_endVal,
+				authorized_years: $authorized_yearsVal,
+				authorized_area: $authorized_areaVal,
+				scope_of_authorization: $scope_of_authorizationVal,
+				scope_of_operation: $scope_of_operationVal,
+				authorized_amount: $authorized_amountVal,
+				bz: $bzVal,
+				status: $statusVal,
+
+				contract_id: $contract_idVal,
+				files: files
+			}
 			$.ajax({
 				type: "POST",
-				url: "http://140.143.142.191/dadi/droit/update",
-				data: JSON.stringify(data),
+				url: "http://140.143.142.191/dadi/patent/update",
+				data: JSON.stringify(da),				
 				dataType: "json",
 				cache: false,
 				contentType: "application/json;charset=UTF-8",
 				success: function(res) {
 					if(res && res.status == 1){
-						console.log(1)
-						data.id = res.data.id;
-						$(".qlnews-list").append(itemSearchListLook1Tpl([data]));
-						document.getElementById("ht-add").reset();
-						$('#modal-newly-added1').modal('hide');
-					}
+						console.log(res)
+						util.showMsg("提交成功！")
+
+						$('#gengk-added').modal('hide');
+						$(".qlnews-xuanqu").append($(".qlnews-list").html());
+						$(".right-news input").remove();
+						setTimeout(function(){
+							location.reload();
+						})
+					}					
 				},
 				error: function(error){
 					util.showMsg("error")
 				}
-			});
+			});	
 		}
-	})
-	$doc.on("click", ".pre-stepa", function(){
-		let $this = $(this);
-		preBtn($this, $stepa);
+		
 	})
 }
 //下一步
