@@ -1,10 +1,11 @@
 import '../css/trademark-management.scss';
 
 const util = require("./common/util.js")
-
+const trademarkList = require('../tpl/item-trademark-list.tpl')
 const fieldList = require('../tpl/item-field-list.tpl');
-
+const itemSearchListLook3Tpl = require('../tpl/item-look-xuanqu.3.tpl');
 const itemSearchListTpl = require('../tpl/item-search-list.tpl');
+const searchListProduc = require('../tpl/item-search-list-produc.tpl');
 const itemSearchListLookTpl = require('../tpl/item-look-xuanqu.tpl');
 const itemSearchListLook1Tpl = require('../tpl/item-look-xuanqu.1.tpl');
 const itemSearchListLook2Tpl = require('../tpl/item-look-xuanqu.2.tpl');
@@ -209,7 +210,15 @@ function bindEvents(){
 			}
 		});
 	})
+	
 
+	let $box;
+	$doc.on("click", ".ht-name-add", function(){
+		$('#modal-choiceContracts-produc').modal('show');
+		$box = $(this);
+	})
+	//选择合同
+	//搜索
 	$doc.on("click", ".btn-ht", function(){
 		let NameVal = $("#ht-name").val();
 		if(util.isEmpty(NameVal)){
@@ -229,9 +238,13 @@ function bindEvents(){
 				success: function(res) {
 					if(res && res.status == 1){
 						if(res.data){//搜索
-							$(".htn-list").html(itemSearchListTpl(res.data));
+							for(var i = 0;i < res.data.length;i++){
+								res.data[i]._id = res.data[i].contract_name +"-"+ res.data[i].id;
+							}
+							$(".htn-list").html(searchListProduc(res.data));
+							//$(".htn-list").html(itemSearchListTpl(res.data));
 						}else{//创建
-							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a></div>');
+							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract-produc">创建合同</a></div>');
 						}
 					}					
 				},
@@ -242,7 +255,7 @@ function bindEvents(){
 		}
 		
 	})
-	//查看并选择权利
+	//查看合同详情
 	let droitJson = [];
 	$doc.on("click", ".btn-ht-news", function(){
 		let $this = $(this);
@@ -265,6 +278,9 @@ function bindEvents(){
 					$(".look-details-01").html(itemSearchListLookTpl([res.data.contract]))
 					$(".qlnews-cont").html(itemSearchListLook1Tpl(res.data.droit))
 					$(".qyfNews").html(itemSearchListLook2Tpl(res.data.sign))
+					$(".fileobj").html(itemSearchListLook3Tpl(res.data.fileobj))
+					$(".qlnews-cont input").remove();
+				
 				}					
 			},
 			error: function(error){
@@ -274,34 +290,21 @@ function bindEvents(){
 		
 
 	})	
-	//批量选取id
-	function copy(){
-		var checkbox = $("input[name=a1]");
-		let html = '',id, _id;
+	//合同详情选取
+	$doc.on("click", ".htn-list input[name=ht-list]", function(){
+		var checkbox = $(".htn-list input[name=ht-list]");
+		let kkidTr = [];
 		for (let i = 0; i < checkbox.length; i++) {
 			var $this = checkbox[i];
 			if($this.checked){
-				id = $this.value;
-				_id = $this.id;
-				//kkid.push(id)
-				html += '<tr class="a b_'+ id +'" id="'+ id +'" data-id="'+ _id +'">'+ $(".c_"+ id).html() +'</tr>';
+				let $tr =$this.parentNode.parentNode.cloneNode(true);
+				kkidTr.push($tr)
 			}
 		}
-		return html;
-	}	
-	//合同详情选取
-	$doc.on("click", ".btn-xqu", function(){
-		console.log(droitJson)
-		let c = copy();	
-		if(util.isEmpty(c)){
-			util.showMsg("请选取权利信息");
-		}else{
-			$('#modal-detailsContract').modal('hide');
-			$(".qlnews-xuanqu").append(c);
-		}
-		$(".a input").remove();
+		$(".htn-list-xq").html(kkidTr);
+		$(".htn-list-xq input").remove()
 	})
-	$('#modal-choiceContracts').on('hidden.bs.modal' ,function(e){
+	$('#modal-choiceContracts-produc').on('hidden.bs.modal' ,function(e){
     	$("#ht-name").val('');
 		$(".htn-list").html('');
 		$(".qlnews-xuanqu").html('');
@@ -310,19 +313,43 @@ function bindEvents(){
 		// if(util.isEmpty($RightNews.html())){
 		// 	util.showMsg("请选取权利信息");
 		// }else{			
-			$('#modal-choiceContracts').modal('hide');
-			let id = $(".qlnews-xuanqu tr").data("id");
+			$('#modal-choiceContracts-produc').modal('hide');
+			let id = $(".htn-list-xq tr").data("id");
 			//$RightNews.html($(".qlnews-xuanqu").html());
-			$("#contract_id").val(id)
+			id = id.split("-");
+			// console.log(id[1])
+			 $box.val(id[0])
+			let $name = $box.parents(".htname");
+			$name.nextAll(".htid").val(id[1]);
 			//console.log(kkid)
+			// $.ajax({
+			// 	type: "GET",
+			// 	url: "http://140.143.142.191/dadi/contract/findById",
+			// 	data: {
+			// 		id: id[1]
+			// 	},				
+			// 	dataType: "json",
+			// 	cache: false,
+			// 	contentType: "application/json;charset=UTF-8",
+			// 	success: function(res) {
+			// 		if(res && res.status == 1){
+			// 			let data = res.data;
+			// 			$box.val(data.contract.contract_name)
+			// 			let $name = $box.parents(".htname");
+			// 			$name.nextAll(".htid").val(data.contract.id);
+			// 			$name.nextAll(".htbh").find("input").val(data.contract.contract_code);
+			// 			$name.nextAll(".htje").find("input").val(data.contract.contract_amount);
+			// 			$name.nextAll(".hrq").find("input").val(data.contract.effect_date);
+			// 			$name.nextAll(".hrqend").find("input").val(data.contract.invalid_date);
+			// 		}					
+			// 	},
+			// 	error: function(error){
+			// 		util.showMsg("error")
+			// 	}
+			// });		
 		//}		
 	})
 	//创建合同
-	// 创建合同、无权利信确认
-	// $doc.on("click", ".btn-cjqr", function(){
-	// 	$('#modal-createContract').modal('hide');
-	// 	$(".htn-list").html(itemSearchListTpl(data3));
-	// })	
 	//合同下一步\提交	
 	let $stepa = $(".stepa li");
 	$doc.on("click", ".next-stepa", function(){
@@ -339,96 +366,68 @@ function bindEvents(){
 			$contractPaymentMethodVal = $("#contract-payment-method").val(),
 			$contractNotesVal = $("#contract-notes").val(),
 			$contractPartyPistHtml = $("#contract-party-list").html();
-		if($this.hasClass("next-step-01")){
-			//第一步
-			
-			if(util.isEmpty($contractNumVal) || util.isEmpty($contractSubVal) || util.isEmpty($contractNameVal) || util.isEmpty($contractMoneyVal) || util.isEmpty($contractSigningTimeVal) || util.isEmpty($contractYakeTimeVal) || util.isEmpty($contractInvalidTimeVal) || util.isEmpty($contractYesTimeVal) || util.isEmpty($contractPaymentPlanVal) || util.isEmpty($contractPaymentMethodVal) || util.isEmpty($contractNotesVal) || util.isEmpty($contractPartyPistHtml)){
-				util.showMsg("合同基础信息不能为空！")
-				//return
-			}else{
-				nextBtn($this, $stepa);
-			}			
-
-		}else if($this.hasClass("next-step-02")) {
-			//第二步
-			let $qlnewsListHtml = $(".qlnews-list").html();
-			if(util.isEmpty($qlnewsListHtml)){
-				util.showMsg("合同权利信息不能为空！")
-				//return
-			}else{
-				nextBtn($this, $stepa);
-			}
+		
+		//提交
+		let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
+		if(util.isEmpty($contractAppendicesListtHtml)){
+			util.showMsg("合同附件信息不能为空！")
+			//return
 		}else{
-			//提交
-			let $contractAppendicesListtHtml = $("#contract-appendices-list").html();
-			if(util.isEmpty($contractAppendicesListtHtml)){
-				util.showMsg("合同附件信息不能为空！")
-				//return
-			}else{
-				let $tr1 = $("#contract-party-list tr");
-				let sign_ids = [];
-				for(let a = 0;a < $tr1.length;a++){
-					sign_ids.push($tr1[a].id)
-				}
-				console.log(sign_ids)
-
-				let $tr2 = $(".qlnews-list tr");
-				let droit_ids = [];
-				for(let b = 0;b < $tr2.length;b++){
-					droit_ids.push($tr2[b].id)
-				}
-				console.log(droit_ids)
-				
-				let $tr3 = $("#contract-appendices-list tr");
-				let files = [];
-				for(let c = 0;c < $tr3.length;c++){
-					files.push($tr3[c].id)
-				}
-				console.log(files)
-				let da = {
-					contract_code: $contractNumVal,
-					contract_subject: $contractSubVal,
-					contract_name: $contractNameVal,
-					contract_amount: $contractMoneyVal,
-					sign_date: $contractSigningTimeVal,
-					effect_date: $contractYakeTimeVal,
-					invalid_date: $contractInvalidTimeVal,
-					effect_period: $contractYesTimeVal,
-					pay_plan: $contractPaymentPlanVal,
-					pay_standard: $contractPaymentMethodVal,
-					contract_explain: $contractNotesVal,
-					sign_ids: sign_ids,
-					droit_ids: droit_ids,
-					files: files
-				}
-				$.ajax({
-					type: "POST",
-					url: "http://140.143.142.191/dadi/contract/update",
-					data: JSON.stringify(da),				
-					dataType: "json",
-					cache: false,
-					contentType: "application/json;charset=UTF-8",
-					success: function(res) {
-						if(res && res.status == 1){
-							console.log(res)
-							util.showMsg("提交成功！")
-
-							//合同详情选取
-							$('#modal-createContract').modal('hide');
-							let dataId = res.data.contract_name +"-"+ res.data.id;
-							$(".qlnews-list tr").attr("data-id", dataId)
-							$(".qlnews-xuanqu").append($(".qlnews-list").html());
-							$(".right-news input").remove();
-							// setTimeout(function(){
-							// 	location.reload();
-							// })
-						}					
-					},
-					error: function(error){
-						util.showMsg("error")
-					}
-				});		
+			let $tr1 = $("#contract-party-list tr");
+			let sign_ids = [];
+			for(let a = 0;a < $tr1.length;a++){
+				sign_ids.push($tr1[a].id)
 			}
+			console.log(sign_ids)
+			
+			let $tr3 = $("#contract-appendices-list tr");
+			let files = [];
+			for(let c = 0;c < $tr3.length;c++){
+				files.push($tr3[c].id)
+			}
+			console.log(files)
+			let da = {
+				contract_code: $contractNumVal,
+				contract_subject: $contractSubVal,
+				contract_name: $contractNameVal,
+				contract_amount: $contractMoneyVal,
+				sign_date: $contractSigningTimeVal,
+				effect_date: $contractYakeTimeVal,
+				invalid_date: $contractInvalidTimeVal,
+				effect_period: $contractYesTimeVal,
+				pay_plan: $contractPaymentPlanVal,
+				pay_standard: $contractPaymentMethodVal,
+				contract_explain: $contractNotesVal,
+				sign_ids: sign_ids,
+				files: files
+			}
+			$.ajax({
+				type: "POST",
+				url: "http://140.143.142.191/dadi/contract/update",
+				data: JSON.stringify(da),				
+				dataType: "json",
+				cache: false,
+				contentType: "application/json;charset=UTF-8",
+				success: function(res) {
+					if(res && res.status == 1){
+						console.log(res)
+						util.showMsg("提交成功！")
+
+						//合同详情选取
+					let dataId = res.data.contract_name +"-"+ res.data.id;
+											
+
+					$(".htn-list-xq").html(searchListProduc([res.data]));
+					$(".htn-list-xq input").remove();
+					$(".htn-list-xq tr").attr("data-id", dataId)
+
+					$('#modal-createContract-produc').modal('hide');
+					}					
+				},
+				error: function(error){
+					util.showMsg("error")
+				}
+			});	
 		}		
 	})	
 	//附件
@@ -484,86 +483,10 @@ function bindEvents(){
 			});		
 		}
 	})
-	//权利信息新增
-	$doc.on("click", ".modal-right-info-btn", function(){
-		let $modalRightInfoNameVal = $("#modal-right-info-name").val(),
-			$modalRightInfoSetVal = $("#modal-right-info-set").val(),
-			$modalRightInfoUntilVal = $("#modal-right-info-until").val(),
-			$modalRightInfoSVal = $("#modal-right-info-s").val(),
-			$modalRightInfoSqrVal = $("#modal-right-info-sqr").val(),
-			$modalRightInfoSqpVal = $("#modal-right-info-sqp").val(),
-			$modalRightInfoSqmVal = $("#modal-right-info-sqm").val(),
-			$modalRightInfoQldescVal = $("#modal-right-info-qldesc").val(),
-			$datetimeStartVal = $("#datetimeStart").val(),
-			$datetimeEndVal = $("#datetimeEnd").val(),
-			$modalRightInfoDescVal = $("#modal-right-info-desc").val(),
-			$modalRightInfoRemarks = $("#modal-right-info-remarks").val(),
-			$modalRightInfoFVal = $("#modal-right-info-f").val();
-		let $limitVal = $("input[name='limit']:checked").val(),
-			$limit1Val = $("input[name='limit1']:checked").val(),
-			$limit3Val = $("input[name='limit3']:checked").val(),
-			$limit4Val = $("input[name='limit4']:checked").val(),
-			$limit5Val = $("input[name='limit5']:checked").val(),
-			mode0 = showArr("mode0"),
-			language = showArr("language"),
-			mode = showArr("mode");
-		if(util.isEmpty($modalRightInfoRemarks) || util.isEmpty($modalRightInfoNameVal) || util.isEmpty($modalRightInfoSetVal) || util.isEmpty($modalRightInfoUntilVal) || util.isEmpty($modalRightInfoSVal) || util.isEmpty($modalRightInfoSqrVal) || util.isEmpty($modalRightInfoSqpVal) || util.isEmpty($modalRightInfoSqmVal) || util.isEmpty($modalRightInfoQldescVal) || util.isEmpty($datetimeStartVal) || util.isEmpty($datetimeEndVal) || util.isEmpty($modalRightInfoDescVal) || util.isEmpty($modalRightInfoFVal) || util.isEmpty($limitVal) || util.isEmpty($limit1Val) || util.isEmpty($limit3Val) || util.isEmpty($limit4Val) || util.isEmpty(mode0) || util.isEmpty($limit5Val) || util.isEmpty(language) || util.isEmpty(mode)){
-			util.showMsg("权利信息新增不能为空！")
-			return
-		}else{
-			let data = {
-				opus_name: $modalRightInfoNameVal,
-				peri_num: $modalRightInfoSetVal,
-				unit_price: $modalRightInfoUntilVal,
-				droit_subject: $modalRightInfoSVal,
-				bdroit_per: $modalRightInfoSqrVal,
-				droit_propor: $modalRightInfoSqpVal,
-				droit_price: $modalRightInfoSqmVal,
-				is_propri: $limit1Val,
-				ishave_contract: mode0,
-				droit_content: $modalRightInfoQldescVal,
-				sqxk_ksrq: $datetimeStartVal,
-				sqxk_jsrq: $datetimeEndVal,
-				droit_mode: $limit3Val,
-				sqxk_sydy: $limit5Val,
-				sqxk_syyy: language,
-				is_deleg: $limit4Val,
-				is_wripr: $limitVal,
-				sqxk_syqd: mode,
-				sqxk_sycs: $modalRightInfoFVal,
-				htql_ms: $modalRightInfoDescVal,
-				droit_des: $modalRightInfoRemarks
-			}
-			console.log(data)
-			$.ajax({
-				type: "POST",
-				url: "http://140.143.142.191/dadi/droit/update",
-				data: JSON.stringify(data),
-				dataType: "json",
-				cache: false,
-				contentType: "application/json;charset=UTF-8",
-				success: function(res) {
-					if(res && res.status == 1){
-						console.log(1)
-						data.id = res.data.id;
-						$(".qlnews-list").append(itemSearchListLook1Tpl([data]));
-						document.getElementById("ht-add").reset();
-						$('#modal-newly-added1').modal('hide');
-					}
-				},
-				error: function(error){
-					util.showMsg("error")
-				}
-			});
-		}
-	})
-	$doc.on("click", ".pre-stepa", function(){
-		let $this = $(this);
-		preBtn($this, $stepa);
-	})
+	
 	$doc.on("click", ".btn-xz-qr", function(){
 		let $this = $(this);
-		let $contract_idVal = $("#contract_id").val(),
+		let $contract_idVal = $("#mark_contract_id").val(),
 			$realmname_addressVal = $("#realmname_address").val(),
 			$ownerVal = $("#owner").val(),
 			$owner_emailVal = $("#owner_email").val(),
@@ -585,9 +508,9 @@ function bindEvents(){
 				files.push($tr3[c].id)
 			}
 			console.log(files)
-			$contract_idVal = $contract_idVal.split("-")
+			//$contract_idVal = $contract_idVal.split("-")
 			let da = {
-				contract_id: $contract_idVal[1],
+				contract_id: $contract_idVal,
 				realmname_address: $realmname_addressVal,
 				owner: $ownerVal,
 				owner_email: $owner_emailVal,
