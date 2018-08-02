@@ -318,38 +318,44 @@ function bindEvents(){
 	})
 	//选择合同
 	//搜索
+	let NameVal;
 	$doc.on("click", ".btn-ht", function(){
-		let NameVal = $("#ht-name").val();
+		NameVal = $("#ht-name").val();
 		if(util.isEmpty(NameVal)){
 			util.showMsg('搜索字段不能为空')
 		}else{
-			$.ajax({
-				type: "GET",
-				url: "http://140.143.142.191/dadi/contract/list",
-				data: {
-					contract_name: NameVal,
-					pageNum: 1,
-					pageSize: 20
-				},				
-				dataType: "json",
-				cache: false,
-				contentType: "application/json;charset=UTF-8",
-				success: function(res) {
-					if(res && res.status == 1){
-						if(res.data){//搜索
-							$(".htn-list").html(itemSearchListTpl(res.data));
-						}else{//创建
-							$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a></div>');
-						}
-					}					
-				},
-				error: function(error){
-					util.showMsg("error")
-				}
-			});		
+			searchHtList(1)
 		}
 		
 	})
+	function searchHtList(page){
+		page = page || 1;
+		$.ajax({
+			type: "GET",
+			url: "http://140.143.142.191/dadi/contract/list",
+			data: {
+				contract_name: NameVal,
+				pageNum: page,
+				pageSize: 5
+			},				
+			dataType: "json",
+			cache: false,
+			contentType: "application/json;charset=UTF-8",
+			success: function(res) {
+				if(res && res.status == 1){
+					if(res.data){//搜索
+						$(".htn-list").html(itemSearchListTpl(res.data));
+						util.pageinator("htn-list-page", page, res.page.pageCount, searchHtList);
+					}else{//创建
+						$(".htn-list").html('<div class="ht-list-s"><p>查询无结果</p><a class="cjht" data-toggle="modal" data-target="#modal-createContract">创建合同</a></div>');
+					}
+				}					
+			},
+			error: function(error){
+				util.showMsg("error")
+			}
+		});
+	}
 	//查看并选择权利
 	let droitJson = [];
 	$doc.on("click", ".btn-ht-news", function(){
