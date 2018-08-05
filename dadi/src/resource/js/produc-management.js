@@ -235,8 +235,8 @@ function bindEvents(){
 					product_amount: cpnews.product_amount,
 					register_institution: cpnews.register_institution,
 					product_xingtai: cpnews.product_xingtai,
-					shou_quan_ren: cpnews.shou_quan_ren,
-					bei_shou_quan_ren: cpnews.bei_shou_quan_ren,
+					new_shouquanren: cpnews.new_shouquanren,
+					new_beishouquanren: cpnews.new_beishouquanren,
 
 					
 					contract_ids: contract_ids,
@@ -354,8 +354,8 @@ function bindEvents(){
 				register_institution: $modalRightInfoJigouVal,
 				register_date: $modalRightDjTimeVal,
 				product_xingtai: $limit1Val,
-				shou_quan_ren: $modalRightInfoSVal,
-				bei_shou_quan_ren: $modalRightInfoSqrVal
+				new_shouquanren: $modalRightInfoSVal,
+				new_beishouquanren: $modalRightInfoSqrVal
 			}
 			$('#modal-newly-added2').modal('hide');
 			$(".news-list").append(c);
@@ -713,6 +713,36 @@ function bindEvents(){
 		// }
 		
 	})
+	//批量选取id
+function getAllids(checkbox){
+	var id = "";
+	for ( var i = 0; i < checkbox.length; i++) {
+		var $this = checkbox[i];
+		if($this.checked){
+			id = id + $this.value + ",";
+		}
+	}
+	return id.slice(0,-1);
+}
+	$doc.on("click", ".add-n-list input[name=work-list]", function(){
+		var checkbox = $(".add-n-list input[name=work-list]");		
+		let id = getAllids(checkbox);
+		$.ajax({
+			type: "GET",
+			url: "http://140.143.142.191/dadi/droit/generateDroit",
+			data: {
+				droits: JSON.stringify(id)
+			},
+			dataType: "json",
+			cache: false,
+			contentType: "application/json;charset=UTF-8",
+			success: function(res) {
+				if(res && res.status == 1){
+
+				}
+			}
+		})
+	})
 	$doc.on("click", ".btn-upload-dele", function(){
 		$(this).parents("tr").remove();
 	})
@@ -792,6 +822,7 @@ function worksSearchListF(nameVal, page){
 		pageNum: page,
 		pageSize: 10
 	}
+	console.log(jsond)
 	$.ajax({
 		type: "GET",
 		url: "http://140.143.142.191/dadi/opus/list",
@@ -832,8 +863,8 @@ function searchDetais(data){
 						id: d.opus.id,
 						opus_name: d.opus.opus_name,
 						opus_type: d.opus.opus_type,
-						shou_quan_ren: dr.shou_quan_ren,
-						bei_shou_quan_ren: dr.bei_shou_quan_ren,
+						new_shouquanren: dr.new_shouquanren,
+						new_beishouquanren: dr.new_beishouquanren,
 						droit_startime: dr.droit_startime,
 						droit_mode: dr.droit_mode,
 						sqxk_sydy: dr.sqxk_sydy,

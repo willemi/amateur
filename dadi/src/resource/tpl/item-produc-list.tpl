@@ -6,8 +6,8 @@
 	<td>{{!m.product_name}}</td>
 	<td>{{!m.theme_type}}</td>
 	<td>{{!m.product_xingtai}}</td>
-	<td>{{!m.shou_quan_ren}}</td>
-	<td>{{!m.bei_shou_quan_ren}}</td>
+	<td>{{!m.new_shouquanren}}</td>
+	<td>{{!m.new_beishouquanren}}</td>
 	<td>{{!m.ishave_contract}}</td>
 	<td>{{!m.droit_startime}}</td>
 	<td>{{!m.droit_endtime}}</td>

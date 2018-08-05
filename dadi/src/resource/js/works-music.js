@@ -16,6 +16,8 @@ const detailsListTpl = require('../tpl/item-details-list.tpl');
 const detailsQlnewsTpl = require('../tpl/item-details-qlnews.tpl');
 const detailsFjianTpl = require('../tpl/item-details-fjian.tpl');
 
+const itemfileListTpl = require('../tpl/item-field-list.tpl')
+
 let worksId;
 let $RightNews = $(".right-news");
 
@@ -129,25 +131,6 @@ window.formatobligee_sign = function (state){
 // 	}
 // }
 
-var data3 = [{
-	"num": "XXXXXXX189675456WSPD",
-	"name": "《嗨！看电视》2018XXX采购合同",
-	"qTime": "2018-03-23",
-	"sTime": "2018-03-23",
-	"sxTime": "2018-03-23"
-},{
-	"num": "XXXXXXX189675456WSPD",
-	"name": "《嗨！看电视》2018XXX采购合同",
-	"qTime": "2018-03-23",
-	"sTime": "2018-03-23",
-	"sxTime": "2018-03-23"
-},{
-	"num": "XXXXXXX189675456WSPD",
-	"name": "《嗨！看电视》2018XXX采购合同",
-	"qTime": "2018-03-23",
-	"sTime": "2018-03-23",
-	"sxTime": "2018-03-23"
-}]
 
 //默认展示列表
 let workslistPage = 1;
@@ -228,7 +211,9 @@ function bindEvents(){
 		$modalNAuthorizingPerson = $("#modal-n-authorizing-person"),
 		$modalNAuthorizedPerson = $("#modal-n-authorized-person"),
 		$modalBAuthorization = $("#modal-b-authorization");
-	$('#modal-changeRights').on('show.bs.modal', function () {
+	$doc.on('click', ".works-list-bg", function () {
+		let old = $(this).data("old");
+		console.log(old)
 		// 执行一些动作...
 		$modalPObligee.val("11111");
 		$modalPAuthorizedPerson.val("22222");
@@ -251,8 +236,6 @@ function bindEvents(){
 			cache: false,
 			success: function(res) {
 				if(res && res.errno ==0){
-
-
 					$('#modal-detailsContract').modal('hide');
 				}
 			},
@@ -372,10 +355,14 @@ function bindEvents(){
 			contentType: "application/json;charset=UTF-8",
 			success: function(res) {
 				if(res && res.status == 1){
+					// for(var i = 0;i < res.data.droit.length;i++){
+					// 	res.data.droit[i]._id = res.data.contract.id;
+					// }
 					for(var i = 0;i < res.data.droit.length;i++){
-						res.data.droit[i]._id = res.data.contract.id;
+						res.data.droit[i]._id = res.data.contract.contract_name +"-"+ res.data.contract.id;
 					}
 					$.extend(droitJson, res.data.droit)
+					console.log(res.data.droit)
 					$(".look-details-01").html(itemSearchListLookTpl([res.data.contract]))
 					$(".qlnews-cont").html(itemSearchListLook1Tpl(res.data.droit))
 					$(".qyfNews").html(itemSearchListLook2Tpl(res.data.sign))
@@ -425,7 +412,8 @@ function bindEvents(){
 			util.showMsg("请选取权利信息");
 		}else{			
 			$('#modal-choiceContracts').modal('hide');
-			
+			let htname = $(".qlnews-xuanqu tr").data("id").split("-")[0];
+			$("#source-contract-name").val(htname);
 			$RightNews.html($(".qlnews-xuanqu").html());
 			
 			console.log(kkid)
@@ -776,6 +764,7 @@ function bindEvents(){
 					if(res && res.status == 1){
 						console.log(1)
 						data.id = res.data.id;
+						data._id = $("#contract-name").val() +"-"+ data.id;
 						$(".qlnews-list").append(itemSearchListLook1Tpl([data]));
 						document.getElementById("ht-add").reset();
 						$('#modal-newly-added1').modal('hide');
@@ -842,19 +831,24 @@ function bindEvents(){
 				console.log(obligeeIds)
 
 				let $tr2 = $(".right-news tr");
-				let droitIds = [];
+				let droitIds = [], contract_name= [];
 				for(let b = 0;b < $tr2.length;b++){
+					let htid = $tr2[b].dataset.id.split("-")[0];
+					contract_name.push(htid);
 					droitIds.push($tr2[b].id)
 				}
-				console.log(droitIds)
+				console.log(droitIds, contract_name)
 				
 				let $tr3 = $("#enclosure-list tr");
 				let files = [];
 				for(let c = 0;c < $tr3.length;c++){
+					
 					files.push($tr3[c].id)
 				}
 				console.log(files)
+				
 				let da = {
+					id: worksId,
 					opus_classify: 1,
 					opus_name: $workNameVal,
 					opus_type: $workTypeVal,
@@ -869,7 +863,8 @@ function bindEvents(){
 					opus_briefing: $worksDescVal,
 					obligee_ids: obligeeIds,
 					droit_ids: droitIds,
-					files: files
+					files: files,
+					contract_name: contract_name
 				}
 				$.ajax({
 					type: "POST",
@@ -885,7 +880,8 @@ function bindEvents(){
 							setTimeout(function(){
 								location.reload();
 							})
-						}					
+							worksId = '';
+						}
 					},
 					error: function(error){
 						util.showMsg("error")
@@ -1000,6 +996,7 @@ function bindEvents(){
 		let id = $(this).parents("tr").attr("id");
 		for(var i = 0;i < qlListJson.length;i++){
 			let json = qlListJson[i];
+			console.log(qlListJson)
 			if(json.id == id){
 				$btnListQr.attr("id", json.id);
 				$modalObligeeName.val(json.obligee_name);
@@ -1090,6 +1087,11 @@ function bindEvents(){
 					// $(".details-qlnews").html(detailsQlnewsTpl(data.droit));
 					// $(".details-fjian").html(detailsFjianTpl(data.fileobj));	
 					worksId = data.opus.id;
+					for(let k = 0;k < res.data.obligee.length;k++){
+						qlListJson.push(res.data.obligee[k])
+					}
+					$RightNews.html(itemSearchListLook1Tpl(res.data.droit));
+					$("#enclosure-list").html(itemfileListTpl(res.data.fileobj));
 					$("#work-name").val(data.opus.opus_name);
 					$("#work-type").val(data.opus.opus_type);
 					$("#theme-type").val(data.opus.theme_type);

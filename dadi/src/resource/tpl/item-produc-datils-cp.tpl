@@ -10,7 +10,7 @@
 	<td>{{!m.product_amount}}</td>
 	<td>{{!m.register_date}}</td>
 	<td>{{!m.register_institution}}</td>
-	<td>{{!m.shou_quan_ren}}</td>
-	<td>{{!m.bei_shou_quan_ren}}</td>
+	<td>{{!m.new_shouquanren}}</td>
+	<td>{{!m.new_beishouquanren}}</td>
 </tr>
 {{~}}
