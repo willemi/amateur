@@ -280,6 +280,7 @@ function bindEvents(){
 		}else{
 			$('#modal-referenceWorks').modal('hide');
 			$(".yy-list").append(c);
+			//listHtml = '';
 			$("#workName").val("");
 			$(".work-search-list").html("")
 		}
@@ -719,7 +720,7 @@ function getAllids(checkbox){
 	for ( var i = 0; i < checkbox.length; i++) {
 		var $this = checkbox[i];
 		if($this.checked){
-			id = id + $this.value + ",";
+			id = id + $this.className + ",";
 		}
 	}
 	return id.slice(0,-1);
@@ -727,11 +728,12 @@ function getAllids(checkbox){
 	$doc.on("click", ".add-n-list input[name=work-list]", function(){
 		var checkbox = $(".add-n-list input[name=work-list]");		
 		let id = getAllids(checkbox);
+		id = parseInt(id);
 		$.ajax({
 			type: "GET",
 			url: "http://140.143.142.191/dadi/droit/generateDroit",
 			data: {
-				droits: JSON.stringify(id)
+				droits: id
 			},
 			dataType: "json",
 			cache: false,
@@ -803,13 +805,14 @@ function showArr(name){
 let listHtml = '';
 function copy(){
 	var checkbox = $("input[name=work-list]");
-	let id;
+	let id,_id;
 	for (let i = 0; i < checkbox.length; i++) {
 		var $this = checkbox[i];
 		if($this.checked){
 			id = $this.value;
+			_id = $this.className;
 			//kkid.push(id)
-			listHtml += '<tr class="f_'+ id +'" id="'+ id +'">'+ $(".t_"+ id).html() +'</tr>';
+			listHtml += '<tr class="f_'+ id +'" id="'+ id +'" data-id="'+ _id +'">'+ $(".t_"+ id).html() +'</tr>';
 		}
 	}
 	return listHtml;
@@ -858,28 +861,33 @@ function searchDetais(data){
 			success: function(res) {				
 				if(res && res.status == 1){
 					let d = res.data;
-					let dr = d.droit[0];
-					let json = {
-						id: d.opus.id,
-						opus_name: d.opus.opus_name,
-						opus_type: d.opus.opus_type,
-						new_shouquanren: dr.new_shouquanren,
-						new_beishouquanren: dr.new_beishouquanren,
-						droit_startime: dr.droit_startime,
-						droit_mode: dr.droit_mode,
-						sqxk_sydy: dr.sqxk_sydy,
-						sqxk_syyy: dr.sqxk_syyy,
-						is_deleg: dr.is_deleg,
-						is_wripr: dr.is_wripr,
-						sqxk_syqd: dr.sqxk_syqd,
-						sqxk_sycs: dr.sqxk_sycs,
-						droit_content: dr.droit_content,
-						droit_propor: dr.droit_propor,
-						droit_price: dr.droit_price,
-						htql_ms: dr.htql_ms,
-						droit_des: dr.droit_des
-					} 
-					worksSearchListJson.push(json)
+					
+					for(var p = 0;p < d.droit.length;p++){
+						let dr = d.droit[p];
+						let json = {
+							id: d.opus.id,
+							_id: dr.id,
+							opus_name: d.opus.opus_name,
+							opus_type: d.opus.opus_type,
+							new_shouquanren: dr.new_shouquanren,
+							new_beishouquanren: dr.new_beishouquanren,
+							droit_startime: dr.droit_startime,
+							droit_mode: dr.droit_mode,
+							sqxk_sydy: dr.sqxk_sydy,
+							sqxk_syyy: dr.sqxk_syyy,
+							is_deleg: dr.is_deleg,
+							is_wripr: dr.is_wripr,
+							sqxk_syqd: dr.sqxk_syqd,
+							sqxk_sycs: dr.sqxk_sycs,
+							droit_content: dr.droit_content,
+							droit_propor: dr.droit_propor,
+							droit_price: dr.droit_price,
+							htql_ms: dr.htql_ms,
+							droit_des: dr.droit_des
+						} 
+						worksSearchListJson.push(json)
+					}
+					
 					//worksSearchListArr.
 					// for(var i = 0;i < worksSearchListJson.length;i++){
 					// 	if(worksSearchListJson[i] && worksSearchListJson[i].id == json.id){ //修改
@@ -900,6 +908,7 @@ function searchDetais(data){
 	}
 	console.log(worksSearchListJson)
 	$(".work-search-list").html(worksSearchList(worksSearchListJson))
+	worksSearchListJson = []
 }
 
 let resD;

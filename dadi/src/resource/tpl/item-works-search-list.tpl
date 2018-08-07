@@ -1,6 +1,6 @@
 {{~it :m:n}}
-<tr class="t_{{!m.id}}" id="{{!m.id}}">
-	<th scope="row"><input value="{{!m.id}}" type="checkbox" name="work-list">{{!m.id}}</th>
+<tr class="t_{{!m.id}}" id="{{!m.id}}" name="{{!m._id}}">
+	<th scope="row"><input value="{{!m.id}}" class="{{!m._id}}" type="checkbox" name="work-list">{{!m.id}}</th>
 	<td>{{!m.opus_name}}</td>
 	<td>{{!m.opus_type}}</td>
 	<td>{{!m.droit_subject}}</td>

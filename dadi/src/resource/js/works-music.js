@@ -211,13 +211,13 @@ function bindEvents(){
 		$modalNAuthorizingPerson = $("#modal-n-authorizing-person"),
 		$modalNAuthorizedPerson = $("#modal-n-authorized-person"),
 		$modalBAuthorization = $("#modal-b-authorization");
-	$doc.on('click', ".works-list-bg", function () {
-		let old = $(this).data("old");
-		console.log(old)
-		// 执行一些动作...
-		$modalPObligee.val("11111");
-		$modalPAuthorizedPerson.val("22222");
-	})
+	// $doc.on('click', ".works-list-bg", function () {
+	// 	let old = $(this).data("old");
+	// 	console.log(old)
+	// 	// 执行一些动作...
+	// 	$modalPObligee.val("11111");
+	// 	$modalPAuthorizedPerson.val("22222");
+	// })
 	$doc.on("click", "#modal-b-authorization", function(){
 		let val1 = $modalNAuthorizingPerson.val(),
 			val2 = $modalNAuthorizedPerson.val();
@@ -831,13 +831,13 @@ function bindEvents(){
 				console.log(obligeeIds)
 
 				let $tr2 = $(".right-news tr");
-				let droitIds = [], contract_name= [];
+				let droitIds = [], contract_name= '';
 				for(let b = 0;b < $tr2.length;b++){
 					let htid = $tr2[b].dataset.id.split("-")[0];
-					contract_name.push(htid);
+					contract_name = contract_name + htid + ",";
 					droitIds.push($tr2[b].id)
 				}
-				console.log(droitIds, contract_name)
+				console.log(droitIds, contract_name.slice(0,-1))
 				
 				let $tr3 = $("#enclosure-list tr");
 				let files = [];
@@ -864,7 +864,7 @@ function bindEvents(){
 					obligee_ids: obligeeIds,
 					droit_ids: droitIds,
 					files: files,
-					contract_name: contract_name
+					contract_name: contract_name.slice(0,-1)
 				}
 				$.ajax({
 					type: "POST",
